@@ -1,0 +1,52 @@
+---
+layout: post
+slug: no-sense
+title: No sense
+categories: [cgi-vfx]
+tags: [game highlights, Unreal Tournament]
+date: 2011-08-13T12:00:00+03:00
+custom_update_date: 2020-04-30T13:00:00-06:00
+---
+This is a defrag & game highlights game video.
+I spent several years performing all the tricks and creating this video, and I am very pleased with the result!
+This video contains unique tricks that UT3 players have hardly ever performed or even seen before.
+All the tricks were performed with standard game physics and speed, the only "cheat" was using `god` sometimes to achieve invulnerability.
+
+A review from a viewer on YouTube:
+> "one of the best, and also the only one defrag movie of ut3! i like it", [stereofiction](https://www.youtube.com/user/stereofiction)
+
+<div class="iframe-margins">
+  <div class="iframe-ratio-16-9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OvgxtA5i-bA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+Music:
+* Freedom Call - Shine on
+* Within Temptation - It's the Fear
+* Rhapsody - The Dark Tower of Abyss
+
+## Thanks
+* **DENTNT** - 3D modelling and creation of a special font for the title of the movie.
+
+* **FACH** - Modification of UT3 maps with the models created by **DENTNT** and some other modifications.
+
+* **UX.Loki** - Creation of monochromatic UT3 maps.
+
+These&#x1f446; guys really saved me from doing a lot of work!
+
+* **Rypel** - Creation of RypelCam that provides a powerful ability to take cool shots with free in-game camera.
+It would have been impossible to create this video without RypelCam for UT3.
+
+* **DiNoWaR** - Taught me an unusual way to make color correction and helped with Adobe After Effects during the beginning of my work.
+Unfortunately, later he turned out to be a very dishonest man.
+
+* **AlphaSt3XC~RTS~** - Inspired me by continuously asking about progress with my work on the movie &#x1f600;.
+
+* **UTgamer** a.k.a. **SNappy** - Participated in some tricks.
+
+## Links
+I created a few tutorials describing some VFX techniques used in the video:
+* [ice text]({% post_url 2010-11-07-ice-text %}),
+* [smoke to text effect]({% post_url 2011-01-05-smoke-to-text %}),
+* [color correction]({% post_url 2010-11-21-hdr-video %}).

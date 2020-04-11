@@ -1,0 +1,16 @@
+---
+layout: base
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <div class="post-metadata">
+    {%- if page.tags.size > 0 -%}
+      {%- capture post_tags -%}{{ page.tags | join: site.custom_post_tag_delimiter }}{%- endcapture -%}
+      {%- include post-tags.html content = post_tags -%}
+    {%- endif -%}
+    {%- if page.date -%}
+      <p>Posted {{ page.date | date: "%Y-%m-%d" }}, last updated {{ page.custom_update_date | date: "%Y-%m-%d" }}</p>
+    {%- endif -%}
+  </div>
+  {{ content }}
+</article>

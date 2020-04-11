@@ -1,0 +1,28 @@
+---
+layout: post
+slug: hdr-video
+title: Improve your video with HDR & Tone Mapping in HDRsoft Photomatix Pro 3
+categories: [cgi-vfx]
+tags: [tutorial]
+date: 2010-11-21T12:00:00+03:00
+custom_update_date: 2020-05-01T10:00:00-06:00
+---
+This tutorial presents a way[^1] to improve colors and enhance details in your video using HDR effect in Photomatix.
+I used this technique in the game highlights video [No sense]({% post_url 2011-08-13-no-sense %}).
+
+<div class="iframe-margins">
+  <div class="iframe-ratio-16-9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/8zYIG9mPcyk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+Music:
+* Cirque Du Soleil - Marelle
+* Cirque Du Soleil - Rivage
+* Cirque Du Soleil - Zydeko
+* Van Zant - Takin' Up Space
+
+[^1]: The described process has some drawbacks because the effect was meant to be used on images instead of video:
+    brightness flickering and sometimes other minor artifacts.
+    Luckily, Photomatix Pro 4 has a new feature called exposure fusion.
+    I found that one can get good results without artifacts when using exposure fusion instead of generating HDR image and then applying tone mapping.

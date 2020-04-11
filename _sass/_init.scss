@@ -1,0 +1,54 @@
+$base-font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+$monospace-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+
+$font-size: 1em;
+$small-font-size: 0.8em;
+$block-monospace-font-size: 0.8em;
+$inline-monospace-font-size: 0.85em;
+$post-metadata-font-size: $small-font-size;
+
+$font-weight: 400;
+$header-font-weight: 500;
+
+$site-navigation-width: 14.5em;
+$toolbar-height: 1.5em;
+$spacing-unit-em: 1.55em;//depends on the size of the text in the current element
+$spacing-unit-percentage: 1%;//depends on the size of the parent element
+$base-spacing-em: $spacing-unit-em / 2;
+$border-radius: 0.15em;
+$block-padding: 0.2em;
+$inline-padding: 0.1em;
+$line-height: 1.4;
+$code-line-height: 1.6;
+$code-block-max-height: 45em;
+$margin-leftright-percentage: $spacing-unit-percentage * 2.5;
+
+$border-color-darken-percentage: 5%;
+$site-background-color: white;
+$font-color: rgb(50, 50, 50);
+$quotation-font-color: lighten($font-color, 30%);//see https://sass-lang.com/documentation/modules/color for other color functions
+$quotation-background-color: desaturate(lighten(linen, 1%), 20%);
+$code-font-backgroung-color: lighten(lavender, 2%);
+$header-font-color: steelblue;
+$hover-header-font-color: lighten($header-font-color, 15%);
+$site-layout-markup-color: lighten(ghostwhite, 0.3%);//e.g. lines separating the site navigation and the footer
+$site-navigation-background-color: $site-background-color;
+$site-navigation-border-color: $site-background-color;
+$site-navigation-menu-font-color: $header-font-color;
+$site-navigation-hover-font-color: coral;
+$page-layout-markup-color: lighten($header-font-color, 35%);//e.g. thematic breaks
+$link-color: cornflowerblue;
+$link-hover-color: coral;
+$code-background-color: $site-background-color;
+$code-border-color: darken($quotation-background-color, $border-color-darken-percentage);
+$table-header-background-color: $code-font-backgroung-color;
+$table-border-color: darken($quotation-background-color, $border-color-darken-percentage);
+$table-zebra-color: $site-layout-markup-color;
+$post-metadata-font-color: $header-font-color;//$quotation-font-color;
+$post-tag-decoration-color: thistle;
+$info-background-color: desaturate(lighten($page-layout-markup-color, 12%), 0%);
+
+$unhovered-svg-button-opacity: 0.5;
+$site-navigation-menu-arrow: "\25b6\00a0";//BLACK RIGHT-POINTING TRIANGLE and NO-BREAK SPACE
+$link-after-content: "\25f9";//UPPER RIGHT TRIANGLE
+$border-widthstyle: thin solid;

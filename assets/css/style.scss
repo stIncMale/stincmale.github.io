@@ -1,0 +1,16 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "{{ site.encoding }}";
+@import
+  "init",
+  "base",
+  "site-title",
+  "site-navigation",
+  "toolbar",
+  "toc",
+  "footnotes",
+  "posts",
+  "post-metadata",
+  "code-highlighting",
+  "footer";

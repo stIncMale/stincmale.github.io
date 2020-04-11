@@ -1,0 +1,26 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>{%- comment -%}<!-- Sitemaps XML format https://www.sitemaps.org/protocol.html -->{%- endcomment -%}
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}</loc>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    {%- capture link -%}{%- link lyrics.markdown -%}{%- endcapture -%}
+    <loc>{{ link | absolute_url }}</loc>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  {%- for post in site.posts -%}
+    {%- unless post.draft -%}
+      <url>
+        <loc>{{ post.url | absolute_url }}</loc>
+        <lastmod>{{ post.custom_update_date | date: "%Y-%m-%d" }}</lastmod>
+        <changefreq>daily</changefreq>
+      </url>
+    {%- endunless -%}
+  {%- endfor -%}
+</urlset>

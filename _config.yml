@@ -1,0 +1,54 @@
+encoding: UTF-8
+timezone: Etc/UTC
+language: en
+baseurl:
+permalink: /blog/:categories/:slug
+# see https://jekyllrb.com/docs/configuration/options/#build-command-options
+show_drafts: false
+kramdown:
+  # smart_quotes:
+  #
+  #   first parameter : how an opening apostrophe is transformed
+  #                     or apostrophe like in "I'm"
+  #           default : ' -> ‘ (lsquo)
+  #              apos : ' -> '
+  #
+  #   second parameter : how a closing apostrophe is transformed
+  #           default : ' -> ’ (rsquo)
+  #              apos : ' -> '
+  #
+  #   third parameter : how an opening double quote is transformed
+  #           default : " -> “ (ldquo)
+  #              quot : " -> "
+  #
+  #   fourth parameter : how a closing double quote is transformed
+  #           default : " -> ” (rdquo)
+  #              quot : " -> "
+  #
+  #   Default kramdown config
+  #     smart_quotes: ["rdquo", "rsquo", "ldquo", "rdquo"]
+  #
+  #   Programmer's world compliant config
+  #     smart_quotes: ["apos", "apos", "quot", "quot"]
+  smart_quotes:  ["apos", "apos", "quot", "quot"]
+  #Use ZERO WIDTH SPACE to "disable" Kramdown backlink text
+  footnote_backlink: "\u200b"
+
+custom_title: '<span class="site-title1">DEAD</span><span class="site-title2 monospace">&lt;code/&gt;</span>'
+# Having all the HTML tags specified in custom_title is not particularly harmful for the Atom feed, but is also not helpful
+# because users may see that markup when importing my feed into their feed readers and this may confuse them. 
+custom_plaintext_title: DEAD<code/>
+# LinkedIn (and maybe some other) sites/apps fail to display "DEAD<code/>" title specified in og:title, so I have to use a simplified version
+custom_simplified_title: DEADcode
+custom_author: Valentin Kovalenko
+custom_author_email: public.vkovalenko@gmail.com
+# This is used for generating https://tools.ietf.org/html/rfc4287#section-4.2.6
+# I am using tag URIs (https://tools.ietf.org/html/rfc4151)
+custom_feed_id_iri_email: public.vkovalenko@gmail.com
+custom_feed_id_iri_inception_year: 2020
+# The only way to pass parameters to includes in Jekyll is by passing a single parameter of type String
+# (see https://jekyllrb.com/docs/includes/#passing-parameters-to-includes and https://shopify.github.io/liquid/basics/types/#string).
+# Thus in order to pass an Array of tags, we have to
+# join them (https://shopify.github.io/liquid/filters/join/), pass the result and split it back (https://shopify.github.io/liquid/filters/split/).
+# This value is used as a delimiter when joining/splitting tags, therefore it cannot be used as part of a tag.
+custom_post_tag_delimiter: ^

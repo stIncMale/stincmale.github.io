@@ -1,0 +1,43 @@
+table.posts {
+  border: 0em;
+  margin-left: 0%;
+  margin-right: 0%;
+  width: 100%;
+
+  tr {
+    &:hover {
+      background: darken($table-zebra-color, 2%);
+    }
+  }
+
+  td {
+    border: 0em;
+    vertical-align: top;
+  }
+
+  td.post-link {
+    color: $header-font-color;
+
+    a {
+      color: $header-font-color;
+    
+      &:after {
+        content: none;
+      }
+      &:hover {
+        color: $header-font-color;
+      }
+    }
+  }
+
+  td.post-tags {
+    width: 20%;
+    text-align: left;
+    line-height: 150%;
+  }
+
+  td.post-date {
+    width: 10%;
+    text-align: left;
+  }
+}

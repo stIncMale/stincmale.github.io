@@ -1,0 +1,39 @@
+#toolbar {
+  top: 0em;
+  height: $toolbar-height;
+  position: sticky;
+  z-index: 1;//appear on top of other elements (without this style transparent elements appear on top of this element)
+  margin-left: $site-navigation-width;
+  background: $site-background-color;
+  border-bottom: $border-widthstyle $site-layout-markup-color;
+  line-height: 1;
+}
+
+#site-navigation-toggle-button {
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.svg-button {
+  line-height: 1;
+  padding: 0em;
+  margin: 0em;
+  width: 1em;
+  height: 1em;
+  fill: $link-color;
+  opacity: $unhovered-svg-button-opacity;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+a.button {
+  &:after {
+    content: none;
+  }
+
+  &:hover {
+    color: currentColor;
+  }
+}

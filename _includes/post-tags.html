@@ -1,0 +1,8 @@
+{%- assign post_tags = include.content | split: site.custom_post_tag_delimiter -%}
+<ul class="post-tags">
+  {%- for tag in post_tags -%}
+    <li>
+      <a href="{{ "/blog/tags#" | append: tag | uri_escape | relative_url }}" class="post-tag">{{ tag }}<sup>{{ site.tags[tag] | second | size }}</sup></a>
+    </li>
+  {%- endfor -%}
+</ul>

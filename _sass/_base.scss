@@ -1,0 +1,288 @@
+:root {
+  font-family: $base-font-family;
+  font-size: 100%;
+  font-weight: $font-weight;
+  background: $site-background-color;
+  color: $font-color;
+  white-space: normal;
+}
+
+:root, html, body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dt, dd,
+ol, ul,
+figure, hr {
+  margin: 0em;
+  padding: 0em;
+}
+
+body {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+#right-side-area {
+  margin-left: $site-navigation-width;
+  overflow: auto;
+}
+
+main {
+  padding-left: $base-spacing-em;
+  padding-right: $base-spacing-em;
+  margin-bottom: $base-spacing-em;
+}
+
+/**
+ * Vertical rhythm.
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl,
+ul, ol,
+hr,
+table, figure,
+div.iframe-margins,
+div.info-block {
+  margin-bottom: $base-spacing-em;
+}
+li > ol,
+li > ul {
+  margin-top: $spacing-unit-em / 3;
+  margin-bottom: 0em;
+}
+li p {
+    margin-bottom: $spacing-unit-em / 4;
+}
+li {
+  margin-bottom: $spacing-unit-em / 3;
+}
+
+/**
+ * Horizontal margins for some elements.
+ */
+blockquote, pre,
+dl, ul, ol,
+table, figure,
+div.info-block,
+.margin-leftright {
+  margin-left: $margin-leftright-percentage;
+  margin-right: $margin-leftright-percentage;
+}
+
+hr {
+  border: $border-widthstyle $page-layout-markup-color;
+  border-bottom: 0em;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $header-font-weight;
+  color: $header-font-color;
+}
+h1 {
+  font-size: $font-size * 1.6;
+}
+h2 {
+  font-size: $font-size * 1.5;
+}
+h3 {
+  font-size: $font-size * 1.4;
+}
+h4 {
+  font-size: $font-size * 1.3;
+}
+h5 {
+  font-size: $font-size * 1.2;
+}
+h6 {
+  font-size: $font-size * 1.1;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:after {
+    font-size: $small-font-size;
+    vertical-align: super;
+    content: $link-after-content;
+  }
+  &:hover {
+    color: $link-hover-color;
+  }
+  &:active {
+  }
+  &:visited {
+  }
+}
+
+@mixin highlightable {
+  opacity: 0.5;
+
+  &:target {
+    opacity: 1;
+  }
+}
+.highlightable {
+  @include highlightable;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/**
+ * Iframe elements.
+ */
+div.iframe-margins {
+  margin-left: $margin-leftright-percentage;
+  margin-right: 40%;
+}
+div.iframe-ratio-16-9 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;//16:9 aspect ratio (9 / 16 = 0.5625)
+}
+div.iframe-ratio-4-3 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;//4:3 aspect ratio (3 / 4 = 0.75)
+}
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: baseline;
+}
+figure > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+figcaption {
+  font-size: $small-font-size;
+  text-align: center;
+  color: $quotation-font-color;
+}
+
+span.small-font {
+  font-size: $small-font-size;
+}
+
+/**
+ * Quotations.
+ */
+q {
+  font-style: italic;
+  color: $quotation-font-color;
+
+  &:before {
+    content: none;
+  }
+  &:after {
+    content: none;
+  }
+}
+blockquote,
+div.info-block {
+  font-style: italic;
+  border: 0em;
+  border-radius: $border-radius;
+  padding: $block-padding;
+  color: desaturate(darken($quotation-background-color, 40%), 10%);
+  background: $quotation-background-color;
+
+  > :last-child {//this is usually a <p> element
+    margin-bottom: 0em;
+  }
+}
+div.info-block {
+  font-style: normal;
+  color: desaturate(darken($info-background-color, 50%), 10%);
+  background: $info-background-color;
+}
+
+:not(code) > table {//<table> elements that are not children of <code> elements
+  border-collapse: collapse;
+  border: $border-widthstyle $table-border-color;
+  th, td {
+    padding: ($block-padding * 2) ($block-padding * 2);
+  }
+  th {
+    background-color: $table-header-background-color;
+    border: $border-widthstyle darken($table-header-background-color, $border-color-darken-percentage);
+    font-weight: normal;
+  }
+  td {
+    border: $border-widthstyle $table-border-color;
+  }
+  tr {
+    &:nth-child(even) {
+      background-color: $table-zebra-color;
+    }
+  }
+}
+
+/**
+ * Code.
+ */
+pre,
+samp, kbd, var,
+code,
+.monospace {
+  font-family: $monospace-font-family;
+  font-size: $inline-monospace-font-size;
+}
+//inline code
+samp, kbd, var,
+:not(pre) > code {//a <code> element that is a child (direct descendant) of any element but a <pre> element
+  border: 0em;
+  border-radius: $border-radius;
+  padding: $inline-padding;
+  background: $code-font-backgroung-color;
+  //color: should not be set because it messes with <a> color scheme (HTML generated from Markdown specifies <code> inside <a> but not vise-versa)
+}
+pre {
+  border: $border-widthstyle $page-layout-markup-color;
+  border-radius: $border-radius;
+  padding: $block-padding;
+  overflow: auto;
+}
+pre code,
+code pre {//reset some styles for those <code> elements that are inside <pre> elements and vice versa
+  font-size: 1em;
+  margin-left: 0em;
+  margin-right: 0em;
+  border: 0em;
+  padding: 0em;
+}
+figure.highlight,
+code table {//reset margin-bottom to maintain vertical rhythm
+  margin-bottom: 0em;
+  margin-left: 0em;
+  margin-right: 0em;
+}
+pre.highlight,
+figure.highlight > pre {
+  font-size: $block-monospace-font-size;
+  border: $border-widthstyle $code-border-color;
+  line-height: $code-line-height;
+  max-height: $code-block-max-height;
+  background: $code-background-color;
+}
+td.gutter.gl {//separate line numbers from code with a border
+  border-right: $border-widthstyle $code-border-color;
+}

@@ -1,0 +1,19 @@
+<head>
+  {%- capture title -%}
+    {%- if page.title -%}{{ page.title | strip_html | append: " | " }}{%- endif -%}{{ site.custom_title | strip_html }} by {{ site.custom_author }}
+  {%- endcapture -%}
+  {%- capture og_title -%}
+    {%- if page.title -%}{{ page.title | strip_html | append: " | " }}{%- endif -%}{{ site.custom_simplified_title }} by {{ site.custom_author }}
+  {%- endcapture -%}
+  <title>{{ title }}</title>
+  <meta charset="{{ site.encoding }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="{{ og_title }}"/>
+  <meta property="og:image" content="{% link assets/img/site-logo.png %}"/>{%- comment -%}<!-- The aspect ratio of this image is for LinkedIn, but also works with Telegram -->{%- endcomment -%}
+  <meta property="og:image" content="{% link assets/img/favicon.png %}"/>{%- comment -%}<!-- WatsApp takes the last og:image -->{%- endcomment -%}
+  <link rel="icon" type="image/png" href="{% link assets/img/favicon.png %}">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link rel="alternate" href="{% link feed.xml %}" type="application/atom+xml">
+  <script src="{% link assets/js/common.js %}" defer></script>
+  <script src="{% link assets/js/navigation.js %}" defer></script>
+</head>

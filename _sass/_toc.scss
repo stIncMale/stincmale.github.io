@@ -1,0 +1,27 @@
+//see https://www.w3.org/Style/Examples/007/color-bullets.en.html for details about changing list bullet colors
+#markdown-toc, #markdown-toc ol {
+  list-style: none;
+  counter-reset: li;
+}
+#markdown-toc li {
+  counter-increment: li;
+
+  &:before {
+    margin-left: -$base-spacing-em / 2;
+    display: inline-block;
+    width: $spacing-unit-em;
+    color: $header-font-color;
+    content: counter(li)".";
+  }
+}
+
+#markdown-toc a {
+  color: $header-font-color;
+
+  &:hover {
+    color: $hover-header-font-color;
+  }
+  &:after {
+    content: none;
+  }
+}

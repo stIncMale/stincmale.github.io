@@ -1,0 +1,28 @@
+.post-metadata {
+  font-size: $post-metadata-font-size;
+  color: $post-metadata-font-color;
+}
+.post-tag {
+  font-style: italic;
+
+  &:before {
+    color: $post-tag-decoration-color;
+    content: "#";
+  }
+}
+a.post-tag::after {
+  content: none;
+}
+ul.post-tags {
+  list-style: none;
+  margin-left: 0%;
+  margin-right: 0%;
+
+  li {
+    display: inline;
+    margin: 0em;
+  }
+}
+td ul.post-tags {
+  margin: 0em;//remove margins when tags are inside a table cell
+}

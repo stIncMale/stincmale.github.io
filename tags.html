@@ -1,0 +1,44 @@
+---
+layout: base
+title: Posts by tag
+permalink: /blog/tags
+---
+{%- capture tags -%}
+  {%- for tag_and_posts in site.tags -%}
+    {{ tag_and_posts | first }}
+    {%- unless forloop.last -%}
+      {{ site.custom_post_tag_delimiter }}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{% assign sorted_tags = tags | split: site.custom_post_tag_delimiter | sort_natural %}
+
+<div class="margin-leftright">
+  {%- capture post_tags -%}{{ sorted_tags | join: site.custom_post_tag_delimiter }}{%- endcapture -%}
+  {%- include post-tags.html content = post_tags -%}
+</div>
+<hr>
+{%- for tag in sorted_tags -%}
+  {%- assign posts = site.tags[tag] -%}
+  <div id="{{ tag | uri_escape }}" class="highlightable">
+    <p class="post-metadata">
+      <a href="{{ "#" | append: tag | uri_escape }}" class="post-tag">{{ tag }}</a>
+    </p>
+    <div class="margin-leftright">
+      <table class="posts">
+        <tbody>
+          {%- for post in posts -%}
+            <tr class="clickable" onclick="window.location='{{ post.url }}'">
+              <td class="post-link">{{ post.title }}</td>
+              <td class="post-date">
+                <div class="post-metadata">
+                  {{ post.date | date: "%Y-%m-%d" }}
+                </div>
+              </td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endfor %}

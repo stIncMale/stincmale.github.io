@@ -1,0 +1,55 @@
+<nav id="site-navigation">
+  <div id="site-title">
+    <div id="site-logo">
+      <a class="button" href="{{ "/" | relative_url }}"><img src="{% link /assets/img/site-logo.png %}" alt="{{ site.custom_simplified_title }}"></a>
+    </div>
+    <p id="site-author">
+      by <a href="mailto:{{ site.custom_author_email }}"><strong>{{ site.custom_author }}</strong></a>
+      <a class="button" id="feed-link" href="{% link feed.xml %}" title="Feed">
+        {%- comment -%}<!-- /assets/img/_feed.svg -->{%- endcomment -%}
+        <svg class="svg-button" enable-background="new 0 0 56.693 56.693" version="1.1" viewBox="0 0 56.693 56.693" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path d="M3.428,31.085c6.19,0,12.009,2.418,16.382,6.816c4.381,4.398,6.793,10.256,6.793,16.492h9.539  c0-18.113-14.676-32.848-32.714-32.848V31.085z M3.443,14.174c22.061,0,40.01,18.047,40.01,40.231h9.539  c0-27.445-22.229-49.77-49.549-49.77V14.174z M16.634,47.741c0,3.648-2.959,6.607-6.607,6.607S3.42,51.39,3.42,47.741  c0-3.65,2.958-6.607,6.606-6.607S16.634,44.091,16.634,47.741z"/>
+        </svg>
+      </a>
+    </p>
+  </div>
+  <div id="site-navigation-menu">
+    <ul>
+      <li>
+        <h3><a class="button" href="{% link tech.markdown %}">Tech blog</a></h3>
+      </li>
+      <li>
+        <h3><a class="button" href="{% link cgi-vfx.markdown %}">CGI & VFX blog</a></h3>
+      </li>
+      <li>
+        <h3><a class="button" href="{% link index.markdown %}">About</a></h3>
+      </li>
+    </ul>
+  </div>
+  <div id="site-navigation-external-links">
+    <a class="button" href="https://docs.google.com/document/d/1MWmoPrBkyAV9nJJ1g8PSrlBS_td6u4qe212aaCX5hNY/edit?usp=sharing" title="Resume">
+      {%- comment -%}<!-- /assets/img/_resume-badge.svg -->{%- endcomment -%}
+      <svg class="svg-button" enable-background="new 0 0 96 96" version="1.1" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path d="M72,63H42v6h30V63z M72,75H42v6h30V75z M72,27H42v6h30V27z M72,39H42v6h30V39z M72,51H42v6h30V51z M36,51H24v6h12V51z M81,3  H15c-1.657,0-3,1.343-3,3v84c0,1.657,1.343,3,3,3h66c1.657,0,3-1.343,3-3V6C84,4.343,82.657,3,81,3z M78,87H18V9h60V87z M36,39H24v6  h12V39z M36,27c0-1.938-1.231-3.576-2.95-4.209c0.886-0.821,1.45-1.986,1.45-3.291c0-2.486-2.015-4.5-4.5-4.5s-4.5,2.014-4.5,4.5  c0,1.305,0.563,2.47,1.45,3.291C25.231,23.424,24,25.062,24,27v6h12V27z"/>
+      </svg>
+    </a>
+    <a class="button" href="https://github.com/stIncMale" title="GitHub">
+      {%- comment -%}<!-- /assets/img/_github-badge.svg -->{%- endcomment -%}
+      <svg class="svg-button" viewBox="0 0 1024 1024" height="1024" width="1024" xmlns="http://www.w3.org/2000/svg">
+        <path d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z"/>
+      </svg>
+    </a>
+    <a class="button" href="https://www.linkedin.com/in/stIncMale" title="LinkedIn">
+      {%- comment -%}<!-- /assets/img/_linkedin-badge.svg -->{%- endcomment -%}
+      <svg class="svg-button" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z" style="fill-rule:nonzero;"/>
+      </svg>
+    </a>
+    <a class="button" href="https://www.youtube.com/user/stIncMale" title="YouTube">
+      {%- comment -%}<!-- /assets/img/_youtube-badge.svg -->{%- endcomment -%}
+      <svg class="svg-button" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
+      </svg>
+    </a>
+  </div>
+</nav>

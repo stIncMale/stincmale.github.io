@@ -23,14 +23,18 @@ body {
 }
 
 #right-side-area {
-  margin-left: $site-navigation-width;
   overflow: auto;
+}
+@media screen and (orientation: landscape) {
+  #right-side-area {
+    margin-left: $site-navigation-width + $base-spacing-em * 2 /*we need to account for padding that site-navigation has*/;
+  }
 }
 
 main {
+  padding-top: $base-spacing-em;
   padding-left: $base-spacing-em;
   padding-right: $base-spacing-em;
-  margin-bottom: $base-spacing-em;
 }
 
 /**
@@ -48,14 +52,14 @@ div.info-block {
 }
 li > ol,
 li > ul {
-  margin-top: $spacing-unit-em / 3;
+  margin-top: $spacing-unit-em / 4;
   margin-bottom: 0em;
 }
 li p {
-    margin-bottom: $spacing-unit-em / 4;
+    margin-bottom: $spacing-unit-em / 6;
 }
 li {
-  margin-bottom: $spacing-unit-em / 3;
+  margin-bottom: $spacing-unit-em / 4;
 }
 
 /**
@@ -102,6 +106,22 @@ h6 {
   font-size: $font-size * 1.1;
 }
 
+/**
+ * Outline (e.g. when navigating over all interactive elements with Tab).
+ * One should never remove outline because it reduces accessibility.
+ */
+a, button {
+  &:focus {
+    outline-color: $link-hover-color;
+    outline-width: $outline-width;
+    outline-offset: 0em;
+  }
+}
+div.safe-outline,
+button { 
+  margin: $outline-width;
+}
+
 a {
   text-decoration: none;
   color: $link-color;
@@ -131,7 +151,8 @@ a {
   @include highlightable;
 }
 
-.clickable {
+.clickable,
+a, button {
   cursor: pointer;
 }
 
@@ -180,6 +201,31 @@ figcaption {
 
 span.small-font {
   font-size: $small-font-size;
+}
+
+button {
+  font-family: $base-font-family;
+  font-size: $font-size;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: $button-font-color;
+  border-image: none;
+  border-radius: $border-radius;
+  background-color: lighten($button-font-color, 30%);
+  border: $border-widthstyle darken(lighten($button-font-color, 30%), $border-color-darken-percentage);
+
+  &:hover {
+    color: $button-hover-font-color;
+    background-color: lighten($button-hover-font-color, 30%);
+    border: $border-widthstyle darken(lighten($button-hover-font-color, 30%), $border-color-darken-percentage);
+  }
+  &:active {
+    color: $button-hover-font-color;
+    background-color: lighten($button-hover-font-color, 25%);
+    border: $border-widthstyle darken(lighten($button-hover-font-color, 25%), $border-color-darken-percentage);
+  }
 }
 
 /**

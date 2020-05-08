@@ -33,3 +33,7 @@ function notNullOrUndefined(value) {
     return true;
   }
 }
+
+function isLandscape() {
+  return window.matchMedia("(orientation: landscape)").matches;
+}

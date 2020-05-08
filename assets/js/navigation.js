@@ -1,47 +1,90 @@
 "use strict";
 
-updateSiteNavigation(false);
+updateWindowAccordingToOrientation(false);
+
+/*
+ * This event listener updates the window when orientation changes.
+ * Because I change some elements from a script, they are not automatically updated with accordance to CSS when orientation changes,
+ * and I have to do that again from a script.
+ */
+let lastKnownLandscape = isLandscape();
+window.addEventListener("resize", () => {
+  const landscapeKey = "landscape";
+  const landscape = isLandscape();
+  if (landscape !== lastKnownLandscape) {
+    lastKnownLandscape = landscape;
+    updateWindowAccordingToOrientation(false);
+  }
+});
 
 scrollWindowToAnchor();//this call scrolls the window when a user enters a page with a hash-URL
-window.addEventListener('click', event => {
+window.addEventListener("click", event => {
   if (notNullOrUndefined(event.toElement) && notNullOrUndefined(event.toElement.hash)) {//this event listener scrolls the window when a user clicks a hash-link
     scrollWindowToAnchor();
   }
 });
 
+function toggleLandscapeMenu() {
+  updateWindowAccordingToOrientation(true);
+  const siteNavigationToggle = window.document.getElementById("site-navigation-menu-landscape-toggle");
+  siteNavigationToggle.blur();
+}
+
+function togglePortraitMenu() {
+  updateWindowAccordingToOrientation(true);
+  const siteNavigationToggle = window.document.getElementById("site-navigation-menu-portrait-toggle");
+  siteNavigationToggle.blur();
+}
+
 /**
- * Modifies DOM so that the current state of the site-navigation is rendered properly.
+ * Modifies DOM so that the current state of the window with regard to site-navigation toggled on/off is rendered properly.
  *
- * @toggle When true, changes the current state to the opposite.
- * Either "closes" the site-navigation by hiding it amd moving the toolbar and the right-side-area to the left,
+ * @toggleMenu Works only in landscape orientation. When true, changes the current state to the opposite.
+ *
+ * Landscape orientation.
+ * Either "closes" the site-navigation by hiding it and moving the toolbar and the right-side-area to the left,
  * or "opens" it by doing the opposite. The state is saved to window.sessionStorage to be preserved if the window is reloaded.
+ * 
+ * Portrait orientation.
+ * The state is not saved to window.sessionStorage because I want it to be off by default and as soon as an element from the menu is clicked.
  */
-function updateSiteNavigation(toggle) {
-  const siteNavigation = document.getElementById("site-navigation");
-  const rightSideArea = document.getElementById("right-side-area");
-  const toolbar = document.getElementById("toolbar");
-  const siteNavigationVisibleKey = "siteNavigationVisible";
-  const siteNavigationVisible = toBool(window.sessionStorage.getItem(siteNavigationVisibleKey), true);
-  const siteNavigationWidthKey = "siteNavigationWidth";
-  let siteNavigationWidth = window.sessionStorage.getItem(siteNavigationWidthKey);
-  if (siteNavigationWidth === null) {
-    if (!siteNavigationVisible) {
-      throw "Expected siteNavigationVisible === true";
+function updateWindowAccordingToOrientation(toggleMenu) {
+  const siteNavigation = window.document.getElementById("site-navigation");
+  const siteNavigationMenu = window.document.getElementById("site-navigation-menu");
+  if (isLandscape()) {
+    const rightSideArea = window.document.getElementById("right-side-area");
+    const toolbar = window.document.getElementById("toolbar");
+    const siteNavigationVisibleKey = "siteNavigationVisible";
+    const siteNavigationVisible = toBool(window.sessionStorage.getItem(siteNavigationVisibleKey), true);
+    const newSiteNavigationVisible = toggleMenu
+        ? !siteNavigationVisible
+        : siteNavigationVisible;
+    if (newSiteNavigationVisible) {
+      window.sessionStorage.setItem(siteNavigationVisibleKey, true);
+      siteNavigationMenu.style.display = "block";
+      siteNavigation.style.display = "block";
+      /*
+       * Writing an empty string results in CSS values being used, I have no idea if this is a behaviour I can rely on.
+       */
+      rightSideArea.style.marginLeft = "";
+      toolbar.style.marginLeft = "";
+    } else {
+      window.sessionStorage.setItem(siteNavigationVisibleKey, false);
+      siteNavigation.style.display = "none";
+      rightSideArea.style.marginLeft = "0em";
+      toolbar.style.marginLeft = "0em";
     }
-    siteNavigationWidth = siteNavigation.style.width;
-    window.sessionStorage.setItem(siteNavigationWidthKey, siteNavigationWidth);
-  }
-  let newSiteNavigationVisible = toggle ? !siteNavigationVisible : siteNavigationVisible;
-  if (newSiteNavigationVisible) {
-    window.sessionStorage.setItem(siteNavigationVisibleKey, true);
-    siteNavigation.style.display = "block";
-    rightSideArea.style.marginLeft = siteNavigationWidth;
-    toolbar.style.marginLeft = siteNavigationWidth;
-  } else {
-    window.sessionStorage.setItem(siteNavigationVisibleKey, false);
-    siteNavigation.style.display = "none";
-    rightSideArea.style.marginLeft = "0em";
-    toolbar.style.marginLeft = "0em";
+  } else {//portrait
+    window.document.getElementById("site-navigation").style.display = "block";
+    const siteNavigationToggle = window.document.getElementById("site-navigation-menu-portrait-toggle");
+    const siteNavigationMenuVisible = toggleMenu
+        ? siteNavigationMenu.style.display === "none" || siteNavigationMenu.style.display === "" || siteNavigationMenu.style.display === null
+        : false;
+    if (siteNavigationMenuVisible) {
+      siteNavigationMenu.style.display = "block";
+    } else {
+      siteNavigationMenu.style.display = "none";
+    }
   }
 }
 

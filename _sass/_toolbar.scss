@@ -1,19 +1,24 @@
 #toolbar {
   top: 0em;
-  height: $toolbar-height;
+  min-height: $toolbar-height;
   position: sticky;
+  overflow: auto;
   z-index: 1;//appear on top of other elements (without this style transparent elements appear on top of this element)
-  margin-left: $site-navigation-width;
   background: $site-background-color;
+  border-left: $border-widthstyle $site-navigation-border-color;
   border-bottom: $border-widthstyle $site-layout-markup-color;
   line-height: 1;
 }
 
-#site-navigation-toggle-button {
-  font-size: 1.5em;
+a.button {//the image inside should define the size of the button, not the <a> element itself
   display: inline-block;
-}
+  width: 0em;
+  height: 0em;
 
+  &:after {
+    content: none;
+  }
+}
 .svg-button {
   line-height: 1;
   padding: 0em;
@@ -25,15 +30,18 @@
 
   &:hover {
     opacity: 1;
+    fill: $link-hover-color;
   }
 }
 
-a.button {
-  &:after {
-    content: none;
+@media screen and (orientation: landscape) {
+  #toolbar {
+    margin-left: $site-navigation-width + $base-spacing-em * 2 /*we need to account for padding that site-navigation has*/;
   }
+}
 
-  &:hover {
-    color: currentColor;
+@media screen and (orientation: portrait) {
+  #site-navigation-menu-landscape-toggle {
+    display: none;
   }
 }

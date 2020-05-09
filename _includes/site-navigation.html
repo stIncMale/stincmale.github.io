@@ -1,5 +1,5 @@
 <nav id="site-navigation">
-  <div id="site-title" class="safe-outline">
+  <div id="site-title">
     <div id="site-logo">
       <a href="{{ "/" | relative_url }}" title="{{ site.custom_title | strip_html }}"><img src="{% link /assets/img/site-logo.png %}" alt="{{ site.custom_simplified_title }}"></a>
     </div>
@@ -13,7 +13,7 @@
         </svg>
     </a>
   </div>
-  <div id="site-navigation-external-links" class="safe-outline">
+  <div id="site-navigation-external-links">
     <p id="email"><a href="mailto:{{ site.custom_author_email }}">{{ site.custom_author_email }}</a></p>
     <div id="external-buttons">
       <a class="button" href="https://docs.google.com/document/d/1MWmoPrBkyAV9nJJ1g8PSrlBS_td6u4qe212aaCX5hNY/edit?usp=sharing" title="Resume">
@@ -42,22 +42,5 @@
       </a>
     </div>
   </div>
-  <div id="site-navigation-menu-portrait-toggle-container">
-    <button id="site-navigation-menu-portrait-toggle" type="button" title="Toggle navigation menu" onclick="togglePortraitMenu()">Menu</button>
-  </div>
-  <div id="site-navigation-menu" class="safe-outline">
-    {%- assign first_category = page.categories | first -%}
-    {%- assign category = page.custom_post_category_to_display | default: first_category | default: "" -%}
-    <ul>
-      <li>
-        <a class="button {% if category == "tech"%}selected-menu{% endif %}" href="{% link tech.markdown %}">Tech blog</a>
-      </li>
-      <li>
-        <a class="button {% if category == "cgi-vfx"%}selected-menu{% endif %}" href="{% link cgi-vfx.markdown %}">CGI & VFX blog</a>
-      </li>
-      <li>
-        <a class="button {% if category == "about"%}selected-menu{% endif %}" href="{% link index.markdown %}">About</a>
-      </li>
-    </ul>
-  </div>
+  {%- include site-navigation-menu.html content = "site-navigation-landscape-menu" -%}
 </nav>

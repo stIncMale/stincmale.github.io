@@ -1,0 +1,34 @@
+#site-navigation-landscape-menu,
+#site-navigation-portrait-menu {
+  ul {
+    list-style: none;
+    margin: 0em;
+    white-space: nowrap;
+
+    li {
+      margin-bottom: $spacing-unit-em / 1.5;
+
+      a {
+        color: $site-navigation-menu-font-color;
+
+        &:before {
+          content: $site-navigation-menu-arrow;
+          color: $site-navigation-hover-font-color;
+          opacity: 0;
+        }
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+
+      a.selected-menu {
+          &:after {
+            font-size: $font-size;
+            vertical-align: baseline;
+            content: " *";
+            color: $site-navigation-hover-font-color;
+          }
+        }
+    }
+  }
+}

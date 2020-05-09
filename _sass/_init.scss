@@ -32,9 +32,8 @@ $quotation-background-color: desaturate(lighten(linen, 1%), 20%);
 $code-font-backgroung-color: lighten(lavender, 2%);
 $header-font-color: steelblue;
 $hover-header-font-color: lighten($header-font-color, 15%);
-$site-layout-markup-color: lighten(ghostwhite, 0.3%);//e.g. lines separating the site navigation and the footer
-$site-navigation-background-color: $site-background-color;
-$site-navigation-border-color: $site-layout-markup-color;
+$site-navigation-background-color: lighten(ghostwhite, 0.4%);
+$site-layout-markup-color: darken($site-navigation-background-color, $border-color-darken-percentage);//e.g. lines separating the site navigation and the footer
 $site-navigation-menu-font-color: $header-font-color;
 $site-navigation-hover-font-color: coral;
 $page-layout-markup-color: lighten($header-font-color, 35%);//e.g. thematic breaks
@@ -44,12 +43,13 @@ $code-background-color: $site-background-color;
 $code-border-color: darken($quotation-background-color, $border-color-darken-percentage);
 $table-header-background-color: $code-font-backgroung-color;
 $table-border-color: darken($quotation-background-color, $border-color-darken-percentage);
-$table-zebra-color: $site-layout-markup-color;
-$post-metadata-font-color: $header-font-color;//$quotation-font-color;
+$table-zebra-color: $site-navigation-background-color;
+$post-metadata-font-color: $header-font-color;
 $post-tag-decoration-color: thistle;
 $info-background-color: desaturate(lighten($page-layout-markup-color, 12%), 0%);
 $button-font-color: $link-color;
-$button-hover-font-color: $link-hover-color;
+$button-hover-font-color: $link-color;
+$button-active-font-color: darken($link-color, 7%);
 
 $unhovered-svg-button-opacity: 0.5;
 $site-navigation-menu-arrow: "\25b6\00a0";//BLACK RIGHT-POINTING TRIANGLE and NO-BREAK SPACE

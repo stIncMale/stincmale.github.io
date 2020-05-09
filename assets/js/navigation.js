@@ -5,11 +5,10 @@ updateWindowAccordingToOrientation(false);
 /*
  * This event listener updates the window when orientation changes.
  * Because I change some elements from a script, they are not automatically updated with accordance to CSS when orientation changes,
- * and I have to do that again from a script.
+ * and I have to update them again from a script.
  */
 let lastKnownLandscape = isLandscape();
 window.addEventListener("resize", () => {
-  const landscapeKey = "landscape";
   const landscape = isLandscape();
   if (landscape !== lastKnownLandscape) {
     lastKnownLandscape = landscape;
@@ -24,16 +23,10 @@ window.addEventListener("click", event => {
   }
 });
 
-function toggleLandscapeMenu() {
+function toggleNavigationMenu() {
   updateWindowAccordingToOrientation(true);
-  const siteNavigationToggle = window.document.getElementById("site-navigation-menu-landscape-toggle");
-  siteNavigationToggle.blur();
-}
-
-function togglePortraitMenu() {
-  updateWindowAccordingToOrientation(true);
-  const siteNavigationToggle = window.document.getElementById("site-navigation-menu-portrait-toggle");
-  siteNavigationToggle.blur();
+  const siteNavigationMenuToggle = window.document.getElementById("site-navigation-menu-toggle");
+  siteNavigationMenuToggle.blur();
 }
 
 /**
@@ -50,7 +43,6 @@ function togglePortraitMenu() {
  */
 function updateWindowAccordingToOrientation(toggleMenu) {
   const siteNavigation = window.document.getElementById("site-navigation");
-  const siteNavigationMenu = window.document.getElementById("site-navigation-menu");
   if (isLandscape()) {
     const rightSideArea = window.document.getElementById("right-side-area");
     const toolbar = window.document.getElementById("toolbar");
@@ -61,7 +53,6 @@ function updateWindowAccordingToOrientation(toggleMenu) {
         : siteNavigationVisible;
     if (newSiteNavigationVisible) {
       window.sessionStorage.setItem(siteNavigationVisibleKey, true);
-      siteNavigationMenu.style.display = "block";
       siteNavigation.style.display = "block";
       /*
        * Writing an empty string results in CSS values being used, I have no idea if this is a behaviour I can rely on.
@@ -74,12 +65,14 @@ function updateWindowAccordingToOrientation(toggleMenu) {
       rightSideArea.style.marginLeft = "0em";
       toolbar.style.marginLeft = "0em";
     }
+    const siteNavigationMenu = window.document.getElementById("site-navigation-portrait-menu");
+    siteNavigationMenu.style.display = "none";//we modify its displayability via script, thus we have to hide it via script also
   } else {//portrait
-    window.document.getElementById("site-navigation").style.display = "block";
-    const siteNavigationToggle = window.document.getElementById("site-navigation-menu-portrait-toggle");
+    const siteNavigationMenu = window.document.getElementById("site-navigation-portrait-menu");
     const siteNavigationMenuVisible = toggleMenu
         ? siteNavigationMenu.style.display === "none" || siteNavigationMenu.style.display === "" || siteNavigationMenu.style.display === null
         : false;
+    siteNavigation.style.display = "block";
     if (siteNavigationMenuVisible) {
       siteNavigationMenu.style.display = "block";
     } else {

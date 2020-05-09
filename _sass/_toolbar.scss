@@ -1,13 +1,12 @@
 #toolbar {
   top: 0em;
   min-height: $toolbar-height;
+  line-height: 1;
   position: sticky;
   overflow: auto;
   z-index: 1;//appear on top of other elements (without this style transparent elements appear on top of this element)
-  background: $site-background-color;
-  border-left: $border-widthstyle $site-navigation-border-color;
-  border-bottom: $border-widthstyle $site-layout-markup-color;
-  line-height: 1;
+  padding-left: $base-spacing-em;
+  background: $site-navigation-background-color;
 }
 
 a.button {//the image inside should define the size of the button, not the <a> element itself
@@ -34,14 +33,19 @@ a.button {//the image inside should define the size of the button, not the <a> e
   }
 }
 
+#site-navigation-portrait-menu {
+  margin-top: $spacing-unit-em / 2;
+}
+
 @media screen and (orientation: landscape) {
   #toolbar {
     margin-left: $site-navigation-width + $base-spacing-em * 2 /*we need to account for padding that site-navigation has*/;
   }
+
+  #site-navigation-portrait-menu {
+    display: none;
+  }
 }
 
 @media screen and (orientation: portrait) {
-  #site-navigation-menu-landscape-toggle {
-    display: none;
-  }
 }

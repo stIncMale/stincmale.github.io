@@ -117,10 +117,6 @@ a, button {
     outline-offset: 0em;
   }
 }
-div.safe-outline,
-button { 
-  margin: $outline-width;
-}
 
 a {
   text-decoration: none;
@@ -210,6 +206,7 @@ button {
   padding-bottom: 0.2em;
   padding-left: 0.5em;
   padding-right: 0.5em;
+  margin: $outline-width;
   color: $button-font-color;
   border-image: none;
   border-radius: $border-radius;
@@ -222,9 +219,9 @@ button {
     border: $border-widthstyle darken(lighten($button-hover-font-color, 30%), $border-color-darken-percentage);
   }
   &:active {
-    color: $button-hover-font-color;
-    background-color: lighten($button-hover-font-color, 25%);
-    border: $border-widthstyle darken(lighten($button-hover-font-color, 25%), $border-color-darken-percentage);
+    color: $button-active-font-color;
+    background-color: lighten($button-active-font-color, 30%);
+    border: $border-widthstyle darken(lighten($button-active-font-color, 30%), $border-color-darken-percentage);
   }
 }
 

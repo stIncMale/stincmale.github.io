@@ -47,7 +47,7 @@ Text before ToC.
   * [https://www.kovalenko.link/blog/tags](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags)
   * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
   * [https://www.kovalenko.link/blog/cgi-vfx/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2F)
-  * [https://www.kovalenko.link/blog/drafts/examples](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fdrafts%2Fexamples)
+  * [view-source:http://127.0.0.1:4000/blog/drafts/examples](view-source:http://127.0.0.1:4000/blog/drafts/examples)
   * [https://www.kovalenko.link/blog/cgi-vfx/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2Fnetcracker-sportfest)
 * W3C feed validator
   * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
@@ -240,12 +240,19 @@ from my_table
 where id > 10;
 {%- endhighlight -%}
 
+Note that Jekyll {% raw %}[`{% highlight <languageName> linenos %}`](https://jekyllrb.com/docs/liquid/tags/#line-numbers){% endraw %}
+generates invalid HTML
+(a [`table`](https://html.spec.whatwg.org/multipage/tables.html#the-table-element) element is put inside of
+a [`code`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element) element).
+Most browsers seem to manage rendering such invalid HTML "as expected", but Safari for iOS does not, so avoid using line numbers
+unless absolutely required.
+
 {%- highlight sql linenos -%}
 --SQL code block with Jekyll (line numbers)
 select *
 from my_table
 where id > 10;
-{%- endhighlight -%}
+{%- endhighlight -%}  
 
 {%- highlight sql linenos -%}
 --SQL code block with Jekyll (line numbers, long)

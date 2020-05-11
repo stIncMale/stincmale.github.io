@@ -3,7 +3,7 @@ layout: post
 slug: 3d-billiards
 title: 3D Billiards
 categories: [tech]
-tags: [archived-memories, C++, OpenGL]
+tags: [archived memories, C++, OpenGL]
 date: 2005-12-01T00:00:00+00:00
 custom_update_date: 2020-05-10T23:00:00-06:00
 ---

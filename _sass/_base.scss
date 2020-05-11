@@ -152,7 +152,7 @@ abbr {
   display: inline-block;
   font-variant: normal;
   text-decoration: none;
-  border-bottom: $border-widthstyle $info-background-color;
+  border-bottom: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
 
   &:hover::after {
     font-size: $small-font-size;

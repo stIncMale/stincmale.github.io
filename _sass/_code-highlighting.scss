@@ -9,15 +9,15 @@
 .highlight table td { padding: $block-padding; }
 .highlight table pre { margin: 0; border-radius: 0em; }
 .highlight .cm {
-  color: $quotation-font-color;
+  color: $insignificant-font-color;
   font-style: italic;
 }
 .highlight .cp {
-  color: #999999;
+  color: $insignificant-font-color;
   font-weight: bold;
 }
 .highlight .c1 {
-  color: $quotation-font-color;
+  color: $insignificant-font-color;
   font-style: italic;
 }
 .highlight .cs {
@@ -26,7 +26,7 @@
   font-style: italic;
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
-  color: #999988;
+  color: $insignificant-font-color;
   font-style: italic;
 }
 .highlight .err {

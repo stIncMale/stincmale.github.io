@@ -5,7 +5,7 @@ title: Improve your video with HDR & Tone Mapping in HDRsoft Photomatix Pro 3
 categories: [cgi-vfx]
 tags: [tutorial]
 date: 2010-11-21T12:00:00+03:00
-custom_update_date: 2020-05-01T10:00:00-06:00
+custom_update_date: 2020-05-10T20:04:00-06:00
 ---
 This tutorial presents a way[^1] to improve colors and enhance details in your video using HDR effect in Photomatix.
 I used this technique in the game highlights video [No sense]({% post_url 2011-08-13-no-sense %}).

@@ -14,10 +14,10 @@
         &:before {
           content: $site-navigation-menu-arrow;
           color: $site-navigation-hover-font-color;
-          opacity: 0;
+          visibility: hidden;
         }
         &:hover::before {
-          opacity: 1;
+          visibility: visible;
         }
       }
 

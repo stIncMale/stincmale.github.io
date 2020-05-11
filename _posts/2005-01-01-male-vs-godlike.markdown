@@ -5,7 +5,7 @@ title: Male vs Godlike
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2005-01-01T12:00:00+00:00
-custom_update_date: 2020-04-30T21:00:00-06:00
+custom_update_date: 2020-05-10T20:01:00-06:00
 ---
 This is the very first attempt to create a game highlights video.
 It was created with VirtualDubMod and Microsoft Paint, and looks quite naive. Good memories though &#x1f642;.

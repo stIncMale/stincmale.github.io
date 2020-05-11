@@ -1,4 +1,4 @@
-<div id="{{ include.content }}">
+<nav id="{{ include.content }}">
     {%- assign first_category = page.categories | first -%}
     {%- assign category = page.custom_post_category_to_display | default: first_category | default: "" -%}
     <ul>
@@ -12,4 +12,4 @@
             <a class="button {% if category == "about"%}selected-menu{% endif %}" href="{% link index.markdown %}">About</a>
         </li>
     </ul>
-</div>
+</nav>

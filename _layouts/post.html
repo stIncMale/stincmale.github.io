@@ -9,7 +9,7 @@ layout: base
       {%- include post-tags.html content = post_tags -%}
     {%- endif -%}
     {%- if page.date -%}
-      <p>Posted {{ page.date | date: "%Y-%m-%d" }}, last updated {{ page.custom_update_date | date: "%Y-%m-%d" }}</p>
+      <p>Posted on {{ page.date | date: "%Y-%m-%d" }}, last updated on {{ page.custom_update_date | date: "%Y-%m-%d" }}</p>
     {%- endif -%}
   </div>
   {{ content }}

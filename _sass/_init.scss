@@ -27,26 +27,29 @@ $outline-width: 0.2em;
 $border-color-darken-percentage: 5%;
 $site-background-color: white;
 $font-color: rgb(50, 50, 50);
-$quotation-font-color: lighten($font-color, 30%);//see https://sass-lang.com/documentation/modules/color for other color functions
+$insignificant-font-color: lighten($font-color, 30%);//see https://sass-lang.com/documentation/modules/color for other color functions
 $quotation-background-color: desaturate(lighten(linen, 1%), 20%);
+$quotation-font-color: desaturate(darken($quotation-background-color, 40%), 10%);
 $code-font-backgroung-color: lighten(lavender, 2%);
 $header-font-color: steelblue;
 $hover-header-font-color: lighten($header-font-color, 15%);
-$site-navigation-background-color: lighten(ghostwhite, 0.4%);
-$site-layout-markup-color: darken($site-navigation-background-color, $border-color-darken-percentage);//e.g. lines separating the site navigation and the footer
+$site-navigation-background-color: $site-background-color;
+$site-layout-markup-color: darken($site-navigation-background-color, $border-color-darken-percentage);
 $site-navigation-menu-font-color: $header-font-color;
 $site-navigation-hover-font-color: coral;
-$page-layout-markup-color: lighten($header-font-color, 35%);//e.g. thematic breaks
+$page-layout-markup-color: lighten($header-font-color, 35%);
 $link-color: cornflowerblue;
 $link-hover-color: coral;
+$toolbar-background-color: lighten($link-color, 30%);
 $code-background-color: $site-background-color;
 $code-border-color: darken($quotation-background-color, $border-color-darken-percentage);
 $table-header-background-color: $code-font-backgroung-color;
 $table-border-color: darken($quotation-background-color, $border-color-darken-percentage);
-$table-zebra-color: $site-navigation-background-color;
+$table-zebra-color: lighten(ghostwhite, 0.4%);
 $post-metadata-font-color: $header-font-color;
 $post-tag-decoration-color: thistle;
 $info-background-color: desaturate(lighten($page-layout-markup-color, 12%), 0%);
+$info-font-color: desaturate(darken($info-background-color, 50%), 10%);
 $button-font-color: $link-color;
 $button-hover-font-color: $link-color;
 $button-active-font-color: darken($link-color, 7%);
@@ -54,4 +57,5 @@ $button-active-font-color: darken($link-color, 7%);
 $unhovered-svg-button-opacity: 0.5;
 $site-navigation-menu-arrow: "\25b6\00a0";//BLACK RIGHT-POINTING TRIANGLE and NO-BREAK SPACE
 $link-after-content: "\25f9";//UPPER RIGHT TRIANGLE
+$section-link-after-content: "\00a7\00a0";//SECTION SIGN and NO-BREAK SPACE
 $border-widthstyle: thin solid;

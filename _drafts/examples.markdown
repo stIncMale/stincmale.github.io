@@ -6,7 +6,7 @@ slug: examples
 # Each post must belong to a single category (it is used in permalinks but not in Atom feed),
 # this one belongs to both just because it is an example.
 categories: [tech, cgi-vfx]
-title: Markup (a pun, it's actually <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>) and style examples
+title: Markup (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a>) and style examples
 permalink: /blog/drafts/examples
 tags: [example]
 # These dates must be specified in the RFC 3339 (https://tools.ietf.org/html/rfc3339) format,
@@ -26,21 +26,17 @@ Text before ToC.
 
 {%- include toc.markdown -%}
 
-## TODO
+## [](#todo){:.slink}TODO {#todo}
 * Leave "redirect" links in the old site
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites 
 
-## Useful links {#useful-links}
-* [Jekyll](https://jekyllrb.com/docs/), [Jekyll Codex](https://jekyllcodex.org/without-plugins/)
-* [Liquid](https://shopify.github.io/liquid/), [Liquid reference](https://shopify.dev/docs/themes/liquid)
-* [SCSS](https://sass-lang.com/documentation)
+## [](#useful-links){:.slink}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
-* Search engine optimization (SEO): [The Web Robots Pages](https://www.robotstxt.org/), [Google - About robots.txt](https://support.google.com/webmasters/topic/6061961?hl=en&ref_topic=4598466), [Google - Build and submit a sitemap](https://support.google.com/webmasters/answer/183668?hl=en&ref_topic=4581190)
 * [Making Your Website Shareable on LinkedIn](https://www.linkedin.com/help/linkedin/answer/46687/making-your-website-shareable-on-linkedin), [LinkedIn post inspector](https://www.linkedin.com/post-inspector/)
 * comments: <https://jekyllcodex.org/without-plugin/comments/>, <https://aristath.github.io/blog/static-site-comments-using-github-issues-api>, <https://www.bitsgalore.org/2020/03/11/does-microsoft-onedrive-export-large-ZIP-files-that-are-corrupt>
 * [Validate XML against XSD online](https://www.freeformatter.com/xml-validator-xsd.html)
 
-## URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
+## [](#urls-to-check){:.slink}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
   * [https://www.kovalenko.link/lyrics](https://validator.w3.org/check?uri=https%3A%2F%2Fwww.kovalenko.link%2Flyrics&charset=%28detect+automatically%29&doctype=Inline&group=0)
@@ -55,12 +51,12 @@ Text before ToC.
   * [https://www.kovalenko.link/assets/css/style.css](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.kovalenko.link%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 <!-- see https://kramdown.gettalong.org/syntax.html#specifying-a-header-id for details -->
-## Header `<h2>` {#h2}
-### Header `<h3>` {#h3}
-#### Header `<h4>` {#h4}
-##### Header `<h5>` {#h5}
-###### Header `<h6>` {#h6}
-## Basic formatting {#basic-formatting}
+## [](#h2){:.slink}Header `<h2>` {#h2}
+### [](#h3){:.slink}Header `<h3>` {#h3}
+#### [](#h4){:.slink}Header `<h4>` {#h4}
+##### [](#h5){:.slink}Header `<h5>` {#h5}
+###### [](#h6){:.slink}Header `<h6>` {#h6}
+## [](#basic-formatting){:.slink}Basic formatting {#basic-formatting}
 Normal text.
 
 Decimal digits: 0123456789.
@@ -110,7 +106,17 @@ long text.
 </p>
 </div>
 
-## Lists {#lists}
+## [](#abbreviations){:.slink}Abbreviations {#abbreviations}
+*[HTML]:
+{:data-title="Hyper Text Markup Language"}
+*[CSS]:
+{:data-title="Cascading Style Sheets"}
+
+Use abbreviations, for example\\
+HTML and [CSS](https://www.w3.org/Style/CSS/)\\
+inside normal text.
+
+## [](#lists){:.slink}Lists {#lists}
 Normal text.
 1. Ordered list item 1.
 2. Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
@@ -131,17 +137,17 @@ long text.
 6. Ordered list item 5.
 
 Normal text.
-* Hyphens and dashes
+* Hyphens and dashes (see <https://www.grammarly.com/blog/hyphens-and-dashes/>)
   * Hyphen - <q>This rock-hard cake is absolutely impossible to eat.</q>
   * En-dash &ndash; <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
   * Em-dash &mdash; <q>He is afraid of two things &mdash; spiders and senior prom.</q>
-* Ellipsis&hellip;
+* Ellipsis &hellip; <q>Andrew, can you, um&hellip; never mind.</q>
 
-## Footnotes {#footnotes}
+## [](#footnotes){:.slink}Footnotes {#footnotes}
 <!-- see https://kramdown.gettalong.org/syntax.html#footnotes for details -->
 Text with footnotes[^footnoteA] in it[^footnoteB].
 
-## Tables {#tables}
+## [](#tables){:.slink}Tables {#tables}
 Table:
 
 Table column 1 header | Table column 2 header
@@ -158,14 +164,14 @@ cell 21 | cell 22
 cell 31 | Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.
 cell 41 | cell 42
 
-## Thematic separators {#separator}
+## [](#separator){:.slink}Thematic separators {#separator}
 HTML thematic break (horizontal line)
 <hr>
 Markdown thematic break (horizontal line)
 
 ---
 
-## Figures {#figures}
+## [](#figures){:.slink}Figures {#figures}
 Inline image ![Example image]({% link /assets/img/favicon.png %}){:style="border-radius: 20%; border: thin solid lightsteelblue; width: 4em; height: auto;"} with Markdown and inline CSS.
 
 Figure:
@@ -174,7 +180,7 @@ Figure:
   <figcaption>Figure caption.</figcaption>
 </figure>
 
-## Code {#code}
+## [](#code){:.slink}Code {#code}
 Inlined code: `java.lang.Object`, [`java.lang.Object`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html).
 
 `Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.`
@@ -252,7 +258,7 @@ unless absolutely required.
 select *
 from my_table
 where id > 10;
-{%- endhighlight -%}  
+{%- endhighlight -%}
 
 {%- highlight sql linenos -%}
 --SQL code block with Jekyll (line numbers, long)

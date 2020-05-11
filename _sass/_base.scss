@@ -135,6 +135,42 @@ a {
   &:visited {
   }
 }
+a.slink {//section link
+  opacity: 0.3;
+  color: inherit;
+
+  &:after {
+    content: "\00a7\0020";
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+abbr {
+  position: relative;
+  display: inline-block;
+  font-variant: normal;
+  text-decoration: none;
+  border-bottom: $border-widthstyle $info-background-color;
+
+  &:hover::after {
+    font-size: $small-font-size;
+    position: absolute;
+    top: -90%;
+    left: 85%;
+    z-index: 1;
+    padding: $block-padding;
+    white-space: nowrap;
+    overflow: auto;
+    content: attr(data-title);
+    background: pink;
+    border-radius: $border-radius;
+    color: $info-font-color;
+    background: $info-background-color;
+    border: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
+  }
+}
 
 @mixin highlightable {
   opacity: 0.5;
@@ -192,11 +228,14 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
   text-align: center;
-  color: $quotation-font-color;
+  color: $insignificant-font-color;
 }
 
 span.small-font {
   font-size: $small-font-size;
+}
+span.insignificant-font {
+  color: $insignificant-font-color;
 }
 
 button {
@@ -245,7 +284,7 @@ div.info-block {
   border: 0em;
   border-radius: $border-radius;
   padding: $block-padding;
-  color: desaturate(darken($quotation-background-color, 40%), 10%);
+  color: $quotation-font-color;
   background: $quotation-background-color;
 
   > :last-child {//this is usually a <p> element
@@ -254,7 +293,7 @@ div.info-block {
 }
 div.info-block {
   font-style: normal;
-  color: desaturate(darken($info-background-color, 50%), 10%);
+  color: $info-font-color;
   background: $info-background-color;
 }
 

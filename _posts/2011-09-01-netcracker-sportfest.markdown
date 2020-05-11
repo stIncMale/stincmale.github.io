@@ -5,7 +5,7 @@ title: NetCracker SportFest
 categories: [cgi-vfx]
 tags: []
 date: 2011-09-01T12:00:00+03:00
-custom_update_date: 2020-05-01T13:00:00-06:00
+custom_update_date: 2020-05-10T20:08:00-06:00
 ---
 In 2011 I was employed with NetCracker Technology, and we had a very nice weekend called SportFest.
 Unfortunately, there was no video taken, and all we had were photos.

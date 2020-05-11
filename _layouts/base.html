@@ -6,7 +6,8 @@
     {%- include toolbar.html -%}
     <div id="right-side-area">
       {%- include main.html -%}
-      {%- include footer.html -%}
+      {%- capture footer -%}{%- include footer.markdown -%}{%- endcapture-%}
+      {{ footer | markdownify }}
     </div>
   </body>
 </html>

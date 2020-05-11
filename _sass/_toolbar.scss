@@ -6,7 +6,7 @@
   overflow: auto;
   z-index: 1;//appear on top of other elements (without this style transparent elements appear on top of this element)
   padding-left: $base-spacing-em;
-  background: $site-navigation-background-color;
+  background: linear-gradient(to right, $site-background-color, $toolbar-background-color, $site-background-color);
 }
 
 a.button {//the image inside should define the size of the button, not the <a> element itself

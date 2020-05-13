@@ -2,13 +2,14 @@
 layout: base
 title:
 custom_post_category_to_display: about
+custom_description: My personal website. Articles/notes/thoughts written by a server-side software engineer and occasionally other stuff.
 ---
 *[MIPT]:
 {:data-title="The Moscow Institute of Physics and Technology"}
 
-<figure>
+<figure style="display: block">
   {%- comment -%}<!-- -webkit-clip-path is for Safari for iOS -->{%- endcomment -%}
-  <img src="{% link /assets/img/face.png %}" alt="Me" style="clip-path: circle(42% at 51% 47%); -webkit-clip-path: circle(42% at 51% 47%);">
+  <img src="{% link /assets/img/face.png %}" alt="Me" style="clip-path: circle(42% at 51% 47%); -webkit-clip-path: circle(42% at 51% 47%); display: block; margin-left: auto; margin-right: auto;">
   <figcaption>(this photo is from ~2013, I need to update it sometime)</figcaption>
 </figure>
 
@@ -17,11 +18,15 @@ custom_post_category_to_display: about
 `Bio` | I was born in Belarus, moved to Moscow, Russia, where I studied at [MIPT](https://mipt.ru/english/) and got my **MSc degree in applied mathematics and physics**. Now I live in Calgary, Canada.
 
 ## [](#dead-code){:.slink}{{ site.custom_title }}
-This is a place where I share things (mostly those related to my profession) with humanity.
-Humanity.., do I like it? Let's say I have mixed feelings, I love [the song](https://youtu.be/0755SXCTCN0) though!
+A place where I share things (mostly those related to my profession) with humanity.
+Humanity&hellip; do I like it? Let's say, I have mixed feelings. I love [the song](https://youtu.be/0755SXCTCN0) though!
+
+The story behind the name {{ site.custom_title }} is straightforward:
+the majority of code that software engineers write in their spare time ends up being unused, i.e. being dead &mdash; hence the name.
 
 ## [](#personality){:.slink}Personality
-This particular page is about sharing something about my personality rather than technical things. For example, here are a few quotes/sayings I like:
+This particular page is about sharing something with regard to my personality rather than technical things.
+For example, here are a few examples of [lyrics]({% link lyrics.markdown %}) and quotes/sayings I like:
 * <q>"...it takes all the running you can do, to keep in the same place.
 If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
 <span class="small-font">Lewis Carroll, "Alice Through the Looking Glass", 1871</span>
@@ -33,7 +38,6 @@ If you want to get somewhere else, you must run at least twice as fast as that!"
 <span class="small-font">this saying [is ridiculously interpreted](https://youtu.be/z52kKE8qngs) in South Park s16e7</span>
 * <q>"Do your duty, come what may."</q>
 * <q>"Live as if you were to die tomorrow. Learn as if you were to live forever."</q>
-* and [some lyrics]({% link lyrics.markdown %}).
 
 I like to play computer games and spent a lot of time playing Quake and Unreal Tournament series.
 I also was taking part for 3 years in developing (unfortunately mobile) games at [ZeptoLab](https://youtu.be/mAXjQvJ2Umo).

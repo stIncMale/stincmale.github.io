@@ -5,7 +5,8 @@ title: CyberEclipse
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2006-01-01T12:00:00+00:00
-custom_update_date: 2020-05-10T20:02:00-06:00
+custom_update_date: 2020-05-13T10:03:00−06:00
+custom_keywords: [game highlights, frag highlights, Unreal Tournament 2004, UT2004, Unreal Tournament, UT]
 ---
 After a "pilot" video [Male vs Godlike]({% post_url 2005-01-01-male-vs-godlike %}) I decided to make a really good and "serious" game highlights video,
 and this is the result.

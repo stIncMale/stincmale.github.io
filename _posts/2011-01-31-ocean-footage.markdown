@@ -5,7 +5,9 @@ title: Ocean footage
 categories: [cgi-vfx]
 tags: [footage]
 date: 2011-01-31T12:00:00+03:00
-custom_update_date: 2020-05-10T20:06:00-06:00
+custom_update_date: 2020-05-13T10:08:00−06:00
+custom_keywords: [footage, ocean, loop, cyclic]
+custom_description: Looping CGI videos of ocean.
 ---
 {%- include toc.markdown -%}
 

@@ -1,18 +1,18 @@
 ---
 layout: post
 # Slug is used as a post ID that must never change (it is used in permalinks and as part of IRI in Atom feed).
-# For some reason slug is not working for drafts, but it does work for normal posts.
 slug: examples
 # Each post must belong to a single category (it is used in permalinks but not in Atom feed),
 # this one belongs to both just because it is an example.
 categories: [tech, cgi-vfx]
 title: Markup (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a>) and style examples
-permalink: /blog/drafts/examples
 tags: [example]
 # These dates must be specified in the RFC 3339 (https://tools.ietf.org/html/rfc3339) format,
 # e.g. 1985-04-12T23:20:50.52Z or 2020-04-24T20:08:00−06:00 because they are used in Atom feed.
 date: 2020-04-26T12:00:00+00:00
-custom_update_date: 2020-04-26T20:08:00−06:00
+custom_update_date: 2020-05-13T10:00:00−06:00
+custom_keywords: [keyword1, keyword2]
+custom_description: Markup and style examples.
 ---
 {%- comment -%}<!--
   Use -draft (actually it is double hyphen, but those are not allowed inside comments) e.g.
@@ -39,12 +39,12 @@ Text before ToC.
 ## [](#urls-to-check){:.slink}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
-  * [https://www.kovalenko.link/lyrics](https://validator.w3.org/check?uri=https%3A%2F%2Fwww.kovalenko.link%2Flyrics&charset=%28detect+automatically%29&doctype=Inline&group=0)
-  * [https://www.kovalenko.link/blog/tags](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags)
+  * [https://www.kovalenko.link/lyrics](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Flyrics)
+  * [https://www.kovalenko.link/blog/tags/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags%2F)
   * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
   * [https://www.kovalenko.link/blog/cgi-vfx/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2F)
-  * [view-source:http://127.0.0.1:4000/blog/drafts/examples](view-source:http://127.0.0.1:4000/blog/drafts/examples)
-  * [https://www.kovalenko.link/blog/cgi-vfx/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2Fnetcracker-sportfest)
+  * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
+  * [https://www.kovalenko.link/blog/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fnetcracker-sportfest)
 * W3C feed validator
   * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
 * W3C CSS validator
@@ -108,7 +108,7 @@ long text.
 
 ## [](#abbreviations){:.slink}Abbreviations {#abbreviations}
 *[HTML]:
-{:data-title="Hyper Text Markup Language"}
+{:data-title="Hypertext Markup Language"}
 *[CSS]:
 {:data-title="Cascading Style Sheets"}
 
@@ -172,11 +172,11 @@ Markdown thematic break (horizontal line)
 ---
 
 ## [](#figures){:.slink}Figures {#figures}
-Inline image ![Example image]({% link /assets/img/favicon.png %}){:style="border-radius: 20%; border: thin solid lightsteelblue; width: 4em; height: auto;"} with Markdown and inline CSS.
+Inline image ![Example image]({% link /assets/img/favicon.png %}){:style="border-radius: 20%; border: thin solid lightsteelblue; width: 3em; height: auto;"} with Markdown and inline CSS.
 
 Figure:
 <figure>
-  <img src="{% link /assets/img/favicon.png %}" alt="Example image" style="width: 4em; height: auto;">
+  <img src="{% link /assets/img/favicon.png %}" alt="Example image" style="width: 6em; height: auto;">
   <figcaption>Figure caption.</figcaption>
 </figure>
 

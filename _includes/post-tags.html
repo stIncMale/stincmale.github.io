@@ -2,7 +2,8 @@
 <ul class="post-tags">
   {%- for tag in post_tags -%}
     <li>
-      <a href="{{ "/blog/tags#" | append: tag | uri_escape | relative_url }}" class="post-tag">{{ tag }}<sup>{{ site.tags[tag] | second | size }}</sup></a>
+      {%- capture tags_link -%}{% link tags.html %}{%- endcapture -%}
+      <a href="{{ tags_link | append: "#" | append: tag | uri_escape | relative_url }}" class="post-tag">{{ tag }}<sup>{{ site.tags[tag] | second | size }}</sup></a>
     </li>
   {%- endfor -%}
 </ul>

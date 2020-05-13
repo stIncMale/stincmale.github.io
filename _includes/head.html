@@ -5,9 +5,16 @@
   {%- capture og_title -%}
     {%- if page.title -%}{{ page.title | strip_html | append: " | " }}{%- endif -%}{{ site.custom_simplified_title }} by {{ site.custom_author }}
   {%- endcapture -%}
-  <title>{{ title }}</title>
   <meta charset="{{ site.encoding }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  {%- if page.custom_description -%}
+    <meta name="description" property="og:description" content="{{ page.custom_description }}">
+  {%- endif -%}
+  {%- if page.custom_keywords.size > 0 -%}
+    <meta name="keywords" content="{{ page.custom_keywords | join:", "}}">
+  {%- endif -%}
+  <meta name="author" content="{{ site.custom_author }}">
   <meta property="og:title" content="{{ og_title }}"/>
   <meta property="og:image" content="{% link assets/img/site-logo.png %}"/>{%- comment -%}<!-- The aspect ratio of this image is for LinkedIn, but also works with Telegram -->{%- endcomment -%}
   <meta property="og:image" content="{% link assets/img/favicon.png %}"/>{%- comment -%}<!-- WatsApp takes the last og:image -->{%- endcomment -%}

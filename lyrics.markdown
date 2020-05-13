@@ -1,6 +1,7 @@
 ---
 layout: base
 title: Lyrics
+custom_description: Some lyrics that I like.
 ---
 # Lyrics
 {:.no_toc}

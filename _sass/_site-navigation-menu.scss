@@ -22,13 +22,8 @@
       }
 
       a.selected-menu {
-          &:after {
-            font-size: $font-size;
-            vertical-align: baseline;
-            content: " *";
-            color: $site-navigation-hover-font-color;
-          }
-        }
+        color: $site-navigation-hover-font-color;
+      }
     }
   }
 }

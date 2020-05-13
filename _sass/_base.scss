@@ -220,15 +220,14 @@ img {
   max-width: 100%;
   vertical-align: baseline;
 }
-figure > img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-figcaption {
-  font-size: $small-font-size;
-  text-align: center;
-  color: $insignificant-font-color;
+figure {
+  display: inline-block;
+
+  > figcaption {
+    font-size: $small-font-size;
+    text-align: center;
+    color: $insignificant-font-color;
+  }
 }
 
 span.small-font {
@@ -245,7 +244,8 @@ button {
   padding-bottom: 0.2em;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  margin: $outline-width;
+  margin-top: $outline-width;
+  margin-bottom: $outline-width;
   color: $button-font-color;
   border-image: none;
   border-radius: $border-radius;
@@ -350,6 +350,9 @@ code pre {//reset some styles for those <code> elements that are inside <pre> el
   margin-right: 0em;
   border: 0em;
   padding: 0em;
+}
+figure.highlight {
+  display: block;
 }
 figure.highlight,
 code table {//reset margin-bottom to maintain vertical rhythm

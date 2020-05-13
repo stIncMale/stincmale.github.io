@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Posts by tag
-permalink: /blog/tags
+permalink: /blog/tags/
 ---
 {%- capture tags -%}
   {%- for tag_and_posts in site.tags -%}
@@ -29,7 +29,7 @@ permalink: /blog/tags
         <tbody>
           {%- for post in posts -%}
             <tr class="clickable" onclick="window.location='{{ post.url }}'">
-              <td class="post-link">{{ post.title }}</td>
+              <td class="post-link"><a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a></td>
               <td class="post-date">
                 <div class="post-metadata">
                   {{ post.date | date: "%Y-%m-%d" }}

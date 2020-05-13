@@ -1,36 +1,11 @@
 #toolbar {
   top: 0em;
-  min-height: $toolbar-height;
   line-height: 1;
   position: sticky;
   overflow: auto;
-  z-index: 1;//appear on top of other elements (without this style transparent elements appear on top of this element)
+  z-index: 2;//appear on top of other elements (without this style transparent elements appear on top of this element)
   padding-left: $base-spacing-em;
   background: linear-gradient(to right, $site-background-color, $toolbar-background-color, $site-background-color);
-}
-
-a.button {//the image inside should define the size of the button, not the <a> element itself
-  display: inline-block;
-  width: 0em;
-  height: 0em;
-
-  &:after {
-    content: none;
-  }
-}
-.svg-button {
-  line-height: 1;
-  padding: 0em;
-  margin: 0em;
-  width: 1em;
-  height: 1em;
-  fill: $link-color;
-  opacity: $unhovered-svg-button-opacity;
-
-  &:hover {
-    opacity: 1;
-    fill: $link-hover-color;
-  }
 }
 
 #site-navigation-portrait-menu {

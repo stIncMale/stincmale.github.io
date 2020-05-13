@@ -2,7 +2,7 @@
 layout: base
 title:
 custom_post_category_to_display: about
-custom_description: My personal website. Articles/notes/thoughts written by a server-side software engineer and occasionally other stuff.
+custom_description: My personal website. Software engineering articles/notes/thoughts written by me and occasionally other stuff.
 ---
 *[MIPT]:
 {:data-title="The Moscow Institute of Physics and Technology"}

@@ -6,7 +6,12 @@ slug: examples
 # this one belongs to both just because it is an example.
 categories: [tech, cgi-vfx]
 title: Markup (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a>) and style examples
-tags: [example]
+# Check that:
+# - the unreserved characters (https://tools.ietf.org/html/rfc3986#section-2.3) are either left as is or are percent-encoded (https://tools.ietf.org/html/rfc3986#section-2.1) (I am not testing alpha and digit characters as they obviously work),
+# - the reserved characters (https://tools.ietf.org/html/rfc3986#section-2.2) are percent-encoded,
+# - the percent character is percent-encoded (according to https://tools.ietf.org/html/rfc3986#section-2.4),
+# - all other characters may be percent-encoded.
+tags: ["RFC3986-unreserved-characters-may-be-encoded__-.~", "RFC3986-reserved-characters-must-be-encoded__:_/_?_#_[_]_@_!_$_&_'_(_)_*_+_,_;_=", "percent-character-must-be-encoded__%", 'other-characters-may-be-encoded__\_ _"_&lt;_&gt;_^_&#x01f4af;']
 # These dates must be specified in the RFC 3339 (https://tools.ietf.org/html/rfc3339) format,
 # e.g. 1985-04-12T23:20:50.52Z or 2020-04-24T20:08:00−06:00 because they are used in Atom feed.
 date: 2020-04-26T12:00:00+00:00
@@ -38,13 +43,15 @@ Text before ToC.
 
 ## [](#urls-to-check){:.slink}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator
+  * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
+  * [view-source:http://127.0.0.1:4000/blog/tags/](view-source:http://127.0.0.1:4000/blog/tags/)
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
   * [https://www.kovalenko.link/lyrics](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Flyrics)
   * [https://www.kovalenko.link/blog/tags/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags%2F)
-  * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
   * [https://www.kovalenko.link/blog/cgi-vfx/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2F)
-  * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
+  * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
   * [https://www.kovalenko.link/blog/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fnetcracker-sportfest)
+  * [https://www.kovalenko.link/blog/stopwatch](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fstopwatch)
 * W3C feed validator
   * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
 * W3C CSS validator

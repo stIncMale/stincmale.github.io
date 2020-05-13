@@ -20,9 +20,10 @@ permalink: /blog/tags/
 <hr>
 {%- for tag in sorted_tags -%}
   {%- assign posts = site.tags[tag] -%}
-  <div id="{{ tag | uri_escape }}" class="highlightable">
+  {%- capture tag_url_percent_encoded -%}{%- include url-percent-encode content = tag -%}{%- endcapture -%}
+  <div id="{{ tag_url_percent_encoded }}" class="highlightable">
     <p class="post-metadata">
-      <a href="{{ "#" | append: tag | uri_escape }}" class="post-tag">{{ tag }}</a>
+      <a href="{{ "#" | append: tag_url_percent_encoded }}" class="post-tag">{{ tag }}</a>
     </p>
     <div class="margin-leftright">
       <table class="posts">

@@ -3,7 +3,8 @@
   {%- for tag in post_tags -%}
     <li>
       {%- capture tags_link -%}{% link tags.html %}{%- endcapture -%}
-      <a href="{{ tags_link | append: "#" | append: tag | uri_escape | relative_url }}" class="post-tag">{{ tag }}<sup>{{ site.tags[tag] | second | size }}</sup></a>
+      {%- capture tag_url_percent_encoded -%}{%- include url-percent-encode content = tag -%}{%- endcapture -%}
+      <a href="{{ tags_link | append: "#" | append: tag_url_percent_encoded }}" class="post-tag">{{ tag }}<sup>{{ site.tags[tag] | second | size }}</sup></a>
     </li>
   {%- endfor -%}
 </ul>

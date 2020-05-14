@@ -1,0 +1,55 @@
+div.iframe-margins {
+  margin-left: $margin-leftright-percentage;
+  margin-right: 40%;
+}
+@media print {
+  .iframe-margins {
+    display: none;
+  }
+
+  .print-iframe-youtube-video-substitute {
+    img {
+      width: 6em;
+      height: auto;
+    }
+
+    a::after {
+      content: none;
+    }
+  }
+}
+@media not print {
+  .print-iframe-youtube-video-substitute {
+    display: none;
+  }
+}
+div.iframe-ratio-64-33 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 51.5625%;//64:33 aspect ratio (33 / 64 = 0.515625)
+}
+div.iframe-ratio-16-9 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;//16:9 aspect ratio (9 / 16 = 0.5625)
+}
+div.iframe-ratio-22-15 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 68.18182%;//68.18182%;//22:15 aspect ratio (15 / 22 = 0.6818182)
+}
+div.iframe-ratio-4-3 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;//4:3 aspect ratio (3 / 4 = 0.75)
+}
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

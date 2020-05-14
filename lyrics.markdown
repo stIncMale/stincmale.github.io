@@ -5,8 +5,7 @@ custom_description: Some lyrics that I like.
 ---
 # Lyrics
 {:.no_toc}
-<!-- -->
-{%- include toc.markdown -%}
+{% include toc.markdown %}
 
 ## [](#if){:.slink}If {#if}
 If you can keep your head when all about you\\

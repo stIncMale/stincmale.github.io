@@ -104,3 +104,9 @@ a.button {//the image inside should define the size of the button, not the <a> e
     display: none;
   }
 }
+
+@media print {
+  #site-navigation {
+    display: none;
+  }
+}

@@ -5,3 +5,9 @@ footer {
   text-align: center;
   color: $insignificant-font-color;
 }
+
+@media print {
+  footer {
+    display: none;
+  }
+}

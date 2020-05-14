@@ -5,7 +5,7 @@ title: No sense
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2011-08-13T12:00:00+03:00
-custom_update_date: 2020-05-13T10:09:00−06:00
+custom_update_date: 2020-05-14T21:08:00−06:00
 custom_keywords: [game highlights, frag highlights, defrag, Unreal Tournament 3, UT3, Unreal Tournament, UT]
 ---
 This is a defrag & game highlights game video.
@@ -16,11 +16,7 @@ All the tricks were performed with standard game physics and speed, the only "ch
 A review from a viewer on YouTube:
 > "one of the best, and also the only one defrag movie of ut3! i like it", [stereofiction](https://www.youtube.com/user/stereofiction)
 
-<div class="iframe-margins">
-  <div class="iframe-ratio-16-9">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/OvgxtA5i-bA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div>
+{% include youtube-video.html content = "OvgxtA5i-bA, maxresdefault, iframe-ratio-16-9" %}
 
 Music:
 * Freedom Call - Shine on

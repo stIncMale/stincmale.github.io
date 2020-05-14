@@ -22,5 +22,8 @@
   }
 }
 
-@media screen and (orientation: portrait) {
+@media print {
+  #toolbar {
+    display: none;
+  }
 }

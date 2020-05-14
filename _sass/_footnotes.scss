@@ -2,8 +2,10 @@ div.footnotes {
   font-size: $small-font-size;
   border-top: $border-widthstyle $page-layout-markup-color;
 }
-div.footnotes li {//highlight the selected footnote
-  @include highlightable;
+@media not print {
+  div.footnotes li {//highlight the selected footnote
+    @include highlightable;
+  }
 }
 
 a.footnote {

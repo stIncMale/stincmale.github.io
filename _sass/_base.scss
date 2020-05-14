@@ -146,29 +146,37 @@ a.slink {//section link
     opacity: 0.6;
   }
 }
+@media print {
+  a.slink {
+    display: none;
+  }
+}
 
 abbr {
   position: relative;
   display: inline-block;
   font-variant: normal;
   text-decoration: none;
-  border-bottom: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
-
-  &:hover::after {
-    font-size: $small-font-size;
-    position: absolute;
-    top: -90%;
-    left: 85%;
-    z-index: 1;
-    padding: $block-padding;
-    white-space: nowrap;
-    overflow: auto;
-    content: attr(data-title);
-    background: pink;
-    border-radius: $border-radius;
-    color: $info-font-color;
-    background: $info-background-color;
-    border: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
+}
+@media not print {
+  abbr {
+    border-bottom: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
+  
+    &:hover::after {
+      font-size: $small-font-size;
+      position: absolute;
+      top: -90%;
+      left: 85%;
+      z-index: 1;
+      padding: $block-padding;
+      white-space: nowrap;
+      overflow: auto;
+      content: attr(data-title);
+      border-radius: $border-radius;
+      color: $info-font-color;
+      background: $info-background-color;
+      border: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
+    }
   }
 }
 
@@ -179,41 +187,15 @@ abbr {
     opacity: 1;
   }
 }
-.highlightable {
-  @include highlightable;
+@media not print {
+  .highlightable {
+    @include highlightable;
+  }
 }
 
 .clickable,
 a, button {
   cursor: pointer;
-}
-
-/**
- * Iframe elements.
- */
-div.iframe-margins {
-  margin-left: $margin-leftright-percentage;
-  margin-right: 40%;
-}
-div.iframe-ratio-16-9 {//this element should be inside div.iframe-margins
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;//16:9 aspect ratio (9 / 16 = 0.5625)
-}
-div.iframe-ratio-4-3 {//this element should be inside div.iframe-margins
-  position: relative;
-  overflow: hidden;
-  padding-top: 75%;//4:3 aspect ratio (3 / 4 = 0.75)
-}
-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 
 img {
@@ -285,7 +267,12 @@ div.info-block {
   border-radius: $border-radius;
   padding: $block-padding;
   color: $quotation-font-color;
-  background: $quotation-background-color;
+  @media not print {
+    background: $quotation-background-color;
+  }
+  @media print {
+    border: $border-widthstyle $quotation-border-color;
+  }
 
   > :last-child {//this is usually a <p> element
     margin-bottom: 0em;
@@ -294,7 +281,12 @@ div.info-block {
 div.info-block {
   font-style: normal;
   color: $info-font-color;
-  background: $info-background-color;
+  @media not print {
+    background: $info-background-color;
+  }
+  @media print {
+    border: $border-widthstyle $info-border-color;
+  }
 }
 
 :not(code) > table {//<table> elements that are not children of <code> elements
@@ -304,16 +296,29 @@ div.info-block {
     padding: ($block-padding * 2) ($block-padding * 2);
   }
   th {
-    background-color: $table-header-background-color;
+    @media not print {
+      font-weight: bolder;
+      background-color: $table-header-background-color;
+    }
+    @media not print {
+      font-weight: $font-weight;
+    }
     border: $border-widthstyle darken($table-header-background-color, $border-color-darken-percentage);
-    font-weight: normal;
   }
   td {
     border: $border-widthstyle $table-border-color;
   }
-  tr {
-    &:nth-child(even) {
-      background-color: $table-zebra-color;
+  @media not print {
+    tr {
+      &:nth-child(even) {
+        background-color: $table-zebra-color;
+      }
+    }
+  }
+  @media print {
+    tr, tr td, tr th {
+      break-inside: avoid;
+      break-after: auto;
     }
   }
 }
@@ -334,7 +339,9 @@ samp, kbd, var,
   border: 0em;
   border-radius: $border-radius;
   padding: $inline-padding;
-  background: $code-font-backgroung-color;
+  @media not print {
+    background: $code-font-backgroung-color;
+  }
   //color: should not be set because it messes with <a> color scheme (HTML generated from Markdown specifies <code> inside <a> but not vise-versa)
 }
 pre {

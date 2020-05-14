@@ -29,11 +29,12 @@ custom_description: Markup and style examples.
 -->{%- endcomment -%}
 Text before ToC.
 
-{%- include toc.markdown -%}
+{% include toc.markdown %}
 
 ## [](#todo){:.slink}TODO {#todo}
-* Leave "redirect" links in the old site
-* Update the link to this site on YouTube channel, LinkedIn, Github and other social websites 
+* Leave "redirect" links in the old site.
+* Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
+* Support printing videos <https://stackoverflow.com/questions/12556521/is-it-possible-to-print-a-youtube-video-stillshot-as-it-appears-on-your-webpage>.
 
 ## [](#useful-links){:.slink}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
@@ -329,6 +330,15 @@ public final class MyClass {
   }
 }
 {%- endhighlight -%}
+
+## [](#video){:.slink}Video {#video}
+### [](#video-youtube){:.slink}YouTube {#video-youtube}
+
+A video with the title specified for printing
+{% include youtube-video.html content = "YziVpa8oZDg, hqdefault, iframe-ratio-22-15, Darkwing Duck (intro and outro)" %}
+
+A video with no title specified for printing
+{% include youtube-video.html content = "UGp8FvWGoWs, maxresdefault, iframe-ratio-64-33" %}
 
 [^footnoteA]: Footnote
 

@@ -1,24 +1,24 @@
 "use strict";
 
-updateWindowAccordingToOrientation(false);
-
+updateWindowAccordingToOrientation(false);//update the window each time it is opened
 /*
- * This event listener updates the window when orientation changes.
- * Because I change some elements from a script, they are not automatically updated with accordance to CSS when orientation changes,
- * and I have to update them again from a script.
+ * These event listeners update the window either before printing or when orientation changes.
+ * I have to do this because I change some elements from a script,
+ * and as a result they are not automatically updated with accordance to CSS @display rules when orientation changes.
  */
-let lastKnownLandscape = isLandscape();
-window.addEventListener("resize", () => {
-  const landscape = isLandscape();
-  if (landscape !== lastKnownLandscape) {
-    lastKnownLandscape = landscape;
-    updateWindowAccordingToOrientation(false);
-  }
+window.matchMedia("print").addListener(()=> {
+  updateWindowAccordingToOrientation(false);
+});
+window.matchMedia("(orientation: landscape)").addListener(()=> {
+  updateWindowAccordingToOrientation(false);
+});
+window.matchMedia("(orientation: portrait)").addListener(()=> {
+  updateWindowAccordingToOrientation(false);
 });
 
 scrollWindowToAnchor();//this call scrolls the window when a user enters a page with a hash-URL
-window.addEventListener("click", event => {
-  if (notNullOrUndefined(event.toElement) && notNullOrUndefined(event.toElement.hash)) {//this event listener scrolls the window when a user clicks a hash-link
+window.addEventListener("click", event => {//this event listener scrolls the window when a user clicks a hash-link
+  if (notNullOrUndefined(event.toElement) && notNullOrUndefined(event.toElement.hash)) {
     scrollWindowToAnchor();
   }
 });
@@ -43,7 +43,7 @@ function toggleNavigationMenu() {
  */
 function updateWindowAccordingToOrientation(toggleMenu) {
   const siteNavigation = window.document.getElementById("site-navigation");
-  if (isLandscape()) {
+  if (window.matchMedia("(orientation: landscape)").matches) {
     const rightSideArea = window.document.getElementById("right-side-area");
     const toolbar = window.document.getElementById("toolbar");
     const siteNavigationVisibleKey = "siteNavigationVisible";
@@ -53,7 +53,7 @@ function updateWindowAccordingToOrientation(toggleMenu) {
         : siteNavigationVisible;
     if (newSiteNavigationVisible) {
       window.sessionStorage.setItem(siteNavigationVisibleKey, true);
-      siteNavigation.style.display = "block";
+      siteNavigation.style.display = displayOrNoneIfMediaPrint("block");
       /*
        * Writing an empty string results in CSS values being used, I have no idea if this is a behaviour I can rely on.
        */
@@ -72,12 +72,20 @@ function updateWindowAccordingToOrientation(toggleMenu) {
     const siteNavigationMenuVisible = toggleMenu
         ? siteNavigationMenu.style.display === "none" || siteNavigationMenu.style.display === "" || siteNavigationMenu.style.display === null
         : false;
-    siteNavigation.style.display = "block";
+    siteNavigation.style.display = displayOrNoneIfMediaPrint("block");
     if (siteNavigationMenuVisible) {
-      siteNavigationMenu.style.display = "block";
+      siteNavigationMenu.style.display = displayOrNoneIfMediaPrint("block");
     } else {
       siteNavigationMenu.style.display = "none";
     }
+  }
+}
+
+function displayOrNoneIfMediaPrint(display) {
+  if (window.matchMedia("print").matches) {
+    return "none";
+  } else {
+    return display;
   }
 }
 

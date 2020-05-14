@@ -26,3 +26,9 @@ ul.post-tags {
 td ul.post-tags {
   margin: 0em;//remove margins when tags are inside a table cell
 }
+
+@media print {
+  article .post-tags {
+    display: none;
+  }
+}

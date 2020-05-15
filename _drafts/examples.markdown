@@ -34,7 +34,6 @@ Text before ToC.
 ## [](#todo){:.slink}TODO {#todo}
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
-* Support printing videos <https://stackoverflow.com/questions/12556521/is-it-possible-to-print-a-youtube-video-stillshot-as-it-appears-on-your-webpage>.
 
 ## [](#useful-links){:.slink}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)

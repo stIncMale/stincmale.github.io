@@ -8,13 +8,16 @@ div.iframe-margins {
   }
 
   .print-iframe-youtube-video-substitute {
-    img {
+    a {
+      display: block;
       width: 6em;
-      height: auto;
-    }
+      height: 5em;
+      background-size: contain;
+      background-repeat: no-repeat;
 
-    a::after {
-      content: none;
+      &:after {
+        display: none;
+      }
     }
   }
 }

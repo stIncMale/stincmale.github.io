@@ -10,14 +10,20 @@
 {%- assign splash_image_id = params[1] -%}
 {%- assign css_aspect_ratio_class = params[2] -%}
 {%- assign video_title = params[3] -%}
-<figure class="print-iframe-youtube-video-substitute">
-  <a href="https://youtu.be/{{ video_id }}"><img src="https://img.youtube.com/vi/{{ video_id }}/{{ splash_image_id }}.jpg" alt="Video link"></a>
-  {%- if video_title -%}
-    <figcaption>{{ video_title }}</figcaption>
-  {%- endif -%}
-</figure>
 <div class="iframe-margins">
   <div class="{{ css_aspect_ratio_class}} ">
     <iframe src="https://www.youtube.com/embed/{{ video_id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
+<figure class="print-iframe-youtube-video-substitute">
+  {%- comment -%}<!--
+    The usage of inline styles instead of <img> allows to not load images when the <a> element is not displayed, i.e. when the CSS media is "screen".
+    This has a drawback though (at least in the current Chrome browser implementation): if background images do not finish downloading in the short
+    period of time that the browser waits before rendering the preview, then the images are rendered neither in the preview nor in the printed result.
+    Cancelling preview and starting the print process again or simply forcing re-rendering by changing print settings is a workaround.
+  -->{%- endcomment -%}
+  <a href="https://youtu.be/{{ video_id }}" style="background-image: url(https://img.youtube.com/vi/{{ video_id }}/{{ splash_image_id }}.jpg);"></a>
+  {%- if video_title -%}
+  <figcaption>{{ video_title }}</figcaption>
+  {%- endif -%}
+</figure>

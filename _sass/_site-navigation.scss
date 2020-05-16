@@ -57,27 +57,27 @@ a.button {//the image inside should define the size of the button, not the <a> e
   }
 
   #site-author {
-    font-size: $small-font-size;
+    font-size: $medium-font-size;
     display: inline-block;
     margin-bottom: 0em;
     color: $site-navigation-menu-font-color;
   }
 
   #feed-link {
-    font-size: 1em;//scale the button
+    font-size: 1.15em;//scale the button
     vertical-align: super;
   }
 }
 
 #site-navigation-external-links {
-  font-size: $small-font-size;
+  font-size: $medium-font-size;
   text-align: left;
 
   #email {
   }
 
   #external-buttons {
-    font-size: 1.5em;//scale the buttons
+    font-size: 1.45em;//scale the buttons
 
     .button {
       margin-right: 1.2em;

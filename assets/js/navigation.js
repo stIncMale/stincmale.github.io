@@ -46,13 +46,13 @@ function updateWindowAccordingToOrientation(toggleMenu) {
   if (window.matchMedia("(orientation: landscape)").matches) {
     const rightSideArea = window.document.getElementById("right-side-area");
     const toolbar = window.document.getElementById("toolbar");
-    const siteNavigationVisibleKey = "siteNavigationVisible";
-    const siteNavigationVisible = toBool(window.sessionStorage.getItem(siteNavigationVisibleKey), true);
-    const newSiteNavigationVisible = toggleMenu
-        ? !siteNavigationVisible
-        : siteNavigationVisible;
-    if (newSiteNavigationVisible) {
-      window.sessionStorage.setItem(siteNavigationVisibleKey, true);
+    const siteNavigationOpenedKey = "siteNavigationOpened";
+    const siteNavigationOpened = toBool(window.sessionStorage.getItem(siteNavigationOpenedKey), true);
+    const newSiteNavigationOpened = toggleMenu
+        ? !siteNavigationOpened
+        : siteNavigationOpened;
+    if (newSiteNavigationOpened) {
+      window.sessionStorage.setItem(siteNavigationOpenedKey, true);
       siteNavigation.style.display = displayOrNoneIfMediaPrint("block");
       /*
        * Writing an empty string results in CSS values being used, I have no idea if this is a behaviour I can rely on.
@@ -60,7 +60,7 @@ function updateWindowAccordingToOrientation(toggleMenu) {
       rightSideArea.style.marginLeft = "";
       toolbar.style.marginLeft = "";
     } else {
-      window.sessionStorage.setItem(siteNavigationVisibleKey, false);
+      window.sessionStorage.setItem(siteNavigationOpenedKey, false);
       siteNavigation.style.display = "none";
       rightSideArea.style.marginLeft = "0em";
       toolbar.style.marginLeft = "0em";

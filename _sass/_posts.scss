@@ -5,8 +5,10 @@ table.posts {
   width: 100%;
 
   tr {
-    &:hover {
-      background: darken($table-zebra-color, 2%);
+    @media not print {
+      &:hover { 
+        background: darken($table-zebra-color, 2%);
+      }
     }
   }
 

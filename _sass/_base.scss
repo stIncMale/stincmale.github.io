@@ -267,12 +267,8 @@ div.info-block {
   border-radius: $border-radius;
   padding: $block-padding;
   color: $quotation-font-color;
-  @media not print {
-    background: $quotation-background-color;
-  }
-  @media print {
-    border: $border-widthstyle $quotation-border-color;
-  }
+  background: $quotation-background-color;
+  border: $border-widthstyle $quotation-border-color;
 
   > :last-child {//this is usually a <p> element
     margin-bottom: 0em;
@@ -281,12 +277,8 @@ div.info-block {
 div.info-block {
   font-style: normal;
   color: $info-font-color;
-  @media not print {
-    background: $info-background-color;
-  }
-  @media print {
-    border: $border-widthstyle $info-border-color;
-  }
+  background: $info-background-color;
+  border: $border-widthstyle $info-border-color;
 }
 
 :not(code) > table {//<table> elements that are not children of <code> elements
@@ -296,23 +288,16 @@ div.info-block {
     padding: ($block-padding * 2) ($block-padding * 2);
   }
   th {
-    @media not print {
-      font-weight: bolder;
-      background-color: $table-header-background-color;
-    }
-    @media not print {
-      font-weight: $font-weight;
-    }
+    font-weight: bolder;
+    background-color: $table-header-background-color;
     border: $border-widthstyle darken($table-header-background-color, $border-color-darken-percentage);
   }
   td {
     border: $border-widthstyle $table-border-color;
   }
-  @media not print {
-    tr {
-      &:nth-child(even) {
-        background-color: $table-zebra-color;
-      }
+  tr {
+    &:nth-child(even) {
+      background-color: $table-zebra-color;
     }
   }
   @media print {
@@ -339,9 +324,7 @@ samp, kbd, var,
   border: 0em;
   border-radius: $border-radius;
   padding: $inline-padding;
-  @media not print {
-    background: $code-font-backgroung-color;
-  }
+  background: $code-font-backgroung-color;
   //color: should not be set because it messes with <a> color scheme (HTML generated from Markdown specifies <code> inside <a> but not vise-versa)
 }
 pre {

@@ -1,15 +1,14 @@
 {%- comment -%}<!--
   include.content is: video-id, splash-image-id, css-aspect-ratio-class, video-title
-  
   splash-image-id is one of [0, 1, 2, 3, default, hqdefault, maxresdefault] (see https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api/2068371).
-  video-title is optional.
-  
 -->{%- endcomment -%}
 {%- assign params = include.content | split: ", " -%}
 {%- assign video_id = params[0] -%}
 {%- assign splash_image_id = params[1] -%}
 {%- assign css_aspect_ratio_class = params[2] -%}
 {%- assign video_title = params[3] -%}
+{%- capture video_url -%}https://youtu.be/{{ video_id }}{%- endcapture -%}
+{%- capture splash_image_url -%}https://img.youtube.com/vi/{{ video_id }}/{{ splash_image_id }}.jpg{%- endcapture -%}
 <div class="iframe-margins">
   <div class="{{ css_aspect_ratio_class}} ">
     <iframe src="https://www.youtube.com/embed/{{ video_id }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -22,8 +21,6 @@
     period of time that the browser waits before rendering the preview, then the images are rendered neither in the preview nor in the printed result.
     Cancelling preview and starting the print process again or simply forcing re-rendering by changing print settings is a workaround.
   -->{%- endcomment -%}
-  <a href="https://youtu.be/{{ video_id }}" style="background-image: url(https://img.youtube.com/vi/{{ video_id }}/{{ splash_image_id }}.jpg);"></a>
-  {%- if video_title -%}
-  <figcaption>{{ video_title }}</figcaption>
-  {%- endif -%}
+  <a href="{{ video_url }}" style="background-image: url({{ splash_image_url }});"></a>
+  <span><a href="{{ video_url }}">{{ video_title }} <sup>{{ video_url }}</sup></a></span>
 </figure>

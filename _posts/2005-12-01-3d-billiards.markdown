@@ -5,7 +5,7 @@ title: 3D Billiards
 categories: [tech]
 tags: [archived, C++, OpenGL]
 date: 2005-12-01T00:00:00+00:00
-custom_update_date: 2020-05-14T21:02:00−06:00
+custom_update_date: 2020-05-15T21:02:00−06:00
 ---
 *[MIPT]:
 {:data-title="The Moscow Institute of Physics and Technology"}
@@ -23,7 +23,7 @@ Despite the game is quite poor, this page is here to keep memories about the ver
 
 ## [](#demo){:.slink}Demo video {#demo}
 
-{% include youtube-video.html content = "8Lzr0kWM440, maxresdefault, iframe-ratio-4-3" %}
+{% include youtube-video.html content = "8Lzr0kWM440, maxresdefault, iframe-ratio-4-3, 3D Billiards Demo" %}
 
 ## [](#requirements){:.slink}Requirements {#requirements}
 

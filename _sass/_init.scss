@@ -30,7 +30,7 @@ $insignificant-font-color: lighten($font-color, 30%);//see https://sass-lang.com
 $quotation-background-color: desaturate(lighten(linen, 1%), 20%);
 $quotation-border-color: darken($quotation-background-color, $border-color-darken-percentage);
 $quotation-font-color: desaturate(darken($quotation-background-color, 40%), 10%);
-$code-font-backgroung-color: lighten(lavender, 2%);
+$code-font-backgroung-color: lighten(lavender, 2.5%);
 $header-font-color: steelblue;
 $hover-header-font-color: lighten($header-font-color, 15%);
 $site-navigation-background-color: $site-background-color;

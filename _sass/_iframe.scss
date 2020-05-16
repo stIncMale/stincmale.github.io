@@ -8,12 +8,14 @@ div.iframe-margins {
   }
 
   .print-iframe-youtube-video-substitute {
-    a {
-      display: block;
-      width: 6em;
-      height: 5em;
+    > a {
+      display: inline-block;
+      width: 4em;
+      height: 3em;
       background-size: contain;
       background-repeat: no-repeat;
+      border: $border-widthstyle $page-layout-markup-color;
+      vertical-align: baseline;
 
       &:after {
         display: none;

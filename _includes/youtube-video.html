@@ -2,7 +2,7 @@
   include.content is: video-id, splash-image-id, css-aspect-ratio-class, video-title
   splash-image-id is one of [0, 1, 2, 3, default, hqdefault, maxresdefault] (see https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api/2068371).
 -->{%- endcomment -%}
-{%- assign params = include.content | split: ", " -%}
+{%- assign params = include.content | split: " , " -%}
 {%- assign video_id = params[0] -%}
 {%- assign splash_image_id = params[1] -%}
 {%- assign css_aspect_ratio_class = params[2] -%}

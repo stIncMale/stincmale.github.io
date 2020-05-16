@@ -348,9 +348,9 @@ public final class MyClass {
 ## [](#video){:.slink}Video {#video}
 ### [](#video-youtube){:.slink}YouTube {#video-youtube}
 
-{% include youtube-video.html content = "YziVpa8oZDg, hqdefault, iframe-ratio-22-15, Darkwing Duck (intro and outro)" %}
+{% include youtube-video.html content = "YziVpa8oZDg , hqdefault , iframe-ratio-22-15 , Darkwing Duck (intro and outro)" %}
 <br>
-{% include youtube-video.html content = "UGp8FvWGoWs, maxresdefault, iframe-ratio-64-33, Devil May Cry 4 Full Video (eng)" %}
+{% include youtube-video.html content = "UGp8FvWGoWs , maxresdefault , iframe-ratio-64-33 , Devil May Cry 4 Full Video (eng)" %}
 
 [^footnoteA]: Footnote
 

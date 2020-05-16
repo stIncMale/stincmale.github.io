@@ -12,7 +12,7 @@ custom_description: A tutorial about making an ice text with Photoshop.
 This tutorial presents a way to make an ice text with Photoshop. 
 I used this technique in the game highlights video [No sense]({% post_url 2011-08-13-no-sense %}).
 
-{% include youtube-video.html content = "4ICl5mXvTBw, maxresdefault, iframe-ratio-16-9, Ice Text in Adobe Photoshop CS3" %}
+{% include youtube-video.html content = "4ICl5mXvTBw , maxresdefault , iframe-ratio-16-9 , Ice Text in Adobe Photoshop CS3" %}
 
 Music:
 * Cirque Du Soleil - Kalandero

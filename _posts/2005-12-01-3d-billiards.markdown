@@ -23,7 +23,7 @@ Despite the game is quite poor, this page is here to keep memories about the ver
 
 ## [](#demo){:.slink}Demo video {#demo}
 
-{% include youtube-video.html content = "8Lzr0kWM440, maxresdefault, iframe-ratio-4-3, 3D Billiards Demo" %}
+{% include youtube-video.html content = "8Lzr0kWM440 , maxresdefault , iframe-ratio-4-3 , 3D Billiards Demo" %}
 
 ## [](#requirements){:.slink}Requirements {#requirements}
 

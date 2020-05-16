@@ -13,7 +13,7 @@ It was created with VirtualDubMod and Microsoft Paint, and looks quite naive. Go
 Unfortunately, I played Unreal Tournament 2004 offline, so all frags are on godlike bots.
 This is unusual, and you can hardly find another UT2004 highlights video with bots.
 
-{% include youtube-video.html content = "_2FXpECrXKw, hqdefault, iframe-ratio-4-3, Male vs Godlike" %}
+{% include youtube-video.html content = "_2FXpECrXKw , hqdefault , iframe-ratio-4-3 , Male vs Godlike" %}
 
 Music:
 * Mortal Kombat - Main Theme

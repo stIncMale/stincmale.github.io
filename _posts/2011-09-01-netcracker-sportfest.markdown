@@ -11,7 +11,7 @@ In 2011 I was employed with NetCracker Technology, and we had a very nice weeken
 Unfortunately, there was no video taken, and all we had were photos.
 I decided to use the photos and create this nifty video because <q>"life is about the people you meet, and the things you create with them"</q>.
 
-{% include youtube-video.html content = "SPrfvCjE79U, maxresdefault, iframe-ratio-16-9, NetCracker SportFest 2011" %}
+{% include youtube-video.html content = "SPrfvCjE79U , maxresdefault , iframe-ratio-16-9 , NetCracker SportFest 2011" %}
 
 Music:
 * Cbreez (feat. Kerry) - Momentums

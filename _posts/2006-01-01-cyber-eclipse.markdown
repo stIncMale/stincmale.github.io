@@ -16,7 +16,7 @@ YouTube muted the audio, but you can watch the video with the original sound
 <a href="https://drive.google.com/file/d/0B_4a-5REfZ5jSU9rakNXZUR0VGc/view?usp=sharing">here</a>.
 </div>
 
-{% include youtube-video.html content = "68R8q1rlsms, hqdefault, iframe-ratio-4-3, CyberEclipse" %}
+{% include youtube-video.html content = "68R8q1rlsms , hqdefault , iframe-ratio-4-3 , CyberEclipse" %}
 
 Music:
 * Gustaf Grefberg - "Escape From Butcher Bay" end credits

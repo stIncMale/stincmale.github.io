@@ -16,7 +16,7 @@ $spacing-unit-percentage: 1%;//depends on the size of the parent element
 $base-spacing-em: $spacing-unit-em / 2;
 $border-radius: 0.15em;
 $block-padding: 0.2em;
-$inline-padding: 0.1em;
+$inline-padding: 0.3em;
 $line-height: 1.7;
 $code-line-height: 1.6;
 $code-block-max-height: 45em;
@@ -57,6 +57,6 @@ $button-active-font-color: darken($link-color, 7%);
 
 $unhovered-svg-button-opacity: 0.5;
 $site-navigation-menu-arrow: "\25b6\00a0";//BLACK RIGHT-POINTING TRIANGLE and NO-BREAK SPACE
-$link-after-content: "\25f9";//UPPER RIGHT TRIANGLE
+$link-after-content: none;//"\25f9";//UPPER RIGHT TRIANGLE
 $section-link-after-content: "\00a7\00a0";//SECTION SIGN and NO-BREAK SPACE
 $border-widthstyle: thin solid;

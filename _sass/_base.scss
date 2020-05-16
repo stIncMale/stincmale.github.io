@@ -331,7 +331,14 @@ pre {
   border: $border-widthstyle $page-layout-markup-color;
   border-radius: $border-radius;
   padding: $block-padding;
-  overflow: auto;
+  @media not print {
+    overflow: auto;
+  }
+  @media print {
+    span {
+      white-space: pre-wrap;//wrap text because when printing there are no scroll-bars
+    }
+  }
 }
 pre code,
 code pre {//reset some styles for those <code> elements that are inside <pre> elements and vice versa
@@ -355,7 +362,9 @@ figure.highlight > pre {
   font-size: $block-monospace-font-size;
   border: $border-widthstyle $code-border-color;
   line-height: $code-line-height;
-  max-height: $code-block-max-height;
+  @media not print {
+    max-height: $code-block-max-height;
+  }
   background: $code-background-color;
 }
 td.gutter.gl {//separate line numbers from code with a border

@@ -140,7 +140,8 @@ a.slink {//section link
   color: inherit;
 
   &:after {
-    content: "\00a7\0020";
+    content: $section-link-after-content;
+    margin-right: $block-padding;
   }
   &:hover {
     opacity: 0.6;
@@ -155,8 +156,7 @@ a.slink {//section link
 abbr {
   position: relative;
   display: inline-block;
-  font-variant: normal;
-  text-decoration: none;
+  font-variant: none;
 }
 @media not print {
   abbr {
@@ -164,6 +164,10 @@ abbr {
   
     &:hover::after {
       font-size: $small-font-size;
+      font-weight: $font-weight;
+      font-variant: normal;
+      font-style: normal;
+      text-decoration: none;
       position: absolute;
       top: -90%;
       left: 85%;
@@ -187,9 +191,31 @@ abbr {
     opacity: 1;
   }
 }
+@mixin highlightable2 {
+  @keyframes fading-background {
+    from {
+      background: darken($site-layout-markup-color, 20%);
+    }
+  
+    to {
+      background: darken($site-layout-markup-color, 0.5%);
+    }
+  }
+
+  &:target {
+    animation-name: fading-background;
+    animation-duration: 1s;
+    background: darken($site-layout-markup-color, 0.5%);
+    border-radius: $border-radius;
+  }
+}
 @media not print {
   .highlightable {
     @include highlightable;
+  }
+
+  .highlightable2 {
+    @include highlightable2;
   }
 }
 
@@ -212,10 +238,8 @@ figure {
   }
 }
 
-span.small-font {
+span.insignificant {
   font-size: $small-font-size;
-}
-span.insignificant-font {
   color: $insignificant-font-color;
 }
 
@@ -323,7 +347,7 @@ samp, kbd, var,
 :not(pre) > code {//a <code> element that is a child (direct descendant) of any element but a <pre> element
   border: 0em;
   border-radius: $border-radius;
-  padding: $inline-padding;
+  padding: $inline-code-padding;
   background: $code-font-backgroung-color;
   //color: should not be set because it messes with <a> color scheme (HTML generated from Markdown specifies <code> inside <a> but not vise-versa)
 }

@@ -13,6 +13,7 @@
 
         &:before {
           content: $site-navigation-menu-arrow;
+          padding-right: $block-padding * 1.5;
           color: $site-navigation-hover-font-color;
           visibility: hidden;
         }

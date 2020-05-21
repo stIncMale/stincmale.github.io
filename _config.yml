@@ -43,9 +43,6 @@ custom_plaintext_title: DEAD<code/>
 custom_simplified_title: DEADcode
 custom_author: Valentin Kovalenko
 custom_author_email: public.vkovalenko@gmail.com
-# This is used for generating https://tools.ietf.org/html/rfc4287#section-4.2.6
-# I am using tag URIs (https://tools.ietf.org/html/rfc4151)
-custom_feed_id_iri_email: public.vkovalenko@gmail.com
 custom_feed_id_iri_inception_year: 2020
 # The only way to pass parameters to includes in Jekyll is by passing a single parameter of type String
 # (see https://jekyllrb.com/docs/includes/#passing-parameters-to-includes and https://shopify.github.io/liquid/basics/types/#string).

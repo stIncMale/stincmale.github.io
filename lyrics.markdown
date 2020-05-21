@@ -44,7 +44,7 @@ With sixty seconds' worth of distance run,\\
 Yours is the Earth and everything that's in it,\\
 And - which is more - you'll be a man, my son!
 
-<span class="insignificant-font">Rudyard Kipling</span>
+<span class="insignificant">Rudyard Kipling</span>
 
 ## [](#my-way){:.slink}My Way {#my-way}
 And now, the end is near\\
@@ -93,7 +93,7 @@ And did it my way
 
 Yes, it was my way
 
-<span class="insignificant-font">Paul Anka, who rewrote "Comme d'habitude" by Claude François and Gilles Thibaut for Frank Sinatra</span>
+<span class="insignificant">Paul Anka, who rewrote "Comme d'habitude" by Claude François and Gilles Thibaut for Frank Sinatra</span>
 
 ## [](#spring-is-long-gone){:.slink}Весна давно уж позади {#spring-is-long-gone}
 Весна давно уж позади,\\
@@ -121,4 +121,4 @@ Yes, it was my way
 а в том, что и любить и жить\\
 ты так недавно научился.
 
-<span class="insignificant-font">Александр Дольский</span>
+<span class="insignificant">Александр Дольский</span>

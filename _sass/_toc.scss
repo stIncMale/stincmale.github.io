@@ -1,3 +1,9 @@
+#markdown-toc {
+  padding: $block-padding;
+  border-radius: $border-radius;
+  border: $border-widthstyle $page-layout-markup-color;
+}
+
 //see https://www.w3.org/Style/Examples/007/color-bullets.en.html for details about changing list bullet colors
 #markdown-toc, #markdown-toc ol {
   list-style: none;
@@ -7,7 +13,6 @@
   counter-increment: li;
 
   &:before {
-    margin-left: -$base-spacing-em / 2;
     display: inline-block;
     width: $spacing-unit-em;
     color: $header-font-color;

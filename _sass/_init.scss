@@ -14,13 +14,13 @@ $header-font-weight: 500;
 $site-navigation-width: 13.4em;
 $spacing-unit-em: 1.55em;//depends on the size of the text in the current element
 $spacing-unit-percentage: 1%;//depends on the size of the parent element
-$base-spacing-em: $spacing-unit-em / 2;
+$base-spacing-em: $spacing-unit-em / 2;//TODO replace usages of $spacing-unit-em
 $border-radius: 0.15em;
 $block-padding: 0.2em;
-$inline-padding: 0.3em;
+$inline-code-padding: 0.25em;
 $line-height: 1.7;
 $code-line-height: 1.6;
-$code-block-max-height: 45em;
+$code-block-max-height: 60em;
 $margin-leftright-percentage: $spacing-unit-percentage * 2.5;
 $outline-width: 0.2em;
 
@@ -57,7 +57,7 @@ $button-hover-font-color: $link-color;
 $button-active-font-color: darken($link-color, 7%);
 
 $unhovered-svg-button-opacity: 0.5;
-$site-navigation-menu-arrow: "\25b6\00a0";//BLACK RIGHT-POINTING TRIANGLE and NO-BREAK SPACE
+$site-navigation-menu-arrow: "\25b6";//BLACK RIGHT-POINTING TRIANGLE
 $link-after-content: none;//"\25f9";//UPPER RIGHT TRIANGLE
-$section-link-after-content: "\00a7\00a0";//SECTION SIGN and NO-BREAK SPACE
+$section-link-after-content: "\00a7";//SECTION SIGN
 $border-widthstyle: thin solid;

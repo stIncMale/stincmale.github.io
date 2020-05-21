@@ -19,22 +19,22 @@ custom_update_date: 2020-05-13T10:00:00−06:00
 custom_keywords: [keyword1, keyword2]
 custom_description: Markup and style examples.
 ---
-{%- comment -%}<!--
+{% comment %}<!--
   Use -draft (actually it is double hyphen, but those are not allowed inside comments) e.g.
     bundle exec jekyll serve -draft
   to start Jekyll server that serves draft posts;
   alternatively specify
     show_drafts: true
   in _config.yml.
--->{%- endcomment -%}
+-->{% endcomment %}
 Text before ToC.
 
 {% include toc.markdown %}
 
 ## [](#todo){:.slink}TODO {#todo}
+* Rename slink class to section-link.
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
-* Replace headers with import if possible
 
 ## [](#useful-links){:.slink}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
@@ -52,7 +52,7 @@ Text before ToC.
   * [https://www.kovalenko.link/blog/cgi-vfx/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2F)
   * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
   * [https://www.kovalenko.link/blog/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fnetcracker-sportfest)
-  * [https://www.kovalenko.link/blog/stopwatch](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fstopwatch)
+  * [https://www.kovalenko.link/blog/parallelism-vs-concurrency](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fparallelism-vs-concurrency)
 * W3C feed validator
   * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
 * W3C CSS validator
@@ -100,23 +100,21 @@ very very very very very very very very very very very very very very very very 
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 long text."
 
-Information block:
-<div class="info-block">
-<p>
+Information block that supports kramdown syntax inside:
+<div class="info-block" markdown="1">
 Info text.
-</p>
-<p><a href="https://google.com">Link</a></p>
-<p>
+
+[Link](https://google.com)
+
 Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 long text.
-</p>
 </div>
 
 ## [](#abbreviations){:.slink}Abbreviations {#abbreviations}
 *[HTML]:
-{:data-title="Hypertext Markup Language"}
+{:data-title="HyperText Markup Language"}
 *[CSS]:
 {:data-title="Cascading Style Sheets"}
 *[kramdown]:
@@ -126,9 +124,15 @@ long text.
 *[Jekyll]:
 {:data-title="A site generator"}
 
-Use abbreviations, for example\\
-HTML and [CSS](https://www.w3.org/Style/CSS/)\\
-inside normal text.
+These are abbreviations:\\
+HTML, [CSS](https://www.w3.org/Style/CSS/), kramdown\\
+that can be used to clarify any text.
+
+## [](#link-definitions){:.slink}Link definitions {#link-definitions}
+
+[`java.lang.Object`]: <https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html>
+[Java SE]: <https://docs.oracle.com/en/java/javase/index.html> "Java Platform, Standard Edition Documentation"
+This is a link to [Java SE] that has a title, and this one does not [`java.lang.Object`].
 
 ## [](#lists){:.slink}Lists {#lists}
 Normal text.
@@ -138,17 +142,17 @@ very very very very very very very very very very very very very very very very 
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 long text.
 
-    Another paragraph.
+   Another paragraph.
 3. Ordered list item 3.
-4. Ordered list item 3.
+4. Ordered list item 4.
    1. Ordered list item 4a.
    2. Ordered list item 4b.
 
-        Another paragraph.
+      Another paragraph.
    3. Ordered list item 4c.
    4. Ordered list item 4d.
-5. Ordered list item 4.
-6. Ordered list item 5.
+5. Ordered list item 5.
+6. Ordered list item 6.
 
 Normal text.
 * Hyphens and dashes (see <https://www.grammarly.com/blog/hyphens-and-dashes/>)
@@ -195,7 +199,8 @@ Figure:
 </figure>
 
 ## [](#code){:.slink}Code {#code}
-Inlined code: `java.lang.Object`, [`java.lang.Object`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html).
+Inlined code: `java.lang.Object`, [`java.lang.Object`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html),
+`select * from my_table where id > 10`{:.highlight .language-sql}.
 
 `Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.`
 
@@ -314,6 +319,27 @@ from
   left join ?.stream_function on model_attr_array[4]::bigint = stream_function.?
   left join ?.function_metrics on model_attr_array[5]::bigint = function_metrics.?
 group by event_tree_id;
+--
+--These comments are here to cause rendering a vertical scrollbar.
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
+--
 {%- endhighlight -%}
 
 {%- highlight java -%}

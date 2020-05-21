@@ -1,10 +1,12 @@
 div.footnotes {
   font-size: $small-font-size;
+  padding-top: $base-spacing-em;
   border-top: $border-widthstyle $page-layout-markup-color;
 }
 @media not print {
-  div.footnotes li {//highlight the selected footnote
-    @include highlightable;
+  div.footnotes > ol > li {//highlight the selected footnote
+    @include highlightable2;
+    padding: $block-padding;
   }
 }
 
@@ -14,6 +16,32 @@ a.footnote {
   &:after {
     content: none;
   }
+}
+
+@keyframes bounce {
+  from {
+    padding-left: 0em; 
+  }
+
+  25% {
+    padding-left: 1em;
+  }
+
+  50% {
+    padding-left: 0em;
+  }
+
+  75% {
+    padding-left: 0.5em;
+  }
+
+  to {
+    padding-left: 0em;
+  }
+}
+sup:target {
+  animation-name: bounce;
+  animation-duration: 0.5s;
 }
 
 a.reversefootnote::after {

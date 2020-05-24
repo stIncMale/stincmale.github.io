@@ -7,8 +7,7 @@ tags: [archived, C++, OpenGL]
 date: 2005-12-01T00:00:00+00:00
 custom_update_date: 2020-05-15T21:02:00−06:00
 ---
-*[MIPT]:
-{:data-title="The Moscow Institute of Physics and Technology"}
+{% include common-links-abbreviations.markdown %}
 
 This game is a computer science project made by students at MIPT.
 The greater part of all programming was made by me with some help of [Roman Prokofyev](https://prokofyev.ch),

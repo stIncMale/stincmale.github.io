@@ -5,30 +5,16 @@ title: Race condition vs. data race
 categories: [tech]
 tags: [concurrency, Java]
 date: 2015-01-01T00:00:00+00:00
-custom_update_date: 2020-05-21T02:04:00−06:00
+custom_update_date: 2020-05-23T23:33:00−06:00
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
-[OpenJDK]: <https://openjdk.java.net/>
+{% include common-links-abbreviations.markdown %}
 
 *[race condition]:
 {:data-title="a property of an algorithm"}
 *[data race]:
 {:data-title="a property of an execution of a program"}
-*[Java SE]:
-{:data-title="Java Platform, Standard Edition"}
-*[JDK]:
-{:data-title="Java Development Kit"}
-*[JLS]:
-{:data-title="Java Language Specification"}
-*[JMM]:
-{:data-title="Java Memory Model"}
-*[HB]:
-{:data-title="Happens-Before"}
-*[SO]:
-{:data-title="Synchronization Order"}
-*[SW]:
-{:data-title="Synchronizes-With"}
 
 It may seem that the terms "race condition" and "data race" have the same meaning, while in fact, they are different.
 [Java Concurrency in Practice](https://jcip.net/)<span class="insignificant">&nbsp;ISBN: 0321349601</span> book says:
@@ -246,7 +232,7 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
 
 [^2]: We can do volatile read/write [actions](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.2) in Java
     either by accessing a [`volatile` field](https://docs.oracle.com/javase/specs/jls/se14/html/jls-8.html#jls-8.3.1.4)
-    or by using [`VarHandle.AccessMode.GET_VOLATILE`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#GET_VOLATILE)/<wbr>[`VarHandle.AccessMode.SET_VOLATILE`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#SET_VOLATILE).
+    or by using [`VarHandle.AccessMode.GET_VOLATILE`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#GET_VOLATILE)/<wbr>[`VarHandle.AccessMode.SET_VOLATILE`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#SET_VOLATILE).
 
 [^3]: An execution IS be allowed by the JMM iff it
     * is [well-formed](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.7),

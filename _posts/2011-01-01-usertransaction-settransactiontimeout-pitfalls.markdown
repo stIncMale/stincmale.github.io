@@ -5,15 +5,17 @@ title: Pitfalls with <a href="https://jakarta.ee/specifications/transactions/1.3
 categories: [tech]
 tags: [Java, Jakarta EE]
 date: 2011-01-01T00:00:00+00:00
-custom_update_date: 2020-05-21T02:02:00−06:00
+custom_update_date: 2020-05-23T23:31:00−06:00
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---
+{% include common-links-abbreviations.markdown %}
+
 [`UserTransaction.setTransactionTimeout`]: <https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#setTransactionTimeout-int->
 [`UserTransaction.begin`]: <https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#begin-->
 
 First and foremost, [`UserTransaction.setTransactionTimeout`]<!-- -->[^1]
-affects only subsequent[^2] transactions associated with the [current thread](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Thread.html#currentThread()).
+affects only subsequent[^2] transactions associated with the [current thread](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Thread.html#currentThread()).
 This behavior is explicitly stated in the documentation, but may not be intuitively expected. However, if we think about this behavior, it becomes obvious that
 if the method were affecting transactions [started](https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#begin--) by other threads,
 then setting a transaction timeout would have been inherently racy[^3]: another thread could have called [`UserTransaction.setTransactionTimeout`] with a different timeout

@@ -7,6 +7,8 @@ tags: [archived, tutorial]
 date: 2011-01-05T12:00:00+03:00
 custom_update_date: 2020-05-15T21:06:00−06:00
 ---
+{% include common-links-abbreviations.markdown %}
+
 This tutorial presents a way[^1] to make a smoke to text (or vice versa) effect in Adobe After Effects using only out of the box functionality.
 I used this technique in the game highlights video [No sense]({% post_url 2011-08-13-no-sense %}).
 

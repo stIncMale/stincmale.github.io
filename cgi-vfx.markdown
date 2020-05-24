@@ -5,10 +5,7 @@ permalink: /blog/cgi-vfx/
 custom_post_category_to_display: cgi-vfx
 custom_description: A few things I created at the time I was into CGI, VFX and video editing.
 ---
-*[CGI]:
-{:data-title="Computer-generated imagery"}
-*[VFX]:
-{:data-title="Visual effects"}
+{% include common-links-abbreviations.markdown %}
 
 A few things I created at the time I was into CGI, VFX and video editing.
 Some more videos can be found on my [YouTube channel](https://www.youtube.com/user/stIncMale). 

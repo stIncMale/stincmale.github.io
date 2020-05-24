@@ -28,7 +28,7 @@ $border-color-darken-percentage: 5%;
 $site-background-color: white;
 $font-color: rgb(50, 50, 50);
 $insignificant-font-color: lighten($font-color, 30%);//see https://sass-lang.com/documentation/modules/color for other color functions
-$quotation-background-color: desaturate(lighten(linen, 1%), 20%);
+$quotation-background-color: desaturate(lighten(linen, 2%), 20%);
 $quotation-border-color: darken($quotation-background-color, $border-color-darken-percentage);
 $quotation-font-color: desaturate(darken($quotation-background-color, 40%), 10%);
 $code-font-backgroung-color: lighten(lavender, 2.5%);
@@ -49,7 +49,7 @@ $table-border-color: $quotation-border-color;
 $table-zebra-color: lighten(ghostwhite, 0.4%);
 $post-metadata-font-color: $header-font-color;
 $post-tag-decoration-color: thistle;
-$info-background-color: desaturate(lighten($page-layout-markup-color, 12%), 0%);
+$info-background-color: desaturate(lighten($page-layout-markup-color, 13%), 0%);
 $info-border-color: darken($info-background-color, $border-color-darken-percentage);
 $info-font-color: desaturate(darken($info-background-color, 50%), 10%);
 $button-font-color: $link-color;

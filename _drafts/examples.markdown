@@ -27,6 +27,9 @@ custom_description: Markup and style examples.
     show_drafts: true
   in _config.yml.
 -->{% endcomment %}
+
+{% include common-links-abbreviations.markdown %}
+
 Text before ToC.
 
 {% include toc.markdown %}
@@ -130,8 +133,8 @@ that can be used to clarify any text.
 
 ## [](#link-definitions){:.slink}Link definitions {#link-definitions}
 
-[`java.lang.Object`]: <https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html>
-[Java SE]: <https://docs.oracle.com/en/java/javase/index.html> "Java Platform, Standard Edition Documentation"
+[`java.lang.Object`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html>
+[Java SE]: <https://docs.oracle.com/en/java/javase/index.html> "Java Platform, Standard Edition Documentation by Oracle"
 This is a link to [Java SE] that has a title, and this one does not [`java.lang.Object`].
 
 ## [](#lists){:.slink}Lists {#lists}
@@ -199,7 +202,7 @@ Figure:
 </figure>
 
 ## [](#code){:.slink}Code {#code}
-Inlined code: `java.lang.Object`, [`java.lang.Object`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/Object.html),
+Inlined code: `java.lang.Object`, [`java.lang.Object`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html),
 `select * from my_table where id > 10`{:.highlight .language-sql}.
 
 `Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.`

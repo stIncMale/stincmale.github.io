@@ -9,6 +9,8 @@ custom_update_date: 2020-05-15T21:07:00−06:00
 custom_keywords: [footage, ocean, loop, cyclic]
 custom_description: Looping CGI videos of ocean.
 ---
+{% include common-links-abbreviations.markdown %}
+
 {% include toc.markdown %}
 
 ## [](#info){:.slink}Footage info {#info}

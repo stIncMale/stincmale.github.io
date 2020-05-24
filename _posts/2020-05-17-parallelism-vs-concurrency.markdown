@@ -5,10 +5,12 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency]
 date: 2020-05-17T10:00:00−06:00
-custom_update_date: 2020-05-21T02:05:00−06:00
+custom_update_date: 2020-05-23T23:34:00−06:00
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
+{% include common-links-abbreviations.markdown %}
+
 *[CRDT]:
 {:data-title="Conflict-Free Replicated Data Type"}
 *[CRDTs]:
@@ -44,8 +46,8 @@ this implies an immodest assumption that I have something meaningful to add to w
 ## [](#parallelism){:.slink}Parallelism {#parallelism}
 <div class="info-block" markdown="1">
 **Parallelism** &mdash; a term referring to
-techniques used to speedup execution by doing *independent* actions on multiple *independently* working processing units at the same physical time[^1],
-a.k.a. simultaneously. Such actions are referred to as being done in parallel.
+techniques used to speedup execution by doing *independent* actions on multiple *independently* working processing units at the same physical time,
+a.k.a. simultaneously[^1]. Such actions are referred to as being done in parallel.
 </div>
 
 This does not mean that the processing units must be completely independent,
@@ -122,7 +124,7 @@ Instructions of a thread in the multithreading execution model are sequential,
 and the result of one instruction may be an operand for an instruction that is ordered after it in the same thread,
 but they may be partially executed in parallel nonetheless.
 
-The instruction set architectures (ISA) of modern CPUs usually follow reduced instruction set computer (RISC) approach.
+Instruction set architectures (ISA) of modern CPUs usually follow reduced instruction set computer (RISC) approach.
 Each instruction is processed in multiple steps common for all instructions and ideally taking one CPU cycle,
 e.g., fetch an instruction from memory, decode the instruction, execute the instruction, access memory, write the result into a register.
 A processing unit works on different steps of different instructions in parallel,
@@ -134,7 +136,7 @@ Instructions still appear to be executed sequentially, just like an assembly lin
 A fun example of concurrent actions from the theory of special relativity.
 
 Consider actions `a` and `b` where `inv(a)`, `res(a)`, `inv(b)`, `res(b)` are physical events, i.e., points in spacetime defined by spacial coordinates and a time coordinate.
-If the spacetime interval between `res(a)` and `inv(b)` is spacelike, then to some observers, that is, in some reference frames, `res(a)` is ordered before `inv(b)`,
+If the spacetime interval between `res(a)` and `inv(b)` is space-like, then to some observers, that is, in some reference frames, `res(a)` is ordered before `inv(b)`,
 which means that to those observers `a` is ordered before `b`. But to other observers `inv(b)` is ordered before `res(a)`,
 which means that for them `a` is not ordered before `b`, i.e., either `b` is ordered before `a`, or `a` and `b` are unordered.
 This effect is called relativity of simultaneity.
@@ -142,14 +144,13 @@ This effect is called relativity of simultaneity.
 Since it is not the case that for all observers either `a` is ordered before `b`, or `b` is ordered before `a`,
 we may conclude that the actions `a` and `b` are concurrent.
 
-[^1]: What we mean exactly when saying "at the same time" with regard to parallelism is not of the essence, because parallelism is about performance, not correctness.
+[^1]: Parallelism is inherently tied to the physical world, just like performance.
+    What we mean exactly when saying "at the same time" / "simultaneously" with regard to parallelism is not of the essence, because parallelism is not about correctness.
     Depending on the situation, it may be adequate to think about simultaneity in terms of Newtonian, a.k.a. absolute, time
     or in terms of Einstein's special or general relativity.
 
-    According to my understanding, mankind does not have an established answer to the question "what is time?".
-    Is it a characteristic emerging only on the macroscopic scale, as a result of how animal brain works and perceives the second law of thermodynamics
-    (it is about entropy, which is a macroscopic statistical measure), or is it a fundamental feature of the Universe?
-    I am not qualified in this area, but I can recommend a few videos of qualified people talking about / discussing this topic:
+    The concept of physical time is not trivial, and I am not qualified in this area,
+    but I can recommend a few videos of qualified people talking about / discussing this topic:
     * [Time Is of the Essence… or Is It?](https://youtu.be/N-NTXoYTvao)\\
     <span class="insignificant">Participants: David Z. Albert, Vijay Balasubramanian, Carlo Rovelli, Lee Smolin; moderator: Jim Holt</span>
     * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\

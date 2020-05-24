@@ -7,6 +7,8 @@ tags: [archived, C#, .NET]
 date: 2008-01-01T00:00:00+00:00
 custom_update_date: 2020-05-13T10:04:00−06:00
 ---
+{% include common-links-abbreviations.markdown %}
+
 There were times when I was learning C# instead of Java.
 This tiny program was written in the beginning of those times and is mentioned in my blog to keep memories.
 

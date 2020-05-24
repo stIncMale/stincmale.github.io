@@ -9,6 +9,8 @@ custom_update_date: 2020-05-15T21:04:00−06:00
 custom_keywords: [tutorial, Photoshop, ice text]
 custom_description: A tutorial about making an ice text with Photoshop.
 ---
+{% include common-links-abbreviations.markdown %}
+
 This tutorial presents a way to make an ice text with Photoshop. 
 I used this technique in the game highlights video [No sense]({% post_url 2011-08-13-no-sense %}).
 

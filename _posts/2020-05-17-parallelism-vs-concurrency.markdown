@@ -43,7 +43,7 @@ this implies an immodest assumption that I have something meaningful to add to w
 
 {% include toc.markdown %}
 
-## [](#parallelism){:.slink}Parallelism {#parallelism}
+## [](#parallelism){:.section-link}Parallelism {#parallelism}
 <div class="info-block" markdown="1">
 **Parallelism** &mdash; a term referring to
 techniques used to speedup execution by doing *independent* actions on multiple *independently* working processing units at the same physical time,
@@ -55,7 +55,7 @@ but rather that they must be able to do at least some parts of their activity in
 
 So parallelism is a concept we may want to use when talking about the *performance* of a system.
 
-## [](#concurrency){:.slink}Concurrency {#concurrency}
+## [](#concurrency){:.section-link}Concurrency {#concurrency}
 Before defining what concurrency is, we need to talk about the order of actions and the lack thereof.
 We may think of an action / operation `a` as a pair of events: an invocation `inv(a)` and the matching response `res(a)`.
 Actions `a` and `b` are ordered or sequential iff either `res(a)` is ordered before `inv(b)`, or `res(b)` is ordered before `inv(a)`.
@@ -84,7 +84,7 @@ let alone that it is often incorrect to assume that there is an absolute physica
 Just like using the word "time" may be misleading, using the words "now", "immediate"
 may also be misleading, see [Disambiguating "now" and "immediate"]({% post_url 2013-08-01-now-immediate %}) for more details.
 
-## [](#source-of-confusion){:.slink}A possible source of confusion {#source-of-confusion}
+## [](#source-of-confusion){:.section-link}A possible source of confusion {#source-of-confusion}
 The concepts of parallelism and concurrency are likely often confused because the corresponding techniques affect each other:
 * Parallel execution introduces a partial lack of order, which means that a system must be prepared to deal with it,
 i.e., it must be designed with concurrency in mind in order to be able to benefit from parallel execution without compromising correctness, a.k.a. safety.
@@ -95,8 +95,8 @@ If a technique that imposes ordering does this in a too coarse-grained manner,
 i.e., imposes ordering not only on conflicting actions, but also on independent actions,
 then such a technique reduces the possible level of parallelism for a given system.
 
-## [](#examples){:.slink}Examples {#examples}
-### [](#pit-digging){:.slink}Digging a pit {#pit-digging}
+## [](#examples){:.section-link}Examples {#examples}
+### [](#pit-digging){:.section-link}Digging a pit {#pit-digging}
 An example of a situation when actions are not done in parallel despite being concurrent.
 
 If people A and B having the same performance were digging a pit together during the same day,
@@ -104,7 +104,7 @@ then their "dig" actions both started in the morning and finished in the evening
 However, if during that day when A was in the pit &mdash; B was resting, and vice versa, then they did not dig the pit in parallel,
 and, therefore, a single person C who has the same performance as either A or B but does not need any rest would have dug a pit of the same size in a day while working alone.
 
-### [](#executing-on-single-processing-unit){:.slink}Executing on a single processing unit {#executing-on-single-processing-unit}
+### [](#executing-on-single-processing-unit){:.section-link}Executing on a single processing unit {#executing-on-single-processing-unit}
 An example showing that we still may have to think about concurrency even if no parallel execution is possible in the system that we are designing.
 
 If we run [PostgreSQL](https://www.postgresql.org/)
@@ -119,7 +119,7 @@ and, therefore, behave differently. If this is not obvious, you may take any of 
 [Serializable Snapshot Isolation (SSI)](https://drkp.net/papers/ssi-vldb12.pdf)<span class="insignificant">&nbsp;by Dan R. K. Ports, Kevin Grittner</span>
 and see that it does not rely on whether transactions are executed in parallel or not, yet shows that without SSI the behavior would have been different.
 
-### [](#instruction-pipelining){:.slink}Instruction pipelining[^4] {#instruction-pipelining}
+### [](#instruction-pipelining){:.section-link}Instruction pipelining[^4] {#instruction-pipelining}
 Instructions of a thread in the multithreading execution model are sequential,
 and the result of one instruction may be an operand for an instruction that is ordered after it in the same thread,
 but they may be partially executed in parallel nonetheless.
@@ -132,7 +132,7 @@ like a car assembly line assembles different parts of different cars simultaneou
 This is called instruction-level parallelism and in terms of latency and throughput, it increases the throughput without affecting the latency.
 Instructions still appear to be executed sequentially, just like an assembly line produces manufactured cars one at a time.
 
-### [](#inherent-concurrency){:.slink}Inherent concurrency {#inherent-concurrency}
+### [](#inherent-concurrency){:.section-link}Inherent concurrency {#inherent-concurrency}
 A fun example of concurrent actions from the theory of special relativity.
 
 Consider actions `a` and `b` where `inv(a)`, `res(a)`, `inv(b)`, `res(b)` are physical events, i.e., points in spacetime defined by spacial coordinates and a time coordinate.

@@ -36,13 +36,13 @@ and a situation where there is a data race but there is no race condition.
 
 {% include toc.markdown %}
 
-## [](#race-condition){:.slink}Race condition {#race-condition}
+## [](#race-condition){:.section-link}Race condition {#race-condition}
 <div class="info-block" markdown="1">
 **Race condition** &mdash; a property of an algorithm (or a program, a system, etc.) manifested in displaying anomalous outcomes / behaviour
 because of unfortunate ordering / relative timing of events.
 </div>
 
-## [](#data-race){:.slink}Data race {#data-race}
+## [](#data-race){:.section-link}Data race {#data-race}
 <div class="info-block" markdown="1">
 **Data race** &mdash; a property of an [execution of a program](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.6).
 According to the JMM, an execution is said to contain a data race if it contains at least two conflicting accesses (reads of or writes to the same variable)
@@ -84,13 +84,13 @@ A phrase "the program has a data race" means that there are executions of the pr
 (hereafter in this post I will refer to an execution allowed by the JMM as just an execution). A phrase "the program / algorithm is racy" means
 that it has a race condition.
 
-## [](#examples){:.slink}Examples {#examples}
+## [](#examples){:.section-link}Examples {#examples}
 I will try to give links to the JMM sections needed to understand the explanations below, but it is still better if the reader is familiar with the JMM.
 If you feel a bit scared reading [the JMM](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4),
 maybe reading [Close Encounters of The Java Memory Model Kind](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
 is going to be more fun.
 
-### [](#race-condition-example){:.slink}Race condition example {#race-condition-example}
+### [](#race-condition-example){:.section-link}Race condition example {#race-condition-example}
 While I could have described an algorithm with a race condition in plain English, I will show a source code of a program in Java
 which has this condition, just to emphasize that data race and race condition do not necessarily imply one another even in Java programs.
 
@@ -158,7 +158,7 @@ For this modified program the JMM allows executions with *only* the following SO
 We hereby presented a proof that all executions of this modified program produce the same result: they print "true",
 hence this program does not have a race condition.
 
-### [](#data-race-example){:.slink}Data race example {#data-race-example}
+### [](#data-race-example){:.section-link}Data race example {#data-race-example}
 
 Let us change the example by getting rid of the `volatile` modifier.
 

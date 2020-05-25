@@ -135,7 +135,7 @@ a {
   &:visited {
   }
 }
-a.slink {//section link
+a.section-link {
   opacity: 0.3;
   color: inherit;
 
@@ -148,7 +148,7 @@ a.slink {//section link
   }
 }
 @media print {
-  a.slink {
+  a.section-link {
     display: none;
   }
 }
@@ -163,6 +163,7 @@ abbr {
     border-bottom: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
   
     &:hover::after {
+      font-family: $base-font-family;
       font-size: $small-font-size;
       font-weight: $font-weight;
       font-variant: normal;

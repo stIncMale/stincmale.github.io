@@ -7,7 +7,7 @@ custom_description: Some lyrics that I like.
 {:.no_toc}
 {% include toc.markdown %}
 
-## [](#if){:.slink}If {#if}
+## [](#if){:.section-link}If {#if}
 If you can keep your head when all about you\\
 Are losing theirs and blaming it on you\\
 If you can trust yourself when all men doubt you,\\
@@ -46,7 +46,7 @@ And - which is more - you'll be a man, my son!
 
 <span class="insignificant">Rudyard Kipling</span>
 
-## [](#my-way){:.slink}My Way {#my-way}
+## [](#my-way){:.section-link}My Way {#my-way}
 And now, the end is near\\
 And so I face the final curtain\\
 My friend, I'll say it clear\\
@@ -95,7 +95,7 @@ Yes, it was my way
 
 <span class="insignificant">Paul Anka, who rewrote "Comme d'habitude" by Claude François and Gilles Thibaut for Frank Sinatra</span>
 
-## [](#spring-is-long-gone){:.slink}Весна давно уж позади {#spring-is-long-gone}
+## [](#spring-is-long-gone){:.section-link}Весна давно уж позади {#spring-is-long-gone}
 Весна давно уж позади,\\
 и лето жаркое далеко.\\
 В осенний вечер не сиди\\

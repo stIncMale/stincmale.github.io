@@ -31,7 +31,7 @@ and the two following great answers:
 
 {% include toc.markdown %}
 
-## [](#now){:.slink}Now {#now}
+## [](#now){:.section-link}Now {#now}
 The notion of "now" seems to be a good enough illusion for everyday life. Let us consider with some rigor what "now" means
 when used with respect to something physical, i.e., the Universe or its part, or something logical, e.g., a data object.
 Having the now- or current state of something, that we will refer to as `X`, implies the two following premises:
@@ -39,7 +39,7 @@ Having the now- or current state of something, that we will refer to as `X`, imp
 * the ability to explore a snapshot of `X` while `X` is not changing, as otherwise our snapshot is not the current, but an outdated one;
 I did not find a better name for this then the contemporaneity premise.
 
-### [](#absolute-time){:.slink}The absolute time premise {#absolute-time}
+### [](#absolute-time){:.section-link}The absolute time premise {#absolute-time}
 <div class="info-block" markdown="1">
 If `X` can be thought of as existing in a single directional timeline which all parts of `X` agree on,
 then this timeline represents **absolute time**.
@@ -71,7 +71,7 @@ and the [specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-
 <q>"The returned value is NOT an atomic snapshot; invocation in the absence of concurrent updates returns an accurate result,
 but concurrent updates that occur while the sum is being calculated might not be incorporated."</q>
 
-### [](#contemporaneity){:.slink}The contemporaneity premise {#contemporaneity}
+### [](#contemporaneity){:.section-link}The contemporaneity premise {#contemporaneity}
 <div class="info-block" markdown="1">
 While the current snapshot `S(t1)` is being explored,
 `X` must not be changing, that is, the state of `X` at any absolute time `t > t1` must be equal to `S(t1)`.
@@ -83,7 +83,7 @@ It is impossible to stop the Universe or its part from continuously changing, wh
 i.e., if the absolute time premise were to hold, such a snapshot would be outdated by definition.
 Preventing a logical system from changing its state is, however, possible.
 
-### [](#now-conclustion){:.slink}Conclusion {#now-conclusion}
+### [](#now-conclustion){:.section-link}Conclusion {#now-conclusion}
 Just like the concept of "now" cannot be used with regard to the Universe or its part,
 unless we think of them within a model that is even more simple than the one provided by the theory of special relativity,
 it can be used with regard to a logical system only if the two aforementioned premises hold for the system,
@@ -91,7 +91,7 @@ which is something that should be accurately thought of before appealing to the 
 
 I may recommend also reading [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
 
-## [](#immediate){:.slink}Immediate {#immediate}
+## [](#immediate){:.section-link}Immediate {#immediate}
 Strictly speaking, the word "immediate" cannot have temporal semantics, despite it is commonly perceived as expressing a temporal quality.
 It may have sound meaning only when applied to ordered elements. The phrase "`y` immediately follows `x`" have the same meaning as the phrase "`y` is ordered immediately after `x`",
 which means that there is no element `z` different from both `x` and `y` such that `x` if ordered before `z` and `z` is ordered before `y`.

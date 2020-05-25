@@ -34,18 +34,17 @@ Text before ToC.
 
 {% include toc.markdown %}
 
-## [](#todo){:.slink}TODO {#todo}
-* Rename slink class to section-link.
+## [](#todo){:.section-link}TODO {#todo}
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
 
-## [](#useful-links){:.slink}Useful links {#useful-links}
+## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
 * [Making Your Website Shareable on LinkedIn](https://www.linkedin.com/help/linkedin/answer/46687/making-your-website-shareable-on-linkedin), [LinkedIn post inspector](https://www.linkedin.com/post-inspector/)
 * comments: <https://jekyllcodex.org/without-plugin/comments/>, <https://aristath.github.io/blog/static-site-comments-using-github-issues-api>, <https://www.bitsgalore.org/2020/03/11/does-microsoft-onedrive-export-large-ZIP-files-that-are-corrupt>
 * [Validate XML against XSD online](https://www.freeformatter.com/xml-validator-xsd.html)
 
-## [](#urls-to-check){:.slink}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
+## [](#urls-to-check){:.section-link}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator
   * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
   * [view-source:http://127.0.0.1:4000/blog/tags/](view-source:http://127.0.0.1:4000/blog/tags/)
@@ -62,12 +61,12 @@ Text before ToC.
   * [https://www.kovalenko.link/assets/css/style.css](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.kovalenko.link%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 <!-- see https://kramdown.gettalong.org/syntax.html#specifying-a-header-id for details -->
-## [](#h2){:.slink}Header `<h2>` {#h2}
-### [](#h3){:.slink}Header `<h3>` {#h3}
-#### [](#h4){:.slink}Header `<h4>` {#h4}
-##### [](#h5){:.slink}Header `<h5>` {#h5}
-###### [](#h6){:.slink}Header `<h6>` {#h6}
-## [](#basic-formatting){:.slink}Basic formatting {#basic-formatting}
+## [](#h2){:.section-link}Header `<h2>` {#h2}
+### [](#h3){:.section-link}Header `<h3>` {#h3}
+#### [](#h4){:.section-link}Header `<h4>` {#h4}
+##### [](#h5){:.section-link}Header `<h5>` {#h5}
+###### [](#h6){:.section-link}Header `<h6>` {#h6}
+## [](#basic-formatting){:.section-link}Basic formatting {#basic-formatting}
 Normal text.
 
 Decimal digits: 0123456789.
@@ -115,7 +114,7 @@ very very very very very very very very very very very very very very very very 
 long text.
 </div>
 
-## [](#abbreviations){:.slink}Abbreviations {#abbreviations}
+## [](#abbreviations){:.section-link}Abbreviations {#abbreviations}
 *[HTML]:
 {:data-title="HyperText Markup Language"}
 *[CSS]:
@@ -131,13 +130,13 @@ These are abbreviations:\\
 HTML, [CSS](https://www.w3.org/Style/CSS/), kramdown\\
 that can be used to clarify any text.
 
-## [](#link-definitions){:.slink}Link definitions {#link-definitions}
+## [](#link-definitions){:.section-link}Link definitions {#link-definitions}
 
 [`java.lang.Object`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html>
 [Java SE]: <https://docs.oracle.com/en/java/javase/index.html> "Java Platform, Standard Edition Documentation by Oracle"
 This is a link to [Java SE] that has a title, and this one does not [`java.lang.Object`].
 
-## [](#lists){:.slink}Lists {#lists}
+## [](#lists){:.section-link}Lists {#lists}
 Normal text.
 1. Ordered list item 1.
 2. Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
@@ -164,11 +163,11 @@ Normal text.
   * Em-dash &mdash; <q>He is afraid of two things &mdash; spiders and senior prom.</q>
 * Ellipsis &hellip; <q>Andrew, can you, um&hellip; never mind.</q>
 
-## [](#footnotes){:.slink}Footnotes {#footnotes}
+## [](#footnotes){:.section-link}Footnotes {#footnotes}
 <!-- see https://kramdown.gettalong.org/syntax.html#footnotes for details -->
 Text with footnotes[^footnoteA] in it[^footnoteB].
 
-## [](#tables){:.slink}Tables {#tables}
+## [](#tables){:.section-link}Tables {#tables}
 Table:
 
 Table column 1 header | Table column 2 header
@@ -185,14 +184,14 @@ cell 21 | cell 22
 cell 31 | Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.
 cell 41 | cell 42
 
-## [](#separator){:.slink}Thematic separators {#separator}
+## [](#separator){:.section-link}Thematic separators {#separator}
 HTML thematic break (horizontal line)
 <hr>
 kramdown thematic break (horizontal line)
 
 ---
 
-## [](#figures){:.slink}Figures {#figures}
+## [](#figures){:.section-link}Figures {#figures}
 Inline image ![Example image]({% link /assets/img/favicon.png %}){:style="border-radius: 20%; border: thin solid lightsteelblue; width: 3em; height: auto;"} with kramdown and inline CSS.
 
 Figure:
@@ -201,7 +200,7 @@ Figure:
   <figcaption>Figure caption.</figcaption>
 </figure>
 
-## [](#code){:.slink}Code {#code}
+## [](#code){:.section-link}Code {#code}
 Inlined code: `java.lang.Object`, [`java.lang.Object`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html),
 `select * from my_table where id > 10`{:.highlight .language-sql}.
 
@@ -374,8 +373,8 @@ public final class MyClass {
 }
 {%- endhighlight -%}
 
-## [](#video){:.slink}Video {#video}
-### [](#video-youtube){:.slink}YouTube {#video-youtube}
+## [](#video){:.section-link}Video {#video}
+### [](#video-youtube){:.section-link}YouTube {#video-youtube}
 
 {% include youtube-video.html content = "YziVpa8oZDg , hqdefault , iframe-ratio-22-15 , Darkwing Duck (intro and outro)" %}
 <br>

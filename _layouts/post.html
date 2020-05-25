@@ -2,7 +2,7 @@
 layout: base
 ---
 <article>
-  <h1><a href="{{ post.url | relative_url }}" class="slink"></a>{{ page.title }}</h1>
+  <h1><a href="{{ post.url | relative_url }}" class="section-link"></a>{{ page.title }}</h1>
   <div class="post-metadata">
     {%- if page.tags.size > 0 -%}
       {%- capture post_tags -%}{{ page.tags | join: site.custom_post_tag_delimiter }}{%- endcapture -%}

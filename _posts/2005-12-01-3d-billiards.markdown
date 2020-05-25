@@ -5,7 +5,8 @@ title: 3D Billiards
 categories: [tech]
 tags: [archived, C++, OpenGL]
 date: 2005-12-01T00:00:00+00:00
-custom_update_date: 2020-05-15T21:02:00−06:00
+custom_post_date: 2005-12
+custom_update_date: 2020-05-25T09:00:02−06:00
 ---
 {% include common-links-abbreviations.markdown %}
 

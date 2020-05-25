@@ -8,9 +8,9 @@
 *[MIPT]:
 {:data-title="Moscow Institute of Physics and Technology"}
 *[CGI]:
-{:data-title="Computer-generated imagery"}
+{:data-title="Computer-Generated Imagery"}
 *[VFX]:
-{:data-title="Visual effects"}
+{:data-title="Visual Effects"}
 *[UT]:
 {:data-title="Unreal Tournament"}
 *[UT2004]:
@@ -55,3 +55,7 @@
 {:data-title="Reduced Instruction Set Computer"}
 *[OS]:
 {:data-title="Operating System"}
+*[LDAP]:
+{:data-title="Lightweight Directory Access Protocol"}
+*[JDBC]:
+{:data-title="Java Database Connectivity"}

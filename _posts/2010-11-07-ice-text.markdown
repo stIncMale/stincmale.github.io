@@ -5,7 +5,7 @@ title: Ice text in Adobe Photoshop CS3
 categories: [cgi-vfx]
 tags: [tutorial]
 date: 2010-11-07T12:00:00+03:00
-custom_update_date: 2020-05-15T21:04:00−06:00
+custom_update_date: 2020-05-25T09:00:05−06:00
 custom_keywords: [tutorial, Photoshop, ice text]
 custom_description: A tutorial about making an ice text with Photoshop.
 ---

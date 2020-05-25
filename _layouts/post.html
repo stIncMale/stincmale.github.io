@@ -8,9 +8,9 @@ layout: base
       {%- capture post_tags -%}{{ page.tags | join: site.custom_post_tag_delimiter }}{%- endcapture -%}
       {%- include post-tags.html content = post_tags -%}
     {%- endif -%}
-    {%- if page.date -%}
-      <p>Posted on {{ page.date | date: "%Y-%m-%d" }}, last updated on {{ page.custom_update_date | date: "%Y-%m-%d" }}</p>
-    {%- endif -%}
+    {%- assign formatted_date = page.date | date: "%Y-%m-%d" -%}
+    {%- assign post_date = page.custom_post_date | default: formatted_date -%}
+    <p>Posted on {{ post_date }}, last updated on {{ page.custom_update_date | date: "%Y-%m-%d" }}</p>
   </div>
   {{ content }}
 </article>

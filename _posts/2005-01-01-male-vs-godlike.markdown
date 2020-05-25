@@ -5,7 +5,8 @@ title: Male vs Godlike
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2005-01-01T12:00:00+00:00
-custom_update_date: 2020-05-15T21:01:00−06:00
+custom_post_date: 2005
+custom_update_date: 2020-05-25T09:00:01−06:00
 custom_keywords: [game highlights, frag highlights, Unreal Tournament 2004, UT2004, Unreal Tournament, UT]
 ---
 {% include common-links-abbreviations.markdown %}

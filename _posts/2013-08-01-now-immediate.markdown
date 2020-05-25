@@ -4,8 +4,8 @@ slug: now-immediate
 title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency]
-date: 2013-08-01T00:00:00+00:00
-custom_update_date: 2020-05-24T23:50:00−06:00
+date: 2013-08-21T00:00:00+03:00
+custom_update_date: 2020-05-25T09:00:13−06:00
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: If you imply temporal semantics when using the words "now", "immediate" while reasoning about concurrency, you are probably doing something wrong.
 ---

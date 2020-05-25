@@ -5,7 +5,8 @@ title: NetCracker SportFest
 categories: [cgi-vfx]
 tags: []
 date: 2011-09-01T12:00:00+03:00
-custom_update_date: 2020-05-15T21:09:00−06:00
+custom_post_date: 2011-09
+custom_update_date: 2020-05-25T09:00:11−06:00
 ---
 {% include common-links-abbreviations.markdown %}
 

@@ -33,7 +33,9 @@ permalink: /blog/tags/
               <td class="post-link"><a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a></td>
               <td class="post-date">
                 <div class="post-metadata">
-                  {{ post.date | date: "%Y-%m-%d" }}
+                  {%- assign formatted_date = post.date | date: "%Y-%m-%d" -%}
+                  {%- assign post_date = post.custom_post_date | default: formatted_date -%}
+                  {{ post_date }}
                 </div>
               </td>
             </tr>

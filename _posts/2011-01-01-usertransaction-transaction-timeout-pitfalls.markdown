@@ -1,11 +1,12 @@
 ---
 layout: post
-slug: usertransaction-settransactiontimeout-pitfalls
+slug: usertransaction-transaction-timeout-pitfalls
 title: Pitfalls with <a href="https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#setTransactionTimeout-int-"><code>UserTransaction.setTransactionTimeout</code></a>
 categories: [tech]
 tags: [Java, Jakarta EE]
 date: 2011-01-01T00:00:00+00:00
-custom_update_date: 2020-05-23T23:31:00−06:00
+custom_post_date: 2011
+custom_update_date: 2020-05-25T09:00:07−06:00
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---

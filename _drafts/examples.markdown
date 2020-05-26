@@ -35,6 +35,7 @@ Text before ToC.
 {% include toc.markdown %}
 
 ## [](#todo){:.section-link}TODO {#todo}
+* Update https://github.com/stIncMale/sandbox/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampTest.java#L27
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
 
@@ -43,6 +44,7 @@ Text before ToC.
 * [Making Your Website Shareable on LinkedIn](https://www.linkedin.com/help/linkedin/answer/46687/making-your-website-shareable-on-linkedin), [LinkedIn post inspector](https://www.linkedin.com/post-inspector/)
 * comments: <https://jekyllcodex.org/without-plugin/comments/>, <https://aristath.github.io/blog/static-site-comments-using-github-issues-api>, <https://www.bitsgalore.org/2020/03/11/does-microsoft-onedrive-export-large-ZIP-files-that-are-corrupt>
 * [Validate XML against XSD online](https://www.freeformatter.com/xml-validator-xsd.html)
+* [All HTML named entities](https://dev.w3.org/html5/html-author/charref)
 
 ## [](#urls-to-check){:.section-link}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator

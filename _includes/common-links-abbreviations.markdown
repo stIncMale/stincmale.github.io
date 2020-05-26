@@ -1,5 +1,6 @@
 [MIPT]: <https://mipt.ru/english/>
 [OpenJDK]: <https://openjdk.java.net/>
+[Junit 5]: <https://junit.org/junit5/>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 
@@ -27,8 +28,12 @@
 {:data-title="Application Programming Interface"}
 *[Java SE]:
 {:data-title="Java Platform, Standard Edition"}
+*[JSR]:
+{:data-title="Java Specification Request"}
 *[JDK]:
 {:data-title="Java Development Kit"}
+*[JVM]:
+{:data-title="Java Virtual Machine"}
 *[JLS]:
 {:data-title="Java Language Specification"}
 *[JMM]:
@@ -57,5 +62,11 @@
 {:data-title="Operating System"}
 *[LDAP]:
 {:data-title="Lightweight Directory Access Protocol"}
+*[DB]:
+{:data-title="Database"}
 *[JDBC]:
 {:data-title="Java Database Connectivity"}
+*[SQL]:
+{:data-title="Structured Query Language"}
+*[POSIX]:
+{:data-title="Portable Operating System Interface"}

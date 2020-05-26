@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency]
 date: 2013-08-21T00:00:00+03:00
-custom_update_date: 2020-05-25T09:00:13−06:00
+custom_update_date: 2020-05-26T10:41:00−06:00
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: If you imply temporal semantics when using the words "now", "immediate" while reasoning about concurrency, you are probably doing something wrong.
 ---
@@ -36,7 +36,7 @@ The notion of "now" seems to be a good enough illusion for everyday life. Let us
 when used with respect to something physical, i.e., the Universe or its part, or something logical, e.g., a data object.
 Having the now- or current state of something, that we will refer to as `X`, implies the two following premises:
 * existence of absolute time, which allows us to talk about snapshots of `X`;
-* the ability to explore a snapshot of `X` while `X` is not changing, as otherwise our snapshot is not the current, but an outdated one;
+* the ability to explore a snapshot of `X` while `X` is not changing, as otherwise our snapshot is not the current but an outdated one;
 I did not find a better name for this then the contemporaneity premise.
 
 ### [](#absolute-time){:.section-link}The absolute time premise {#absolute-time}
@@ -51,12 +51,12 @@ If there is absolute time, we can define what a snapshot is.
 **Snapshot** &mdash; the state `S(t)` of `X` at a point `t` on its absolute timeline.
 </div>
 
-According to the theory of special relativity, there is no absolute timeline in which the Universe exists.
+According to the theory of special relativity, there is no absolute time in which the Universe exists.
 For any event, i.e., a point in spacetime defined by spacial coordinates and a time coordinate,
 there are infinitely many events distanced from it with a space-like interval.
 Such events are seen as simultaneous by some observers and are not seen as simultaneous by other observers.
 
-What if we are talking about a logical system, may it have an absolute timeline? &mdash; it definitely may, for example:
+What if we are talking about a logical system, may it have absolute time? &mdash; it definitely may, for example:
 * any sequential object, that is, a data object that is accessed only sequentially, may be thought of as having absolute logical time;
 * depending on the consistency model of a [concurrent] object, that is, a data object that may be accessed concurrently,
   we may be able to imagine it existing in absolute logical time.

@@ -50,4 +50,3 @@ I cannot see the menu/fonts in the game. | Maybe the required font is not instal
 ## [](#links){:.section-link}Download links {#links}
 * [unpack and play](https://docs.google.com/leaf?id=0B_4a-5REfZ5jMGIxNzFkMWYtMGVmNy00NDZiLWJhOTAtY2U1ZDU3ODU4MDIz&sort=name&layout=list&num=50)
 * [the source code for Microsoft Visual C++ 6 with all in-game assets](https://docs.google.com/leaf?id=0B_4a-5REfZ5jMzNkZWU2NGItYTFhOS00ODkxLWExYTUtNDk1MGVmODUyMDlh&sort=name&layout=list&num=50)
- 

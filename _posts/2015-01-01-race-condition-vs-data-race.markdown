@@ -248,4 +248,4 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
     The phrase "[OpenJDK JDK](https://openjdk.java.net/projects/jdk/)" means "a JDK developed by the OpenJDK community".
     We may see usage of this phrase, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):
     <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)"</q>.
-    I find this naming confusing. 
+    I find this naming confusing.

@@ -1,24 +1,33 @@
 ---
 layout: null
 ---
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">{%- comment -%}<!-- Atom syndication format https://tools.ietf.org/html/rfc4287 -->{%- endcomment -%}
   {%- comment -%}<!-- I am using tag URIs https://tools.ietf.org/html/rfc4151 as IDs -->{%- endcomment -%}
-  {%- capture id_prefix -%}tag:kovalenko.link,{{ site.custom_feed_id_iri_inception_year }}:{%- endcapture -%}
-  <id>{{ id_prefix }}blog</id>
+  {%- capture id_prefix -%}tag:kovalenko.link,{{ site.custom_feed_id_iri_inception_year }}:/{%- endcapture -%}
+  <id>{{ id_prefix }}</id>
   <link rel="self" type="application/atom+xml" href="{{ page.url | absolute_url }}"/>
   <link rel="alternate" type="text/html" href="{{ "" | absolute_url }}"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <title type="text">{{ site.custom_plaintext_title | xml_escape }}</title>
-  <subtitle type="text">Latest blog posts</subtitle>
+  <subtitle type="text">Software engineering articles/notes/thoughts and occasionally other stuff.</subtitle>
+  {%- capture icon -%}{% link assets/img/favicon.png %}{%- endcapture -%}
+  <icon>{{ icon | absolute_url}}</icon>
+  {%- capture logo -%}{% link assets/img/site-logo.png %}{%- endcapture -%}
+  <logo>{{ logo | absolute_url}}</logo>
   {%- for post in site.posts limit: 50 -%}
     {%- unless post.draft -%}
       <entry>
         <id>{{ id_prefix }}blog/{{ post.slug }}</id>
-        <link rel="alternate" type="text/html" href="{{ post.url | absolute_url }}"/>
+        {%- capture post_url -%}{{ post.url | absolute_url }}{%- endcapture -%}
+        <link rel="alternate" type="text/html" href="{{ post_url }}"/>
         <published>{{ post.date | date_to_xmlschema }}</published>
         <updated>{{ post.custom_update_date | date_to_xmlschema }}</updated>
+        <category term="blog" label="blog"></category>
+        <category term="{{ post.categories | first }}" label="{{ post.categories | first }}"></category>
         <title type="html">{{ post.title | xml_escape }}</title>
+        <summary type="html">{{ post.custom_description | xml_escape }}</summary>
+        <content type="text/html" src="{{ post_url }}"></content>
         <author>
           <name>{{ site.custom_author }}</name>
           <email>{{ site.custom_author_email }}</email>

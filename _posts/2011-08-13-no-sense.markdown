@@ -5,12 +5,13 @@ title: No sense
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2011-08-13T12:00:00+03:00
-custom_update_date: 2020-05-25T09:00:10−06:00
+custom_update_date: 2020-05-28T17:00:08−06:00
 custom_keywords: [game highlights, frag highlights, defrag, Unreal Tournament 3, UT3, Unreal Tournament, UT]
+custom_description: A defrag & game highlights Unreal Tournament 3 video.
 ---
 {% include common-links-abbreviations.markdown %}
 
-This is a defrag & game highlights game video.
+This is a defrag & game highlights Unreal Tournament 3 video.
 I spent several years performing all the tricks and creating this video, and I am very pleased with the result!
 This video contains unique tricks that UT3 players have hardly ever performed or even seen before.
 All the tricks were performed with standard game physics and speed, the only "cheat" was using `god` sometimes to achieve invulnerability.

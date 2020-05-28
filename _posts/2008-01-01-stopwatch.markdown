@@ -6,7 +6,8 @@ categories: [tech]
 tags: [archived, C#, .NET]
 date: 2008-01-01T00:00:00+00:00
 custom_post_date: 2008
-custom_update_date: 2020-05-25T09:00:04−06:00
+custom_update_date: 2020-05-28T17:00:04−06:00
+custom_description: A tiny program I wrote when I was learning C#.
 ---
 {% include common-links-abbreviations.markdown %}
 

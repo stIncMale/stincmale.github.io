@@ -8,6 +8,8 @@
 {:data-title="if and only if"}
 *[MIPT]:
 {:data-title="Moscow Institute of Physics and Technology"}
+*[WTFPL]:
+{:data-title="Do What The Fuck You Want To Public License"}
 *[CGI]:
 {:data-title="Computer-Generated Imagery"}
 *[VFX]:

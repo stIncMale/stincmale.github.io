@@ -6,7 +6,8 @@ categories: [cgi-vfx]
 tags: []
 date: 2011-09-01T12:00:00+03:00
 custom_post_date: 2011-09
-custom_update_date: 2020-05-25T09:00:11−06:00
+custom_update_date: 2020-05-28T17:00:09−06:00
+custom_description: A short creative video showcasing some photos from NetCracker SportFest 2011.
 ---
 {% include common-links-abbreviations.markdown %}
 

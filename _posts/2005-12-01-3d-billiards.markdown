@@ -6,7 +6,8 @@ categories: [tech]
 tags: [archived, C++, OpenGL]
 date: 2005-12-01T00:00:00+00:00
 custom_post_date: 2005-12
-custom_update_date: 2020-05-25T09:00:02−06:00
+custom_update_date: 2020-05-28T17:00:02−06:00
+custom_description: A computer science project made by students at MIPT.
 ---
 {% include common-links-abbreviations.markdown %}
 

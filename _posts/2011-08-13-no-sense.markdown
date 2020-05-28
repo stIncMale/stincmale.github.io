@@ -5,7 +5,7 @@ title: No sense
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2011-08-13T12:00:00+03:00
-custom_update_date: 2020-05-28T17:00:08−06:00
+custom_update_date: 2020-05-28T17:54:08−06:00
 custom_keywords: [game highlights, frag highlights, defrag, Unreal Tournament 3, UT3, Unreal Tournament, UT]
 custom_description: A defrag & game highlights Unreal Tournament 3 video.
 ---
@@ -33,7 +33,7 @@ Music:
 
 * **UX.Loki** - Creation of monochromatic UT3 maps.
 
-These&#x1f446; guys really saved me from doing a lot of work!
+These &#x1f446; guys really saved me from doing a lot of work!
 
 * **Rypel** - Creation of RypelCam that provides a powerful ability to take cool shots with free in-game camera.
 It would have been impossible to create this video without RypelCam for UT3.

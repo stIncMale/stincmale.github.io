@@ -49,7 +49,6 @@ Text before ToC.
 ## [](#urls-to-check){:.section-link}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator
   * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
-  * [view-source:http://127.0.0.1:4000/blog/tags/](view-source:http://127.0.0.1:4000/blog/tags/)
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
   * [https://www.kovalenko.link/lyrics](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Flyrics)
   * [https://www.kovalenko.link/blog/tags/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags%2F)

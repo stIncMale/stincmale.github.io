@@ -1,12 +1,12 @@
 ---
 layout: post
 slug: jdbc-timestamp-pitfalls
-title: Pitfalls with JDBC <a href="https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setTimestamp(int,java.sql.Timestamp)"><code>PreparedStatement.setTimestamp</code></a>/<a href="https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getTimestamp(int)"><code>ResultSet.getTimestamp</code></a>
+title: Pitfalls with JDBC <code>PreparedStatement<wbr>.setTimestamp</code>/<wbr><code>ResultSet<wbr>.getTimestamp</code>
 categories: [tech]
 tags: [Java, JDBC]
 date: 2012-01-01T00:00:00+00:00
 custom_post_date: 2012
-custom_update_date: 2020-05-26T10:40:00−06:00
+custom_update_date: 2020-05-28T17:45:00−06:00
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject​, getObject​]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---

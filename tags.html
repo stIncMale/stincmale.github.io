@@ -30,7 +30,7 @@ permalink: /blog/tags/
         <tbody>
           {%- for post in posts -%}
             <tr class="clickable" onclick="window.location='{{ post.url }}'">
-              <td class="post-link"><a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a></td>
+              <td class="post-link"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
               <td class="post-date">
                 <div class="post-metadata">
                   {%- assign formatted_date = post.date | date: "%Y-%m-%d" -%}

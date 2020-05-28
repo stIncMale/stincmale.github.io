@@ -15,7 +15,7 @@ tags: ["RFC3986-unreserved-characters-may-be-encoded__-.~", "RFC3986-reserved-ch
 # These dates must be specified in the RFC 3339 (https://tools.ietf.org/html/rfc3339) format,
 # e.g. 1985-04-12T23:20:50.52Z or 2020-04-24T20:08:00−06:00 because they are used in Atom feed.
 date: 2020-04-26T12:00:00+00:00
-custom_update_date: 2020-05-13T10:00:00−06:00
+custom_update_date: 2020-05-28T10:57:00−06:00
 custom_keywords: [keyword1, keyword2]
 custom_description: Markup and style examples.
 ---
@@ -73,7 +73,7 @@ Normal text.
 
 Decimal digits: 0123456789.
 
-Unicode character by hexadecimal code point: &#x01f4af; (HUNDRED POINTS SYMBOL, U+01f4af).
+Unicode character by hexadecimal code point: &#x01f4af; (`HUNDRED POINTS SYMBOL`, `U+01f4af`).
 
 Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very

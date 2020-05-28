@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency]
 date: 2013-08-21T00:00:00+03:00
-custom_update_date: 2020-05-26T10:41:00−06:00
+custom_update_date: 2020-05-28T11:02:00−06:00
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: If you imply temporal semantics when using the words "now", "immediate" while reasoning about concurrency, you are probably doing something wrong.
 ---
@@ -83,14 +83,6 @@ It is impossible to stop the Universe or its part from continuously changing, wh
 i.e., if the absolute time premise were to hold, such a snapshot would be outdated by definition.
 Preventing a logical system from changing its state is, however, possible.
 
-### [](#now-conclustion){:.section-link}Conclusion {#now-conclusion}
-Just like the concept of "now" cannot be used with regard to the Universe or its part,
-unless we think of them within a model that is even more simple than the one provided by the theory of special relativity,
-it can be used with regard to a logical system only if the two aforementioned premises hold for the system,
-which is something that should be accurately thought of before appealing to the concept of "now".
-
-I may recommend also reading [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
-
 ## [](#immediate){:.section-link}Immediate {#immediate}
 Strictly speaking, the word "immediate" cannot have temporal semantics, despite it is commonly perceived as expressing a temporal quality.
 It may have sound meaning only when applied to ordered elements. The phrase "`y` immediately follows `x`" have the same meaning as the phrase "`y` is ordered immediately after `x`",
@@ -109,6 +101,15 @@ then the duration of each operation in such a sequential history stops affecting
 and therefore we may imagine that operations take effect instantaneously.
 I cannot speak for others, but to me, informal remarks in articles about concurrency or distributed systems that appeal to words with temporal semantics,
 introduce confusion instead of helping to understand the concept being explained.
+
+## [](#conclustion){:.section-link}Conclusion {#conclusion}
+Just like the concept of "now" can be used with regard to the Universe or its part
+only if we think of them within a model that is even more simple than the one provided by the theory of special relativity,
+it can be used with regard to a logical system only if the two aforementioned premises hold for the system,
+which is something that should be accurately thought of before appealing to the concept of "now".
+If you imply temporal semantics when using the words "now", "immediate" while reasoning about concurrency, you are probably doing something wrong.
+
+I may recommend also reading [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
 
 [^1]: The word "atomic" is overloaded: it is used both as a synonym of being linearizable (by the way, a `volatile` field in Java is a linearizable register)
     and as the atomicity property in ACID, which is about either committing all actions bundled together in a transaction, or ensuring that none of them happened.

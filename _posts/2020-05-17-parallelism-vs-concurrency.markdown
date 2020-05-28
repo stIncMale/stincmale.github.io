@@ -5,9 +5,9 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency]
 date: 2020-05-17T10:00:00−06:00
-custom_update_date: 2020-05-25T09:00:15−06:00
+custom_update_date: 2020-05-28T11:01:00−06:00
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
-custom_description: Parallelism &mdash; &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
+custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
 {% include common-links-abbreviations.markdown %}
 

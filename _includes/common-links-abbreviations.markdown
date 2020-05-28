@@ -69,4 +69,12 @@
 *[SQL]:
 {:data-title="Structured Query Language"}
 *[POSIX]:
-{:data-title="Portable Operating System Interface"}
+{:data-title="Portable Operating System Interface for Computer Environments"}
+*[RFC]:
+{:data-title="Request for Comments"}
+*[HTML]:
+{:data-title="Hypertext Markup Language"}
+*[IANA]:
+{:data-title="Internet Assigned Numbers Authority"}
+*[UTF]:
+{:data-title="UCS Transformation Format"}

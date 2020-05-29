@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java]
 date: 2015-01-01T00:00:00+00:00
 custom_post_date: 2015
-custom_update_date: 2020-05-25T09:00:14−06:00
+custom_update_date: 2020-05-28T18:12:00−06:00
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -242,7 +242,7 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
     * obeys the [`final` field semantics](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.5),
     * does not display [word tearing](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.6).
 
-[^4]: Here we are ignoring any shared variables used inside `ForkJoinPool.commonPool().execute(DataRaceExample::raiseFlag)`{:.highlight .language-java} without loss of generality.
+[^4]: Here we are ignoring any shared variables used inside <code>ForkJoinPool.commonPool()<wbr>.execute(<wbr>DataRaceExample::raiseFlag)</code> without loss of generality.
 
 [^5]: [OpenJDK] is a community which goal is developing an implementation of Java SE specification.
     The phrase "[OpenJDK JDK](https://openjdk.java.net/projects/jdk/)" means "a JDK developed by the OpenJDK community".

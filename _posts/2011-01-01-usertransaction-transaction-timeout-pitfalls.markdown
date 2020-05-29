@@ -6,7 +6,7 @@ categories: [tech]
 tags: [Java, Jakarta EE]
 date: 2011-01-01T00:00:00+00:00
 custom_post_date: 2011
-custom_update_date: 2020-05-28T17:44:00−06:00
+custom_update_date: 2020-05-28T18:05:00−06:00
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---
@@ -32,8 +32,11 @@ Following is the code provided as an example where I experienced the described u
 
 ```java
 userTransaction.setTransactionTimeout(10);
-if (myBeanWithContainerManagedTransactions.checkSomething(2)) {//checkSomething starts a new transaction with the timeout 2 seconds
-  userTransaction.begin();//instead of the expected timeout of 10 seconds, this call starts a transaction with the timeout of 2 seconds
+//checkSomething starts a new transaction with the timeout 2 seconds
+if (myBeanWithContainerManagedTransactions.checkSomething(2)) {
+  /* Instead of the expected timeout of 10 seconds,
+   * this call starts a transaction with the timeout of 2 seconds.*/
+  userTransaction.begin();
 }
 ```
 

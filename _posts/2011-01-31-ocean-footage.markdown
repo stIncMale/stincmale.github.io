@@ -5,7 +5,7 @@ title: Ocean footage
 categories: [cgi-vfx]
 tags: [footage]
 date: 2011-01-31T12:00:00+03:00
-custom_update_date: 2020-05-25T09:00:09−06:00
+custom_update_date: 2020-06-02T21:42:00−06:00
 custom_keywords: [footage, ocean, loop, cyclic]
 custom_description: Looping CGI videos of ocean.
 ---
@@ -23,6 +23,10 @@ Each video is cyclic with 10 seconds (250 frames) period, so you can have a seam
 `frame height` | 1536pixels
 `pixel aspect ratio (PAR)` | 1:1
 `display aspect ratio (DAR)` | 4:3
+
+## [](#license){:.section-link}License {#license}
+All the videos below and the After Effects project are licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/),
+a.k.a. Public Domain Dedication.
 
 ## [](#links){:.section-link}Previews and download links {#links}
 [Adobe After Effects CS3 project](https://docs.google.com/leaf?id=0B_4a-5REfZ5jNWYwMjI0ZGUtOTM5MS00Yzg2LWExNjItNDU2Yzg0ZGQ3OGRk&hl=en)

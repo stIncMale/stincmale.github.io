@@ -117,7 +117,7 @@ long text.
 
 ## [](#abbreviations){:.section-link}Abbreviations {#abbreviations}
 *[HTML]:
-{:data-title="HyperText Markup Language"}
+{:data-title="Hypertext Markup Language"}
 *[CSS]:
 {:data-title="Cascading Style Sheets"}
 *[kramdown]:

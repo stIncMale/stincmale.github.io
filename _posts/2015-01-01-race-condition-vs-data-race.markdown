@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java]
 date: 2015-01-01T00:00:00+00:00
 custom_post_date: 2015
-custom_update_date: 2020-05-28T18:12:00−06:00
+custom_update_date: 2020-06-04T20:24:00−06:00
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -235,7 +235,7 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
     either by accessing a [`volatile` field](https://docs.oracle.com/javase/specs/jls/se14/html/jls-8.html#jls-8.3.1.4)
     or by using [`VarHandle.AccessMode.GET_VOLATILE`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#GET_VOLATILE)/<wbr>[`VarHandle.AccessMode.SET_VOLATILE`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#SET_VOLATILE).
 
-[^3]: An execution IS be allowed by the JMM iff it
+[^3]: An execution is allowed by the JMM iff it
     * is [well-formed](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.7),
     * satisfies the [causality requirements](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.8),
     * satisfies the [requirements for observable behavior](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.9),

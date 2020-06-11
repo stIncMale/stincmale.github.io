@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T00:00:00+03:00
-custom_update_date: 2020-06-11T01:14:00−06:00
+custom_update_date: 2020-06-11T15:51:00−06:00
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: If you imply temporal semantics when using the words &quot;now&quot;/&quot;immediate&quot; while reasoning about concurrency, you are probably doing something wrong.
 ---
@@ -37,7 +37,7 @@ when used with respect to something physical, i.e., the Universe or its part, or
 Having the now- or current state of something, that we will refer to as `X`, implies the two following premises:
 * existence of absolute time, which allows us to talk about snapshots of `X`;
 * the ability to explore a snapshot of `X` while `X` is not changing, as otherwise our snapshot is not the current but an outdated one;
-I did not find a better name for this then the contemporaneity premise.
+I did not find a better name for this than the contemporaneity premise.
 
 ### [](#absolute-time){:.section-link}The absolute time[^1] premise {#absolute-time}
 <div class="info-block" markdown="1">
@@ -66,7 +66,7 @@ What if we are talking about a logical system, may it have absolute time? &mdash
 But do not get too excited &mdash; there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
 exist in different timelines. [`LongAdder`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
 from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/index.html)
-is an example of a simple concurrent object with no absolute timeline and therefore no snapshots,
+is an example of a simple concurrent object with no absolute timeline and, therefore, no snapshots,
 and the [specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html#sum()) is explicit about this:
 <q>"The returned value is NOT an atomic snapshot; invocation in the absence of concurrent updates returns an accurate result,
 but concurrent updates that occur while the sum is being calculated might not be incorporated."</q>

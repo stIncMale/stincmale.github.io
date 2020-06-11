@@ -7,7 +7,8 @@ div.iframe-margins {
     display: none;
   }
 
-  .print-iframe-youtube-video-substitute {
+  .print-iframe-youtube-video-substitute,
+  .print-iframe-substitute {
     > a {
       display: inline-block;
       width: 4em;
@@ -15,16 +16,23 @@ div.iframe-margins {
       background-size: contain;
       background-repeat: no-repeat;
       border: $border-widthstyle $page-layout-markup-color;
-      vertical-align: baseline;
+      vertical-align: middle;
 
       &:after {
         display: none;
       }
     }
   }
+  .print-iframe-substitute {
+    > a {
+      width: 2em;
+      height: 2em;
+    }
+  }
 }
 @media not print {
-  .print-iframe-youtube-video-substitute {
+  .print-iframe-youtube-video-substitute,
+  .print-iframe-substitute {
     display: none;
   }
 }
@@ -37,6 +45,11 @@ div.iframe-ratio-16-9 {//this element should be inside div.iframe-margins
   position: relative;
   overflow: hidden;
   padding-top: 56.25%;//16:9 aspect ratio (9 / 16 = 0.5625)
+}
+div.iframe-ratio-480-299 {//this element should be inside div.iframe-margins
+  position: relative;
+  overflow: hidden;
+  padding-top: 62.2917%;//480:299 aspect ratio (299 / 480 = 0.622917)
 }
 div.iframe-ratio-22-15 {//this element should be inside div.iframe-margins
   position: relative;

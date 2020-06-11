@@ -40,6 +40,8 @@
 {:data-title="Java Language Specification"}
 *[JMM]:
 {:data-title="Java Memory Model"}
+*[JAAS]:
+{:data-title="Java Authentication and Authorization Service"}
 *[HB]:
 {:data-title="Happens-Before"}
 *[SO]:
@@ -80,3 +82,5 @@
 {:data-title="Internet Assigned Numbers Authority"}
 *[UTF]:
 {:data-title="UCS Transformation Format"}
+*[HTTP]:
+{:data-title="Hypertext Transfer Protocol"}

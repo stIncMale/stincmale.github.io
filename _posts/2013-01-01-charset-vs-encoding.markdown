@@ -3,10 +3,10 @@ layout: post
 slug: charset-vs-encoding
 title: Charset vs. encoding
 categories: [tech]
-tags: []
+tags: [disambiguation]
 date: 2013-01-01T00:00:00+00:00
 custom_post_date: 2013
-custom_update_date: 2020-05-28T11:00:00−06:00
+custom_update_date: 2020-06-11T01:13:00−06:00
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -37,7 +37,7 @@ I have always been discouraged by the fact that the words "charset" and "encodin
 * The [XML specification](https://www.w3.org/TR/xml/) seems to do a similar thing, only it specifies a declaration named `encoding` instead of `charset`,
 but [recommends](https://www.w3.org/TR/xml/#charencoding) the names of [IANA charsets](https://www.iana.org/assignments/character-sets/character-sets.xhtml) to be specified as values:
 <q>"It is recommended that character encodings registered (as charsets) with the Internet Assigned Numbers Authority, other than those just listed,
-be referred to using their registered names&hellip;"</q>
+be referred to using their registered names"</q>.
 
 My patience burst, and I decided to dive into the matter.
 This post is essentially a version of the [Unicode Character Encoding Model](https://unicode.org/reports/tr17/) shortened and creatively retold by me,
@@ -48,7 +48,7 @@ I also recommend reading the article [The Absolute Minimum Every Software Develo
 
 ## [](#cm){:.section-link}Character map {#cm}
 <div class="info-block" markdown="1">
-[**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps), a.k.a. [**charset**](https://tools.ietf.org/html/rfc2978#section-1.3), or character set &mdash;
+[**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps), a.k.a. [**charset**](https://tools.ietf.org/html/rfc2978#section-1.3) &mdash;
 a mapping from a sequence of members of an [abstract character repertoire (ACR)](https://www.unicode.org/reports/tr17/#Repertoire) to a sequence of bytes.
 
 [CM](https://www.unicode.org/reports/tr17/#CharacterMaps) = [coded character set (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet) + [character encoding form (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm) + [character encoding scheme (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)
@@ -93,7 +93,7 @@ For example, the UTF-8 CEF is a variable-width encoding form that represents cod
 
 ### [](#ces){:.section-link}Character encoding scheme {#ces}
 <div class="info-block" markdown="1">
-[Character encoding scheme (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme) &mdash;
+[**Character encoding scheme** (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme) &mdash;
 a reversible transformation of sequences of code units to sequences of bytes.
 </div>
 

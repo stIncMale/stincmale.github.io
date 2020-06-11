@@ -1,0 +1,12 @@
+<div class="iframe-margins">
+  <div class="iframe-ratio-480-299">
+    <iframe src="https://docs.google.com/presentation/d/e/{{ include.id }}/embed?start=false&loop=false&delayms=60000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  </div>
+</div>
+<figure class="print-iframe-substitute">
+  {%- capture iframe_url -%}
+    https://docs.google.com/presentation/d/e/{{ include.id }}/pub?start=false&loop=false&delayms=60000
+  {%- endcapture -%}
+  <a href="{{ iframe_url }}" style="text-align: center;">&#x1f517;</a>
+  <span><a href="{{ iframe_url }}">{{ include.title }}</a></span>
+</figure>

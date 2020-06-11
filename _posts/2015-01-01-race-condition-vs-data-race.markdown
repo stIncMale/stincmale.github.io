@@ -3,10 +3,10 @@ layout: post
 slug: race-condition-vs-data-race
 title: Race condition vs. data race
 categories: [tech]
-tags: [concurrency, Java]
+tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T00:00:00+00:00
 custom_post_date: 2015
-custom_update_date: 2020-06-04T20:24:00−06:00
+custom_update_date: 2020-06-11T01:16:00−06:00
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---

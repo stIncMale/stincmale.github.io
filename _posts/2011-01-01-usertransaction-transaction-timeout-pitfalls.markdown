@@ -3,10 +3,10 @@ layout: post
 slug: usertransaction-transaction-timeout-pitfalls
 title: Pitfalls with <code>UserTransaction<wbr>.setTransactionTimeout</code>
 categories: [tech]
-tags: [Java, Jakarta EE]
+tags: [Jakarta EE, Java]
 date: 2011-01-01T00:00:00+00:00
 custom_post_date: 2011
-custom_update_date: 2020-05-28T18:05:00−06:00
+custom_update_date: 2020-06-11T01:07:00−06:00
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---

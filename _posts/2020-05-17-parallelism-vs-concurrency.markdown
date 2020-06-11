@@ -3,9 +3,9 @@ layout: post
 slug: parallelism-vs-concurrency
 title: Parallelism vs. concurrency
 categories: [tech]
-tags: [concurrency]
+tags: [concurrency, disambiguation]
 date: 2020-05-17T10:00:00−06:00
-custom_update_date: 2020-05-28T11:01:00−06:00
+custom_update_date: 2020-06-11T01:18:00−06:00
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -34,6 +34,8 @@ custom_description: Parallelism &mdash; a term referring to techniques used to s
 *[JMM]:
 {:data-title="Java Memory Model"}
 
+[Carlo Rovelli]: <http://www.cpt.univ-mrs.fr/~rovelli/>
+
 I know there are many materials about this topic on the Internet,
 e.g., I like this [Haskel wiki page](https://wiki.haskell.org/Parallelism_vs._Concurrency)
 and a talk [Concurrency Is Not Parallelism](https://youtu.be/cN_DpYBzKso)<span class="insignificant">&nbsp;by [Rob Pike](https://en.wikipedia.org/wiki/Rob_Pike)</span>.
@@ -57,7 +59,7 @@ So parallelism is a concept we may want to use when talking about the *performan
 
 ## [](#concurrency){:.section-link}Concurrency {#concurrency}
 Before defining what concurrency is, we need to talk about the order of actions and the lack thereof.
-We may think of an action / operation `a` as a pair of events: an invocation `inv(a)` and the matching response `res(a)`.
+We may think of an action / operation `a` as a pair of events: an invocation `inv(a)` and the matching response `res(a)`, which is ordered after `inv(a)`.
 Actions `a` and `b` are ordered or sequential iff either `res(a)` is ordered before `inv(b)`, or `res(b)` is ordered before `inv(a)`.
 Such "ordered before" relation is also sometimes called "happens-before". For more details see, e.g.,
 [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)<span class="insignificant">&nbsp;by [Maurice P. Herlihy](https://cs.brown.edu/~mph/), [Jeannette M. Wing](http://www.cs.cmu.edu/~wing/)</span>[^2].  
@@ -116,7 +118,7 @@ PostgreSQL still able to start multiple backend processes and process concurrent
 
 Now imagine disabling [concurrency control](https://www.postgresql.org/docs/current/mvcc.html) &mdash; transactions are not isolated ("I" in ACID) anymore
 and, therefore, behave differently. If this is not obvious, you may take any of the [examples](https://wiki.postgresql.org/wiki/SSI) demonstrating
-[Serializable Snapshot Isolation (SSI)](https://drkp.net/papers/ssi-vldb12.pdf)<span class="insignificant">&nbsp;by Dan R. K. Ports, Kevin Grittner</span>
+[Serializable Snapshot Isolation (SSI)](https://drkp.net/papers/ssi-vldb12.pdf)<span class="insignificant">&nbsp;by [Dan R. K. Ports](https://drkp.net/), [Kevin Grittner](http://wiki.postgresql.org/wiki/User:Kgrittn)</span>
 and see that it does not rely on whether transactions are executed in parallel or not, yet shows that without SSI the behavior would have been different.
 
 ### [](#instruction-pipelining){:.section-link}Instruction pipelining[^4] {#instruction-pipelining}
@@ -144,19 +146,22 @@ This effect is called relativity of simultaneity.
 Since it is not the case that for all observers either `a` is ordered before `b`, or `b` is ordered before `a`,
 we may conclude that the actions `a` and `b` are concurrent.
 
-[^1]: Parallelism is inherently tied to the physical world, just like performance.
+[^1]: {%- comment -%}<!-- This footnote is linked from 2013-08-01-now-immediate.markdown -->{%- endcomment -%}
+    Parallelism is inherently tied to the physical world, just like performance.
     What we mean exactly when saying "at the same time" / "simultaneously" with regard to parallelism is not of the essence, because parallelism is not about correctness.
     Depending on the situation, it may be adequate to think about simultaneity in terms of Newtonian, a.k.a. absolute, time
     or in terms of Einstein's special or general relativity.
 
     The concept of physical time is not trivial, and I am not qualified in this area,
     but I can recommend a few videos of qualified people talking about / discussing this topic:
+    * [The Distinction of Past and Future](https://youtu.be/VU0mpPm9U-4)\\
+      <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
     * [Time Is of the Essence… or Is It?](https://youtu.be/N-NTXoYTvao)\\
-    <span class="insignificant">Participants: David Z. Albert, Vijay Balasubramanian, Carlo Rovelli, Lee Smolin; moderator: Jim Holt</span>
+      <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli], [Lee Smolin](http://leesmolin.com/); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
     * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\
-    <span class="insignificant">Carlo Rovelli</span>
+      <span class="insignificant">[Carlo Rovelli]</span>
     * [The Richness of Time](https://youtu.be/1FJWvEbeBps)\\
-    <span class="insignificant">Participants: Lera Boroditsky, Dean Buonomano; moderator: Brian Greene</span>
+      <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](http://www.briangreene.org/)</span>
 
 [^2]: The happens-before order introduced in the paper is the same order that is [specified in the Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5),
     with the only difference that the article defines it as an irreflexive, a.k.a. strict, partial order, while the JMM requires it to be reflexive
@@ -168,3 +173,5 @@ we may conclude that the actions `a` and `b` are concurrent.
     If the reordering produces results consistent with a legal execution, it is not illegal."</q>
 
 [^4]: I have no doubts that the real state of affairs is much more complex than the one described in this section.
+    If you are interested, I may recommend watching [Understanding CPU Microarchitecture to Increase Performance](https://youtu.be/rglmJ6Xyj1c)
+    <span class="insignificant">&nbsp;by [Alex Blewitt](https://alblue.bandlem.com/)</span>.

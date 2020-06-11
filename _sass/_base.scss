@@ -179,7 +179,7 @@ abbr {
       content: attr(data-title);
       border-radius: $border-radius;
       color: $info-font-color;
-      background: $info-background-color;
+      background: lighten($info-background-color, $border-color-darken-percentage / 4);
       border: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
     }
   }

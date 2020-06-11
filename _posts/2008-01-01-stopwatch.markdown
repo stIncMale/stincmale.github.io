@@ -3,10 +3,10 @@ layout: post
 slug: stopwatch
 title: Stopwatch
 categories: [tech]
-tags: [archived, C#, .NET]
+tags: [archived, .NET Framework, C#]
 date: 2008-01-01T00:00:00+00:00
 custom_post_date: 2008
-custom_update_date: 2020-05-28T17:00:04−06:00
+custom_update_date: 2020-06-11T01:04:00−06:00
 custom_description: A tiny program I wrote when I was learning C#.
 ---
 {% include common-links-abbreviations.markdown %}

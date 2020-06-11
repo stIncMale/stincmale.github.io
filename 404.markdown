@@ -1,0 +1,9 @@
+---
+layout: base
+title: Not found
+custom_description: The server has not found anything matching the requested URI.
+---
+{% include common-links-abbreviations.markdown %}
+
+# &#x26d4; [404 Not Found](https://www.rfc-editor.org/rfc/rfc1945#section-9.4)
+The server has not found anything matching the requested URI.

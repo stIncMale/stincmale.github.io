@@ -5,9 +5,9 @@ title: An amateur talks about measuring performance
 categories: [tech]
 tags: [performance]
 date: 2019-01-15T00:00:00−06:00
-custom_update_date: 2020-06-11T01:17:00−06:00
+custom_update_date: 2020-06-11T02:00:00−06:00
 custom_keywords: [throughput, latency, speedup, boost, Amdahl's law, universal scalability law, USL]
-custom_description: What do we imply when say "performance", and how to measure it?
+custom_description: What do we imply when say &quot;performance&quot;, and how to measure it?
 ---
 {% include common-links-abbreviations.markdown %}
 

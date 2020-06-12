@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T10:00:00−06:00
-custom_update_date: 2020-06-11T01:18:00−06:00
+custom_update_date: 2020-06-11T21:04:00−06:00
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -33,8 +33,6 @@ custom_description: Parallelism &mdash; a term referring to techniques used to s
 {:data-title="Reduced Instruction Set Computer"}
 *[JMM]:
 {:data-title="Java Memory Model"}
-
-[Carlo Rovelli]: <http://www.cpt.univ-mrs.fr/~rovelli/>
 
 I know there are many materials about this topic on the Internet,
 e.g., I like this [Haskel wiki page](https://wiki.haskell.org/Parallelism_vs._Concurrency)
@@ -152,16 +150,8 @@ we may conclude that the actions `a` and `b` are concurrent.
     Depending on the situation, it may be adequate to think about simultaneity in terms of Newtonian, a.k.a. absolute, time
     or in terms of Einstein's special or general relativity.
 
-    The concept of physical time is not trivial, and I am not qualified in this area,
-    but I can recommend a few videos of qualified people talking about / discussing this topic:
-    * [The Distinction of Past and Future](https://youtu.be/VU0mpPm9U-4)\\
-      <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
-    * [Time Is of the Essence… or Is It?](https://youtu.be/N-NTXoYTvao)\\
-      <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli], [Lee Smolin](http://leesmolin.com/); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
-    * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\
-      <span class="insignificant">[Carlo Rovelli]</span>
-    * [The Richness of Time](https://youtu.be/1FJWvEbeBps)\\
-      <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](http://www.briangreene.org/)</span>
+    Physical time is not a straightforward concept.
+    [Here]({% post_url 2013-08-01-now-immediate %}#fn:1) is a compilation of interesting talks about time.
 
 [^2]: The happens-before order introduced in the paper is the same order that is [specified in the Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5),
     with the only difference that the article defines it as an irreflexive, a.k.a. strict, partial order, while the JMM requires it to be reflexive

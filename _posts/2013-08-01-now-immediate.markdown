@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T00:00:00+03:00
-custom_update_date: 2020-06-11T15:51:00−06:00
+custom_update_date: 2020-06-11T21:03:00−06:00
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: If you imply temporal semantics when using the words &quot;now&quot;/&quot;immediate&quot; while reasoning about concurrency, you are probably doing something wrong.
 ---
@@ -32,17 +32,15 @@ and the two following great answers:
 {% include toc.markdown %}
 
 ## [](#now){:.section-link}Now {#now}
-The notion of "now" seems to be a good enough illusion for everyday life. Let us consider with some rigor what "now" means
+The notion of "now" seems to be a good enough illusion for everyday perception of time[^1]. Let us consider with some rigor what "now" means
 when used with respect to something physical, i.e., the Universe or its part, or something logical, e.g., a data object.
 Having the now- or current state of something, that we will refer to as `X`, implies the two following premises:
 * existence of absolute time, which allows us to talk about snapshots of `X`;
-* the ability to explore a snapshot of `X` while `X` is not changing, as otherwise our snapshot is not the current but an outdated one;
-I did not find a better name for this than the contemporaneity premise.
+* the ability to stop time and explore a snapshot of `X` while `X` is not changing, as otherwise, the snapshot would not be the current one.
 
-### [](#absolute-time){:.section-link}The absolute time[^1] premise {#absolute-time}
+### [](#absolute-time){:.section-link}Absolute time {#absolute-time}
 <div class="info-block" markdown="1">
-If `X` can be thought of as existing in a single directional timeline which all parts of `X` agree on,
-then this timeline represents **absolute time**.
+If `X` can be thought of as existing in a single timeline which all parts of `X` agree on, then this timeline represents **absolute time**.
 </div>
 
 If there is absolute time, we can define what a snapshot is. 
@@ -54,7 +52,8 @@ If there is absolute time, we can define what a snapshot is.
 According to the theory of special relativity, there is no absolute time in which the Universe exists.
 For any event, i.e., a point in spacetime defined by spacial coordinates and a time coordinate,
 there are infinitely many events distanced from it with a space-like interval.
-Such events are seen as simultaneous by some observers and are not seen as simultaneous by other observers.
+Such events are seen as simultaneous by some observers and are not seen as simultaneous by other observers,
+which means that there is no single timeline that all parts of the Universe agree on.
 
 What if we are talking about a logical system, may it have absolute time? &mdash; it definitely may, for example:
 * any sequential object, that is, a data object that is accessed only sequentially, may be thought of as having absolute logical time;
@@ -63,7 +62,7 @@ What if we are talking about a logical system, may it have absolute time? &mdash
   This may be done for an object as simple as a linearizable, a.k.a. atomic[^2], register,
   or as complex as a DB managed by a DBMS that guarantees that all transactions are serializable.
 
-But do not get too excited &mdash; there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
+Do not get too excited, though &mdash; there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
 exist in different timelines. [`LongAdder`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
 from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/index.html)
 is an example of a simple concurrent object with no absolute timeline and, therefore, no snapshots,
@@ -72,16 +71,26 @@ and the [specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-
 but concurrent updates that occur while the sum is being calculated might not be incorporated."</q>
 
 ### [](#contemporaneity){:.section-link}The contemporaneity premise {#contemporaneity}
+At least on the macroscopic scale, we perceive time as flowing unstoppably and irreversibly.
+What is it exactly that allows us to perceive and measure the time? The answer to this question is &mdash; changes.
+We perceive the flow of time because we observe changes, and if all changes stopped, it would have been equivalent to time stopping.
+An observer within a part of the Universe where there are no changes (this is a hypothetical situation which is not physically possible)
+or within a logical system where no changes are happening cannot perceive that the time is stopped, but an external observer can.
+
 <div class="info-block" markdown="1">
-While the current snapshot `S(t1)` is being explored,
-`X` must not be changing, that is, the state of `X` at any absolute time `t > t1` must be equal to `S(t1)`.
-The minimal time `t2 > t1` such that `S(t2)` is not equal to `S(t1)`, is the point at which `S(t1)` stops being the current snapshot
-and starts being an outdated snapshot of `X`.
+A snapshot `S(tc)` of `X` is the **current snapshot** iff
+1. all instants `t` on the absolute timeline of `X` are such that `t` &le; `tc`;
+2. the above stays true while `S(tc)` is being explored, i.e., time is stopped for `X` but is not stopped for its external observer.
+
+`tc` is called the **current time** or **now**.
 </div>
 
-It is impossible to stop the Universe or its part from continuously changing, which means that even if we were able to take a snapshot of the Universe,
-i.e., if the absolute time premise were to hold, such a snapshot would be outdated by definition.
-Preventing a logical system from changing its state is, however, possible.
+It is impossible to stop the Universe or its part from continuously changing, which means that even if there were absolute time in which the Universe
+exists, there would be strictly speaking no "now". Nevertheless, it still may be useful in some situations to imagine a part of the Universe as
+existing in absolute time and maybe even not changing, and imagine us as being external observers of that part.
+Within such a model "now" makes sense.
+
+Unlike with the Universe, preventing a logical system from changing its state and observing it externally is very much possible.
 
 ## [](#immediate){:.section-link}Immediate {#immediate}
 Strictly speaking, the word "immediate" does not have temporal semantics, despite it is commonly perceived as expressing a temporal quality,
@@ -112,8 +121,18 @@ If you imply temporal semantics when using the words "now"/"immediate" while rea
 
 I may recommend also reading [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
 
-[^1]: Physical time is an interesting concept that is not as straightforward as it may seem at first glance.
-    [Here]({% post_url 2020-05-17-parallelism-vs-concurrency %}#fn:1) is a compilation of interesting talks about time. 
+[^1]: {%- comment -%}<!-- This footnote is linked from 2020-05-17-parallelism-vs-concurrency.markdown -->{%- endcomment -%}
+    The concept of physical time is not trivial, and I am not qualified in this area,
+    but I can recommend a few videos of qualified people talking about / discussing this topic:
+
+    * [The Distinction of Past and Future](https://youtu.be/VU0mpPm9U-4)\\
+      <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
+    * [Time Is of the Essence… or Is It?](https://youtu.be/N-NTXoYTvao)\\
+      <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/), [Lee Smolin](http://leesmolin.com/); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
+    * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\
+      <span class="insignificant">[Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/)</span>
+    * [The Richness of Time](https://youtu.be/1FJWvEbeBps)\\
+      <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](http://www.briangreene.org/)</span> 
 
 [^2]: The word "atomic" is overloaded: it is used both as a synonym of being linearizable (by the way, a `volatile` field in Java is a linearizable register)
     and as the atomicity property in ACID, which is about either committing all actions bundled together in a transaction, or ensuring that none of them happened.

@@ -19,6 +19,7 @@ date: 2020-04-26T12:00:00+00:00
 custom_post_date: 2020
 custom_update_date: 2020-05-28T10:57:00−06:00
 custom_keywords: [keyword1, keyword2]
+# Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
 ---
 {% comment %}<!--

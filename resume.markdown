@@ -1,0 +1,165 @@
+---
+layout: base
+title: Resume
+custom_description: Server-side software engineer (Java) interested in concurrency and distributed systems.
+---
+# Valentin Kovalenko
+{:.resume-h .resume-media-print}
+## Server-side software engineer
+{:.resume-h}
+Concurrency and distributed systems
+<div class="resume-external-links resume-media-print">
+  <a href="{% link resume.markdown %}">Browse online</a><br>
+  <a class="button" href="https://github.com/stIncMale" title="GitHub">
+    <svg class="svg-button" viewBox="0 0 1024 1024" height="1024" width="1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z"></path></svg>
+  </a>
+  <a class="button" href="https://www.linkedin.com/in/stIncMale" title="LinkedIn">
+    <svg class="svg-button" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z" style="fill-rule:nonzero;"></path></svg>
+  </a>
+  <a href="https://www.kovalenko.link/blog/tech/" title="DEAD<code/>">
+    <img src="{% link /assets/img/favicon.png %}" alt="Logo" style="width: 1.7em; height: auto; vertical-align: -0.2em;">
+    kovalenko.link/blog/tech
+  </a>
+</div>
+---
+<div class="resume-contact-info">
+Location: <a href="https://www.google.com/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831">Calgary, AB, Canada</a><br>
+<div class="resume-media-print">Email: <a href="mailto:public.vkovalenko@gmail.com">public.vkovalenko@gmail.com</a><br></div>
+<p>
+Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<span class="insignificant resume-media-not-print">wo</span>9<span class="insignificant resume-media-not-print">ine</span>.3141 <span class="resume-insignificant">10:00&ndash;20:00 <a href="https://www.timeanddate.com/time/zone/canada/edmonton">America/Edmonton time zone</a>, or 16:00&ndash;02:00 UTC</span>
+</p>
+</div>
+
+#### Technical skills
+{:.resume-h}
+---
+
+<table class="resume-table">
+  <tbody>
+    <tr class="resume-table-no-background">
+      <td><code>Main&nbsp;language</code></td>
+      <td>Java</td>
+    </tr>
+    <tr class="resume-table-no-background">
+      <td><code>Frameworks/libraries</code></td>
+      <td>Netty, Protocol Buffers (a.k.a., Protobuf), JMH, Spring Framework, Hibernate ORM, JUnit, Mockito</td>
+    </tr>
+    <tr class="resume-table-no-background">
+      <td><code>DBMS</code></td>
+      <td>PostgreSQL, Redis + Sentinel, Cassandra</td>
+    </tr>
+    <tr class="resume-table-no-background">
+      <td><code>Distributed&nbsp;coordination</code></td>
+      <td>ZooKeeper, Apache Curator</td>
+    </tr>
+    <tr class="resume-table-no-background">
+      <td><code>Other</code></td>
+      <td>Maven, Git, Docker, <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>, good understanding of the Java memory model (JLS 17.4)</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Work experience
+{:.resume-h}
+---
+
+<h6 class="resume-h">
+  <a href="https://www.synopsys.com/" title="Synopsys">
+    <img src="{% link /assets/img/resume/synopsys-logo.png %}" alt="Logo" style="width: auto; height: 0.8em;">
+    Synopsys
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Calgary, Canada</span>
+</h6>
+_Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;present</span>
+<div class="resume-experience" markdown="1">
+* **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
+  (Apache Tomcat, PostgreSQL, Hibernate ORM)
+  * designed and developed **export/import** functionality **from scratch** in pair with a colleague,
+  designed and implemented support of this functionality in **cluster environment** on my own;
+  * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
+  * **cluster** &mdash; identified and fixed multiple bugs, one of them was a problem caused by out of order data replication,
+  here is my [related blog post](https://sites.google.com/site/aboutmale/techblog/datareplicationpitfall);<!-- TODO update this link-->
+  * incremental updates functionality &mdash; allows automatically updating client applications;
+  fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
+</div>
+
+<h6 class="resume-h">
+  <a href="https://www.zeptolab.com/" title="ZeptoLab">
+    <img src="{% link /assets/img/resume/zeptolab-logo.png %}" alt="Logo" style="width: auto; height: 1.1em;">
+    ZeptoLab
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>
+</h6>
+_Senior server-side developer_ / <span class="resume-insignificant">Jan 2016&ndash;Mar 2018</span>\\
+_Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 2015</span>
+<div class="resume-experience" markdown="1">
+* **[King of Thieves](http://www.kingofthieves.com/) server**
+  (Netty, ZooKeeper + Apache Curator, Protobuf, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
+  * joined this project in Aug 2015, 7 months after the global release, and supported it / developed new features until resigning;
+  * implemented validation and processing of **purchases and subscriptions**, here is my [related blog post](https://sites.google.com/site/aboutmale/techblog/parseappstorereceipt);<!-- TODO update this link-->
+  * implemented **automatic data extraction/grouping from Mixpanel and sending** it to partners.
+* **Server and client homegrown frameworks** (Netty)
+  * **developed from scratch**
+  * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it
+* **Configuration server** (Netty, Hibernate ORM, ZooKeeper + Apache Curator, PostgreSQL, Apache Tapestry) &mdash;
+  manages, targets and securely delivers game configurations to game clients, supports having configurations for split-testing
+  * **redeveloped**;
+  * a couple of dozen projects started using it compared to only a single one before redevelopment.
+* **Notifications server/client** (Netty, ZooKeeper + Apache Curator, Protobuf, PostgreSQL) &mdash;
+  provides a unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
+  * **refactored the design** as inappropriate usage of ActiveMQ and Quartz Scheduler was causing performance bottlenecks;
+  * **improved the throughput** by an order of magnitude;
+  * when I resigned, this server was used by all ZeptoLab games.
+</div>
+
+<h6 class="resume-h">
+  <a href="https://www.netcracker.com/" title="Netcracker">
+    <img src="{% link /assets/img/resume/netcracker-logo.png %}" alt="Logo" style="width: auto; height: 1em;">
+    Netcracker
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>
+</h6>
+_Senior software programmer_ / <span class="resume-insignificant">Aug 2013&ndash;Dec 2014</span>\\
+_Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 2013</span>
+<div class="resume-experience" markdown="1">
+* [**TELUS Self Service Portal**](http://www.telus.com) (JMS, WebLogic Server, Oracle Database)
+  * integrated with **Oracle OpenSSO**;
+  * **availability** &mdash; developed functionality allowing front-end servers to persist
+  and later initiate asynchronous execution of tasks on back-ends.
+  This allowed users to use some features of the portal even when back-end servers are temporarily unavailable.
+* **Data objects**, a homegrown persistence library &mdash; developed various **concurrent caches**.
+* Implemented **OpenID authentication**.
+* **Data migration** (Oracle  Database, Oracle PL/SQL).
+</div>
+
+<h6 class="resume-h">
+  <a href="http://www.it.ru/en/" title="I.T. Information Technology">
+    <img src="{% link /assets/img/resume/it-logo.jpg %}" alt="Logo" style="width: auto; height: 0.7em;">
+    I.T. Information Technology
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>
+</h6>
+_Implementation engineer_ / <span class="resume-insignificant">Jul 2008&ndash;Apr 2010</span>
+
+<h6 class="resume-h">
+  <a href="http://www.cplire.ru/" title="V.A. Kotelnikov Institute of Radioengineering and Electronics RAS">
+    <img src="{% link /assets/img/resume/cplire-logo.gif %}" alt="Logo" style="width: auto; height: 0.9em;">
+    V.A. Kotelnikov Institute of Radioengineering and Electronics RAS
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>
+</h6>
+_Student_ / <span class="resume-insignificant">Sep 2006&ndash;Jun 2009</span>
+
+#### Formal education
+{:.resume-h}
+---
+
+<h6 class="resume-h">
+  <a href="https://mipt.ru/english/" title="MIPT">
+    <img src="{% link /assets/img/resume/mipt-logo.png %}" alt="Logo" style="width: auto; height: 1.1em;">
+    Moscow Institute of Physics and Technology
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Dolgoprudny, Moscow Region, Russia</span>
+</h6>
+**_MSc in applied mathematics and physics_** / <span class="resume-insignificant">Sep 2007&ndash;Jun 2009</span> / <span class="resume-insignificant">Grade: 4.7 out of 5.0</span>\\
+_BSc in applied mathematics and physics_ / <span class="resume-insignificant">Sep 2003&ndash;Jun 2007</span> / <span class="resume-insignificant">Grade: 4.3 out of 5.0</span>

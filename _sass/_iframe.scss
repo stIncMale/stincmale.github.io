@@ -7,7 +7,8 @@ div.iframe-margins-right25 {
   margin-right: 25%;
 }
 @media print {
-  .iframe-margins {
+  .iframe-margins-right40,
+  .iframe-margins-right25 {
     display: none;
   }
 

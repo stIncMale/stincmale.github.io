@@ -1,0 +1,57 @@
+h1.resume-h, h2.resume-h, h3.resume-h, h4.resume-h, h5.resume-h, h6.resume-h {
+  margin-bottom: 0em;
+}
+
+div.resume-external-links {
+  font-size: $medium-font-size;
+
+  a {
+    white-space: nowrap;
+  }
+
+  .button {
+    font-size: 1.45em;//scale the buttons
+    margin-right: 1.3em;
+  }
+}
+
+div.resume-contact-info,
+div.resume-experience {
+  font-size: $medium-font-size;
+}
+
+span.resume-insignificant {
+  color: $insignificant-font-color;
+}
+span.resume-normal-font-weight {
+  font-weight: $font-weight;
+}
+
+.resume-media-print {
+  @media not print {
+    display: none;
+  }
+}
+.resume-media-not-print {
+  @media print {
+    display: none;
+  }
+}
+
+table.resume-table {
+  margin-left: 0%;
+  margin-right: 0%;
+  border-style: none;
+
+  tr {
+    &:nth-child(even) {//disable zebra style
+      background-color: $site-background-color;
+    }
+  }
+  tr, td {
+    padding: 0em;
+    padding-right: 0.5em;
+    vertical-align: text-top;
+    border-style: none;
+  }
+}

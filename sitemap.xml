@@ -6,20 +6,26 @@ layout: null
   <url>
     <loc>{{ site.url }}</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     {%- capture link -%}{%- link lyrics.markdown -%}{%- endcapture -%}
     <loc>{{ link | absolute_url }}</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    {%- capture link -%}{%- link resume.markdown -%}{%- endcapture -%}
+    <loc>{{ link | absolute_url }}</loc>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   {%- for post in site.posts -%}
     {%- unless post.draft -%}
       <url>
         <loc>{{ post.url | absolute_url }}</loc>
         <lastmod>{{ post.custom_update_date | date: "%Y-%m-%d" }}</lastmod>
-        <changefreq>daily</changefreq>
+        <changefreq>weekly</changefreq>
       </url>
     {%- endunless -%}
   {%- endfor -%}

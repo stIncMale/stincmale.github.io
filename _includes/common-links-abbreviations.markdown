@@ -40,14 +40,16 @@
 {:data-title="Java Language Specification"}
 *[JMM]:
 {:data-title="Java Memory Model"}
-*[JAAS]:
-{:data-title="Java Authentication and Authorization Service"}
 *[HB]:
 {:data-title="Happens-Before"}
 *[SO]:
 {:data-title="Synchronization Order"}
 *[SW]:
 {:data-title="Synchronizes-With"}
+*[JAAS]:
+{:data-title="Java Authentication and Authorization Service"}
+*[JMH]:
+{:data-title="Java Microbenchmark Harness"}
 *[CRDT]:
 {:data-title="Conflict-Free Replicated Data Type"}
 *[CRDTs]:

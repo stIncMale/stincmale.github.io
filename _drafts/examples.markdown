@@ -38,7 +38,6 @@ Text before ToC.
 {% include toc.markdown %}
 
 ## [](#todo){:.section-link}TODO {#todo}
-* Update https://github.com/stIncMale/sandbox/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampTest.java#L27
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
 

@@ -24,6 +24,8 @@
 {:data-title="High Dynamic Range"}
 *[ACID]:
 {:data-title="Atomicity, Consistency, Isolation, Durability"}
+*[SSI]:
+{:data-title="Serializable Snapshot Isolation"}
 *[DBMS]:
 {:data-title="Database Management System"}
 *[API]:
@@ -40,12 +42,6 @@
 {:data-title="Java Language Specification"}
 *[JMM]:
 {:data-title="Java Memory Model"}
-*[HB]:
-{:data-title="Happens-Before"}
-*[SO]:
-{:data-title="Synchronization Order"}
-*[SW]:
-{:data-title="Synchronizes-With"}
 *[JAAS]:
 {:data-title="Java Authentication and Authorization Service"}
 *[JMH]:
@@ -58,8 +54,6 @@
 {:data-title="Central Processing Unit"}
 *[CPUs]:
 {:data-title="Central Processing Unit"}
-*[SSI]:
-{:data-title="Serializable Snapshot Isolation"}
 *[ISA]:
 {:data-title="Instruction Set Architecture"}
 *[RISC]:

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T00:00:00+00:00
 custom_post_date: 2015
-custom_update_date: 2020-06-11T01:16:00−06:00
+custom_update_date: 2020-07-02T20:00:00−06:00
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -46,7 +46,7 @@ because of unfortunate ordering / relative timing of events.
 <div class="info-block" markdown="1">
 **Data race** &mdash; a property of an [execution of a program](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.6).
 According to the JMM, an execution is said to contain a data race if it contains at least two conflicting accesses (reads of or writes to the same variable)
-that are not ordered by a [happens-before (HB) relation](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5)<!-- -->[^1].
+that are not ordered by a [happens-before (`hb`) relation](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5)<!-- -->[^1].
 Two accesses to the same variable are said to be conflicting if at least one of the accesses is a write.
 </div>
 
@@ -75,7 +75,7 @@ and recommend reading it for those who are interested in a formal explanation of
 Despite the incorrect definition stated by the JMM stays unchanged, I am going to use a fixed version:
 <div class="info-block" markdown="1">
 An execution is said to contain a **data race** if it contains at least two conflicting *non-volatile*[^2] accesses 
-to a [shared variable](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.1) that are not ordered by a HB relation.
+to a [shared variable](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.1) that are not ordered by an `hb` relation.
 </div>
 
 Despite data race is a property of an execution and not a program, you may hear people saying that a program has a data race.
@@ -88,7 +88,7 @@ that it has a race condition.
 I will try to give links to the JMM sections needed to understand the explanations below, but it is still better if the reader is familiar with the JMM.
 If you feel a bit scared reading [the JMM](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4),
 maybe reading [Close Encounters of The Java Memory Model Kind](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
-is going to be more fun.
+is going to be more fun[^4].
 
 ### [](#race-condition-example){:.section-link}Race condition example {#race-condition-example}
 While I could have described an algorithm with a race condition in plain English, I will show a source code of a program in Java
@@ -109,16 +109,16 @@ class RaceConditionExample {
 }
 ```
 
-The only shared variable in the program is `flag`[^4], and it is marked as volatile, hence by definition,
+The only shared variable in the program is `flag`[^5], and it is marked as volatile, hence by definition,
 there are no data races in any execution of this program.
 And yet it is obvious that the program may print not only "true" (let us say the desired outcome), but also "false",
 because we do not impose any order between the action `r` reading `flag` for printing and the action `w1` writing true to `flag` in the method `raiseFlag`.
 More specifically, these two actions are [synchronization actions](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.2),
-thus they are totally ordered with [synchronization order (SO)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4).
+thus they are totally ordered with [synchronization order (`so`)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4).
 But both orders
 
-* SO1: `r`, `w1`
-* SO2: `w1`, `r`
+* `so1`: `r`, `w1`
+* `so2`: `w1`, `r`
 
 are allowed[^3] and lead to different program outputs &mdash; "false" and "true" respectively.
 Moreover, this program may exit without ever executing the method `raiseFlag`, i.e. without printing anything.
@@ -145,13 +145,13 @@ class FixedRaceConditionExample {
 }
 ```
 
-For this modified program the JMM allows executions with *only* the following SO:
+For this modified program the JMM allows executions with *only* the following `so`:
 
-* SO1: `w0`, `w1`, `r_1`, `r`
+* `so1`: `w0`, `w1`, `r_1`, `r`
 
-  which gives [synchronized-with (SW)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4) relation SW(`w1`, `r`)
-  because `w1` and `r` both affect the same `volatile` variable `flag`, and hence HB(`w1`, `r`), thus `r == true`.
-* SO2: `w0`, `r_1`, &hellip;, `w1`, &hellip; `r_k`, `r`
+  which gives [synchronized-with (`sw`)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4) relation `sw(w1, r)`
+  because `w1` and `r` both affect the same `volatile` variable `flag`, and hence `hb(w1, r)`, thus `r == true`.
+* `so2`: `w0`, `r_1`, &hellip;, `w1`, &hellip; `r_k`, `r`
 
   which gives `r == true` for the same reasons as above.
 
@@ -178,7 +178,7 @@ class DataRaceExample {
 }
 ```
 
-Now all executions have data races because `flag` is not `volatile`, and there are no sources for HB relations between `w` and any `r_i`,
+Now all executions have data races because `flag` is not `volatile`, and there are no sources for `hb` relations between `w` and any `r_i`,
 or between `w` and `r`. Therefore by definition, all executions of this program contain data races.
 In this situation the JMM allows either true or false being read by any of the reads `r_i`, `r`.
 So the program may not only print "true" or "false" but may also hang infinitely executing `while (!flag)`{:.highlight .language-java},
@@ -187,7 +187,7 @@ but rather by data races in the executions of the program.
 
 For the sake of completeness, I need to say that a data race does not always lead to unexpected outcomes, while a race condition by definition does.
 Sometimes data races are used to allow the program to perform faster; these are so-called benign data races.
-Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.java.net/projects/jdk/)[^5]:
+Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.java.net/projects/jdk/)[^6]:
 
 ```java
 //java.lang.String from OpenJDK JDK 14
@@ -242,9 +242,13 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
     * obeys the [`final` field semantics](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.5),
     * does not display [word tearing](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.6).
 
-[^4]: Here we are ignoring any shared variables used inside <code>ForkJoinPool.commonPool()<wbr>.execute(<wbr>DataRaceExample::raiseFlag)</code> without loss of generality.
+[^4]: More links to resources about the JMM and its new developments like
+    [access modes](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html)
+    may be found [here]({% post_url 2014-01-01-java-final-field-semantics %}#links).
 
-[^5]: [OpenJDK] is a community which goal is developing an implementation of Java SE specification.
+[^5]: Here we are ignoring any shared variables used inside <code>ForkJoinPool.commonPool()<wbr>.execute(<wbr>DataRaceExample::raiseFlag)</code> without loss of generality.
+
+[^6]: [OpenJDK] is a community which goal is developing an implementation of Java SE specification.
     The phrase "[OpenJDK JDK](https://openjdk.java.net/projects/jdk/)" means "a JDK developed by the OpenJDK community".
     We may see usage of this phrase, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):
     <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)"</q>.

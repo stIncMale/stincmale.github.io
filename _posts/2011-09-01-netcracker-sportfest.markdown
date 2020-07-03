@@ -6,7 +6,7 @@ categories: [cgi-vfx]
 tags: []
 date: 2011-09-01T12:00:00+03:00
 custom_post_date: 2011-09
-custom_update_date: 2020-07-01T02:52:00−06:00
+custom_update_date: 2020-07-02T20:56:00−06:00
 custom_description: A short creative video showcasing some photos from NetCracker SportFest 2011.
 ---
 {% include common-links-abbreviations.markdown %}
@@ -17,5 +17,5 @@ I decided to use the photos and create this nifty video because <q>"life is abou
 
 {% include youtube-video.html content = "SPrfvCjE79U , maxresdefault , iframe-ratio-16-9 , NetCracker SportFest 2011" %}
 
-Music:
+## [](#music){:.section-link}Music {#music}
 * Cbreez (feat. Kerry) - Momentums

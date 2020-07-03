@@ -6,7 +6,7 @@ categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2006-01-01T12:00:00+00:00
 custom_post_date: 2006
-custom_update_date: 2020-06-11T01:03:00−06:00
+custom_update_date: 2020-07-02T20:51:00−06:00
 custom_keywords: [game highlights, frag highlights, Unreal Tournament 2004, UT2004, Unreal Tournament, UT]
 custom_description: A game highlights Unreal Tournament 2004 video.
 ---
@@ -21,7 +21,7 @@ YouTube muted the audio, but you can watch the video with the original sound [he
 
 {% include youtube-video.html content = "68R8q1rlsms , hqdefault , iframe-ratio-4-3 , CyberEclipse" %}
 
-Music:
+## [](#music){:.section-link}Music {#music}
 * Gustaf Grefberg - "Escape From Butcher Bay" end credits
 * Rob Zombie - Two-Lane Blacktop
 * Linkin Park - Faint

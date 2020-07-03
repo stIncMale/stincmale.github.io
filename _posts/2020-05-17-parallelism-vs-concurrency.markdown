@@ -5,34 +5,11 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T10:00:00−06:00
-custom_update_date: 2020-06-11T21:04:00−06:00
+custom_update_date: 2020-07-02T20:01:00−06:00
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
 {% include common-links-abbreviations.markdown %}
-
-*[CRDT]:
-{:data-title="Conflict-Free Replicated Data Type"}
-*[CRDTs]:
-{:data-title="Conflict-Free Replicated Data Type"}
-*[CPU]:
-{:data-title="Central Processing Unit"}
-*[CPUs]:
-{:data-title="Central Processing Unit"}
-*[OS]:
-{:data-title="Operating System"}
-*[ACID]:
-{:data-title="Atomicity, Consistency, Isolation, Durability"}
-*[DBMS]:
-{:data-title="Database Management System"}
-*[SSI]:
-{:data-title="Serializable Snapshot Isolation"}
-*[ISA]:
-{:data-title="Instruction Set Architecture"}
-*[RISC]:
-{:data-title="Reduced Instruction Set Computer"}
-*[JMM]:
-{:data-title="Java Memory Model"}
 
 I know there are many materials about this topic on the Internet,
 e.g., I like this [Haskel wiki page](https://wiki.haskell.org/Parallelism_vs._Concurrency)

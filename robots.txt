@@ -3,7 +3,6 @@ layout: null
 ---
 User-agent: *
 Allow: /
-Disallow: /assets/js/
 Disallow: /blog/drafts/
 
 {% capture sitemap_relative_url %}{%- link sitemap.xml -%}{%- endcapture -%}

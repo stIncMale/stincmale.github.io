@@ -27,14 +27,14 @@ body {
 }
 @media screen and (orientation: landscape) {
   #right-side-area {
-    margin-left: $site-navigation-width + $base-spacing-em * 2 /*we need to account for padding that site-navigation has*/;
+    margin-left: $site-navigation-width + $spacing-unit-em * 2 /*we need to account for padding that site-navigation has*/;
   }
 }
 
 main {
-  padding-top: $base-spacing-em;
-  padding-left: $base-spacing-em;
-  padding-right: $base-spacing-em;
+  padding-top: $spacing-unit-em;
+  padding-left: $spacing-unit-em;
+  padding-right: $spacing-unit-em;
 }
 
 /**
@@ -49,18 +49,18 @@ table, figure,
 div.iframe-margins-right40,
 div.iframe-margins-right25,
 div.info-block {
-  margin-bottom: $base-spacing-em;
+  margin-bottom: $spacing-unit-em;
 }
 li > ol,
 li > ul {
-  margin-top: $spacing-unit-em / 4;
+  margin-top: $spacing-unit-em / 2;
   margin-bottom: 0em;
 }
 li p {
-    margin-bottom: $spacing-unit-em / 6;
+    margin-bottom: $spacing-unit-em / 3;
 }
 li {
-  margin-bottom: $spacing-unit-em / 4;
+  margin-bottom: $spacing-unit-em / 2;
 }
 
 /**

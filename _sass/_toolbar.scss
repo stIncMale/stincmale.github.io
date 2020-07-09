@@ -4,17 +4,17 @@
   position: sticky;
   overflow: auto;
   z-index: 2;//appear on top of other elements (without this style transparent elements appear on top of this element)
-  padding-left: $base-spacing-em;
+  padding-left: $spacing-unit-em;
   background: linear-gradient(to right, $site-background-color, $toolbar-background-color, $site-background-color);
 }
 
 #site-navigation-portrait-menu {
-  margin-top: $spacing-unit-em / 2;
+  margin-top: $spacing-unit-em;
 }
 
 @media screen and (orientation: landscape) {
   #toolbar {
-    margin-left: $site-navigation-width + $base-spacing-em * 2 /*we need to account for padding that site-navigation has*/;
+    margin-left: $site-navigation-width + $spacing-unit-em * 2 /*we need to account for padding that site-navigation has*/;
   }
 
   #site-navigation-portrait-menu {

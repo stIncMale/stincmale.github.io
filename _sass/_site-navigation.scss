@@ -2,9 +2,9 @@
   line-height: 1;
   overflow: auto;
   text-align: left;
-  padding-top: $base-spacing-em;
-  padding-left: $base-spacing-em;
-  padding-right: $base-spacing-em;
+  padding-top: $spacing-unit-em;
+  padding-left: $spacing-unit-em;
+  padding-right: $spacing-unit-em;
   background: $site-navigation-background-color;
 
   a {
@@ -14,7 +14,7 @@
   }
 
   &:not(div) > div {
-    margin-bottom: $spacing-unit-em / 2;
+    margin-bottom: $spacing-unit-em;
   }
 }
 
@@ -48,7 +48,7 @@ a.button {//the image inside should define the size of the button, not the <a> e
   #site-logo {
     height: 1.85em;
     overflow: hidden;
-    margin-bottom: $spacing-unit-em / 1.5;
+    margin-bottom: $spacing-unit-em / 0.75;
   
     img {
       position: relative;
@@ -86,7 +86,7 @@ a.button {//the image inside should define the size of the button, not the <a> e
 }
 
 #site-navigation-landscape-menu {
-  margin-top: $spacing-unit-em * 1.5;
+  margin-top: $spacing-unit-em * 3;
 }
 
 @media screen and (orientation: landscape) {

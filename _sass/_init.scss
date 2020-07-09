@@ -12,9 +12,8 @@ $font-weight: 400;
 $header-font-weight: 500;
 
 $site-navigation-width: 13.4em;
-$spacing-unit-em: 1.55em;//depends on the size of the text in the current element
+$spacing-unit-em: 0.775em;//depends on the size of the text in the current element
 $spacing-unit-percentage: 1%;//depends on the size of the parent element
-$base-spacing-em: $spacing-unit-em / 2;//TODO replace usages of $spacing-unit-em
 $border-radius: 0.15em;
 $block-padding: 0.2em;
 $inline-code-padding: 0.25em;

@@ -111,7 +111,7 @@ h6 {
  * Outline (e.g. when navigating over all interactive elements with Tab).
  * One should never remove outline because it reduces accessibility.
  */
-a, button {
+a, button, input {
   &:focus {
     outline-color: $link-hover-color;
     outline-width: $outline-width;
@@ -245,7 +245,7 @@ span.insignificant {
   color: $insignificant-font-color;
 }
 
-button {
+button, input {
   font-family: $base-font-family;
   font-size: $font-size;
   padding-top: 0.2em;
@@ -254,12 +254,13 @@ button {
   padding-right: 0.5em;
   margin-top: $outline-width;
   margin-bottom: $outline-width;
-  color: $button-font-color;
-  border-image: none;
   border-radius: $border-radius;
+  border-image: none;
+  color: $button-font-color;
   background-color: lighten($button-font-color, 30%);
   border: $border-widthstyle darken(lighten($button-font-color, 30%), $border-color-darken-percentage);
-
+}
+button {
   &:hover {
     color: $button-hover-font-color;
     background-color: lighten($button-hover-font-color, 30%);
@@ -270,6 +271,14 @@ button {
     background-color: lighten($button-active-font-color, 30%);
     border: $border-widthstyle darken(lighten($button-active-font-color, 30%), $border-color-darken-percentage);
   }
+}
+input {
+  color: $button-font-color;
+  background-color: $site-background-color;
+}
+input[type="search"] {
+  -webkit-appearance: none;//prevent fucking iOS Safari from changing the style
+  width: 13em;
 }
 
 /**

@@ -5,7 +5,16 @@
   overflow: auto;
   z-index: 2;//appear on top of other elements (without this style transparent elements appear on top of this element)
   padding-left: $spacing-unit-em;
+  padding-right: $spacing-unit-em;
   background: linear-gradient(to right, $site-background-color, $toolbar-background-color, $site-background-color);
+}
+
+#site-navigation-menu-toggle-container {
+  float: left;
+}
+
+#site-search-form-container {
+  text-align: right;
 }
 
 #site-navigation-portrait-menu {

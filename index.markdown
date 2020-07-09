@@ -7,7 +7,7 @@ custom_description: My personal website. Software engineering articles/notes/tho
 {% include common-links-abbreviations.markdown %}
 
 <figure style="display: block">
-  {%- comment -%}<!-- -webkit-clip-path is for Safari for iOS -->{%- endcomment -%}
+  {%- comment -%}<!-- -webkit-clip-path is for iOS Safari -->{%- endcomment -%}
   <img src="{% link /assets/img/face.png %}" alt="Me" style="clip-path: circle(44.2% at 50% 50%); -webkit-clip-path: circle(44.2% at 50% 50%); width: 12em; height: auto; display: block; margin-left: auto; margin-right: auto;">
   <figcaption>2016, July</figcaption>
 </figure>

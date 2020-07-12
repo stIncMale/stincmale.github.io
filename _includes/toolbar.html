@@ -3,7 +3,7 @@
     <button id="site-navigation-menu-toggle" type="button" title="Toggle navigation menu" onclick="toggleNavigationMenu()">Menu</button>
   </div>
   <div id="site-search-form-container">
-    <form id="site-search-form" method="get" action="https://www.google.com/search" target="_self">
+    <form id="site-search-form" method="get" action="https://www.google.com/search" target="_self" autocomplete="off">
       <input type="hidden" name="sitesearch" value="{{ site.url | remove_first: "http://" | remove_first: "https://" }}/blog"/>
       <input type="search" name="q" placeholder="" title="Search" required/>
     </form>

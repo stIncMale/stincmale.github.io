@@ -15,6 +15,16 @@
 
 #site-search-form-container {
   text-align: right;
+
+  #site-search-form {
+    input[type="search"] {
+      background-image: url(/assets/img/search.svg);
+      background-repeat: no-repeat;
+      background-size: 1.4em;
+      background-position: left 0.0em bottom 50%;
+      padding-left: 1.5em;
+    }
+  }
 }
 
 #site-navigation-portrait-menu {

@@ -1,3 +1,4 @@
+[WTFPL]: <http://www.wtfpl.net/>
 [MIPT]: <https://mipt.ru/english/>
 [OpenJDK]: <https://openjdk.java.net/>
 [Junit 5]: <https://junit.org/junit5/>
@@ -46,6 +47,8 @@
 {:data-title="Java Authentication and Authorization Service"}
 *[JMH]:
 {:data-title="Java Microbenchmark Harness"}
+*[SLF4J]:
+{:data-title="Simple Logging Facade for Java"}
 *[CRDT]:
 {:data-title="Conflict-Free Replicated Data Type"}
 *[CRDTs]:

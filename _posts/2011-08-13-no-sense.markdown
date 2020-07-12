@@ -4,8 +4,8 @@ slug: no-sense
 title: No sense
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
-date: 2011-08-13T12:00:00+03:00
-custom_update_date: 2020-07-02T20:55:00−06:00
+date: 2011-08-13T12:00:00Z
+custom_update_date: 2020-07-11T18:10:00Z
 custom_keywords: [game highlights, frag highlights, defrag, Unreal Tournament 3, UT3, Unreal Tournament, UT]
 custom_description: A defrag & game highlights Unreal Tournament 3 video.
 ---

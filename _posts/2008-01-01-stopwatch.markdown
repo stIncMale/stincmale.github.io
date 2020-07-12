@@ -4,9 +4,9 @@ slug: stopwatch
 title: Stopwatch
 categories: [tech]
 tags: [archived, .NET Framework, C#]
-date: 2008-01-01T00:00:00+00:00
+date: 2008-01-01T12:00:00Z
 custom_post_date: 2008
-custom_update_date: 2020-07-07T22:10:00−06:00
+custom_update_date: 2020-07-11T18:04:00Z
 custom_description: A tiny program I wrote when I was learning C#.
 ---
 {% include common-links-abbreviations.markdown %}

@@ -4,8 +4,8 @@ slug: now-immediate
 title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
-date: 2013-08-21T00:00:00+03:00
-custom_update_date: 2020-07-01T02:53:00−06:00
+date: 2013-08-21T12:00:00Z
+custom_update_date: 2020-07-11T18:14:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---

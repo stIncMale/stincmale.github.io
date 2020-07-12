@@ -4,9 +4,9 @@ slug: male-vs-godlike
 title: Male vs Godlike
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
-date: 2005-01-01T12:00:00+00:00
+date: 2005-01-01T12:00:00Z
 custom_post_date: 2005
-custom_update_date: 2020-07-02T20:50:00−06:00
+custom_update_date: 2020-07-11T18:01:00Z
 custom_keywords: [game highlights, frag highlights, Unreal Tournament 2004, UT2004, Unreal Tournament, UT]
 custom_description: A game highlights Unreal Tournament 2004 video with Godlike bots.
 ---

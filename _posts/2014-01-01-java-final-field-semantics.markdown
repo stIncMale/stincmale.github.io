@@ -4,9 +4,9 @@ slug: java-final-field-semantics
 title: Java <code>final</code> field semantics
 categories: [tech]
 tags: [concurrency, Java]
-date: 2014-01-01T12:00:00+00:00
+date: 2014-01-01T12:00:00Z
 custom_post_date: 2014
-custom_update_date: 2020-07-02T20:30:00−06:00
+custom_update_date: 2020-07-11T18:16:00Z
 custom_keywords: [final field, final fields, semantics, JMM, Java memory model]
 custom_description: A final field in Java is not the same thing as a final variable that may only be assigned to once.
 ---

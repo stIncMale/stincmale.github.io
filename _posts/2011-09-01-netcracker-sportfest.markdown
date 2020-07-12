@@ -4,9 +4,9 @@ slug: netcracker-sportfest
 title: NetCracker SportFest
 categories: [cgi-vfx]
 tags: []
-date: 2011-09-01T12:00:00+03:00
+date: 2011-09-01T12:00:00Z
 custom_post_date: 2011-09
-custom_update_date: 2020-07-02T20:56:00−06:00
+custom_update_date: 2020-07-11T18:11:00Z
 custom_description: A short creative video showcasing some photos from NetCracker SportFest 2011.
 ---
 {% include common-links-abbreviations.markdown %}

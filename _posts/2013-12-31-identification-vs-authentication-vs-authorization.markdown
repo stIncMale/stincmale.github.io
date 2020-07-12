@@ -4,9 +4,9 @@ slug: identification-vs-authentication-vs-authorization
 title: Identification vs. authentication vs. authorization
 categories: [tech]
 tags: [security, disambiguation]
-date: 2013-12-31T00:00:00+00:00
+date: 2013-12-30T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-06-11T01:15:00−06:00
+custom_update_date: 2020-07-11T18:15:00Z
 custom_keywords: [identification, authentication, external authentication, perimeter authentication, authorization, subject, security domain, security realm, identity, credential, credentials, ]
 custom_description: Identification, authentication, and authorization are crucial parts of implementing access control in a system and they do not mean the same thing.
 ---

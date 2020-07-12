@@ -4,9 +4,9 @@ slug: charset-vs-encoding
 title: Charset vs. encoding
 categories: [tech]
 tags: [disambiguation]
-date: 2013-01-01T00:00:00+00:00
+date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-06-11T01:13:00−06:00
+custom_update_date: 2020-07-11T18:13:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---

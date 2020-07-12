@@ -14,10 +14,12 @@ title: Markup (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a>
 tags: ["RFC3986-unreserved-characters-may-be-encoded__-.~", "RFC3986-reserved-characters-must-be-encoded__:_/_?_#_[_]_@_!_$_&_'_(_)_*_+_,_;_=", "percent-character-must-be-encoded__%", 'other-characters-may-be-encoded__\_ _"_&lt;_&gt;_^_&#x01f4af;']
 # These dates must be specified in the RFC 3339 (https://tools.ietf.org/html/rfc3339) format,
 # e.g. 1985-04-12T23:20:50.52Z or 2020-04-24T20:08:00−06:00 because they are used in Atom feed.
-date: 2020-04-26T12:00:00+00:00
+# However, both data/custom_update_date (and definitely custom_post_date) are simply strings, not timestamps,
+# and Liquid filters do not correctly handle the time zone offset. This is why only either +00:00 or Z should be used.
+date: 2020-04-11T12:00:00Z
 # A data without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2020-05-28T10:57:00−06:00
+custom_update_date: 2020-07-11T18:00:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.

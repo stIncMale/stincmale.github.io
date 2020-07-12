@@ -4,9 +4,9 @@ slug: cyber-eclipse
 title: CyberEclipse
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
-date: 2006-01-01T12:00:00+00:00
+date: 2006-01-01T12:00:00Z
 custom_post_date: 2006
-custom_update_date: 2020-07-02T20:51:00−06:00
+custom_update_date: 2020-07-11T18:03:00Z
 custom_keywords: [game highlights, frag highlights, Unreal Tournament 2004, UT2004, Unreal Tournament, UT]
 custom_description: A game highlights Unreal Tournament 2004 video.
 ---

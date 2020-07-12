@@ -4,9 +4,9 @@ slug: 3d-billiards
 title: 3D Billiards
 categories: [tech]
 tags: [archived, OpenGL, C++]
-date: 2005-12-01T00:00:00+00:00
+date: 2005-12-01T12:00:00Z
 custom_post_date: 2005-12
-custom_update_date: 2020-06-11T01:02:00−06:00
+custom_update_date: 2020-07-11T18:02:00Z
 custom_description: A computer science project made by students at MIPT.
 ---
 {% include common-links-abbreviations.markdown %}

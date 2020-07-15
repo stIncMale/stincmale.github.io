@@ -370,7 +370,7 @@ pre {
     overflow: auto;
   }
   @media print {
-    span {
+    code, span {
       white-space: pre-wrap;//wrap text because when printing there are no scroll-bars
       overflow-wrap: break-word;
     }

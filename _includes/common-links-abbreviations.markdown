@@ -83,3 +83,11 @@
 {:data-title="UCS Transformation Format"}
 *[HTTP]:
 {:data-title="Hypertext Transfer Protocol"}
+*[PKCS]:
+{:data-title="Public-Key Cryptography Standards"}
+*[ITU]:
+{:data-title="International Telecommunication Union"}
+*[ITU-T]:
+{:data-title="ITU Telecommunication Standardization Sector"}
+*[ASN.1]:
+{:data-title="Abstract Syntax Notation One"}

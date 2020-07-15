@@ -96,7 +96,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
 * **[King of Thieves](http://www.kingofthieves.com/) server**
   (Netty, ZooKeeper + Apache Curator, Protobuf, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
   * joined this project in Aug 2015, 7 months after the global release, and supported it / developed new features until resigning;
-  * implemented validation and processing of **purchases and subscriptions**, here is my [related blog post](https://sites.google.com/site/aboutmale/techblog/parseappstorereceipt);<!-- TODO update this link-->
+  * implemented validation and processing of **in-app purchases and subscriptions**, here is my [related blog post]({% post_url 2017-06-06-decoding-apple-app-store-receipts %});
   * implemented **automatic data extraction/grouping from Mixpanel and sending** it to partners.
 * **Server and client homegrown frameworks** (Netty)
   * **developed from scratch**

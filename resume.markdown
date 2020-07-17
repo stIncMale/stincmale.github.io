@@ -78,7 +78,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;p
   designed and implemented support of this functionality in **cluster environment** on my own;
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
   * **cluster** &mdash; identified and fixed multiple bugs, one of them was a problem caused by out of order data replication,
-  here is my [related blog post](https://sites.google.com/site/aboutmale/techblog/datareplicationpitfall);<!-- TODO update this link-->
+  here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
   * incremental updates functionality &mdash; allows automatically updating client applications;
   fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
 </div>

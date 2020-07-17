@@ -42,7 +42,6 @@ Text before ToC.
 ## [](#todo){:.section-link}TODO {#todo}
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
-* Update Jakarta links.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)

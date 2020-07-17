@@ -6,19 +6,19 @@ categories: [tech]
 tags: [Jakarta EE, Java]
 date: 2011-01-01T12:00:00Z
 custom_post_date: 2011
-custom_update_date: 2020-07-11T18:07:00Z
+custom_update_date: 2020-07-17T06:52:00Z
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---
 {% include common-links-abbreviations.markdown %}
 
-[`UserTransaction.setTransactionTimeout`]: <https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#setTransactionTimeout-int->
-[`UserTransaction.begin`]: <https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#begin-->
+[`UserTransaction.setTransactionTimeout`]: <https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#setTransactionTimeout-int->
+[`UserTransaction.begin`]: <https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#begin-->
 
 First and foremost, [`UserTransaction.setTransactionTimeout`]<!-- -->[^1]
 affects only subsequent[^2] transactions associated with the [current thread](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Thread.html#currentThread()).
 This behavior is explicitly stated in the documentation, but may not be intuitively expected. However, if we think about this behavior, it becomes obvious that
-if the method were affecting transactions [started](https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#begin--) by other threads,
+if the method were affecting transactions [started](https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#begin--) by other threads,
 then setting a transaction timeout would have been inherently racy[^3]: another thread could have called [`UserTransaction.setTransactionTimeout`] with a different timeout
 [concurrently]({% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency) with the current thread calling [`UserTransaction.setTransactionTimeout`] and [`UserTransaction.begin`].
 In such a situation it would have been impossible to predict the timeout value for the transaction started by the current thread.
@@ -46,8 +46,8 @@ e.g., via [Spring Framework](https://docs.spring.io/spring-framework/docs/curren
 [`TransactionTemplate`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/transaction/support/TransactionTemplate.html).
 
 [^1]: If a transaction is not terminated by
-    either [committing](https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#commit--)
-    or [rolling back](https://jakarta.ee/specifications/transactions/1.3/apidocs/javax/transaction/UserTransaction.html#rollback--)
+    either [committing](https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#commit--)
+    or [rolling back](https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#rollback--)
     then [Jakarta Transactions](https://jakarta.ee/specifications/transactions/) implementation automatically rolls it back.
 
     This setting is not to be confused with e.g. PostgreSQL [`idle_in_transaction_session_timeout`](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT).

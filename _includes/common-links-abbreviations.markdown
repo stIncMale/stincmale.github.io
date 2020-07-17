@@ -49,6 +49,10 @@
 {:data-title="Java Microbenchmark Harness"}
 *[SLF4J]:
 {:data-title="Simple Logging Facade for Java"}
+*[JPA]:
+{:data-title="Java Persistence API"}
+*[ORM]:
+{:data-title="Object-Relational Mapping"}
 *[CRDT]:
 {:data-title="Conflict-Free Replicated Data Type"}
 *[CRDTs]:

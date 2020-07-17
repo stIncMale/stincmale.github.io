@@ -6,7 +6,7 @@ categories: [tech]
 tags: [security, disambiguation]
 date: 2013-12-30T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-11T18:15:00Z
+custom_update_date: 2020-07-17T06:41:00Z
 custom_keywords: [identification, authentication, external authentication, perimeter authentication, authorization, subject, security domain, security realm, identity, credential, credentials, ]
 custom_description: Identification, authentication, and authorization are crucial parts of implementing access control in a system and they do not mean the same thing.
 ---
@@ -132,8 +132,8 @@ A token may contain information that is used by the system to verify its authent
 
 Single sign-on (SSO) is implemented by utilizing the external [authentication] approach,
 but this approach may often be used just to move the [authentication] burden to a different system.
-[Kerberos](https://www.rfc-editor.org/rfc/rfc4120.html), [LDAP authentication](https://www.rfc-editor.org/rfc/rfc4513.html),
-[RADIUS](https://www.rfc-editor.org/rfc/rfc2865.html), [OpenID](https://openid.net/what-is-openid/) are all examples of external [authentication].
+[Kerberos](https://www.rfc-editor.org/rfc/rfc4120), [LDAP authentication](https://www.rfc-editor.org/rfc/rfc4513),
+[RADIUS](https://www.rfc-editor.org/rfc/rfc2865), [OpenID](https://openid.net/what-is-openid/) are all examples of external [authentication].
 
 See also [WebLogic perimeter authentication](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/scovr/glossary.html#GUID-0E1E0338-573D-4DD9-AD9A-E4C1B488DF0D).
 

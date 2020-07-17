@@ -5,7 +5,7 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2020-07-17T05:30:00Z
+custom_update_date: 2020-07-17T06:43:00Z
 custom_keywords: [replication, incremental replication, logical replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
@@ -119,7 +119,7 @@ replicate
 ```
 
 Note that I have not expressed any correspondence between the natural order of values of the `id` field and the total order of actions
-on a single application. If `id` were randomly generated, e.g., [UUID version 4](https://www.rfc-editor.org/rfc/rfc4122.html#section-4.1.3),
+on a single application. If `id` were randomly generated, e.g., [UUID version 4](https://www.rfc-editor.org/rfc/rfc4122#section-4.1.3),
 then this statement would have been obvious. I use the integer type in this post simply because I can use a single character
 to represent some of its values. I deliberately used 2 as the `id` in the first `create` and 1 in the second `create` because this is allowed
 and results in a scenario I need.

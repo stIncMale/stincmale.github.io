@@ -5,7 +5,7 @@ title: Decoding Apple App Store receipts (PKCS &num;7, ASN.1) in Java
 categories: [tech]
 tags: [Java]
 date: 2017-06-06T12:00:00Z
-custom_update_date: 2020-07-15T06:15:00Z
+custom_update_date: 2020-07-17T06:42:00Z
 custom_keywords: [Apple App Store, receipt, in-app purchase, subscription, decode, PKCS &num;7, ASN.1]
 custom_description: It appears Apple thinks that no one needs to decode receipts on the server side. In practice, however, things are not necessary as smooth and we had to decode receipts before validating them in order to handle and restore subscriptions. This post describes how to do this in Java.
 ---
@@ -13,8 +13,8 @@ custom_description: It appears Apple thinks that no one needs to decode receipts
 
 According to the [documentation](https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html),
 App Store receipts are binary files packed in a
-<q>"[PKCS #7](https://www.rfc-editor.org/rfc/rfc2315.html) container,
-as defined by [RFC 2315](https://www.rfc-editor.org/rfc/rfc2315.html),
+<q>"[PKCS #7](https://www.rfc-editor.org/rfc/rfc2315) container,
+as defined by [RFC 2315](https://www.rfc-editor.org/rfc/rfc2315),
 with its payload encoded using [ASN.1 (Abstract Syntax Notation One)](http://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx),
 as defined by [ITU-T X.690](http://handle.itu.int/11.1002/1000/12483)[^1]"</q>
 The structure of a receipt is shown in the image below.

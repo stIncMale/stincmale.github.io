@@ -7,19 +7,19 @@ slug: examples
 categories: [tech, cgi-vfx]
 title: Markup (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a>) and style examples
 # Check that:
-# - the unreserved characters (https://tools.ietf.org/html/rfc3986#section-2.3) are either left as is or are percent-encoded (https://tools.ietf.org/html/rfc3986#section-2.1) (I am not testing alpha and digit characters as they obviously work),
-# - the reserved characters (https://tools.ietf.org/html/rfc3986#section-2.2) are percent-encoded,
-# - the percent character is percent-encoded (according to https://tools.ietf.org/html/rfc3986#section-2.4),
+# - the unreserved characters (https://www.rfc-editor.org/rfc/rfc3986#section-2.3) are either left as is or are percent-encoded (https://www.rfc-editor.org/rfc/rfc3986#section-2.1) (I am not testing alpha and digit characters as they obviously work),
+# - the reserved characters (https://www.rfc-editor.org/rfc/rfc3986#section-2.2) are percent-encoded,
+# - the percent character is percent-encoded (according to https://www.rfc-editor.org/rfc/rfc3986#section-2.4),
 # - all other characters may be percent-encoded.
 tags: ["RFC3986-unreserved-characters-may-be-encoded__-.~", "RFC3986-reserved-characters-must-be-encoded__:_/_?_#_[_]_@_!_$_&_'_(_)_*_+_,_;_=", "percent-character-must-be-encoded__%", 'other-characters-may-be-encoded__\_ _"_&lt;_&gt;_^_&#x01f4af;']
-# These dates must be specified in the RFC 3339 (https://tools.ietf.org/html/rfc3339) format,
+# These dates must be specified in the RFC 3339 (https://www.rfc-editor.org/rfc/rfc3339) format,
 # e.g. 1985-04-12T23:20:50.52Z or 2020-04-24T20:08:00−06:00 because they are used in Atom feed.
 # However, both data/custom_update_date (and definitely custom_post_date) are simply strings, not timestamps,
 # and Liquid filters do not correctly handle the time zone offset. This is why only either +00:00 or Z should be used.
 date: 2020-04-11T12:00:00Z
 # A data without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2020-07-11T18:00:00Z
+custom_update_date: 2020-07-17T06:44:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
@@ -42,7 +42,7 @@ Text before ToC.
 ## [](#todo){:.section-link}TODO {#todo}
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
-* Replace tools.ietf.org links with rfc-editor.org links.
+* Update Jakarta links.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-11T18:13:00Z
+custom_update_date: 2020-07-17T06:40:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -48,14 +48,14 @@ I also recommend reading the article [The Absolute Minimum Every Software Develo
 
 ## [](#cm){:.section-link}Character map {#cm}
 <div class="info-block" markdown="1">
-[**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps), a.k.a. [**charset**](https://tools.ietf.org/html/rfc2978#section-1.3) &mdash;
+[**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps), a.k.a. [**charset**](https://www.rfc-editor.org/rfc/rfc2978#section-1.3) &mdash;
 a mapping from a sequence of members of an [abstract character repertoire (ACR)](https://www.unicode.org/reports/tr17/#Repertoire) to a sequence of bytes.
 
 [CM](https://www.unicode.org/reports/tr17/#CharacterMaps) = [coded character set (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet) + [character encoding form (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm) + [character encoding scheme (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)
 </div>
 
 CES in the above definition may be compound, which means there may be multiple CEF/CCS for a given CM, which is also then called compound.
-This definition is to an extent similar to the definition given by the [RFC 2978](https://tools.ietf.org/html/rfc2978#section-1.3),
+This definition is to an extent similar to the definition given by the [RFC 2978](https://www.rfc-editor.org/rfc/rfc2978#section-1.3),
 though it does not seem like they are identical, and the definition in the RFC makes much less sense to me than the one in the [Unicode standard](https://unicode.org/standard/standard.html).
 
 So a charset is not actually a set of characters, as one might have anticipated based on the word choice.
@@ -121,7 +121,7 @@ but Java SE API specification refers to it as [`Charset`](https://cr.openjdk.jav
 So what is it exactly? According to [ISO/IEC 10646](https://www.iso.org/standard/69119.html), or the [Unicode standard](https://unicode.org/standard/standard.html)
 (they are [kept synchronized](https://www.unicode.org/faq/unicode_iso.html)),
 there is UTF-8 CEF and UTF-8 CES.
-[RFC 3629](https://tools.ietf.org/html/rfc3629) defines UTF-8 charset that is registered as an [IANA character set](https://www.iana.org/assignments/character-sets/character-sets.xhtml).
+[RFC 3629](https://www.rfc-editor.org/rfc/rfc3629) defines UTF-8 charset that is registered as an [IANA character set](https://www.iana.org/assignments/character-sets/character-sets.xhtml).
 So we may say that
 <div class="info-block" markdown="1">
 UTF-8 charset = UCS CCS + UTF-8 CEF + UTF-8 CES.

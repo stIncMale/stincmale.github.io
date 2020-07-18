@@ -5,8 +5,8 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2020-07-17T06:43:00Z
-custom_keywords: [replication, incremental replication, logical replication]
+custom_update_date: 2020-07-18T18:40:00Z
+custom_keywords: [replication, incremental replication, logical replication, asynchronous replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
 {% include common-links-abbreviations.markdown %}
@@ -72,7 +72,8 @@ The `replicate` algorithm:
 1. Collect all entities in the master that were created/updated since the last execution of this step,
 this is what makes the replication incremental. The replication is logical because it replicates entities based upon their identity,
 as opposed to physical replication that would have replicated data byte-by-byte.
-2. Sort the collected entities by `id` so that the following steps behave identically in all slaves.
+2. Sort the collected entities by `id`. The only reason for doing so is to make the algorithm deterministic, therefore,
+the sort order, per se, does not matter.
 3. Transfer the collected and sorted data to all slaves.
 4. In each slave `delete` all entities that exist in the slave and do not exist in the received data. Entities are matched by `id`.
 5. In each slave iterate over all the received entities preserving the order and apply the new state as follows:
@@ -142,10 +143,12 @@ turned out to be ordered after the action `create(1, "a")`{:.highlight .language
 happened in the master.
 
 ### [](#naive-fix){:.section-link}Naive fix {#naive-fix}
+The original `replicate` algorithm does not specify the order of `create`/`update` operations, their order depends on the
+diff that comes from the master, the state of the slave, and the sort order in step 2, which is arbitrary.
 At first glance, it appears that the above problem can be solved by executing all `update` actions
 before executing any of `create` actions. The <span style="color: green;">updated</span> algorithm:
 1. Collect all entities in the master that were created/updated since the last execution of this step.
-2. Sort the collected entities by `id` so that the following steps behave identically in all slaves.
+2. Sort the collected entities by `id`.
 3. Transfer the collected and sorted data to all slaves.
 4. In each slave `delete` all entities that exist in the slave and do not exist in the received data.
 5. <span style="color: green;">In each slave iterate over all the received entities preserving the order and `update` all entities that the slave has.</span>

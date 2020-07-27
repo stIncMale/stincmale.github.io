@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-17T06:40:00Z
+custom_update_date: 2020-07-27T03:27:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -46,7 +46,19 @@ I also recommend reading the article [The Absolute Minimum Every Software Develo
 
 {% include toc.markdown %}
 
-## [](#cm){:.section-link}Character map {#cm}
+## [](#acr){:.section-link}Abstract character repertoire (ACR) {#acr}
+<div class="info-block" markdown="1">
+An unordered set of **abstract characters** is called an [**abstract character repertoire** (ACR)](https://unicode.org/reports/tr17/#Repertoire).
+Abstract characters are often referred to as just characters.
+</div>
+
+The word "abstract" emphasizes that these objects are defined by convention.
+For example, the capital letter "A" in the Latin alphabet is an abstract character named `LATIN CAPITAL LETTER A` in the [Unicode standard](https://unicode.org/standard/standard.html).
+Regardless of the [glyph](https://unicode.org/reports/tr17/#CharactersVsGlyphs) we use to represent this character, e.g.,
+![glyph examples]({% link /assets/img/blog/charset-vs-encoding/glyph-examples.png %}){:style="width: auth; height: 1.5em; vertical-align: sub;"},
+we mean the same abstract character.
+
+## [](#cm){:.section-link}Character map (CM) {#cm}
 <div class="info-block" markdown="1">
 [**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps), a.k.a. [**charset**](https://www.rfc-editor.org/rfc/rfc2978#section-1.3) &mdash;
 a mapping from a sequence of members of an [abstract character repertoire (ACR)](https://www.unicode.org/reports/tr17/#Repertoire) to a sequence of bytes.
@@ -54,17 +66,13 @@ a mapping from a sequence of members of an [abstract character repertoire (ACR)]
 [CM](https://www.unicode.org/reports/tr17/#CharacterMaps) = [coded character set (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet) + [character encoding form (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm) + [character encoding scheme (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)
 </div>
 
-CES in the above definition may be compound, which means there may be multiple CEF/CCS for a given CM, which is also then called compound.
-This definition is to an extent similar to the definition given by the [RFC 2978](https://www.rfc-editor.org/rfc/rfc2978#section-1.3),
-though it does not seem like they are identical, and the definition in the RFC makes much less sense to me than the one in the [Unicode standard](https://unicode.org/standard/standard.html).
-
 So a charset is not actually a set of characters, as one might have anticipated based on the word choice.
 
-<div class="info-block" markdown="1">
-An unordered set of **abstract characters** is called an [**abstract character repertoire** (ACR)](https://unicode.org/reports/tr17/#Repertoire).
-</div>
+CES in the above definition may be compound, which means there may be multiple CEF/CCS for a given CM, which is also then called compound.
+This definition is to an extent similar to the definition given by the [RFC 2978](https://www.rfc-editor.org/rfc/rfc2978#section-1.3),
+though it does not seem like they are identical, and the definition in the RFC makes much less sense to me than the one in the Unicode standard.
 
-### [](#ccs){:.section-link}Coded character set {#ccs}
+### [](#ccs){:.section-link}Coded character set (CCS) {#ccs}
 
 <div class="info-block" markdown="1">
 [**Coded character set** (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet), a.k.a. [code page](https://docs.microsoft.com/en-us/windows/win32/intl/code-pages) &mdash;
@@ -72,14 +80,7 @@ a mapping from an ACR to the set of non-negative integers, which are called **co
 If a CCS assigns a code point to an abstract character, then such a character is called an **encoded character**.
 </div>
 
-Abstract characters are often referred to as just characters.
-The word "abstract" emphasizes that such characters are defined by convention.
-For example, the capital letter "A" in the Latin alphabet is an abstract character named `LATIN CAPITAL LETTER A` in Unicode.
-Regardless of the [glyph](https://unicode.org/reports/tr17/#CharactersVsGlyphs) we use to represent this character, e.g.,
-![glyph examples]({% link /assets/img/blog/charset-vs-encoding/glyph-examples.png %}){:style="width: auth; height: 1.5em; vertical-align: sub;"},
-we mean the same abstract character.
-
-### [](#cef){:.section-link}Character encoding form {#cef}
+### [](#cef){:.section-link}Character encoding form (CEF) {#cef}
 <div class="info-block" markdown="1">
 [**Character encoding form** (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm) &mdash;
 a mapping from code points used in a CCS to the set of sequences of **code units**.
@@ -91,7 +92,7 @@ This concept arises from the way numbers are represented in computers &mdash; as
 thus a CES enables character representation as actual data in a computer.
 For example, the UTF-8 CEF is a variable-width encoding form that represents code points as a mix of one to four 8-bit code units in the Unicode standard.
 
-### [](#ces){:.section-link}Character encoding scheme {#ces}
+### [](#ces){:.section-link}Character encoding scheme (CES) {#ces}
 <div class="info-block" markdown="1">
 [**Character encoding scheme** (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme) &mdash;
 a reversible transformation of sequences of code units to sequences of bytes.

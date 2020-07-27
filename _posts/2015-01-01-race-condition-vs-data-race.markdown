@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2020-07-11T18:17:00Z
+custom_update_date: 2020-07-27T03:29:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -16,6 +16,12 @@ custom_description: Not all race conditions are data races, and not all data rac
 {:data-title="a property of an algorithm"}
 *[data race]:
 {:data-title="a property of an execution of a program"}
+*[SE]:
+{:data-title="Standard Edition"}
+*[EE]:
+{:data-title="Enterprise Edition"}
+*[ME]:
+{:data-title="Micro Edition"}
 
 It may seem that the terms "race condition" and "data race" have the same meaning, while in fact, they are different.
 [Java Concurrency in Practice](https://jcip.net/)<span class="insignificant">&nbsp;ISBN: 0321349601</span> book says:
@@ -248,8 +254,5 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
 
 [^5]: Here we are ignoring any shared variables used inside <code>ForkJoinPool.commonPool()<wbr>.execute(<wbr>DataRaceExample::raiseFlag)</code> without loss of generality.
 
-[^6]: [OpenJDK] is a community which goal is developing an implementation of Java SE specification.
-    The phrase "[OpenJDK JDK](https://openjdk.java.net/projects/jdk/)" means "a JDK developed by the OpenJDK community".
-    We may see usage of this phrase, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):
-    <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)"</q>.
-    I find this naming confusing.
+[^6]: See this [footnote]({% post_url 2019-05-06-make-app-behavior-consistent %}#fn:1) for an introduction to some Java-related terms
+    (Java SE/EE/ME, JDK, JRE, JVM, OpenJDK, Jakarta EE, etc.), which may be useful to orient rookie engineers/recruiters.

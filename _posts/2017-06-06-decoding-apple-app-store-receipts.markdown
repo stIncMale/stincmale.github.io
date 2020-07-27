@@ -5,7 +5,7 @@ title: Decoding Apple App Store receipts (PKCS &num;7, ASN.1) in Java
 categories: [tech]
 tags: [Java]
 date: 2017-06-06T12:00:00Z
-custom_update_date: 2020-07-17T06:42:00Z
+custom_update_date: 2020-07-27T03:39:00Z
 custom_keywords: [Apple App Store, receipt, in-app purchase, subscription, decode, PKCS &num;7, ASN.1]
 custom_description: It appears Apple thinks that no one needs to decode receipts on the server side. In practice, however, things are not necessary as smooth and we had to decode receipts before validating them in order to handle and restore subscriptions. This post describes how to do this in Java.
 ---
@@ -67,11 +67,11 @@ Now we will use the compiler from the [ASN1bean](https://www.beanit.com/asn1/) l
 that are able to read data structured according to the above definition:
 
 ```shell
-asn1bean-compiler -f app-store-receipt.asn -p stincmale.sandbox.examples.decodeappleappstorereceipt.asn1
+$ asn1bean-compiler -f app-store-receipt.asn -p stincmale.sandbox.examples.decodeappleappstorereceipt.asn1
 ```
 
 The command above generates the following Java classes in the package
-[`stincmale.sandbox.examples.decodeappleappstorereceipt.asn1.receiptmodule`](https://github.com/stIncMale/sandbox/tree/master/examples/src/main/java/stincmale/sandbox/examples/decodeappleappstorereceipt/asn1/receiptmodule):
+[<code>stincmale<wbr>.sandbox<wbr>.examples<wbr>.decodeappleappstorereceipt<wbr>.asn1<wbr>.receiptmodule</code>](https://github.com/stIncMale/sandbox/tree/master/examples/src/main/java/stincmale/sandbox/examples/decodeappleappstorereceipt/asn1/receiptmodule):
 * `Payload` consists of `ReceiptAttribute`s, which are designated as attributes inside a payload in the image above.
 * `ReceiptAttribute` is designated as an attribute inside a payload in the image above.
 * `InAppReceipt` is the value of a `ReceiptAttribute`, which is designated as an in-app purchase receipt in the image above.

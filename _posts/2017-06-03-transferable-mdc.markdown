@@ -5,7 +5,7 @@ title: Using SLF4J MDC across threads
 categories: [tech]
 tags: [Java]
 date: 2017-06-03T12:00:00Z
-custom_update_date: 2020-07-11T18:18:00Z
+custom_update_date: 2020-07-27T03:38:00Z
 custom_keywords: [MDC, mapped diagnostic context, ThreadContext, SLF4J, Log4j, logging]
 custom_description: When a single task is done by multiple threads one may want to pass MDC between the threads to achieve task-scoped behavior. TransferableMdc is the tool that does this for you.
 ---
@@ -24,7 +24,7 @@ This means that the information is accessible to the code that is executed by th
 and is not accessible to the code executed by different threads.
 This approach works fine when a single task is processed by a single thread and fails if more than one thread participates in processing a task.
 Logback [recommends](http://logback.qos.ch/manual/mdc.html#managedThreads) using the methods
-[`MDC.getCopyOfContextMap()`](http://www.slf4j.org/apidocs/org/slf4j/MDC.html#getCopyOfContextMap())/[`MDC.setContextMap(Map<String,​String> contextMap)`](http://www.slf4j.org/apidocs/org/slf4j/MDC.html#setContextMap(java.util.Map))
+[`MDC.getCopyOfContextMap()`](http://www.slf4j.org/apidocs/org/slf4j/MDC.html#getCopyOfContextMap())/<wbr>[`MDC.setContextMap(Map<String, ​String> contextMap)`](http://www.slf4j.org/apidocs/org/slf4j/MDC.html#setContextMap(java.util.Map))
 for transferring the context between threads, Log4j 2 also [suggests](https://logging.apache.org/log4j/2.x/manual/thread-context.html#Implementation_details)
 implementing such transferring in the application.
 In my opinion, this task should be solved by logging libraries instead of being shifted to users, especially given that

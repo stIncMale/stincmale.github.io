@@ -42,6 +42,7 @@ Text before ToC.
 ## [](#todo){:.section-link}TODO {#todo}
 * Leave "redirect" links in the old site.
 * Update the link to this site on YouTube channel, LinkedIn, Github and other social websites.
+* Check spaces around em-dashes; some places use hyphens instead of em-dashes and need to be fixed.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
@@ -166,7 +167,7 @@ Normal text.
 * Hyphens and dashes (see <https://www.grammarly.com/blog/hyphens-and-dashes/>)
   * Hyphen - <q>This rock-hard cake is absolutely impossible to eat.</q>
   * En-dash &ndash; <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
-  * Em-dash &mdash; <q>He is afraid of two things &mdash; spiders and senior prom.</q>
+  * Em-dash &mdash; <q>He is afraid of two things&mdash;spiders and senior prom.</q>
 * Ellipsis &hellip; <q>Andrew, can you, um&hellip; never mind.</q>
 
 ## [](#footnotes){:.section-link}Footnotes {#footnotes}

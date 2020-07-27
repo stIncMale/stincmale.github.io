@@ -7,6 +7,12 @@
 
 *[iff]:
 {:data-title="if and only if"}
+*[stdin]:
+{:data-title="standard input stream"}
+*[stdout]:
+{:data-title="standard output stream"}
+*[stderr]:
+{:data-title="standard error stream"}
 *[MIPT]:
 {:data-title="Moscow Institute of Physics and Technology"}
 *[WTFPL]:
@@ -35,10 +41,18 @@
 {:data-title="Java Platform, Standard Edition"}
 *[JSR]:
 {:data-title="Java Specification Request"}
+*[JEP]:
+{:data-title="JDK Enhancement Proposal"}
+*[JEPs]:
+{:data-title="JDK Enhancement Proposal"}
 *[JDK]:
 {:data-title="Java Development Kit"}
+*[JRE]:
+{:data-title="Java Runtime Environment"}
 *[JVM]:
 {:data-title="Java Virtual Machine"}
+*[JVMS]:
+{:data-title="Java Virtual Machine Specification"}
 *[JLS]:
 {:data-title="Java Language Specification"}
 *[JMM]:
@@ -95,3 +109,7 @@
 {:data-title="ITU Telecommunication Standardization Sector"}
 *[ASN.1]:
 {:data-title="Abstract Syntax Notation One"}
+*[CLI]:
+{:data-title="Command-Line Interface"}
+*[GUI]:
+{:data-title="Graphical User Interface"}

@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2020-07-11T18:20:00Z
+custom_update_date: 2020-07-29T06:58:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -78,7 +78,7 @@ An example of a situation when actions are not done in parallel despite being co
 
 If people A and B having the same performance were digging a pit together during the same day,
 then their "dig" actions both started in the morning and finished in the evening, thus were concurrent.
-However, if during that day when A was in the pit &mdash; B was resting, and vice versa, then they did not dig the pit in parallel,
+However, if during that day when A was in the pit&mdash;B was resting, and vice versa, then they did not dig the pit in parallel,
 and, therefore, a single person C who has the same performance as either A or B but does not need any rest would have dug a pit of the same size in a day while working alone.
 
 ### [](#executing-on-single-processing-unit){:.section-link}Executing on a single processing unit {#executing-on-single-processing-unit}
@@ -91,7 +91,7 @@ then we are in a situation when the computer can execute only one thread of a pr
 the OS regularly switches the thread that is being executed. Despite parallel execution is physically impossible in the described system,
 PostgreSQL still able to start multiple backend processes and process concurrent requests in separate transactions.
 
-Now imagine disabling [concurrency control](https://www.postgresql.org/docs/current/mvcc.html) &mdash; transactions are not isolated ("I" in ACID) anymore
+Now imagine disabling [concurrency control](https://www.postgresql.org/docs/current/mvcc.html)&mdash;transactions are not isolated ("I" in ACID) anymore
 and, therefore, behave differently. If this is not obvious, you may take any of the [examples](https://wiki.postgresql.org/wiki/SSI) demonstrating
 [Serializable Snapshot Isolation (SSI)](https://drkp.net/papers/ssi-vldb12.pdf)<span class="insignificant">&nbsp;by [Dan R. K. Ports](https://drkp.net/), [Kevin Grittner](http://wiki.postgresql.org/wiki/User:Kgrittn)</span>
 and see that it does not rely on whether transactions are executed in parallel or not, yet shows that without SSI the behavior would have been different.

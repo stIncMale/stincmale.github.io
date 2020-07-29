@@ -21,7 +21,7 @@ A place where I share things (mostly those related to my profession) with humani
 Humanity&hellip; do I like it? Let's say, I have mixed feelings. I love [the song](https://youtu.be/0755SXCTCN0) though!
 
 The story behind the name {{ site.custom_title }} is straightforward:
-the majority of code that software engineers write in their spare time ends up being unused, i.e. being dead &mdash; hence the name.
+the majority of code that software engineers write in their spare time ends up being unused, i.e. being dead&mdash;hence the name.
 
 ## [](#personality){:.section-link}Personality
 This particular page is about sharing something with regard to my personality rather than technical things.

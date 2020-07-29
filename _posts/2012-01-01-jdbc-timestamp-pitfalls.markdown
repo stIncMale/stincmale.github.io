@@ -6,7 +6,7 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2020-07-11T18:12:00Z
+custom_update_date: 2020-07-29T06:51:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject​, getObject​]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---
@@ -39,8 +39,8 @@ via [`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x)`]
 and retrieved from a [`ResultSet`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html)
 via [`ResultSet.getTimestamp(int columnIndex)`].
 
-It is working fine &mdash; stores timestamps and reads them back as expected. But then you start it on a different machine all of a sudden,
-it reads not what you expected &mdash; all timestamps are shifted by a few hours. What happened and how this could have been avoided?
+It is working fine&mdash;stores timestamps and reads them back as expected. But then you start it on a different machine all of a sudden,
+it reads not what you expected&mdash;all timestamps are shifted by a few hours. What happened and how this could have been avoided?
 
 ## [](#explanation){:.section-link}Explanation {#explanation}
 Turns out, the new machine uses a different time zone, but our application was not written correctly to survive such an event. 

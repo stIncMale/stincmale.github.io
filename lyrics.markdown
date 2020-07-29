@@ -17,8 +17,8 @@ Or being lied about, don't deal in lies,\\
 Or being hated, don't don't give way to hating,\\
 And yet don't look too good, nor talk too wise:
 
-If you can dream - and not make dreams your master;\\
-If you can think - and not make thoughts your aim;\\
+If you can dream&mdash;and not make dreams your master;\\
+If you can think&mdash;and not make thoughts your aim;\\
 If you can meet with Triumph and Disaster\\
 And treat those two imposters just the same;\\
 If you can bear to hear the truth you've spoken\\
@@ -36,13 +36,13 @@ And so hold on when there is nothing in you\\
 Except the Will which says to them: "Hold on!"
 
 If you can talk with crowds and keep your virtue,\\
-Or walk with Kings - nor lose the common touch,\\
+Or walk with Kings&mdash;nor lose the common touch,\\
 If neither foes nor loving friends can hurt you,\\
 If all men count with you, but none too much;\\
 If you can fill the unforgiving minute\\
 With sixty seconds' worth of distance run,\\
 Yours is the Earth and everything that's in it,\\
-And - which is more - you'll be a man, my son!
+And&mdash;which is more&mdash;you'll be a man, my son!
 
 <span class="insignificant">Rudyard Kipling</span>
 
@@ -80,7 +80,7 @@ And now, as tears subside\\
 I find it all so amusing
 
 To think I did all that\\
-And may I say - not in a shy way\\
+And may I say&mdash;not in a shy way\\
 Oh no, oh no, not me\\
 I did it my way
 

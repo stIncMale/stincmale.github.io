@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java]
 date: 2014-01-01T12:00:00Z
 custom_post_date: 2014
-custom_update_date: 2020-07-11T18:16:00Z
+custom_update_date: 2020-07-29T06:55:00Z
 custom_keywords: [final field, final fields, semantics, JMM, Java memory model]
 custom_description: A final field in Java is not the same thing as a final variable that may only be assigned to once.
 ---
@@ -16,7 +16,7 @@ Contrary to popular belief, a `final` field in Java is not the same thing as
 a [`final` variable](https://docs.oracle.com/javase/specs/jls/se14/html/jls-4.html#jls-4.12.4) that may only be assigned to once.
 [The Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4) not only has a separate
 [section explaining the semantics](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.5)
-but also introduces two partial orders &mdash; dereference chain (`dereferences`) and memory chain (`mc`)
+but also introduces two partial orders&mdash;dereference chain (`dereferences`) and memory chain (`mc`)
 just for the sake of specifying `final` fields.
 
 This presentation touches almost all aspects of the JMM and has many examples of programs which behavior a reader may find unexpected.

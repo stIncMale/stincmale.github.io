@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2020-07-11T18:14:00Z
+custom_update_date: 2020-07-29T06:53:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -49,7 +49,7 @@ there are infinitely many events distanced from it with a space-like interval.
 Such events are seen as simultaneous by some observers and are not seen as simultaneous by other observers,
 which means the universe does not exist in absolute time.
 
-What if we are talking about a logical system, may it have absolute time? &mdash; it definitely may, for example:
+What if we are talking about a logical system, may it have absolute time?&mdash;it definitely may, for example:
 * any sequential object, that is, a data object that is accessed only sequentially, may be thought of as having absolute logical time;
 * depending on the consistency model of a [concurrent] object, that is, a data object that may be accessed concurrently,
   we may be able to imagine it existing in absolute logical time.
@@ -59,7 +59,7 @@ What if we are talking about a logical system, may it have absolute time? &mdash
   [Time, Clocks, and the Ordering of Events in a Distributed System](http://lamport.azurewebsites.net/pubs/pubs.html#time-clocks)<span class="insignificant">&nbsp;by [Leslie Lamport](http://lamport.azurewebsites.net/)</span>
   describes the synchronization of logical clocks, allowing to totally order all events in a distributed system.
 
-Do not get too excited, though &mdash; there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
+Do not get too excited, though&mdash;there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
 exist in different timelines, i.e., the events are ordered not totally, but partially. [`LongAdder`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
 from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/index.html)
 is an example of a simple concurrent object with no absolute timeline and no snapshots,
@@ -69,7 +69,7 @@ but concurrent updates that occur while the sum is being calculated might not be
 
 ### [](#stop-time){:.section-link}The ability to stop time {#stop-time}
 At least on the macroscopic scale, we perceive time as flowing unstoppably and irreversibly.
-What is it exactly that allows us to perceive and measure the time? The answer to this question is &mdash; changes.
+What is it exactly that allows us to perceive and measure the time? The answer to this question is&mdash;changes.
 We perceive the flow of time because we observe changes, and if all changes stopped, it would have been equivalent to time stopping.
 An observer within a part of the universe where there are no changes (this is a hypothetical situation which is not physically possible)
 or within a logical system where no changes are happening cannot perceive that the time is stopped, but an external observer can.
@@ -103,7 +103,7 @@ which means that there is no element `z` different from both `x` and `y` such th
 With this in mind, let us consider the following statement about linearizability:
 <q>"Linearizability provides the **illusion** that each operation takes effect **instantaneously** at some point between its invocation and its response,
 implying that the meaning of a concurrent object's operations can still be given by pre- and post conditions."</q>[^4]
-The authors clearly do not mean to imply that operations take effect instantaneously in a temporal sense &mdash; that is why they call it an illusion.
+The authors clearly do not mean to imply that operations take effect instantaneously in a temporal sense&mdash;that is why they call it an illusion.
 But why exactly does such an illusion occur when a linearizable object is used? It is because the requirements imposed by the linearizable consistency model
 <q>"allow us to describe acceptable concurrent behavior directly in terms of acceptable sequential behavior,
 an approach that simplifies both formal and informal reasoning about concurrent programs."</q>[^4]
@@ -118,14 +118,14 @@ When using the word "now" with regard to a logical system, consider if it is act
 and even if it is applicable, do you actually need it?
 Use the word "immediately" only to express ordering relations because its temporal meaning is vague.
 The idea to write this post came to me as a result of seeing [the question](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011733.html)
-<q>"Can you confirm if this is correct &mdash; a volatile write or atomic dec/inc becomes visible immediately to other threads&hellip;?"</q>,
+<q>"Can you confirm if this is correct&mdash;a volatile write or atomic dec/inc becomes visible immediately to other threads&hellip;?"</q>,
 which was about the semantics of [`volatile` fields](https://docs.oracle.com/javase/specs/jls/se14/html/jls-8.html#jls-8.3.1.4) in Java,
 and apparently implied the temporal meaning of the word "immediately". I like the two following answers to this question:
 
 * [first](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011734.html)
 > No there is no requirement for writes to become visible "immediately".
-> Only the happens-before ordering guarantees visibility &mdash; if you see a given write then you must also see writes that happen-before that first write.
-> In practice writes don't take long to become visible on most architectures &mdash; there is typically a delay until a write buffer drains.
+> Only the happens-before ordering guarantees visibility&mdash;if you see a given write then you must also see writes that happen-before that first write.
+> In practice writes don't take long to become visible on most architectures&mdash;there is typically a delay until a write buffer drains.
 
 * [second](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011735.html)
 > When someone talks about "visible immediately", we need to ask them what they mean by "immediately".

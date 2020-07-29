@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2020-07-27T03:29:00Z
+custom_update_date: 2020-07-29T06:56:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -126,7 +126,7 @@ But both orders
 * `so1`: `r`, `w1`
 * `so2`: `w1`, `r`
 
-are allowed[^3] and lead to different program outputs &mdash; "false" and "true" respectively.
+are allowed[^3] and lead to different program outputs&mdash;"false" and "true" respectively.
 Moreover, this program may exit without ever executing the method `raiseFlag`, i.e. without printing anything.
 So the program clearly has a race condition despite having no data race.
 

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [security, disambiguation]
 date: 2013-12-30T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-17T06:41:00Z
+custom_update_date: 2020-07-29T06:54:00Z
 custom_keywords: [identification, authentication, external authentication, perimeter authentication, authorization, subject, security domain, security realm, identity, credential, credentials, ]
 custom_description: Identification, authentication, and authorization are crucial parts of implementing access control in a system and they do not mean the same thing.
 ---
@@ -112,8 +112,8 @@ In other words, [authenticating] means determining whether a [subject] is in fac
 Consider the following example. A man ([subject]) tells me that his name is "Doug Lea" (claimed [identity]), and I can [identify] that this name belongs to
 a [professor of computer science specialized in concurrent programming, whose name is Doug Lea](http://gee.cs.oswego.edu/).
 At this point, I cannot be sure the man who claims that he is Doug Lea is actually a man that is [identified] by me as professor Doug Lea.
-In order to be sure, I would need to, for example, look at his face ([credentials]) and compare it with the mental image I have
-&mdash; if they match, then I successfully [authenticated] the [subject].
+In order to be sure, I would need to, for example, look at his face ([credentials]) and compare it with the mental image I have&mdash;if they match,
+then I successfully [authenticated] the [subject].
 If we were to communicate over the Internet without the ability to transmit images,
 then in order to prove the [identity]<!-- -->[^3] he could have done something that only the Doug Lea I have knowledge about could do,
 e.g., add the random text I sent him to the [Doug Lea's home page](http://gee.cs.oswego.edu/).

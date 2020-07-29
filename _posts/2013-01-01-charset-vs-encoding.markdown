@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-27T03:27:00Z
+custom_update_date: 2020-07-29T06:52:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -31,7 +31,7 @@ custom_description: Charset, a.k.a. character map (CM) = coded character set (CC
 *[BOM]:
 {:data-title="Byte Order Mark"}
 
-I have always been discouraged by the fact that the words "charset" and "encoding" seem to be used interchangeably &mdash; if they are the same term, why using both words?
+I have always been discouraged by the fact that the words "charset" and "encoding" seem to be used interchangeably&mdash;if they are the same term, why using both words?
 * The [HTML specification](https://html.spec.whatwg.org/multipage/) uses both words interchangeably:
 <q>"The <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset">`charset`</a> attribute specifies the character <a href="https://encoding.spec.whatwg.org/#encoding">encoding</a> used by the document."</q>
 * The [XML specification](https://www.w3.org/TR/xml/) seems to do a similar thing, only it specifies a declaration named `encoding` instead of `charset`,
@@ -88,7 +88,7 @@ While a code unit is an integer with a bit width fixed for a given CEF,
 the sequences of code units representing code points do not necessarily have the same length.
 </div>
 
-This concept arises from the way numbers are represented in computers &mdash; as sequences of bytes;
+This concept arises from the way numbers are represented in computers&mdash;as sequences of bytes;
 thus a CES enables character representation as actual data in a computer.
 For example, the UTF-8 CEF is a variable-width encoding form that represents code points as a mix of one to four 8-bit code units in the Unicode standard.
 

@@ -5,7 +5,7 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2020-07-18T18:40:00Z
+custom_update_date: 2020-07-29T06:57:00Z
 custom_keywords: [replication, incremental replication, logical replication, asynchronous replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
@@ -217,7 +217,7 @@ in the real system and mentioned that the replication cannot be fixed without re
 
 ## [](#analogy){:.section-link}Write-behind cache analogy {#analogy}
 At the beginning of this article I mentioned that the discussed replication is similar to data synchronization between a write-behind cache
-and the underlying storage. There is a very popular write-behind cache &mdash; [Jakarta Persistence](https://jakarta.ee/specifications/persistence/)<!-- -->[^2]
+and the underlying storage. There is a very popular write-behind cache&mdash;[Jakarta Persistence](https://jakarta.ee/specifications/persistence/)<!-- -->[^2]
 persistence context accessible via [`EntityManager`](https://jakarta.ee/specifications/persistence/3.0/apidocs/jakarta/persistence/EntityManager.html).
 Its method [`EntityManager.flush()`](https://jakarta.ee/specifications/persistence/3.0/apidocs/jakarta/persistence/EntityManager.html#flush())
 can be seen as an analogy to the discussed replication process.

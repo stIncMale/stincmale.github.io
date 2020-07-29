@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2020-07-27T05:22:00Z
+custom_update_date: 2020-07-29T06:44:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -17,6 +17,10 @@ custom_description: The behavior of a process is usually partly dependent on the
 {:data-title="Java Platform, Micro Edition"}
 *[Java EE]:
 {:data-title="Java Platform, Enterprise Edition"}
+*[ELF]:
+{:data-title="Executable and Linking Format"}
+*[PE]:
+{:data-title="Portable Executable"}
 
 [Bash]: <https://www.gnu.org/software/bash/>
 [PowerShell]: <https://docs.microsoft.com/en-us/powershell/>
@@ -51,7 +55,7 @@ which is usually an operating system's shell (whether a command-line interface (
 These values are often called the default platform time zone / line separator / locale / charset.
 If we are developing a utility that is used primarily in conjunction with other utilities,
 e.g., as part of a [Bash pipeline](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html),
-it may be important for such an application to behave with accordance to the environment to improve interoperability with other utilities.
+it may be important for such an application to behave in accordance with the environment behavior to improve interoperability with other utilities.
 However, if we are developing an application that is supposed to run on its own, we may want to make it behave the same way in different environments.
 The Java SE API allows to explicitly specify all the aforementioned, thus, overriding the default values defined by the environment, for example:
 * [`LocalDateTime.now()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html#now())
@@ -84,14 +88,14 @@ TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.from(ZoneOffset.UTC)));
 
 ### [](#line-separator){:.section-link}Line separator {#line-separator}
 Any string/text is simply a sequence of [abstract characters]({% post_url 2013-01-01-charset-vs-encoding %}#acr).
-A line is a concept that is no intrinsic to a string/text and is rather added on top of it as a basic way to markup a text for the purpose of
+A line is a concept that is not intrinsic to a string/text and is rather added on top of it as a basic way to markup the text for the purpose of
 separating different pieces from each other to facilitate human perception. On paper or on a screen we display different lines by spatially separating them.
 In a logical system, the information about where a line ends is represented by specially designated control, a.k.a. non-printing/nongraphic, characters
 or sequences of them, called line separators, injected in the text.
 
 The Java SE API provides two ways of accessing the default line separator: either directly via the standard `line.separator`
 [Java system property](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/System.html#getProperty(java.lang.String))
-or by using the method [`System.lineSeparator()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/System.html#lineSeparator()).
+or by using the method [`java.lang.System.lineSeparator()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/System.html#lineSeparator()).
 Note that the method [`System.getProperties()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/System.html#getProperties())
 states
 > "**Changing a standard system property may have unpredictable results unless otherwise specified.**
@@ -99,7 +103,7 @@ states
 > Setting a standard property after initialization &hellip; may not have the desired effect."
 
 So the only reliable way of setting the default line separator is by specifying the value of the `line.separator` Java system property when starting a JVM process.
-Once this is done, methods like [`PrintStream.println()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/PrintStream.html#println())
+Once this is done, methods like [`java.io.PrintStream.println()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/PrintStream.html#println())
 will use the specified value. Specifying a Java system property when starting a JVM process is shell-specific, here is how this can be done
 when using the [`java`/`javaw`](https://docs.oracle.com/en/java/javase/14/docs/specs/man/java.html) launcher in
 * [Bash]
@@ -137,7 +141,7 @@ There is an OpenJDK JDK&ndash;specific and undocumented Java system property `fi
 It is unreliable and nonstandard, more information may be found in the [JEP draft: Use UTF-8 as default `Charset`](https://openjdk.java.net/jeps/8187041).
 
 The very minimal functionality that relies on the default charset and is used either directly or indirectly by virtually all Java applications
-is the standard [`System.out`] and [`System.err`] [`java.io.PrintStream`]s.
+is the standard [`System.out`] and [`System.err`]<!-- --> [`PrintStream`]s.
 We can specify the [`Charset`] used by these two [`PrintStream`]s as follows:
 
 ```java
@@ -145,10 +149,11 @@ System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
 System.setErr(new PrintStream(System.err, true, StandardCharsets.UTF_8));
 ```
 
-Note that the constructor of the [`PrintStream`] class takes an [`OutputStream`],
+Note that the [constructor](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/PrintStream.html#%3Cinit%3E(java.io.OutputStream,boolean,java.nio.charset.Charset))
+of the [`PrintStream`] class takes an [`OutputStream`],
 which is charset-agnostic because it does not operate on characters. The approach specified above works despite [`System.out`]/[`System.err`]
 being [`PrintStream`]s and, thus, having their own charsets specified, because they are treated as [`OutputStream`]s by the constructor of the [`PrintStream`] class.
-Note also, that [`System.out`]/[`System.err`] are declared as `static final`, and yet the methods
+Note also, that the fields [`System.out`]/[`System.err`] are declared as `static final`, and yet the methods
 [`System.setOut(PrintStream out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/System.html#setOut(java.io.PrintStream))/<wbr>
 [`System.setErr(PrintStream err)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/System.html#setErr(java.io.PrintStream))
 somehow write to these fields after they are initialized. Doesn't this violate
@@ -210,7 +215,7 @@ You may notice that these programs use [`java.io.InputStreamReader`] and [`java.
 on the [`System.out`]<!-- --> [`PrintStream`] as was shown above. This is because the Java SE API provides a straightforward tool for transferring character data
 from a [`java.io.Reader`] to a [`java.io.Writer`]&mdash;[`Reader.ransferTo(Writer)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/Reader.html#transferTo(java.io.Writer)).
 It is important to note that we cannot use the method
-[`InputStream.transferTo​(OutputStream out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/InputStream.html#transferTo(java.io.OutputStream))
+[`java.io.InputStream.transferTo​(OutputStream out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/InputStream.html#transferTo(java.io.OutputStream))
 because this way we would be transferring binary data
 from the stdin to the stdout instead of transferring character data, which would break the semantics of the programs.
 
@@ -232,10 +237,8 @@ from the stdin to the stdout instead of transferring character data, which would
     The key part of any JDK or JRE is a Java Virtual Machine (JVM), it is responsible for hardware- and operating system&ndash;independence of any programming language
     compiled into JVM instructions called bytecodes (such languages are often called JVM languages).
     A JVM can be thought of as an emulator of a computing machine that understands the instruction set specified by the
-    [JVMS 6. The Java Virtual Machine Instruction Set](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-6.html)
-    (the [Oracle's HTML version](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-6.html) is broken for this specific chapter,
-    so the [PDF version](https://docs.oracle.com/javase/specs/jvms/se14/jvms14.pdf) is all we have).
-    The Java [class file format](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-2.html#jvms-2.1) is to a JVM
+    [JVMS 6. The Java Virtual Machine Instruction Set](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-6.html).
+    The Java [`class` file format](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-2.html#jvms-2.1) is to a JVM
     as the [Executable and Linking Format (ELF)](https://man7.org/linux/man-pages/man5/elf.5.html) / [Portable Executable (PE) format](https://docs.microsoft.com/en-us/windows/win32/debug/pe-format)
     is to a machine controlled by the Linux/Windows operating system respectively.
 
@@ -260,8 +263,8 @@ from the stdin to the stdout instead of transferring character data, which would
     is a great place to find most of the information you need when developing with Java or learning it.
 
 [^2]: I use PowerShell 7, PowerShell 5 may behave differently.
-    Note also that I see the specified fine results in [PowerShell] only when I run in from [Windows Terminal].
-    If I ran [PowerShell] on its own, it displays
+    Note also that I see the specified fine results in PowerShell only when I run in from Windows Terminal.
+    If I ran PowerShell on its own, it displays
     <figure>
       <img src="{% link assets/img/blog/make-app-behavior-consistent/powershell-output.png %}" alt="PowerShell output">
     </figure>
@@ -280,7 +283,7 @@ from the stdin to the stdout instead of transferring character data, which would
     JVM-wide defaults: charset=windows-1252, locale=en, time zone=UTC, line separator={LINE FEED (LF)}
     Charset smoke test: latin:english___cyrillic:Ñ€ÑƒÑ�Ñ�ÐºÐ¸Ð¹___hangul:í•œêµ­ì–´___math:Î¼âˆžÎ¸â„¤
     ```
-    despite the application puts UTF-8 bytes in the stdout due to the code
+    despite the application putting UTF-8 bytes in the stdout due to the code
     `System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8))`{:.highlight .language-java}.
     As we can see, the JDK detects that the environment charset is `windows-1252`, which is incorrect, as Microsoft claims
     <q>["In PowerShell 6+, the default encoding is UTF-8 without BOM on all platforms."](https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/vscode/understanding-file-encoding?view=powershell-7#configuring-powershell)</q>

@@ -113,3 +113,7 @@
 {:data-title="Command-Line Interface"}
 *[GUI]:
 {:data-title="Graphical User Interface"}
+*[ID]:
+{:data-title="identifier"}
+*[IDs]:
+{:data-title="identifiers"}

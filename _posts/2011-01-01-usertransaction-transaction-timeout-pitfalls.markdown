@@ -6,7 +6,7 @@ categories: [tech]
 tags: [Jakarta EE, Java]
 date: 2011-01-01T12:00:00Z
 custom_post_date: 2011
-custom_update_date: 2020-07-17T06:52:00Z
+custom_update_date: 2020-08-03T09:00:00Z
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---
@@ -28,7 +28,7 @@ Another surprise is that calling a method of an [enterprise bean](https://eclips
 [`UserTransaction.setTransactionTimeout`] if the method of the enterprise bean starts a transaction and the transaction timeout configured for this method/bean
 is different from what you set via [`UserTransaction.setTransactionTimeout`]. This of course depends on the implementation of
 [Jakarta Enterprise Beans](https://jakarta.ee/specifications/enterprise-beans/) that is being used.
-Following is the code provided as an example where I experienced the described unexpected behavior with [Oracle WebLogic Server](https://www.oracle.com/middleware/weblogic/).
+Following is the code provided as an example where I experienced the described unexpected behavior with [Oracle WebLogic Server](https://docs.oracle.com/en/middleware/standalone/weblogic-server/).
 
 ```java
 userTransaction.setTransactionTimeout(10);

@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2020-07-29T06:58:00Z
+custom_update_date: 2020-08-03T09:01:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -140,5 +140,4 @@ we may conclude that the actions `a` and `b` are concurrent.
     If the reordering produces results consistent with a legal execution, it is not illegal."</q>
 
 [^4]: I have no doubts that the real state of affairs is much more complex than the one described in this section.
-    If you are interested, I may recommend watching [Understanding CPU Microarchitecture to Increase Performance](https://youtu.be/rglmJ6Xyj1c)
-    <span class="insignificant">&nbsp;by [Alex Blewitt](https://alblue.bandlem.com/)</span>.
+    If you are interested, I may recommend watching [Understanding CPU Microarchitecture to Increase Performance](https://youtu.be/rglmJ6Xyj1c)<span class="insignificant">&nbsp;by [Alex Blewitt](https://alblue.bandlem.com/)</span>.

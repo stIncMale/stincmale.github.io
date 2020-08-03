@@ -129,7 +129,7 @@ _Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 20
   This allowed users to use some features of the portal even when back-end servers are temporarily unavailable.
 * **Data objects**, a homegrown persistence library &mdash; developed various **concurrent caches**.
 * Implemented **OpenID authentication**.
-* **Data migration** (Oracle  Database, Oracle PL/SQL).
+* **Data migration** (Oracle Database, Oracle PL/SQL).
 </div>
 
 <h6 class="resume-h">

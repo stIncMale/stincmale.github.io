@@ -5,7 +5,7 @@ title: Consider using an <code>array</code> with <code>value_expression in (sele
 categories: [tech]
 tags: [SQL]
 date: 2019-02-14T12:00:00Z
-custom_update_date: 2020-08-03T09:16:00Z
+custom_update_date: 2020-08-13T09:00:00Z
 custom_keywords: [in, any, some, array, unnest, batch, dynamic statement, SQL]
 custom_description: Imagine, you have a set of n identifiers (IDs) that cannot be represented by a range, and you want to delete/update all rows containing these IDs from/in a relational database. How would you do this? What if n is huge?
 ---
@@ -47,8 +47,8 @@ With JDBC this can be done by using
 [`java.sql.PreparedStatement.addBatch()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#addBatch())/<wbr>
 [`java.sql.Statement.executeBatch()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Statement.html#executeBatch())/<wbr>
 [`Statement.executeLargeBatch()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Statement.html#executeLargeBatch()).
-Despite this way commands are issued more efficiently, you still request `n` commands which a DBMS executes one by one.
-It is reasonable to assume that executing `n` commands takes more time than executing a single one which does the same thing as those `n` commands,
+Despite the commands being issued more efficiently this way, you still request `n` commands which a DBMS executes one by one.
+It is reasonable to assume that executing `n` commands takes more time than executing a single one that does the same thing as those `n` commands,
 and it seems to be true according to
 [The Performance Difference Between SQL Row-by-row Updating, Batch Updating, and Bulk Updating](https://blog.jooq.org/2018/04/19/the-performance-difference-between-sql-row-by-row-updating-batch-updating-and-bulk-updating/)<span class="insignificant">&nbsp;by
 [Lukas Eder](https://github.com/lukaseder) working with [JOOQ]</span>.
@@ -71,11 +71,11 @@ java.io.IOException: Tried to send an out-of-range integer as a 2-byte value: 10
 which happened when 100_000 values were specified for the [`in` comparison].
 
 Another problem with this approach, is that you may end up generating many similar SQL statements which differ only by the number of bind variables.
-If there is a cache of execution plans in the DBMS or a cache of prepared statements in JDBC API implementation / JDBC driver,
+If there is a cache of execution plans in the DBMS or a cache of prepared statements in the JDBC API implementation / JDBC driver,
 then not only you can hardly benefit from it, but you also pollute the cache.
-[Hibernate ORM](https://hibernate.org/orm/) tries to mitigate this by is using `in` clause parameter padding,
-see [How to improve statement caching efficiency with IN clause parameter padding](https://vladmihalcea.com/improve-statement-caching-efficiency-in-clause-parameter-padding/)<span class="insignificant">&nbsp;by [Vlad Mihalcea](https://vladmihalcea.com)</span>
-and [`hibernate.query.in_clause_parameter_padding`](https://docs.jboss.org/hibernate/orm/5.4/javadocs/constant-values.html#org.hibernate.cfg.AvailableSettings.IN_CLAUSE_PARAMETER_PADDING).
+[Hibernate ORM](https://hibernate.org/orm/) tries to mitigate this by using `in` clause parameter padding
+(see [How to improve statement caching efficiency with IN clause parameter padding](https://vladmihalcea.com/improve-statement-caching-efficiency-in-clause-parameter-padding/)<span class="insignificant">&nbsp;by [Vlad Mihalcea](https://vladmihalcea.com)</span>
+and [`hibernate.query.in_clause_parameter_padding`](https://docs.jboss.org/hibernate/orm/5.4/javadocs/constant-values.html#org.hibernate.cfg.AvailableSettings.IN_CLAUSE_PARAMETER_PADDING)).
 
 ### [](#solution-array){:.section-link}A static prepared statement with one parameter of the [`array`] type of size `n` {#solution-array}
 As a result of all the aforementioned, it appears to me that a good option may be to use
@@ -91,7 +91,7 @@ We can create an [`array`] with
 and specify it by using
 [`PreparedStatement.setArray(int parameterIndex, Array x)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setArray(int,java.sql.Array)).
 The reason for using the [`unnest`] function is that the [`in` subquery expression] expects (you guessed it)
-a subquery which returns a set of rows, a.k.a. a table, not an `array`.
+a subquery which returns a set of rows, a.k.a. a table, not an [`array`].
 Note that previously we were using the [`in` comparison], while now we are using the [`in` subquery expression].
 The function [`unnest`] converts an [`array`] to a set of rows, this is also called ["flattening"](https://cloud.google.com/bigquery/docs/reference/standard-sql/arrays#flattening_arrays).
 
@@ -113,7 +113,7 @@ By the way, Hibernate ORM may also [use this technique](https://github.com/hiber
 #### [](#solution-array-example){:.section-link}JDBC example {#solution-array-example}
 This technique turns out especially handy when you have multiple sets of IDs and want to request different updates for each set.
 It allows you to have a single SQL statement for each set of IDs and issue all such commands in a batch.
-Here is an example code demonstrating such a situation:
+Here is an example code demonstrating the situation:
 
 ```java
 Map<String, Set<Long>> valueToIds = ...;
@@ -124,7 +124,7 @@ jdbcTemplate.execute((Connection connection) -> {
     valueToIds.forEach((value, ids) -> {
       try {
         statement.setString(1, value);
-        statement.setArray(2, connection.createArrayOf(JDBCType.BIGINT.toString(), ids.toArray()));
+        statement.setArray(2, connection.createArrayOf(JDBCType.BIGINT.getName(), ids.toArray()));
         statement.addBatch();
       } catch (SQLException e) {
         throw new RuntimeException(e);
@@ -157,17 +157,18 @@ seems to describe one such situation.
 
 ## [](#notes){:.section-link}Notes {#notes}
 [100x faster Postgres performance by changing 1 line](https://www.datadoghq.com/blog/100x-faster-postgres-performance-by-changing-1-line/)<span class="insignificant">&nbsp;by [Alexis Lê-Quôc](https://www.linkedin.com/in/alexislequoc/) a co-founder of [Datadog](https://www.datadoghq.com)</span>
-reported poor performance of
+reports poor performance of
 
 ```sql
 value_expression = any(array[v1, v2, ...])
 ```
+in contrast with
 
 ```sql
 value_expression = any(values (v1), (v2), ...)
 ```
 
-for [PostgreSQL] 9.0, but said that it was fixed in [PostgreSQL] 9.3.
+for [PostgreSQL] 9.0, but says the problem was fixed in [PostgreSQL] 9.3.
 
 The reason I am mentioning this difference between the [`any` comparison] and the [`any` subquery expression] here is that
 the [`in` subquery expression] is equivalent to the `=` [`any` subquery expression] according to the [docs](https://www.postgresql.org/docs/current/functions-subquery.html#FUNCTIONS-SUBQUERY-ANY-SOME);

@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2020-08-03T09:01:00Z
+custom_update_date: 2020-08-13T09:03:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -40,7 +40,8 @@ Such "ordered before" relation is also sometimes called "happens-before". For mo
 [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)<span class="insignificant">&nbsp;by [Maurice P. Herlihy](https://cs.brown.edu/~mph/), [Jeannette M. Wing](http://www.cs.cmu.edu/~wing/)</span>[^2].  
 
 We usually do not care about unordered independent actions, because independence means we can assume,
-that they are ordered in any order convenient for us to reason about. 
+that they are ordered in any order convenient for us to reason about
+(this is called [linear extension](https://mathworld.wolfram.com/LinearExtension.html) or topological sorting of a directed graph). 
 But we do care about the order of actions that depend on each other (e.g., the result of one action is used as an input for another action),
 or may affect each other in other ways (such actions are often called *conflicting*).
 

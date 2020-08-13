@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2020-07-29T06:53:00Z
+custom_update_date: 2020-08-13T09:01:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -29,7 +29,7 @@ is the same for all observers, a.k.a. frames of reference.
 </div>
 
 <div class="info-block" markdown="1">
-A **logical** system `X` can be though at existing in a single timeline that represents **absolute time**
+A **logical** system `X` can be though as existing in a single timeline that represents **absolute time**
 iff there is a total order over all events in the system.
 </div>
 
@@ -39,7 +39,7 @@ If there is absolute time, we can define what a snapshot is.
 **Snapshot** &mdash; the state `S(t)` of `X` at a point `t` on its absolute timeline.
 </div>
 
-Note that the term "snapshot" can be defined without introducing the nation of absolute time,
+Note that the term "snapshot" can be defined without introducing the notion of absolute time,
 see [Distributed Snapshots: Determining Global States of Distributed Systems](http://lamport.azurewebsites.net/pubs/pubs.html#chandy)<span class="insignificant">&nbsp;by [K. Mani Chandy](https://en.wikipedia.org/wiki/K._Mani_Chandy) and [Leslie Lamport](http://lamport.azurewebsites.net/)</span>[^2].
 This is, however, not very relevant to our discussion about "now" because discussing this term requires discussing time.
 

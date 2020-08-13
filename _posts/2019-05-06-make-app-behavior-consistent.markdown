@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2020-07-29T06:44:00Z
+custom_update_date: 2020-08-13T09:02:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -244,7 +244,8 @@ from the stdin to the stdout instead of transferring character data, which would
 
     [OpenJDK] is a [community](https://openjdk.java.net/groups/) whose main goal is developing an
     [open-source](https://opensource.com/resources/what-open-source) implementation of the Java SE Specification.
-    [OpenJDK JDK](https://openjdk.java.net/projects/jdk/) is a proper name of the JDK developed by the OpenJDK community,
+    [OpenJDK JDK](https://openjdk.java.net/projects/jdk/) is a proper name of the JDK developed by the OpenJDK community
+    ("OpenJDK" is an adjective here according to [JDK-8205956 Fix usage of “OpenJDK” in build and test instructions](https://bugs.openjdk.java.net/browse/JDK-8205956)),
     but it is ridiculous and is usually shortened to just OpenJDK where it does not cause ambiguity.
     We may see the usage of the full name, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):
     <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)"</q>.

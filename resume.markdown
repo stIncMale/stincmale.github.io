@@ -77,8 +77,13 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;p
   * designed and developed **export/import** functionality **from scratch** in pair with a colleague,
   designed and implemented support of this functionality in **cluster environment** on my own;
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
-  * **cluster** &mdash; identified and fixed multiple bugs, one of them was a problem caused by out of order data replication,
-  here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
+  * **cluster** &mdash; identified and fixed/mitigated multiple bugs, including replication failures caused by
+    * incorrect inference of the order of replicated changes,
+    here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
+    * broken transaction isolation due to incorrect cache strategy;
+    {% comment %}
+      The cache was left in the state inconsistent with the primary storage.
+    {% endcomment %}
   * incremental updates functionality &mdash; allows automatically updating client applications;
   fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
 </div>
@@ -99,8 +104,8 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
   * implemented validation and processing of **in-app purchases and subscriptions**, here is my [related blog post]({% post_url 2017-06-06-decoding-apple-app-store-receipts %});
   * implemented **automatic data extraction/grouping from Mixpanel and sending** it to partners.
 * **Server and client homegrown frameworks** (Netty)
-  * **developed from scratch**
-  * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it
+  * **developed from scratch**;
+  * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it.
 * **Configuration server** (Netty, Hibernate ORM, ZooKeeper + Apache Curator, PostgreSQL, Apache Tapestry) &mdash;
   manages, targets and securely delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;

@@ -74,8 +74,8 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;p
 <div class="resume-experience" markdown="1">
 * **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
   (Apache Tomcat, PostgreSQL, Hibernate ORM)
-  * designed and developed **export/import** functionality **from scratch** in pair with a colleague,
-  designed and implemented support of this functionality in **cluster environment** on my own;
+  * designed and developed **export/import** functionality (the technical side is more complex than it sounds) in pair with a colleague,
+  designed and implemented support of this functionality in a **cluster environment** on my own;
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
   * **cluster** &mdash; identified and fixed/mitigated multiple bugs, including replication failures caused by
     * incorrect inference of the order of replicated changes,

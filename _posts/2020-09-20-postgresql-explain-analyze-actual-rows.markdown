@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2020-09-21T00:30:00Z
+custom_update_date: 2020-09-21T05:00:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -173,7 +173,7 @@ Accessing 5 times each of the 2 inner set rows gives 10 accesses in total, and y
 My understanding is that after `advance outer position` but before `estore inner position to mark` the last row from the
 inner set is still available to the `Merge Join` node without the need to access it again from the inner set, and so it is used right away.
 With this in mind, joining each of the outer rows, but the first one, results in reading 2 - 1 = 1 rows instead of 2 rows
-from the inner set (joining the first outer row still has to read all 2 inner rows), giving 2 + (5 - 1) * (2 - 1) = 6 rows returned/emitted
+from the inner set (joining the first outer row still has to read all 2 inner rows), giving 1 * 2 + (5 - 1) * (2 - 1) = 6 rows returned/emitted
 (as it is worded by the PostgreSQL docs) by the `Materialize` node.
 
 Interestingly, the same does not seem to happen for the `Hash` node which has a `Hash Join` node as its parent:

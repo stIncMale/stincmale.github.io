@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2020-09-21T05:00:00Z
+custom_update_date: 2020-09-21T07:30:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -199,9 +199,9 @@ Execution time: 0.060 ms
 (8 rows)
 ```
 
-Maybe this is because the hash table is accessed only once per each key, and the number of rows returned per key is considered to be always equal
-to the number of rows returned/emitted by the `Hash` node for the key,
-or maybe this is because the constructed hash table is not actually treated as a `Node`:
+Maybe this is because the hash table is accessed only once per each key, and the number of rows returned/emitted per key
+is considered to be equal to the number of rows stored by the `Hash` node for the key,
+or maybe this is because the constructed hash table is not actually treated as a node:
 
 ```c
 //nodeHash.c

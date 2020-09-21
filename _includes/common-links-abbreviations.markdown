@@ -2,6 +2,7 @@
 [MIPT]: <https://mipt.ru/english/>
 [OpenJDK]: <https://openjdk.java.net/>
 [Junit 5]: <https://junit.org/junit5/>
+[PostgreSQL]: <https://www.postgresql.org/>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 

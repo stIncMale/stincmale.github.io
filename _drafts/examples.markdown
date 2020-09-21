@@ -17,7 +17,7 @@ tags: ["RFC3986-unreserved-characters-may-be-encoded__-.~", "RFC3986-reserved-ch
 # However, both data/custom_update_date (and definitely custom_post_date) are simply strings, not timestamps,
 # and Liquid filters do not correctly handle the time zone offset. This is why only either +00:00 or Z should be used.
 date: 2020-04-11T12:00:00Z
-# A data without a day or a month may be specified here.
+# A date without a day or a month may be specified here.
 custom_post_date: 2020
 custom_update_date: 2020-07-29T06:59:00Z
 custom_keywords: [keyword1, keyword2]

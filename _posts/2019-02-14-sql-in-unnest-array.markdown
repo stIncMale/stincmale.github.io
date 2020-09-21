@@ -11,7 +11,6 @@ custom_description: Imagine, you have a set of n identifiers (IDs) that cannot b
 ---
 {% include common-links-abbreviations.markdown %}
 
-[PostgreSQL]: <https://www.postgresql.org/>
 [Oracle Database]: <https://docs.oracle.com/en/database/oracle/oracle-database/>
 [JOOQ]: <https://www.jooq.org>
 [`unnest`]: <https://www.postgresql.org/docs/current/functions-array.html>

@@ -85,7 +85,7 @@ and, therefore, a single person C who has the same performance as either A or B 
 ### [](#executing-on-single-processing-unit){:.section-link}Executing on a single processing unit {#executing-on-single-processing-unit}
 An example showing that we still may have to think about concurrency even if no parallel execution is possible in the system that we are designing.
 
-If we run [PostgreSQL](https://www.postgresql.org/)
+If we run [PostgreSQL]
 (this DBMS is actually ACID, as unlike some others it supports [serializable transactions](https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE))
 in an OS that implements preemptive multitasking and multithreading but runs on an ancient computer with a single CPU/core,
 then we are in a situation when the computer can execute only one thread of a process, and multitasking may be achieved only because

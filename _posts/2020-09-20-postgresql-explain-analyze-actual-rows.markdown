@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2020-09-21T07:30:00Z
+custom_update_date: 2020-09-23T05:45:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -56,7 +56,7 @@ Recently, I was shown a plan that did not fit the presented above view of the wo
 As we can see, 94164 rows sorted by the `Sort` node were fed into the `Materialize` node that reported 43998855 rows.
 How so?
 
-## [](#example){:.section-link}Example {#example}
+## [](#example){:.section-link}Example[^2] {#example}
 
 Turns out, we can observe the aforementioned effect with a simple SQL query:
 
@@ -64,9 +64,9 @@ Turns out, we can observe the aforementioned effect with a simple SQL query:
 # explain analyze
 # select *
 # from
-#   (values (0), (0), (0), (0), (0) order by 1) as a(v)
+#   (values (0), (0), (0), (0), (0) order by 1) as a (v)
 #   inner join
-#   (values (0), (0) order by 1) as b(v)
+#   (values (0), (0) order by 1) as b (v)
 #   on a.v = b.v;
                                                         QUERY PLAN
 ---------------------------------------------------------------------------------------------------------------------------
@@ -182,9 +182,9 @@ Interestingly, the same does not seem to happen for the `Hash` node which has a 
 # explain analyze
 # select *
 # from
-#   (values (0), (0), (0), (0), (0)) as a(v)
+#   (values (0), (0), (0), (0), (0)) as a (v)
 #   inner join
-#   (values (0), (0)) as b(v)
+#   (values (0), (0)) as b (v)
 #   on a.v = b.v;
                                                      QUERY PLAN
 ---------------------------------------------------------------------------------------------------------------------
@@ -225,3 +225,5 @@ or maybe this is because the constructed hash table is not actually treated as a
     <span class="insignificant">by [Hubert Lubaczewski](https://www.depesz.com/) (a.k.a. [depesz](https://www.depesz.com/))</span>
     is a great series of posts explaining how to understand the output of the `explain` command in much more details
     than the [existing documentation](https://www.postgresql.org/docs/current/using-explain.html).
+
+[^2]: All examples were run with PostgreSQL 12.4.

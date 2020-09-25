@@ -162,7 +162,7 @@ It does, but this exception is allowed by the [JLS 17.5.4. Write-Protected Field
 
 ## [](#example){:.section-link}Example {#example}
 [`ConsistentAppExample.java`] is a tiny Java application that demonstrates the aforementioned techniques.
-We can start it in [Bash] running in [macOS](https://www.apple.com/macos) or [Ubuntu](https://ubuntu.com/)
+We can start it in [Bash] running in [macOS] or [Ubuntu]
 using the [source-file mode] (see also [JEP 330: Launch Single-File Source-Code Programs](https://openjdk.java.net/jeps/330)):
 
 ```shell
@@ -171,7 +171,7 @@ JVM-wide defaults: charset=UTF-8, locale=en, time zone=UTC, line separator={LINE
 Charset smoke test: latin:english___cyrillic:русский___hangul:한국어___math:μ∞θℤ
 ```
 
-or in [PowerShell] running in [Windows](https://www.microsoft.com/windows) from [Windows Terminal]<!-- -->[^2]:
+or in [PowerShell] running in [Windows] from [Windows Terminal]<!-- -->[^2]:
 
 ```shell
 > java -D'line.separator'="`n" -D'file.encoding'=UTF-8 ConsistentAppExample.java
@@ -244,7 +244,7 @@ from the stdin to the stdout instead of transferring character data, which would
 
     [OpenJDK] is a [community](https://openjdk.java.net/groups/) whose main goal is developing an
     [open-source](https://opensource.com/resources/what-open-source) implementation of the Java SE Specification.
-    [OpenJDK JDK](https://openjdk.java.net/projects/jdk/) is a proper name of the JDK developed by the OpenJDK community
+    [OpenJDK JDK] is a proper name of the JDK developed by the OpenJDK community
     ("OpenJDK" is an adjective here according to [JDK-8205956 Fix usage of “OpenJDK” in build and test instructions](https://bugs.openjdk.java.net/browse/JDK-8205956)),
     but it is ridiculous and is usually shortened to just OpenJDK where it does not cause ambiguity.
     We may see the usage of the full name, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):

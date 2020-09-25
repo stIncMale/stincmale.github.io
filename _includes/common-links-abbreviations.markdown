@@ -1,8 +1,13 @@
 [WTFPL]: <http://www.wtfpl.net/>
 [MIPT]: <https://mipt.ru/english/>
 [OpenJDK]: <https://openjdk.java.net/>
+[OpenJDK JDK]: <https://openjdk.java.net/projects/jdk/>
 [Junit 5]: <https://junit.org/junit5/>
 [PostgreSQL]: <https://www.postgresql.org/>
+[macOS]: <https://www.apple.com/macos>
+[Ubuntu]: <https://ubuntu.com>
+[Windows]: <https://www.microsoft.com/windows>
+[WSL 2]: <https://docs.microsoft.com/en-ca/windows/wsl/>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 
@@ -118,3 +123,7 @@
 {:data-title="identifier"}
 *[IDs]:
 {:data-title="identifiers"}
+*[TCP]:
+{:data-title="Transmission Control Protocol"}
+*[IP]:
+{:data-title="Internet Protocol"}

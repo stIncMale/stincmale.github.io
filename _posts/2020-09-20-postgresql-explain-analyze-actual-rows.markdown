@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2020-09-23T05:45:00Z
+custom_update_date: 2020-09-25T11:47:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -42,7 +42,7 @@ but actually the number of rows stored in it. By providing the constructed hash 
 which is the set of rows produced by the node.
 And if `Materialize` is used by a `Nested Loop`, then `loops` reported by the `Materialize` node tell us how many times the outer loop
 had to go through the materialized set of rows[^1].
-* And so on...
+* And so on&hellip;
 
 Recently, I was shown a plan that did not fit the presented above view of the world:
 

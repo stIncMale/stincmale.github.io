@@ -5,9 +5,9 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2020-09-25T12:00:00Z
+custom_update_date: 2020-09-26T18:30:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
-custom_description: The name keep-alive is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
+custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
 {% include common-links-abbreviations.markdown %}
 
@@ -21,8 +21,9 @@ for preventing a TCP proxy from considering a connection[^1] idle and terminatin
 This article explains why even if possible (and that is a big "if"), this cannot be done reliably.
 It also shows an example of using HAProxy where the approach fails.
 
-## [](#environment){:.section-link}Environment {#environment}
+{% include toc.markdown %}
 
+## [](#environment){:.section-link}Environment {#environment}
 The information specified in this article was verified in following environment
 
 Software | Version
@@ -31,8 +32,6 @@ Software | Version
 [Windows] | 10 version 2004
 [OpenJDK JDK] | 15
 [HAProxy](http://www.haproxy.org) | 2.0.13
-
-{% include toc.markdown %}
 
 ## [](#theory){:.section-link}Theory {#theory}
 The TCP keep-alive mechanism is specified in [RFC 1122. 4.2.3.6 TCP Keep-Alives](https://www.rfc-editor.org/rfc/rfc1122.html#page-101)[^2].
@@ -177,7 +176,7 @@ $ sudo service haproxy restart
                                                                                                                                                                     [ OK ]
 ```
 
-Warnings and the alerts are there because the default logging configuration is not compatible with the changes made and with my environment,
+The warnings/alerts you see are there because the default logging configuration is not compatible with the changes made and with my environment,
 but logging is irrelevant for our purposes. Let us ignore them and check whether HAProxy is listening for client connections:
 
 ```shell
@@ -213,7 +212,7 @@ Start the client:
 $ java -cp examples/target/classes/ stincmale.sandbox.examples.tcpkeepalive.Client localhost 30000
 2020-09-25T07:30:10.434081900Z main      Connecting to localhost/127.0.0.1:30000 with timeout 1000ms
 2020-09-25T07:30:10.447577700Z main      Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=34974]
-2020-09-25T07:30:10.453081100Z main      Set read timeout 20000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=34974]
+2020-09-25T07:30:10.453081100Z main      Set read timeout 25000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=34974]
 Specify data to be sent:
 ```
 
@@ -230,7 +229,7 @@ The log below is combined from both client and server logs for convenience:
 2020-09-25T11:22:54.938052500Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000ms
 2020-09-25T11:22:54.950853900Z main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34212,localport=30001]
 2020-09-25T11:22:54.951046500Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:22:54.956912800Z main      Client  Set read timeout 20000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
+2020-09-25T11:22:54.956912800Z main      Client  Set read timeout 25000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
 2020-09-25T11:22:54.961998900Z main      Server  Set TCP_KEEPIDLE 5000ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
 2020-09-25T11:22:54.962774Z    main      Server  Set TCP_KEEPINTERVAL 5000ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
 2020-09-25T11:22:54.972156500Z server-0  Server  Set read timeout 25000ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
@@ -257,8 +256,8 @@ The client connected at 11:22:54 and received the last byte at 11:23:13,
 which means that the dialogue lasted for more than 15s without being terminated by the proxy.
 This is as expected because the client was regularly sending data to the server, and the server was regularly sending data back.
 
-Note that both the server read timeout, which is 25s, and the client read timeout, which is 20s,
-are greater than the proxy `timeout server`, which is 15s. Therefore, neither server nor client timeouts may affect the next experiment,
+Note that the server/client read timeout, which is 25s,
+is greater than the proxy `timeout server`, which is 15s. Therefore, neither server nor client timeouts may affect the next experiment,
 where we will not be sending data between the client and the server.
 Note also that the server sends TCP keep-alive probes every 5s after 5s of idling.
 
@@ -281,7 +280,7 @@ The log below is combined from both client and server logs for convenience:
 2020-09-25T10:21:44.637776400Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000ms
 2020-09-25T10:21:44.651432Z    main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34132,localport=30001]
 2020-09-25T10:21:44.652275600Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:44.657658800Z main      Client  Set read timeout 20000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
+2020-09-25T10:21:44.657658800Z main      Client  Set read timeout 25000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
 2020-09-25T10:21:44.662740200Z main      Server  Set TCP_KEEPIDLE 5000ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
 2020-09-25T10:21:44.663288900Z main      Server  Set TCP_KEEPINTERVAL 5000ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
 2020-09-25T10:21:44.670764500Z server-0  Server  Set read timeout 25000ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]

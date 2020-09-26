@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2020-08-13T09:02:00Z
+custom_update_date: 2020-09-26T18:34:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -62,7 +62,7 @@ The Java SE API allows to explicitly specify all the aforementioned, thus, overr
   vs. [<code>LocalDateTime.now(<b>ZoneId zone</b>)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html#now(java.time.ZoneId))\\
   <span class="insignificant">see also [Pitfalls with JDBC `PreparedStatement.setTimestamp`/`ResultSet.getTimestamp`]({% post_url 2012-01-01-jdbc-timestamp-pitfalls %})</span>
 * [`String.lines()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html#lines())
-  vs. [<code>Scanner.useDelimiter​(<b>Pattern pattern</b>)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Scanner.html#useDelimiter(java.util.regex.Pattern)).[`tokens()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Scanner.html#tokens())
+  vs. [<code>Scanner.useDelimiter(<b>Pattern pattern</b>)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Scanner.html#useDelimiter(java.util.regex.Pattern)).[`tokens()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Scanner.html#tokens())
 * [`String.format(String format, Object... args)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))
   vs. [<code>String.format(<b>Locale l</b>, String format, Object... args)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html#format(java.util.Locale,java.lang.String,java.lang.Object...))
 * [`PrintStream(OutputStream out, boolean autoFlush)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/PrintStream.html#%3Cinit%3E(java.io.OutputStream,boolean))
@@ -79,7 +79,7 @@ So it is worth specifying environment-independent JVM-wide defaults at least as 
 ### [](#time-zone){:.section-link}Time zone {#time-zone}
 The default [`java.util.TimeZone`] is accessible via the methods
 [`TimeZone.getDefault()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/TimeZone.html#getDefault())/<wbr>
-[`TimeZone.setDefault​(TimeZone zone)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/TimeZone.html#setDefault(java.util.TimeZone)),
+[`TimeZone.setDefault(TimeZone zone)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/TimeZone.html#setDefault(java.util.TimeZone)),
 and can be set as shown below
 
 ```java
@@ -126,7 +126,7 @@ syntax.
 ### [](#locale){:.section-link}Locale {#locale}
 The default [`java.util.Locale`] is accessible via the methods
 [`Locale.getDefault()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Locale.html#getDefault())/<wbr>
-[`Locale.setDefault​(Locale newLocale)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Locale.html#setDefault(java.util.Locale)),
+[`Locale.setDefault(Locale newLocale)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Locale.html#setDefault(java.util.Locale)),
 and can be set as shown below
 
 ```java
@@ -215,7 +215,7 @@ You may notice that these programs use [`java.io.InputStreamReader`] and [`java.
 on the [`System.out`]<!-- --> [`PrintStream`] as was shown above. This is because the Java SE API provides a straightforward tool for transferring character data
 from a [`java.io.Reader`] to a [`java.io.Writer`]&mdash;[`Reader.ransferTo(Writer)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/Reader.html#transferTo(java.io.Writer)).
 It is important to note that we cannot use the method
-[`java.io.InputStream.transferTo​(OutputStream out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/InputStream.html#transferTo(java.io.OutputStream))
+[`java.io.InputStream.transferTo(OutputStream out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/InputStream.html#transferTo(java.io.OutputStream))
 because this way we would be transferring binary data
 from the stdin to the stdout instead of transferring character data, which would break the semantics of the programs.
 

@@ -6,8 +6,8 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2020-07-29T06:51:00Z
-custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject​, getObject​]
+custom_update_date: 2020-09-26T18:32:00Z
+custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---
 {% include common-links-abbreviations.markdown %}
@@ -32,7 +32,7 @@ Imagine the following Java application:
 * in the DB timestamps are represented as [`timestamp [without time zone]`](https://www.postgresql.org/docs/current/datatype-datetime.html) SQL data type
 (the Java SE API counterpart is [`JDBCType.TIMESTAMP`]);
 * in the application timestamps are represented as [`Timestamp`].
-They are created via the constructor [`Timestamp​(long time)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Timestamp.html#%3Cinit%3E(long))
+They are created via the constructor [`Timestamp(long time)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Timestamp.html#%3Cinit%3E(long))
 and hence are expected to represent [Java Time-Scale](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/Instant.html)[^1].
 Values and are bound to a [`PreparedStatement`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html)
 via [`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x)`]
@@ -87,7 +87,7 @@ introduced, besides others, the following two bidirectional mappings
 * [`OffsetDateTime`] &mdash; [`JDBCType.TIMESTAMP_WITH_TIMEZONE`]
 * [`LocalDateTime`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html) &mdash; [`JDBCType.TIMESTAMP`]
 
-The methods [`PreparedStatement.setObject​(int parameterIndex, Object x)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setObject(int,java.lang.Object))/[`ResultSet.getObject​(int columnIndex, Class<T> type)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getObject(int,java.lang.Class))
+The methods [`PreparedStatement.setObject(int parameterIndex, Object x)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setObject(int,java.lang.Object))/[`ResultSet.getObject(int columnIndex, Class<T> type)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getObject(int,java.lang.Class))
 can now be used to write/read [`OffsetDateTime`]/[`timestamp with time zone`].
 This is the best solution we may have because it uses immutable [`OffsetDateTime`],
 the time zone information is not lost, and the behavior does not depend on the [default time zone].

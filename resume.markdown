@@ -18,16 +18,17 @@ Concurrency and distributed systems
   </a>
   <a href="https://www.kovalenko.link/blog/tech/" title="DEAD<code/>">
     <img src="{% link /assets/img/favicon.png %}" alt="Logo" style="width: 1.7em; height: auto; vertical-align: -0.2em;">
-    kovalenko.link/blog/tech
+    kovalenko.link/blog/tech/
   </a>
 </div>
 ---
 <div class="resume-contact-info">
 Location: <a href="https://www.google.com/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831">Calgary, AB, Canada</a><br>
 <div class="resume-media-print">Email: <a href="mailto:public.vkovalenko@gmail.com">public.vkovalenko@gmail.com</a><br></div>
-<p>
+<p class="resume-media-print">
 Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<span class="insignificant resume-media-not-print">wo</span>9<span class="insignificant resume-media-not-print">ine</span>.3141 <span class="resume-insignificant">10:00&ndash;20:00 <a href="https://www.timeanddate.com/time/zone/canada/edmonton">America/Edmonton time zone</a>, or 16:00&ndash;02:00 UTC</span>
 </p>
+<p class="resume-media-not-print"><!-- this <p> element preserves the same layout as for media print --></p>
 </div>
 
 #### Technical skills
@@ -42,7 +43,7 @@ Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<spa
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Frameworks/libraries</code></td>
-      <td>Netty, Protocol Buffers (a.k.a., Protobuf), JMH, Spring Framework, Hibernate ORM, JUnit, Mockito</td>
+      <td>Netty, Protocol Buffers, JMH, Spring Framework, Hibernate ORM, JUnit, Mockito</td>
     </tr>
     <tr class="resume-table-no-background">
       <td><code>DBMS</code></td>
@@ -54,7 +55,10 @@ Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<spa
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Other</code></td>
-      <td>Maven, Git, Docker, <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>, good understanding of the Java memory model (JLS 17.4)</td>
+      <td>Maven, Git, Docker, <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>,
+      good understanding of the Java memory model
+      (JLS 17.4; this <a href="{% post_url 2014-01-01-java-final-field-semantics %}">presentation</a> may back this claim)
+      </td>
     </tr>
   </tbody>
 </table>
@@ -73,16 +77,29 @@ Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<spa
 _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;present</span>
 <div class="resume-experience" markdown="1">
 * **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
-  (Apache Tomcat, PostgreSQL, Hibernate ORM)
+  (Tomcat, PostgreSQL, Hibernate ORM)
   * designed and developed **export/import** functionality (the technical side is more complex than it sounds) in pair with a colleague,
   designed and implemented support of this functionality in a **cluster environment** on my own;
+  {% comment %}
+    See https://drive.google.com/file/d/1DPblQZxZavvnR5Kh1wk9e9MVFyjEf-gs/view?usp=sharing
+  {% endcomment %}   
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
   * **cluster** &mdash; identified and fixed/mitigated multiple bugs, including replication failures caused by
     * incorrect inference of the order of replicated changes,
     here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
     * broken transaction isolation due to incorrect cache strategy;
     {% comment %}
-      The cache was left in the state inconsistent with the primary storage.
+      Cluster: a coordinator and subscribers with read-only config. Coordinator replicates config (users, roles, groups, triage stores, etc. to subscribers).
+      Some data is modifiable on subscribers and is replicated to coordinator (triage data, merged issue), applied to its history (ordered) and replicated back.
+      A write-through cache of role assignments; effectively just a concurrent hash map, no transactional semantics:
+      - breaks transaction isolation: other transactions may see uncommitted changes;
+      - if a transaction rolls back, the cache modification is not undone.
+      Replication of role assignments reads role cache and clears it (on a per-user basis) before applying the role assignments that have come from the coordinator.
+      Sometimes the replicating transaction fails by violating a foreign key constraint because it observes role assignments for a new uncommitted stream
+      that is being concurrently created. The cache is left inconsistent (empty for a user) with the DB in this case, and a user cannot log in the system.
+      There is a mechanism that reloads the cache in this case, but it operates in the same failed transaction, therefore the DBMS refuses to fulfill the request.
+      In order to mitigate the problem, the mechanism was changed to work in a new transaction.
+      An actual fix was not feasible due to complexity and resource intensity.
     {% endcomment %}
   * incremental updates functionality &mdash; allows automatically updating client applications;
   fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
@@ -99,7 +116,7 @@ _Senior server-side developer_ / <span class="resume-insignificant">Jan 2016&nda
 _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 2015</span>
 <div class="resume-experience" markdown="1">
 * **[King of Thieves](http://www.kingofthieves.com/) server**
-  (Netty, ZooKeeper + Apache Curator, Protobuf, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
+  (Netty, ZooKeeper + Apache Curator, Protocol Buffers, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
   * joined this project in Aug 2015, 7 months after the global release, and supported it / developed new features until resigning;
   * implemented validation and processing of **in-app purchases and subscriptions**, here is my [related blog post]({% post_url 2017-06-06-decoding-apple-app-store-receipts %});
   * implemented **automatic data extraction/grouping from Mixpanel and sending** it to partners.
@@ -110,7 +127,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
   manages, targets and securely delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
-* **Notifications server/client** (Netty, ZooKeeper + Apache Curator, Protobuf, PostgreSQL) &mdash;
+* **Notifications server/client** (Netty, ZooKeeper + Apache Curator, Protocol Buffers, PostgreSQL) &mdash;
   provides a unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
   * **refactored the design** as inappropriate usage of ActiveMQ and Quartz Scheduler was causing performance bottlenecks;
   * **improved the throughput** by an order of magnitude;

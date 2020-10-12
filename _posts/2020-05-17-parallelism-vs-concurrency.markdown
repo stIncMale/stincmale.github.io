@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2020-08-13T09:03:00Z
+custom_update_date: 2020-10-12T05:36:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -111,7 +111,7 @@ This is called instruction-level parallelism and in terms of latency and through
 Instructions still appear to be executed sequentially, just like an assembly line produces manufactured cars one at a time.
 
 ### [](#inherent-concurrency){:.section-link}Inherent concurrency {#inherent-concurrency}
-A fun example of concurrent actions from the theory of special relativity.
+A fun example of concurrent actions from the special theory of relativity.
 
 Consider actions `a` and `b` where `inv(a)`, `res(a)`, `inv(b)`, `res(b)` are physical events, i.e., points in spacetime defined by spacial coordinates and a time coordinate.
 If the spacetime interval between `res(a)` and `inv(b)` is space-like, then to some observers, that is, in some reference frames, `res(a)` is ordered before `inv(b)`,

@@ -5,7 +5,7 @@ title: Decoding Apple App Store receipts (PKCS &num;7, ASN.1) in Java
 categories: [tech]
 tags: [Java]
 date: 2017-06-06T12:00:00Z
-custom_update_date: 2020-07-27T03:39:00Z
+custom_update_date: 2020-10-12T05:37:00Z
 custom_keywords: [Apple App Store, receipt, in-app purchase, subscription, decode, PKCS &num;7, ASN.1]
 custom_description: It appears Apple thinks that no one needs to decode receipts on the server side. In practice, however, things are not necessary as smooth and we had to decode receipts before validating them in order to handle and restore subscriptions. This post describes how to do this in Java.
 ---
@@ -118,7 +118,7 @@ Payload decodeReceipt(byte[] receipt) {
 That is it. Now we have our `Payload` and can read everything there is in it.
 The class [`AppStoreReceiptUtil`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/decodeappleappstorereceipt/AppStoreReceiptUtil.java)
 has some useful methods, e.g., the `toString(Payload payload, boolean omitUnsupportedAttributes)` method
-that allows converting the a `Payload` in a human-readable formatted text. See
+that allows converting a `Payload` in a human-readable formatted text. See
 [`AppStoreReceiptDecoderExample`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/decodeappleappstorereceipt/AppStoreReceiptDecoderExample.java)
 for an example.
 

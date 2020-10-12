@@ -26,7 +26,7 @@ the majority of code that software engineers write in their spare time ends up b
 ## [](#personality){:.section-link}Personality
 This particular page is about sharing something with regard to my personality rather than technical things.
 For example, here are a few examples of [lyrics]({% link lyrics.markdown %}) and quotes/sayings I like:
-* <q>"...it takes all the running you can do to keep in the same place. If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
+* <q>"...it takes all the running you can do to keep in the same place.[^1] If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
   <span class="insignificant">Lewis Carroll, [Through the looking-glass, and what Alice found there](https://www.loc.gov/item/00000848/), 1871</span>
 * <q>"Those who would give up essential Liberty, to purchase a little temporary Safety, deserve neither Liberty nor Safety."</q>\\
   <span class="insignificant">Benjamin Franklin, [Pennsylvania Assembly: Reply to the Governor](https://franklinpapers.org/framedVolumes.jsp?vol=6&page=238a), November 11, 1755</span>
@@ -42,3 +42,8 @@ I also was taking part for 3 years in developing (unfortunately mobile) games at
 My nickname is `Male` sometimes with the tag `stInc`.
 This tag is now quite useless because I suppose I am the only one who still uses it.
 `stInc` means `Starfuckers Inc`, or sometimes it may mean "stink" &#x1f61b;
+
+[^1]: Albert Einstein went even further than Lewis Carroll in his general theory of relativity, which tells us that in curved spacetime a body must
+    have non-zero proper acceleration (it may be measured by an accelerometer) to stay in the same place.
+    See [Is Gravity An Illusion? (at 9:56)](https://youtu.be/XRr1kaXKBsU?t=596)<span class="insignificant">&nbsp;by [Derek Muller](https://www.veritasium.com)</span>
+    for a popular science explanation.

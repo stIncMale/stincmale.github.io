@@ -7,6 +7,7 @@
 [macOS]: <https://www.apple.com/macos>
 [Ubuntu]: <https://ubuntu.com>
 [Windows]: <https://www.microsoft.com/windows>
+[WSL]: <https://docs.microsoft.com/en-ca/windows/wsl/>
 [WSL 2]: <https://docs.microsoft.com/en-ca/windows/wsl/>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
@@ -127,3 +128,5 @@
 {:data-title="Transmission Control Protocol"}
 *[IP]:
 {:data-title="Internet Protocol"}
+*[WSL]:
+{:data-title="Windows Subsystem for Linux"}

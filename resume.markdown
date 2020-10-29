@@ -128,7 +128,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
   * **developed from scratch**;
   * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it.
 * **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Apache Tapestry) &mdash;
-  manages, targets and delivers game configurations to game clients, supports having configurations for split-testing
+  manages, delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
   {% comment %}
@@ -138,7 +138,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
     Read-only servers do not have persistent data and get configurations from the admin server via JGroups.
   {% endcomment %}
 * **Notifications server/client** (Netty, ZooKeeper + Apache Curator, Protocol Buffers, PostgreSQL) &mdash;
-  provides a unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
+  provides unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
   * **refactored the design** as inappropriate usage of ActiveMQ and Quartz Scheduler was causing performance bottlenecks;
   * **improved the throughput** by an order of magnitude;
   * when I resigned, this server was used by all ZeptoLab games.

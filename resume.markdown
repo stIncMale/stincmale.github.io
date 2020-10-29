@@ -128,7 +128,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
   * **developed from scratch**;
   * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it.
 * **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Apache Tapestry) &mdash;
-  manages, delivers game configurations to game clients, supports having configurations for split-testing
+  manages and delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
   {% comment %}

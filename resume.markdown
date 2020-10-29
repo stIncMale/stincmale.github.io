@@ -81,7 +81,11 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;p
   * designed and developed **export/import** functionality (the technical side is more complex than it sounds) in pair with a colleague,
   designed and implemented support of this functionality in a **cluster environment** on my own;
   {% comment %}
-    See https://drive.google.com/file/d/1DPblQZxZavvnR5Kh1wk9e9MVFyjEf-gs/view?usp=sharing
+    See https://drive.google.com/file/d/1DPblQZxZavvnR5Kh1wk9e9MVFyjEf-gs/view?usp=sharing,
+    https://gist.github.com/stIncMale/1db6608396edb35a1cc19894f430b5a2.
+    Also used listen/notify and advisory locks https://gist.github.com/stIncMale/c39903afe4cfde8cea1b1998494ee5e1.
+    Listen/notify was used to improve reaction of one process waiting for new rows inserted by another process;
+    this was used to delete exported streams.
   {% endcomment %}   
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
   * **cluster** &mdash; identified and fixed/mitigated multiple bugs, including replication failures caused by
@@ -123,15 +127,24 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
 * **Server and client homegrown frameworks** (Netty)
   * **developed from scratch**;
   * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it.
-* **Configuration server** (Netty, Hibernate ORM, ZooKeeper + Apache Curator, PostgreSQL, Apache Tapestry) &mdash;
-  manages, targets and securely delivers game configurations to game clients, supports having configurations for split-testing
+* **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Apache Tapestry) &mdash;
+  manages, targets and delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
+  {% comment %}
+    A single admin server that allows registering users, modifying configs (all this is stored in a PostgreSQL DB).
+    There are multiple read-only servers that clients use to read configs (all servers have the same DNS name, DNS round-robin for balancing).
+    Reading the config data does not require authorization.
+    Read-only servers do not have persistent data and get configurations from the admin server via JGroups.
+  {% endcomment %}
 * **Notifications server/client** (Netty, ZooKeeper + Apache Curator, Protocol Buffers, PostgreSQL) &mdash;
   provides a unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
   * **refactored the design** as inappropriate usage of ActiveMQ and Quartz Scheduler was causing performance bottlenecks;
   * **improved the throughput** by an order of magnitude;
   * when I resigned, this server was used by all ZeptoLab games.
+  {% comment %}
+    TODO
+  {% endcomment %}
 </div>
 
 <h6 class="resume-h">

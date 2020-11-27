@@ -9,7 +9,7 @@ custom_description: Server-side software engineer (Java) interested in concurren
 {:.resume-h}
 Concurrency and distributed systems
 <div class="resume-external-links resume-media-print">
-  <a href="{% link resume.markdown %}">Browse online</a><br>
+  <a href="{% link resume.markdown %}">Browse this resume online</a><br>
   <a class="button" href="https://github.com/stIncMale" title="GitHub">
     <svg class="svg-button" viewBox="0 0 1024 1024" height="1024" width="1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z"></path></svg>
   </a>
@@ -23,12 +23,12 @@ Concurrency and distributed systems
 </div>
 ---
 <div class="resume-contact-info">
-Location: <a href="https://www.google.com/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831">Calgary, AB, Canada</a><br>
-<div class="resume-media-print">Email: <a href="mailto:public.vkovalenko@gmail.com">public.vkovalenko@gmail.com</a><br></div>
-<p class="resume-media-print">
-Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<span class="insignificant resume-media-not-print">wo</span>9<span class="insignificant resume-media-not-print">ine</span>.3141 <span class="resume-insignificant">10:00&ndash;20:00 <a href="https://www.timeanddate.com/time/zone/canada/edmonton">America/Edmonton time zone</a>, or 16:00&ndash;02:00 UTC</span>
-</p>
-<p class="resume-media-not-print"><!-- this <p> element preserves the same layout as for media print --></p>
+  Location: <a href="https://www.google.com/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831">Calgary, AB, Canada</a>
+  (<a href="https://www.timeanddate.com/time/zone/canada/edmonton">America/Edmonton time zone</a>)<br>
+  <div class="resume-media-print">
+    Email: <a href="mailto:public.vkovalenko@gmail.com">public.vkovalenko@gmail.com</a><br>
+  </div>
+  <p></p>
 </div>
 
 #### Technical skills
@@ -39,25 +39,44 @@ Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<spa
   <tbody>
     <tr class="resume-table-no-background">
       <td><code>Main&nbsp;language</code></td>
-      <td>Java</td>
+      <td><a href="https://docs.oracle.com/javase/specs/index.html">Java</a></td>
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Frameworks/libraries</code></td>
-      <td>Netty, Protocol Buffers, JMH, Spring Framework, Hibernate ORM, JUnit, Mockito</td>
+      <td>
+        <a href="https://netty.io/">Netty</a>,
+        <a href="https://developers.google.com/protocol-buffers">Protocol Buffers</a>,
+        <a href="https://github.com/openjdk/jmh"><abbr data-title="Java Microbenchmark Harness">JMH</abbr></a>,
+        <a href="https://spring.io/projects/spring-framework">Spring Framework</a>,
+        <a href="https://hibernate.org/orm/">Hibernate <abbr data-title="Object/Relational Mapping">ORM</abbr></a>,
+        <a href="https://junit.org/">JUnit</a>,
+        <a href="http://mockito.org/">Mockito</a>
+      </td>
     </tr>
     <tr class="resume-table-no-background">
-      <td><code>DBMS</code></td>
-      <td>PostgreSQL, Redis + Sentinel, Cassandra</td>
+      <td><code>DBMSs</code></td>
+      <td>
+        <a href="https://www.postgresql.org/">PostgreSQL</a>,
+        <a href="https://redis.io/">Redis</a> + <a href="https://redis.io/topics/sentinel">Sentinel</a>,
+        <a href="https://cassandra.apache.org/">Cassandra</a>
+      </td>
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Distributed&nbsp;coordination</code></td>
-      <td>ZooKeeper, Apache Curator</td>
+      <td>
+        <a href="https://zookeeper.apache.org/">ZooKeeper</a> + <a href="https://curator.apache.org/">Curator</a>
+      </td>
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Other</code></td>
-      <td>Maven, Git, Docker, <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>,
-      good understanding of the Java memory model
-      (JLS 17.4; this <a href="{% post_url 2014-01-01-java-final-field-semantics %}">presentation</a> may back this claim)
+      <td>
+        <a href="https://maven.apache.org/">Maven</a>,
+        <a href="https://git-scm.com/">Git</a>,
+        <a href="https://www.docker.com/">Docker</a>,
+        <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>,
+        good understanding of the Java memory model
+        (<a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-17.html#jls-17.4"><abbr data-title="Java Language Specification">JLS</abbr> 17.4</a>;
+        this <a href="{% post_url 2014-01-01-java-final-field-semantics %}">presentation</a> may back this claim)
       </td>
     </tr>
   </tbody>
@@ -74,7 +93,7 @@ Tel.: +1.587.4<span class="insignificant resume-media-not-print">our</span>2<spa
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Calgary, Canada</span>
 </h6>
-_Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;present</span>
+_Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;Nov 2020</span>
 <div class="resume-experience" markdown="1">
 * **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
   (Tomcat, PostgreSQL, Hibernate ORM)
@@ -120,7 +139,7 @@ _Senior server-side developer_ / <span class="resume-insignificant">Jan 2016&nda
 _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 2015</span>
 <div class="resume-experience" markdown="1">
 * **[King of Thieves](http://www.kingofthieves.com/) server**
-  (Netty, ZooKeeper + Apache Curator, Protocol Buffers, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
+  (Netty, ZooKeeper + Curator, Protocol Buffers, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
   * joined this project in Aug 2015, 7 months after the global release, and supported it / developed new features until resigning;
   * implemented validation and processing of **in-app purchases and subscriptions**, here is my [related blog post]({% post_url 2017-06-06-decoding-apple-app-store-receipts %});
   * implemented **automatic data extraction/grouping from Mixpanel and sending** it to partners.
@@ -132,18 +151,37 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
   {% comment %}
-    A single admin server that allows registering users, modifying configs (all this is stored in a PostgreSQL DB).
+    A single admin server that allows registering users, modifying configs (all this is stored in a DB managed by PostgreSQL).
     There are multiple read-only servers that clients use to read configs (all servers have the same DNS name, DNS round-robin for balancing).
     Reading the config data does not require authorization.
     Read-only servers do not have persistent data and get configurations from the admin server via JGroups.
   {% endcomment %}
-* **Notifications server/client** (Netty, ZooKeeper + Apache Curator, Protocol Buffers, PostgreSQL) &mdash;
+* **Notifications server/client** (Netty, ZooKeeper + Curator, JGroups, Protocol Buffers, PostgreSQL) &mdash;
   provides unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
   * **refactored the design** as inappropriate usage of ActiveMQ and Quartz Scheduler was causing performance bottlenecks;
   * **improved the throughput** by an order of magnitude;
   * when I resigned, this server was used by all ZeptoLab games.
   {% comment %}
-    TODO
+    A single admin server that allows registering users, modifying notification configs (all this is stored in a DB managed by PostgreSQL).
+    
+    Each notification has an ID, which is constructed from the game ID and the notification ID unique within all notifications for that game).
+    
+    There are multiple worker servers that maintain the notification schedule and send notifications via platform-specific API
+    (Android notifications, Apple Push Notification service). Workers maintain the schedule in memory
+    (the scheduler is based on the ScheduledExecutorService), but also persist it in its local DB in the form of a almost append-only log.
+    The log is read at startup starting from the entries that are not outdated and towards the most recent entries (if there are multiple entries for
+    the same notification ID, the most recent entry overrides the older ones regardless of the scheduled time for them). The log is regularly trimmed,
+    i.e., the outdated entires are removed.
+    
+    Worker servers get configurations from the admin server via JGroups.
+    
+    There are multiple balancer servers (all servers have the same DNS name, DNS round-robin for balancing).
+    They organize workers into a consistent hash ring, so that a re-schedule request can be forwarded to the same worker
+    that originally scheduled the notification with the same ID. When a new worker is added or a worker leaves the ring, data (schedules) for those
+    IDs that have to be moved to different workers in the ring. This greatly simplifies the solution and affects only a small fraction of notifications,
+    not allowing to re-schedule or cancel them (re-scheduling may schedule a notification with the same ID).
+    
+    Balancer servers discover workers from a ZooKeeper cluster: workers register themselves there.
   {% endcomment %}
 </div>
 

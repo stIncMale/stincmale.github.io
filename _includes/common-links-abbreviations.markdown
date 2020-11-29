@@ -46,6 +46,12 @@
 {:data-title="Application Programming Interface"}
 *[Java SE]:
 {:data-title="Java Platform, Standard Edition"}
+*[Java ME]:
+{:data-title="Java Platform, Micro Edition"}
+*[Java EE]:
+{:data-title="Java Platform, Enterprise Edition"}
+*[Jakarta EE]:
+{:data-title="Jakarta Enterprise Edition"}
 *[JSR]:
 {:data-title="Java Specification Request"}
 *[JEP]:
@@ -66,6 +72,10 @@
 {:data-title="Java Memory Model"}
 *[JAAS]:
 {:data-title="Java Authentication and Authorization Service"}
+*[JNDI]:
+{:data-title="Java Naming and Directory Interface"}
+*[JNI]:
+{:data-title=" Java Native Interface"}
 *[JMH]:
 {:data-title="Java Microbenchmark Harness"}
 *[SLF4J]:

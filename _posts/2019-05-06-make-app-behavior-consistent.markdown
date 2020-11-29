@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2020-09-26T18:34:00Z
+custom_update_date: 2020-09-29T09:24:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -13,10 +13,6 @@ custom_description: The behavior of a process is usually partly dependent on the
 
 *[SE]:
 {:data-title="Standard Edition"}
-*[Java ME]:
-{:data-title="Java Platform, Micro Edition"}
-*[Java EE]:
-{:data-title="Java Platform, Enterprise Edition"}
 *[ELF]:
 {:data-title="Executable and Linking Format"}
 *[PE]:
@@ -220,19 +216,28 @@ because this way we would be transferring binary data
 from the stdin to the stdout instead of transferring character data, which would break the semantics of the programs.
 
 [^1]: {%- comment -%}<!-- This footnote is linked from 2015-01-01-race-condition-vs-data-race.markdown -->{%- endcomment -%}
+    ##### Java Platform
     A Java Development Kit (JDK) is the common name for an implementation of the Java Platform, Standard Edition (Java SE) Specification.
     For example, here is a link to the [Java SE 14 Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/),
     which formal name is the [Java Specification Request (JSR)](https://jcp.org/en/jsr/overview) [389](https://jcp.org/en/jsr/detail?id=389).
-    Its key parts are the [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se14/html/index.html),
-    the [Java Virtual Machine Specification (JVMS)](https://docs.oracle.com/javase/specs/jvms/se14/html/index.html),
-    the [Java SE API Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/index.html),
-    the [Java Object Serialization Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/serialization/index.html).
+    Its key parts are
+    * [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se14/html/index.html),
+    * [Java Virtual Machine Specification (JVMS)](https://docs.oracle.com/javase/specs/jvms/se14/html/index.html),
+    * [Java SE API Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/index.html);
+    
+    there are other parts, e.g.,
+    * [Java Object Serialization Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/serialization/index.html),
+    * [Java Native Interface (JNI) Specification](https://docs.oracle.com/en/java/javase/14/docs/specs/jni/index.html).
+    
+    Unfortunately, OpenJDK publishes only changed specifications with each Java SE release instead of publishing all of them.
+    See the [specifications published by Oracle](https://docs.oracle.com/en/java/javase/14/docs/specs/index.html) for a full list of Java SE parts.
     Previously the "SE" part was used to differentiate between the "standard" Java Platform,
     the [Java Platform, Micro Edition (Java ME)](https://www.oracle.com/java/technologies/javameoverview.html),
     and the [Java Platform, Enterprise Edition (Java EE)](https://www.oracle.com/java/technologies/java-ee-glance.html).
     Java ME is dead, Java EE [evolved](https://blogs.oracle.com/javamagazine/transition-from-java-ee-to-jakarta-ee) into [Jakarta EE](https://jakarta.ee/)
     after [Java EE 8](https://www.jcp.org/en/jsr/detail?id=366), thus, the "SE" qualifier is an atavism.
 
+    ###### JRE
     A subset of a JDK that is sufficient to run a Java application but is not sufficient to develop one is commonly named a Java Runtime Environment (JRE).
     The key part of any JDK or JRE is a Java Virtual Machine (JVM), it is responsible for hardware- and operating system&ndash;independence of any programming language
     compiled into JVM instructions called bytecodes (such languages are often called JVM languages).
@@ -242,6 +247,7 @@ from the stdin to the stdout instead of transferring character data, which would
     as the [Executable and Linking Format (ELF)](https://man7.org/linux/man-pages/man5/elf.5.html) / [Portable Executable (PE) format](https://docs.microsoft.com/en-us/windows/win32/debug/pe-format)
     is to a machine controlled by the Linux/Windows operating system respectively.
 
+    ##### OpenJDK
     [OpenJDK] is a [community](https://openjdk.java.net/groups/) whose main goal is developing an
     [open-source](https://opensource.com/resources/what-open-source) implementation of the Java SE Specification.
     [OpenJDK JDK] is a proper name of the JDK developed by the OpenJDK community

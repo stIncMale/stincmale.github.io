@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2020-08-13T09:01:00Z
+custom_update_date: 2020-09-29T09:25:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -16,7 +16,7 @@ custom_description: When using the word &quot;now&quot; with regard to a logical
 ## [](#now){:.section-link}Now {#now}
 The notion of "now" seems to be a good enough illusion for everyday perception of time[^1]. Let us consider with some rigor what "now" means
 when used with respect to something physical, that is, the universe or its part, or something logical, e.g., a data object.
-Having the current state of a system `X` assumes both of the following premises:
+Having the current state of a system `X` assumes
 * existence of absolute time, a.k.a. global time, which allows us to talk about snapshots of `X`;
 * the ability to stop time and explore a snapshot of `X` while `X` is not changing, as otherwise, the snapshot would not be the current one.
 

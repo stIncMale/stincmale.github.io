@@ -33,7 +33,7 @@ For example, here are a few examples of [lyrics]({% link lyrics.markdown %}) and
 * <q>"Never attempt to teach a pig to sing; it wastes your time and annoys the pig."</q>\\
   <span class="insignificant">Robert A. Heinlein, [Time enough for love, the lives of Lazarus Long](https://catalog.loc.gov/vwebv/search?searchCode=LCCN&searchArg=72098131&searchType=1&permalink=y), 1973</span>
 * <q>"When the going gets tough, the tough get going."</q>\\
-  <span class="insignificant">this saying [is ridiculously interpreted](https://youtu.be/z52kKE8qngs) in [South Park s16e7](https://southpark.cc.com/full-episodes/s16e07-cartman-finds-love)</span>
+  <span class="insignificant">this saying [is ridiculously interpreted](https://youtu.be/z52kKE8qngs) in [South Park s16e7](https://www.southparkstudios.com/episodes/iyw8ps/south-park-cartman-finds-love-season-16-ep-7)</span>
 * <q>"Do your duty, come what may."</q>
 * <q>"Live as if you were to die tomorrow. Learn as if you were to live forever."</q>
 

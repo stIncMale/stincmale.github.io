@@ -2,15 +2,22 @@
 [MIPT]: <https://mipt.ru/english/>
 [OpenJDK]: <https://openjdk.java.net/>
 [OpenJDK JDK]: <https://openjdk.java.net/projects/jdk/>
+[Oracle JDK]: <https://www.oracle.com/java/technologies/javase-downloads.html>
 [Junit 5]: <https://junit.org/junit5/>
 [PostgreSQL]: <https://www.postgresql.org/>
+[Cassandra]: <https://cassandra.apache.org/>
+[MongoDB]: <https://www.mongodb.com/try/download/community>
 [macOS]: <https://www.apple.com/macos>
 [Ubuntu]: <https://ubuntu.com>
 [Windows]: <https://www.microsoft.com/windows>
 [WSL]: <https://docs.microsoft.com/en-ca/windows/wsl/>
 [WSL 2]: <https://docs.microsoft.com/en-ca/windows/wsl/>
+[DNS]: <https://www.rfc-editor.org/info/std13>
+[IP]: <https://www.rfc-editor.org/info/std86>
+[LDAP]: <https://www.rfc-editor.org/rfc/rfc4510>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
+[authentication]: <{% post_url 2013-12-31-identification-vs-authentication-vs-authorization %}#authentication>
 
 *[iff]:
 {:data-title="if and only if"}
@@ -44,6 +51,8 @@
 {:data-title="Database Management System"}
 *[API]:
 {:data-title="Application Programming Interface"}
+*[SPI]:
+{:data-title="Service Provider Interface"}
 *[Java SE]:
 {:data-title="Java Platform, Standard Edition"}
 *[Java ME]:
@@ -51,7 +60,7 @@
 *[Java EE]:
 {:data-title="Java Platform, Enterprise Edition"}
 *[Jakarta EE]:
-{:data-title="Jakarta Enterprise Edition"}
+{:data-title="Jakarta Enterprise Edition Platform"}
 *[JSR]:
 {:data-title="Java Specification Request"}
 *[JEP]:
@@ -101,7 +110,7 @@
 *[LDAP]:
 {:data-title="Lightweight Directory Access Protocol"}
 *[DB]:
-{:data-title="Database"}
+{:data-title="database"}
 *[JDBC]:
 {:data-title="Java Database Connectivity"}
 *[SQL]:
@@ -140,3 +149,7 @@
 {:data-title="Internet Protocol"}
 *[WSL]:
 {:data-title="Windows Subsystem for Linux"}
+*[DNS]:
+{:data-title="Domain Name System"}
+*[IP]:
+{:data-title="Internet Protocol"}

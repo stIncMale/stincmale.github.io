@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2020-11-29T09:29:00Z
+custom_update_date: 2020-12-03T03:21:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -215,7 +215,7 @@ It is important to note that we cannot use the method
 because this way we would be transferring binary data
 from the stdin to the stdout instead of transferring character data, which would break the semantics of the programs.
 
-[^1]: {%- comment -%}<!-- This footnote is linked from 2015-01-01-race-condition-vs-data-race.markdown -->{%- endcomment -%}
+[^1]: {%- comment -%}<!-- This footnote is linked from 2015-01-01-race-condition-vs-data-race.markdown, 2019-02-16-directory.markdown -->{%- endcomment -%}
     ##### Java Platform
     A Java Development Kit (JDK) is the common name for an implementation of the Java Platform, Standard Edition (Java SE) Specification.
     For example, here is a link to the [Java SE 14 Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/),
@@ -233,8 +233,8 @@ from the stdin to the stdout instead of transferring character data, which would
     See the [specifications published by Oracle](https://docs.oracle.com/en/java/javase/14/docs/specs/index.html) for a full list of Java SE parts.
     Previously the "SE" part was used to differentiate between the "standard" Java Platform,
     the [Java Platform, Micro Edition (Java ME)](https://www.oracle.com/java/technologies/javameoverview.html),
-    and the [Java Platform, Enterprise Edition (Java EE)](https://www.oracle.com/java/technologies/java-ee-glance.html).
-    Java ME is dead, Java EE [evolved](https://blogs.oracle.com/javamagazine/transition-from-java-ee-to-jakarta-ee) into [Jakarta EE](https://jakarta.ee/)
+    and the [Java Platform, Enterprise Edition (Java EE)](https://javaee.github.io/javaee-spec/).
+    Java ME is dead, Java EE [evolved](https://blogs.oracle.com/javamagazine/transition-from-java-ee-to-jakarta-ee) into [Jakarta EE](https://jakarta.ee/about/)
     after [Java EE 8](https://www.jcp.org/en/jsr/detail?id=366), thus, the "SE" qualifier is an atavism.
 
     ###### JRE
@@ -264,7 +264,7 @@ from the stdin to the stdout instead of transferring character data, which would
     here is a link to the [OpenJDK JDK 14 release page](https://openjdk.java.net/projects/jdk/14/)
     specifying all the JEPs included in this release.
 
-    One of the commercial JDK implementations based on OpenJDK JDK is [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html).
+    One of the commercial JDKs based on [OpenJDK JDK] is [Oracle JDK].
     We may see that the [Java API they provide](https://docs.oracle.com/en/java/javase/14/docs/api/) includes both
     the Java SE API and Oracle JDK&ndash;specific API. The [Oracle JDK documentation](https://docs.oracle.com/en/java/javase/)
     is a great place to find most of the information you need when developing with Java or learning it.

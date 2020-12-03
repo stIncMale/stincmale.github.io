@@ -5,13 +5,13 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2020-10-12T05:52:00Z
+custom_update_date: 2020-12-03T03:20:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
 {% include common-links-abbreviations.markdown %}
 
-[`TIME-WAIT`]: <https://www.rfc-editor.org/rfc/rfc793.html#section-3.2>
+[`TIME-WAIT`]: <https://www.rfc-editor.org/rfc/rfc793#section-3.2>
 
 *[NAT]:
 {:data-title="Network Address Translator"}
@@ -34,7 +34,7 @@ Software | Version
 [HAProxy](http://www.haproxy.org) | 2.0.13
 
 ## [](#theory){:.section-link}Theory {#theory}
-The TCP keep-alive mechanism is specified in [RFC 1122. 4.2.3.6 TCP Keep-Alives](https://www.rfc-editor.org/rfc/rfc1122.html#page-101)[^2].
+The TCP keep-alive mechanism is specified in [RFC 1122. 4.2.3.6 TCP Keep-Alives](https://www.rfc-editor.org/rfc/rfc1122#page-101)[^2].
 Below are some notable points from the specification.
 
 1. The intent behind the keep-alive mechanism is to <q>"**confirm that an idle connection is still active**"</q>,
@@ -85,7 +85,7 @@ Let us try and see how a [production-grade](https://www.haproxy.org/they-use-it.
 when operating as a TCP reverse proxy. I am going to use a self-written TCP
 [client](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Client.java)
 and [server](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java)
-that communicate via a protocol mostly compliant with the [echo protocol](https://www.rfc-editor.org/rfc/rfc862.html)[^6].
+that communicate via a protocol mostly compliant with the [echo protocol](https://www.rfc-editor.org/rfc/rfc862)[^6].
 
 ### [](#preparation){:.section-link}Preparation {#preparation}
 I am going to run the proxy, the client and the server on Ubuntu.
@@ -312,7 +312,7 @@ which means that the dialogue lasted for about 15s and then was terminated by th
 ```
 
 * Segments 1-3 with flags `S` (`SYN`), `S.` (`SYN-ACK`), `.` (`ACK`) respectively
-represent [three-way TCP handshake](https://www.rfc-editor.org/rfc/rfc793.html#section-3.4) between the proxy and the server.
+represent [three-way TCP handshake](https://www.rfc-editor.org/rfc/rfc793#section-3.4) between the proxy and the server.
 The proxy initiated the handshake because the client connected to it
 (the respective segments are not in the log because they involved the proxy frontend port 30000,
 not the proxy backend port 30001, for which we were capturing segments)
@@ -330,15 +330,15 @@ Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to pr
     [When TCP sockets refuse to die](https://idea.popcount.org/2019-09-20-when-tcp-sockets-refuse-to-die/)
     <span class="insignificant">by [Marek Majkowski](https://idea.popcount.org)</span>
 
-[^3]: The link is to [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html) documentation
+[^3]: The link is to [Oracle JDK] documentation
     because there is no other documentation published for the option,
     but the option was [implemented](https://bugs.openjdk.java.net/browse/JDK-8194298) in [OpenJDK JDK].
 
 [^4]: For software or hardware that operates on levels below TCP,
-    e.g., [NAT](https://www.rfc-editor.org/rfc/rfc2663.html) implementations and firewalls operating on the IP level, the situation is different
+    e.g., [NAT](https://www.rfc-editor.org/rfc/rfc2663) implementations and firewalls operating on the IP level, the situation is different
     because TCP keep-alive probes are traffic for them just like any other traffic.
 
-[^5]: For example, the [WebSocket](https://www.rfc-editor.org/rfc/rfc6455.html) protocol [does this](https://www.rfc-editor.org/rfc/rfc6455.html#section-5.5.2).
+[^5]: For example, the [WebSocket](https://www.rfc-editor.org/rfc/rfc6455) protocol [does this](https://www.rfc-editor.org/rfc/rfc6455#section-5.5.2).
 
 [^6]: The protocol is documented in
     [`Server.java`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java),

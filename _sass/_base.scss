@@ -82,6 +82,7 @@ hr {
 
 b, strong {
   font-weight: bolder;
+  color: $bolder-font-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -282,7 +283,7 @@ input[type="search"] {
 }
 
 /**
- * Quotations.
+ * Quotations and info blocks
  */
 q {
   font-style: italic;
@@ -293,6 +294,10 @@ q {
   }
   &:after {
     content: none;
+  }
+
+  b, strong {
+    color: $quotation-font-color;
   }
 }
 blockquote,
@@ -308,12 +313,20 @@ div.info-block {
   > :last-child {//this is usually a <p> element
     margin-bottom: 0em;
   }
+
+  b, strong {
+    color: $quotation-font-color;
+  }
 }
 div.info-block {
   font-style: normal;
   color: $info-font-color;
   background: $info-background-color;
   border: $border-widthstyle $info-border-color;
+
+  b, strong {
+    color: $quotation-font-color;
+  }
 }
 
 :not(code) > table {//<table> elements that are not children of <code> elements
@@ -324,6 +337,7 @@ div.info-block {
   }
   th {
     font-weight: bolder;
+    color: $bolder-font-color;
     background-color: $table-header-background-color;
     border: $border-widthstyle darken($table-header-background-color, $border-color-darken-percentage);
   }

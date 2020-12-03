@@ -26,6 +26,7 @@ $outline-width: 0.2em;
 $border-color-darken-percentage: 5%;
 $site-background-color: white;
 $font-color: rgb(50, 50, 50);
+$bolder-font-color: lighten($font-color, 10%);
 $insignificant-font-color: lighten($font-color, 30%);//see https://sass-lang.com/documentation/modules/color for other color functions
 $quotation-background-color: desaturate(lighten(linen, 2%), 20%);
 $quotation-border-color: darken($quotation-background-color, $border-color-darken-percentage);

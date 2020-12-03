@@ -12,6 +12,12 @@ title: Markup (<a href="https://kramdown.gettalong.org/syntax.html">kramdown</a>
 # - the percent character is percent-encoded (according to https://www.rfc-editor.org/rfc/rfc3986#section-2.4),
 # - all other characters may be percent-encoded.
 tags: ["RFC3986-unreserved-characters-may-be-encoded__-.~", "RFC3986-reserved-characters-must-be-encoded__:_/_?_#_[_]_@_!_$_&_'_(_)_*_+_,_;_=", "percent-character-must-be-encoded__%", 'other-characters-may-be-encoded__\_ _"_&lt;_&gt;_^_&#x01f4af;']
+# Set to true if you want to hide the post from indexing and any listings, thus ensuring it can only be accessed via a direct link.
+# Technically this removes the post from sitemap.xml, feed.xml, posts.html, tags.html,
+# and disallows indexing as specified in https://developers.google.com/search/docs/advanced/crawling/block-indexing.
+# Note that both Google and GitHub still index the content of a repository unless it is private.
+# See https://jekyllrb.com/docs/pagination/ for more details about the hidden variable.
+hidden: false
 # These dates must be specified in the RFC 3339 (https://www.rfc-editor.org/rfc/rfc3339) format,
 # e.g. 1985-04-12T23:20:50.52Z or 2020-04-24T20:08:00−06:00 because they are used in Atom feed.
 # However, both data/custom_update_date (and definitely custom_post_date) are simply strings, not timestamps,
@@ -99,7 +105,7 @@ long text.
 Quotation <q>"inlined in text"</q>.
 
 Quotation block:
-> "Quoted text.
+> "**Quoted text.**
 >
 > [Link](https://google.com)
 >
@@ -110,7 +116,7 @@ long text."
 
 Information block that supports kramdown syntax inside:
 <div class="info-block" markdown="1">
-Info text.
+**Info text.**
 
 [Link](https://google.com)
 

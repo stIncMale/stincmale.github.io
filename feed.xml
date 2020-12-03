@@ -16,7 +16,7 @@ layout: null
   {%- capture logo -%}{% link assets/img/site-logo.png %}{%- endcapture -%}
   <logo>{{ logo | absolute_url}}</logo>
   {%- for post in site.posts limit: 50 -%}
-    {%- unless post.draft -%}
+    {%- unless post.hidden -%}
       <entry>
         <id>{{ id_prefix }}blog/{{ post.slug }}</id>
         {%- capture post_url -%}{{ post.url | absolute_url }}{%- endcapture -%}

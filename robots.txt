@@ -1,9 +1,8 @@
 ---
 layout: null
 ---
+{%- comment -%}<!-- See https://www.robotstxt.org/robotstxt.html, https://developers.google.com/search/docs/advanced/robots/intro, https://developers.google.com/search/reference/robots_txt -->{%- endcomment -%}
 User-agent: *
 Allow: /
-Disallow: /blog/drafts/
-
 {% capture sitemap_relative_url %}{%- link sitemap.xml -%}{%- endcapture -%}
 Sitemap: {{ sitemap_relative_url | absolute_url }}

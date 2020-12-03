@@ -8,22 +8,24 @@ layout: base
     <tbody>
       {%- comment -%}<!-- see https://jekyllrb.com/docs/variables/#site-variables and https://shopify.github.io/liquid/tags/iteration/ for more details -->{%- endcomment -%}
       {%- for post in site.categories[page.custom_post_category_to_display] -%}
-        <tr class="clickable" onclick="window.location='{{ post.url | relative_url }}'">
-          <td class="post-link"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
-          <td class="post-tags">
-            <div class="post-metadata">{%- comment -%}<!-- not setting post-metadata class on the <td> element to not mess the padding -->{%- endcomment -%}
-              {%- capture post_tags -%}{{ post.tags | join: site.custom_post_tag_delimiter }}{%- endcapture -%}
-              {%- include post-tags.html content = post_tags -%}
-            </div>
-          </td>
-          <td class="post-date">
-            <div class="post-metadata">
-              {%- assign formatted_date = post.date | date: "%Y-%m-%d" -%}
-              {%- assign post_date = post.custom_post_date | default: formatted_date -%}
-              {{ post_date }}
-            </div>
-          </td>
-        </tr>
+        {%- unless post.hidden -%}
+          <tr class="clickable" onclick="window.location='{{ post.url | relative_url }}'">
+            <td class="post-link"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
+            <td class="post-tags">
+              <div class="post-metadata">{%- comment -%}<!-- not setting post-metadata class on the <td> element to not mess the padding -->{%- endcomment -%}
+                {%- capture post_tags -%}{{ post.tags | join: site.custom_post_tag_delimiter }}{%- endcapture -%}
+                {%- include post-tags.html content = post_tags -%}
+              </div>
+            </td>
+            <td class="post-date">
+              <div class="post-metadata">
+                {%- assign formatted_date = post.date | date: "%Y-%m-%d" -%}
+                {%- assign post_date = post.custom_post_date | default: formatted_date -%}
+                {{ post_date }}
+              </div>
+            </td>
+          </tr>
+        {%- endunless -%}
       {%- endfor -%}
     </tbody>
   </table>

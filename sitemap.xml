@@ -21,7 +21,7 @@ layout: null
     <changefreq>weekly</changefreq>
   </url>
   {%- for post in site.posts -%}
-    {%- unless post.draft -%}
+    {%- unless post.hidden -%}
       <url>
         <loc>{{ post.url | absolute_url }}</loc>
         <lastmod>{{ post.custom_update_date | date: "%Y-%m-%d" }}</lastmod>

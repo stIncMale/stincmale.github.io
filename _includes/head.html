@@ -14,6 +14,9 @@
   {%- if page.custom_keywords.size > 0 -%}
     <meta name="keywords" content="{{ page.custom_keywords | join:", "}}">
   {%- endif -%}
+  {%- if page.hidden -%}
+    <meta name="robots" content="noindex">
+  {%- endif -%}
   <meta name="author" content="{{ site.custom_author }}">
   <meta property="og:title" content="{{ og_title }}"/>
   <meta property="og:image" content="{% link assets/img/site-logo.png %}"/>{%- comment -%}<!-- The aspect ratio of this image is for LinkedIn, but also works with Telegram -->{%- endcomment -%}

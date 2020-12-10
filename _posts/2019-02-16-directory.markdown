@@ -5,7 +5,7 @@ title: Directory vs directory service vs naming service vs LDAP vs JNDI
 categories: [tech]
 tags: [Java, security, disambiguation]
 date: 2019-02-16T12:00:00Z
-custom_update_date: 2020-12-03T03:26:00Z
+custom_update_date: 2020-12-10T08:30:00Z
 custom_keywords: [directory, directory service, naming service, LDAP, JNDI]
 custom_description: This article briefly explains what directory and naming services are, and how they can be accessed.
 ---
@@ -103,10 +103,10 @@ is incompatible with this approach, which makes the whole approach questionable)
 
 [Spring Security] calls the former approach
 [bind authentication](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-authentication-ldap-bind)
-(see also [`org.springframework.security.ldap.authentication.BindAuthenticator`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/ldap/authentication/BindAuthenticator.html)),
+(see also [`org<wbr>.springframework<wbr>.security<wbr>.ldap<wbr>.authentication<wbr>.BindAuthenticator`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/ldap/authentication/BindAuthenticator.html)),
 and the latter one is called
 [password authentication](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-authentication-ldap-pwd)
-(see also [`org.springframework.security.ldap.authentication.PasswordComparisonAuthenticator`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/ldap/authentication/PasswordComparisonAuthenticator.html)).
+(see also [`org<wbr>.springframework<wbr>.security<wbr>.ldap<wbr>.authentication<wbr>.PasswordComparisonAuthenticator`](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/ldap/authentication/PasswordComparisonAuthenticator.html)).
 
 ## [](#jndi){:.section-link}Java Naming and Directory Interface (JNDI) {#jndi}
 Usually, authentication is not the only thing that an application wants, and other interactions with a [directory service] may be required.

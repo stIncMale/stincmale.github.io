@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2020-09-25T11:47:00Z
+custom_update_date: 2020-12-30T11:42:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -153,7 +153,7 @@ The following excerpt from the PostgreSQL code comments gives us a hint:
  *          }
  *          advance outer position              NEXTOUTER
  *          if (outer == mark)                  TESTOUTER
- *            estore inner position to mark     TESTOUTER
+ *            restore inner position to mark     TESTOUTER
  *          else
  *            break // return to top of outer loop
  *        }
@@ -166,15 +166,16 @@ The following excerpt from the PostgreSQL code comments gives us a hint:
 So `Merge Join` may access the same rows produced by the inner child node (`Materialize` in our case)
 multiple times if `restore inner position to mark` happens.
 In our query, the outer set of rows `a` is `(0)`, `(0)`, `(0)`, `(0)`, `(0)`, and the inner set of rows `b` is `(0)`, `(0)`.
-According to the algorithm described above, `restore inner position to mark` must be happening 5 times, resulting in accessing the materialized set of
-rows 5 times. Are you also experiencing `Nested Loop` déjà vu at this point? Only in this case the `loops` value is 1.
+According to the algorithm described above, `restore inner position to mark` must be happening 4 times, resulting in accessing the materialized (inner)
+set of rows 5 times. Are you also experiencing `Nested Loop` déjà vu at this point? Only in this case the `loops` value is 1.
 
 Accessing 5 times each of the 2 inner set rows gives 10 accesses in total, and yet the `Materialize` node reports 6 rows.
-My understanding is that after `advance outer position` but before `estore inner position to mark` the last row from the
+My understanding is that after `advance outer position` but before `restore inner position to mark` the last row from the
 inner set is still available to the `Merge Join` node without the need to access it again from the inner set, and so it is used right away.
-With this in mind, joining each of the outer rows, but the first one, results in reading 2 - 1 = 1 rows instead of 2 rows
-from the inner set (joining the first outer row still has to read all 2 inner rows), giving 1 * 2 + (5 - 1) * (2 - 1) = 6 rows returned/emitted
-(as it is worded by the PostgreSQL docs) by the `Materialize` node.
+With this in mind, joining each of the outer rows, but the first one, results in accessing 2 - 1 = 1 rows instead of 2 rows
+from the inner set (joining the first outer row still has to access all 2 inner rows), giving
+1<span class="insignificant">&nbsp;outer row</span> * 2<span class="insignificant">&nbsp;inner rows</span> + (5 - 1)<span class="insignificant">&nbsp;outer rows</span> * (2 - 1)<span class="insignificant">&nbsp;inner rows</span> = 6
+rows returned/emitted (as it is worded by the PostgreSQL docs) by the `Materialize` node.
 
 Interestingly, the same does not seem to happen for the `Hash` node which has a `Hash Join` node as its parent:
 

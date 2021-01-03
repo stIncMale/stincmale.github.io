@@ -87,6 +87,18 @@ Concurrency and distributed systems
 ---
 
 <h6 class="resume-h">
+  <a href="https://www.mongodb.com/" title="MongoDB">
+    <img src="{% link /assets/img/resume/mongodb-logo.png %}" alt="Logo" style="width: auto; height: 1.1em;">
+    MongoDB
+  </a>
+  / <span class="resume-insignificant resume-normal-font-weight">Calgary, Canada (remote)</span>
+</h6>
+_Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndash;current</span>
+<div class="resume-experience" markdown="1">
+* **[Java MongoDB Drivers](https://docs.mongodb.com/drivers/java-drivers/)**
+</div>
+
+<h6 class="resume-h">
   <a href="https://www.synopsys.com/" title="Synopsys">
     <img src="{% link /assets/img/resume/synopsys-logo.png %}" alt="Logo" style="width: auto; height: 0.8em;">
     Synopsys
@@ -130,7 +142,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
 
 <h6 class="resume-h">
   <a href="https://www.zeptolab.com/" title="ZeptoLab">
-    <img src="{% link /assets/img/resume/zeptolab-logo.png %}" alt="Logo" style="width: auto; height: 1.1em;">
+    <img src="{% link /assets/img/resume/zeptolab-logo.png %}" alt="Logo" style="width: auto; height: 1.4em;">
     ZeptoLab
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>
@@ -146,7 +158,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
 * **Server and client homegrown frameworks** (Netty)
   * **developed from scratch**;
   * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it.
-* **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Apache Tapestry) &mdash;
+* **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Tapestry) &mdash;
   manages and delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
@@ -187,7 +199,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
 
 <h6 class="resume-h">
   <a href="https://www.netcracker.com/" title="Netcracker">
-    <img src="{% link /assets/img/resume/netcracker-logo.png %}" alt="Logo" style="width: auto; height: 1em;">
+    <img src="{% link /assets/img/resume/netcracker-logo.png %}" alt="Logo" style="width: auto; height: 0.9em;">
     Netcracker
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>

@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2020-11-29T09:30:00Z
+custom_update_date: 2021-01-04T08:58:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -148,7 +148,7 @@ See also [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span 
     * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\
       <span class="insignificant">[Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/)</span>
     * [The Richness of Time](https://youtu.be/1FJWvEbeBps)\\
-      <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](http://www.briangreene.org/)</span> 
+      <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](https://www.briangreene.org/)</span> 
 
 [^2]: By the way, despite the paper does not mention the term "consistent cut",
     it is widely used by the community when talking about the snapshot algorithm described in the paper.

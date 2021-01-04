@@ -37,11 +37,32 @@ For example, here are a few examples of [lyrics]({% link lyrics.markdown %}) and
 * <q>"Do your duty, come what may."</q>
 * <q>"Live as if you were to die tomorrow. Learn as if you were to live forever."</q>
 
-I like to play computer games and spent a lot of time playing Quake and Unreal Tournament series.
-I also was taking part for 3 years in developing (unfortunately mobile) games at [ZeptoLab](https://youtu.be/mAXjQvJ2Umo).
+I like to play computer games and spent a lot of time playing Quake and Unreal Tournament series at university and for some time after graduating.
+I am still playing, but mostly non-competitive games because they do not require investing time regularly.
 My nickname is `Male` sometimes with the tag `stInc`.
 This tag is now quite useless because I suppose I am the only one who still uses it.
 `stInc` means `Starfuckers Inc`, or sometimes it may mean "stink" &#x1f61b;
+I also was taking part for 3 years in developing (unfortunately mobile) games at [ZeptoLab](https://youtu.be/mAXjQvJ2Umo).
+
+Following are examples of YouTube channels I am subscribed to and watching regularly, which may tell you something about my interests beyond professional ones:
+* [3Blue1Brown](https://www.youtube.com/3blue1brown)<span class="insignificant">&nbsp;by [Grant Sanderson](https://www.3blue1brown.com/about#about-the-author)</span>\\
+  <span class="insignificant">A combination of math and entertainment, depending on your disposition.</span>
+* [Robert Miles](https://www.youtube.com/RobertMilesAI)\\
+  <span class="insignificant">Videos about Artificial Intelligence Safety Research, for everyone.</span>
+* [Healthcare Triage](https://www.youtube.com/healthcaretriage)<span class="insignificant">&nbsp;by [Aaron Carroll](https://medicine.iu.edu/faculty/3005/carroll-aaron)</span>\\
+  <span class="insignificant">Videos that explain healthcare policy, medical research, and answer a lot of other questions you may have about medicine, health, and healthcare.</span>
+* [Kurzgesagt – In a Nutshell](https://www.youtube.com/inanutshell)<span class="insignificant">&nbsp;by [kurzgesagt.org](https://kurzgesagt.org/about/)</span>\\
+  <span class="insignificant">Videos explaining things with optimistic nihilism.</span>
+* [Real Engineering](https://www.youtube.com/RealEngineering)<span class="insignificant">&nbsp;by [Brian McManus](https://twitter.com/TheBrianMcManus)</span>\\
+  <span class="insignificant">Interesting answers to simple questions.</span>
+* [PBS Space Time](https://www.youtube.com/pbsspacetime)<span class="insignificant">&nbsp;hosted by [Matt O'Dowd](https://www.mattodowd.space/) (originally hosted by [Gabe Perez-Giz](https://twitter.com/fizziksgabe))</span>\\
+  <span class="insignificant">The channel explores the outer reaches of space, the craziness of astrophysics, the possibilities of sci-fi, and anything else you can think of beyond Planet Earth.</span>
+* [Science without the gobbledygook](https://www.youtube.com/SabineHossenfelder)<span class="insignificant">&nbsp;by [Sabine Hossenfelder](http://sabinehossenfelder.com/)</span>\\
+  <span class="insignificant">No hype, no spin, no tip-toeing around inconvenient truths.</span>
+* [Fermilab](https://www.youtube.com/fermilab)<span class="insignificant">&nbsp;by [Fermi National Accelerator Laboratory](https://www.fnal.gov/), hosted by [Don Lincoln](https://drdonlincoln.com/)</span>\\
+  <span class="insignificant">Videos on basic particle physics and cosmology.</span>
+* [World Science Festival](https://www.youtube.com/WorldScienceFestival)<span class="insignificant">&nbsp;by [World Science Foundation](https://www.worldsciencefestival.com/about/meet-our-team/), hosted by [Brian Greene](https://www.briangreene.org/)</span>\\
+  <span class="insignificant">Long and short-form videos on nearly every science-related topic including physics, biology, the brain, robotics, medicine, space, engineering, and the Earth.</span>
 
 [^1]: Albert Einstein went even further than Lewis Carroll in his general theory of relativity, which tells us that in curved spacetime a body must
     have non-zero proper acceleration (it may be measured by an accelerometer) to stay in the same place.

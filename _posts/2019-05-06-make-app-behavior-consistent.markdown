@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2020-12-03T03:21:00Z
+custom_update_date: 2021-01-12T06:12:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -241,8 +241,8 @@ from the stdin to the stdout instead of transferring character data, which would
     A subset of a JDK that is sufficient to run a Java application but is not sufficient to develop one is commonly named a Java Runtime Environment (JRE).
     The key part of any JDK or JRE is a Java Virtual Machine (JVM), it is responsible for hardware- and operating system&ndash;independence of any programming language
     compiled into JVM instructions called bytecodes (such languages are often called JVM languages).
-    A JVM can be thought of as an emulator of a computing machine that understands the instruction set specified by the
-    [JVMS 6. The Java Virtual Machine Instruction Set](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-6.html).
+    A JVM can be thought of as an emulator of a computing machine that understands the instruction set specified by
+    [JVMS Chapter 6. The Java Virtual Machine Instruction Set](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-6.html).
     The Java [`class` file format](https://docs.oracle.com/javase/specs/jvms/se14/html/jvms-2.html#jvms-2.1) is to a JVM
     as the [Executable and Linking Format (ELF)](https://man7.org/linux/man-pages/man5/elf.5.html) / [Portable Executable (PE) format](https://docs.microsoft.com/en-us/windows/win32/debug/pe-format)
     is to a machine controlled by the Linux/Windows operating system respectively.

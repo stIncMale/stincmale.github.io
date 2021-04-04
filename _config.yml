@@ -34,7 +34,6 @@ kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
   # Use ZERO WIDTH SPACE to "disable" Kramdown backlink text
   footnote_backlink: "\u200b"
-
 custom_title: '<span class="site-title1">DEAD</span><span class="site-title2 monospace">&lt;code/&gt;</span>'
 # Having all the HTML tags specified in custom_title is not particularly harmful for the Atom feed, but is also not helpful
 # because users may see that markup when importing my feed into their feed readers and this may confuse them. 

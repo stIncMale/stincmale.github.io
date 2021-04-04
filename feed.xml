@@ -23,11 +23,11 @@ layout: null
         <link rel="alternate" type="text/html" href="{{ post_url }}"/>
         <published>{{ post.date | date_to_xmlschema }}</published>
         <updated>{{ post.custom_update_date | date_to_xmlschema }}</updated>
-        <category term="blog" label="blog"></category>
-        <category term="{{ post.categories | first }}" label="{{ post.categories | first }}"></category>
+        <category term="blog" label="blog"/>
+        <category term="{{ post.categories | first }}" label="{{ post.categories | first }}"/>
         <title type="html">{{ post.title | xml_escape }}</title>
         <summary type="html">{{ post.custom_description | xml_escape }}</summary>
-        <content type="text/html" src="{{ post_url }}"></content>
+        <content type="text/html" src="{{ post_url }}"/>
         <author>
           <name>{{ site.custom_author }}</name>
           <email>{{ site.custom_author_email }}</email>

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java]
 date: 2014-01-01T12:00:00Z
 custom_post_date: 2014
-custom_update_date: 2020-07-29T06:55:00Z
+custom_update_date: 2021-04-04T07:12:00Z
 custom_keywords: [final field, final fields, semantics, JMM, Java memory model]
 custom_description: A final field in Java is not the same thing as a final variable that may only be assigned to once.
 ---
@@ -31,4 +31,4 @@ made a [public talk](https://youtu.be/f6joeCiz440) in Russian.
 * [Теоретический минимум для понимания Java Memory Model](https://youtu.be/hxIRyqHRnjE)<span class="insignificant">&nbsp;by [Roman Elizarov](https://github.com/elizarov)</span> (in Russian)
 * [Close Encounters of The Java Memory Model Kind](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
 * [Using JDK 9 Memory Order Modes](http://gee.cs.oswego.edu/dl/html/j9mm.html)<span class="insignificant">&nbsp;by [Doug Lea](http://gee.cs.oswego.edu/)</span>
-* [A Formalization of Java's Concurrent Access Modes](http://compiler.cs.ucla.edu/papers/jam/)<span class="insignificant">&nbsp;by [John Bender](http://johnbender.us/), [Jens Palsberg](http://web.cs.ucla.edu/~palsberg/)</span>
+* [A Formalization of Java's Concurrent Access Modes](http://compiler.cs.ucla.edu/papers/jam/)<span class="insignificant">&nbsp;by [John Bender](https://johnbender.us/), [Jens Palsberg](https://web.cs.ucla.edu/~palsberg/)</span>

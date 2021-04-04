@@ -5,7 +5,7 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2020-07-29T06:57:00Z
+custom_update_date: 2021-04-04T07:15:00Z
 custom_keywords: [replication, incremental replication, logical replication, asynchronous replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
@@ -224,7 +224,7 @@ can be seen as an analogy to the discussed replication process.
 If it is a good analogy, then we expect similar problems there, right? Indeed, sometimes you have to explicitly synchronize the persistence context
 with the underlying database, not only for the sake of keeping it from growing too large in a large transaction,
 but also in order to avoid violating constraints of the underlying database. It seems that Jakarta Persistence implementations,
-e.g., [Hibernate ORM](http://hibernate.org/orm/), try to save users some trouble by implementing a sophisticated
+e.g., [Hibernate ORM](https://hibernate.org/orm/), try to save users some trouble by implementing a sophisticated
 [`flush` operation order](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#flushing-order),
 which is meant to reduce the chances of violating database constraints when flushing.
 If you are interested in further reading about Hibernate ORM flushing order, I recommend the following:

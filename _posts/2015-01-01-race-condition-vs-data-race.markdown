@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2020-07-29T06:56:00Z
+custom_update_date: 2021-04-04T07:13:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -64,8 +64,8 @@ the [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls
 for the [Java Platform, Standard Edition (Java SE) 14](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/):
 
 * <q>"JLS3 seems to contain a glitch that prevents me from proving that my program is free of data races"</q>\\
-<span class="insignificant">[Java Memory Model discussions list](http://www.cs.umd.edu/~pugh/java/memoryModel/archive/2477.html),
-[the answer](http://www.cs.umd.edu/~pugh/java/memoryModel/archive/2483.html), 2005</span>
+<span class="insignificant">[Java Memory Model discussions list](https://www.cs.umd.edu/~pugh/java/memoryModel/archive/2477.html),
+[the answer](https://www.cs.umd.edu/~pugh/java/memoryModel/archive/2483.html), 2005</span>
 * <q>"I was wondering if there was a happens before guarantee for reads of volatiles relative to later writes."</q>\\
 <span class="insignificant">[concurrency-interest discussion list](http://cs.oswego.edu/pipermail/concurrency-interest/2012-January/008883.html),
 [the answer](http://cs.oswego.edu/pipermail/concurrency-interest/2012-January/008927.html), 2012</span>

@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2021-01-04T08:58:00Z
+custom_update_date: 2021-04-04T07:11:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -40,7 +40,7 @@ If there is absolute time, we can define what a snapshot is.
 </div>
 
 Note that the term "snapshot" can be defined without introducing the notion of absolute time,
-see [Distributed Snapshots: Determining Global States of Distributed Systems](http://lamport.azurewebsites.net/pubs/pubs.html#chandy)<span class="insignificant">&nbsp;by [K. Mani Chandy](https://en.wikipedia.org/wiki/K._Mani_Chandy) and [Leslie Lamport](http://lamport.azurewebsites.net/)</span>[^2].
+see [Distributed Snapshots: Determining Global States of Distributed Systems](https://lamport.azurewebsites.net/pubs/pubs.html#chandy)<span class="insignificant">&nbsp;by [K. Mani Chandy](https://en.wikipedia.org/wiki/K._Mani_Chandy) and [Leslie Lamport](http://lamport.azurewebsites.net/)</span>[^2].
 This is, however, not very relevant to our discussion about "now" because discussing this term requires discussing time.
 
 According to the theory of special relativity, there is no absolute time in which the universe exists.
@@ -56,7 +56,7 @@ What if we are talking about a logical system, may it have absolute time?&mdash;
   This may be done for an object as simple as a linearizable, a.k.a. atomic[^3], register,
   or as complex as a DB managed by a DBMS that guarantees that all transactions are serializable;
 * the work
-  [Time, Clocks, and the Ordering of Events in a Distributed System](http://lamport.azurewebsites.net/pubs/pubs.html#time-clocks)<span class="insignificant">&nbsp;by [Leslie Lamport](http://lamport.azurewebsites.net/)</span>
+  [Time, Clocks, and the Ordering of Events in a Distributed System](https://lamport.azurewebsites.net/pubs/pubs.html#time-clocks)<span class="insignificant">&nbsp;by [Leslie Lamport](http://lamport.azurewebsites.net/)</span>
   describes the synchronization of logical clocks, allowing to totally order all events in a distributed system.
 
 Do not get too excited, though&mdash;there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
@@ -144,7 +144,7 @@ See also [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span 
     * [The Distinction of Past and Future](https://youtu.be/VU0mpPm9U-4)\\
       <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
     * [Time Is of the Essence… or Is It?](https://youtu.be/N-NTXoYTvao)\\
-      <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/), [Lee Smolin](http://leesmolin.com/); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
+      <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/), [Lee Smolin](https://leesmolin.com); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
     * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\
       <span class="insignificant">[Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/)</span>
     * [The Richness of Time](https://youtu.be/1FJWvEbeBps)\\
@@ -156,4 +156,4 @@ See also [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span 
 [^3]: The word "atomic" is overloaded: it is used both as a synonym of being linearizable (by the way, a `volatile` field in Java is a linearizable register)
     and as the atomicity property in ACID, which is about either committing all actions bundled together in a transaction, or ensuring that none of them happened.
 
-[^4]: [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)<span class="insignificant sub">&nbsp;by [Maurice P. Herlihy](https://cs.brown.edu/~mph/), [Jeannette M. Wing](http://www.cs.cmu.edu/~wing/)</span>
+[^4]: [Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)<span class="insignificant sub">&nbsp;by [Maurice P. Herlihy](https://cs.brown.edu/~mph/), [Jeannette M. Wing](https://www.cs.cmu.edu/~wing/)</span>

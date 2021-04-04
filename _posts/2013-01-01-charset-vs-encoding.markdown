@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-29T06:52:00Z
+custom_update_date: 2021-04-04T07:10:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -108,13 +108,13 @@ It may introduce compression or care about [byte order](https://www.unicode.org/
 [ISO/IEC 10646](https://www.iso.org/standard/69119.html) defines a CCS called Universal Coded Character Set (UCS).
 The Unicode standard uses this CCS.
 UCS includes many interesting characters, e.g., &#x2467; &#x1f9a0; &#x222c;, but not everything you might want, for example,
-it [does not include Apple logo](http://hea-www.harvard.edu/~fine/OSX/unicode_apple_logo.html).
-The complete CCS used by the Unicode standard is available at <http://www.unicode.org/charts>.
+it [does not include Apple logo](https://hea-www.harvard.edu/~fine/OSX/unicode_apple_logo.html).
+The complete CCS used by the Unicode standard is available at <https://www.unicode.org/charts/>.
 
 Unicode code points are written in the format `U+HHHH` or `U+HHHHHH`, where `H` is a hexadecimal digit,
 and have values from `U+0000` (0) to `U+10FFFF` (1_114_111).
 Note that some values do not have assigned characters and are reserved in the Unicode standard for internal use.
-Such code points are called [noncharacters](http://www.unicode.org/faq/private_use.html#noncharacters).
+Such code points are called [noncharacters](https://www.unicode.org/faq/private_use.html#noncharacters).
 
 ### [](#cm-example){:.section-link}Character map {#cm-example}
 We often refer to something called "UTF-8" as "encoding",

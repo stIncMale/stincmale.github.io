@@ -14,7 +14,7 @@ Concurrency and distributed systems
     <svg class="svg-button" viewBox="0 0 1024 1024" height="1024" width="1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z"></path></svg>
   </a>
   <a class="button" href="https://www.linkedin.com/in/stIncMale" title="LinkedIn">
-    <svg class="svg-button" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z" style="fill-rule:nonzero;"></path></svg>
+    <svg class="svg-button" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z" style="fill-rule:nonzero;"></path></svg>
   </a>
   <a href="https://www.kovalenko.link/blog/tech/" title="DEAD<code/>">
     <img src="{% link /assets/img/favicon.png %}" alt="Logo" style="width: 1.7em; height: auto; vertical-align: -0.2em;">
@@ -150,7 +150,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
 _Senior server-side developer_ / <span class="resume-insignificant">Jan 2016&ndash;Mar 2018</span>\\
 _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 2015</span>
 <div class="resume-experience" markdown="1">
-* **[King of Thieves](http://www.kingofthieves.com/) server**
+* **[King of Thieves](https://www.kingofthieves.com/) server**
   (Netty, ZooKeeper + Curator, Protocol Buffers, Redis + Sentinel, Cassandra, Docker, Ansible, Datadog, Mixpanel)
   * joined this project in Aug 2015, 7 months after the global release, and supported it / developed new features until resigning;
   * implemented validation and processing of **in-app purchases and subscriptions**, here is my [related blog post]({% post_url 2017-06-06-decoding-apple-app-store-receipts %});
@@ -207,7 +207,7 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
 _Senior software programmer_ / <span class="resume-insignificant">Aug 2013&ndash;Dec 2014</span>\\
 _Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 2013</span>
 <div class="resume-experience" markdown="1">
-* [**TELUS Self Service Portal**](http://www.telus.com) (JMS, WebLogic Server, Oracle Database)
+* [**TELUS Self Service Portal**](https://www.telus.com) (JMS, WebLogic Server, Oracle Database)
   * integrated with **Oracle OpenSSO**;
   * **availability** &mdash; developed functionality allowing front-end servers to persist
   and later initiate asynchronous execution of tasks on back-ends.
@@ -218,7 +218,7 @@ _Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 20
 </div>
 
 <h6 class="resume-h">
-  <a href="http://www.it.ru/en/" title="I.T. Information Technology">
+  <a href="https://www.it.ru/en/" title="I.T. Information Technology">
     <img src="{% link /assets/img/resume/it-logo.jpg %}" alt="Logo" style="width: auto; height: 0.7em;">
     I.T. Information Technology
   </a>

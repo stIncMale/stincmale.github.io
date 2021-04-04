@@ -5,7 +5,7 @@ title: Decoding Apple App Store receipts (PKCS &num;7, ASN.1) in Java
 categories: [tech]
 tags: [Java]
 date: 2017-06-06T12:00:00Z
-custom_update_date: 2020-10-12T05:37:00Z
+custom_update_date: 2021-04-04T07:14:00Z
 custom_keywords: [Apple App Store, receipt, in-app purchase, subscription, decode, PKCS &num;7, ASN.1]
 custom_description: It appears Apple thinks that no one needs to decode receipts on the server side. In practice, however, things are not necessary as smooth and we had to decode receipts before validating them in order to handle and restore subscriptions. This post describes how to do this in Java.
 ---
@@ -15,8 +15,8 @@ According to the [documentation](https://developer.apple.com/library/content/rel
 App Store receipts are binary files packed in a
 <q>"[PKCS #7](https://www.rfc-editor.org/rfc/rfc2315) container,
 as defined by [RFC 2315](https://www.rfc-editor.org/rfc/rfc2315),
-with its payload encoded using [ASN.1 (Abstract Syntax Notation One)](http://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx),
-as defined by [ITU-T X.690](http://handle.itu.int/11.1002/1000/12483)[^1]"</q>
+with its payload encoded using [ASN.1 (Abstract Syntax Notation One)](https://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx),
+as defined by [ITU-T X.690](https://handle.itu.int/11.1002/1000/12483)[^1]"</q>
 The structure of a receipt is shown in the image below.
 
 <figure>
@@ -30,7 +30,7 @@ Apparently, the authors think that no one needs to decode receipts in Java becau
 then we are talking about the server side, and in this case, one can obtain a JSON-encoded receipt data from the
 [App Store validation service](https://developer.apple.com/documentation/storekit/in-app_purchase/validating_receipts_with_the_app_store).
 In practice, however, things are not necessary as smooth and we had to decode receipts before validating them in order to handle and restore subscriptions.
-This post describes how I decoded receipts in [King of Thieves](http://www.kingofthieves.com/) at [ZeptoLab](https://www.zeptolab.com/).
+This post describes how I decoded receipts in [King of Thieves](https://www.kingofthieves.com/) at [ZeptoLab](https://www.zeptolab.com/).
 
 ## [](#generate-classes){:.section-link}Generating Java classes from the ASN.1 module {#generate-classes}
 If you are familiar with [Protocol Buffers](https://developers.google.com/protocol-buffers/), you will easily understand this step.

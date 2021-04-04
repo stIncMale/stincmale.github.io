@@ -25,7 +25,7 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2021-01-04T08:59:00Z
+custom_update_date: 2021-04-04T07:15:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
@@ -48,7 +48,6 @@ Text before ToC.
 ## [](#todo){:.section-link}TODO {#todo}
 * Leave "redirect" links in the old site.
 * Remove "​" (ZWSP characters), "﻿" (ZWNBSP).
-* Change HTTP URIs to HTTPS where possible.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
@@ -57,7 +56,7 @@ Text before ToC.
 * [Validate XML against XSD online](https://www.freeformatter.com/xml-validator-xsd.html)
 * [All HTML named entities](https://dev.w3.org/html5/html-author/charref)
 
-## [](#urls-to-check){:.section-link}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](http://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
+## [](#urls-to-check){:.section-link}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](https://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
 * W3C markup validator
   * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
@@ -71,7 +70,7 @@ Text before ToC.
 * W3C feed validator
   * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
 * W3C CSS validator
-  * [https://www.kovalenko.link/assets/css/style.css](http://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.kovalenko.link%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  * [https://www.kovalenko.link/assets/css/style.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.kovalenko.link%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 <!-- see https://kramdown.gettalong.org/syntax.html#specifying-a-header-id for details -->
 ## [](#h2){:.section-link}Header `<h2>` {#h2}
@@ -99,7 +98,7 @@ long text.
 
 **_~~Bold italic strikethrough text.~~_**
 
-[Link to Google](http://google.com), automatic link <http://google.com>.
+[Link to The Internet Engineering Task Force](https://www.ietf.org), automatic link <https://www.ietf.org>.
 
 <span class="monospace">Monospace text.</span>
 
@@ -108,7 +107,7 @@ Quotation <q>"inlined in text"</q>.
 Quotation block:
 > "**Quoted text.**
 >
-> [Link](https://google.com)
+> [Link](https://www.ietf.org)
 >
 > Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
@@ -119,7 +118,7 @@ Information block that supports kramdown syntax inside:
 <div class="info-block" markdown="1">
 **Info text.**
 
-[Link](https://google.com)
+[Link](https://www.ietf.org)
 
 Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very

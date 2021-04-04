@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2020-12-03T03:20:00Z
+custom_update_date: 2021-04-04T07:18:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -31,7 +31,7 @@ Software | Version
 [Ubuntu] on [WSL 2] | 20.04
 [Windows] | 10 version 2004
 [OpenJDK JDK] | 15
-[HAProxy](http://www.haproxy.org) | 2.0.13
+[HAProxy](https://www.haproxy.org) | 2.0.13
 
 ## [](#theory){:.section-link}Theory {#theory}
 The TCP keep-alive mechanism is specified in [RFC 1122. 4.2.3.6 TCP Keep-Alives](https://www.rfc-editor.org/rfc/rfc1122#page-101)[^2].
@@ -146,22 +146,22 @@ frontend fe
   bind localhost:30000 #Client connects to this socket
   mode tcp
   timeout client 600000ms #The inactivity timeout applies when the client is expected to acknowledge or send data.
-                          #  See http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20client
+                          #  See https://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20client
   default_backend be
 
 backend be
   mode tcp
   timeout connect 1000ms #The maximum time to wait for a connection attempt to a server to succeed.
-                         #  See http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20connect
+                         #  See https://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20connect
   timeout server 15000ms #The inactivity timeout applies when the server is expected to acknowledge or send data.
-                         #  See http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20server
+                         #  See https://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20server
   server s1 localhost:30001 #Server listens on this socket
 ```
 
 With this configuration, the proxy listens for TCP connections from clients on the port 30000
 and establishes respective TCP connections with the server on the port 30001.
-Note that the [`timeout client`](http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20client) is 6 minutes,
-while the [`timeout server`](http://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20server) is 15 seconds.
+Note that the [`timeout client`](https://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20client) is 6 minutes,
+while the [`timeout server`](https://cbonte.github.io/haproxy-dconv/2.0/configuration.html#4-timeout%20server) is 15 seconds.
 So in our case, if there is no client-server activity, then the proxy detects it based on the `timeout server` and terminates both connections
 (the client-facing socket managed by the proxy stays in the [`TIME-WAIT`] state in this case).
 

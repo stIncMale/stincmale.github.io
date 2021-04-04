@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2020-10-12T05:36:00Z
+custom_update_date: 2021-04-04T07:17:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -37,7 +37,7 @@ Before defining what concurrency is, we need to talk about the order of actions 
 We may think of an action / operation `a` as a pair of events: an invocation `inv(a)` and the matching response `res(a)`, which is ordered after `inv(a)`.
 Actions `a` and `b` are ordered or sequential iff either `res(a)` is ordered before `inv(b)`, or `res(b)` is ordered before `inv(a)`.
 Such "ordered before" relation is also sometimes called "happens-before". For more details see, e.g.,
-[Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)<span class="insignificant">&nbsp;by [Maurice P. Herlihy](https://cs.brown.edu/~mph/), [Jeannette M. Wing](http://www.cs.cmu.edu/~wing/)</span>[^2].  
+[Linearizability: A Correctness Condition for Concurrent Objects](https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)<span class="insignificant">&nbsp;by [Maurice P. Herlihy](https://cs.brown.edu/~mph/), [Jeannette M. Wing](https://www.cs.cmu.edu/~wing/)</span>[^2].
 
 We usually do not care about unordered independent actions, because independence means we can assume,
 that they are ordered in any order convenient for us to reason about
@@ -94,7 +94,7 @@ PostgreSQL still able to start multiple backend processes and process concurrent
 
 Now imagine disabling [concurrency control](https://www.postgresql.org/docs/current/mvcc.html)&mdash;transactions are not isolated ("I" in ACID) anymore
 and, therefore, behave differently. If this is not obvious, you may take any of the [examples](https://wiki.postgresql.org/wiki/SSI) demonstrating
-[Serializable Snapshot Isolation (SSI)](https://drkp.net/papers/ssi-vldb12.pdf)<span class="insignificant">&nbsp;by [Dan R. K. Ports](https://drkp.net/), [Kevin Grittner](http://wiki.postgresql.org/wiki/User:Kgrittn)</span>
+[Serializable Snapshot Isolation (SSI)](https://drkp.net/papers/ssi-vldb12.pdf)<span class="insignificant">&nbsp;by [Dan R. K. Ports](https://drkp.net/), [Kevin Grittner](https://wiki.postgresql.org/wiki/User:Kgrittn)</span>
 and see that it does not rely on whether transactions are executed in parallel or not, yet shows that without SSI the behavior would have been different.
 
 ### [](#instruction-pipelining){:.section-link}Instruction pipelining[^4] {#instruction-pipelining}

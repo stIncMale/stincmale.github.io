@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2021-01-12T06:12:00Z
+custom_update_date: 2021-04-04T07:16:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -260,7 +260,7 @@ from the stdin to the stdout instead of transferring character data, which would
     So, the OpenJDK JDK is an implementation of the Java SE Specification. As a result of it being open-source, there are many other implementations
     that are based on it. Each implementation may have its own additional features not specified by the Java SE Specification.
     Both standard and nonstandard features included in each new release of the OpenJDK JDK are listed in the corresponding release page.
-    They are called [JDK Enhancement Proposals (JEPs)](http://openjdk.java.net/jeps/0),
+    They are called [JDK Enhancement Proposals (JEPs)](https://openjdk.java.net/jeps/0),
     here is a link to the [OpenJDK JDK 14 release page](https://openjdk.java.net/projects/jdk/14/)
     specifying all the JEPs included in this release.
 

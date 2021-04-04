@@ -196,8 +196,8 @@ Sometimes data races are used to allow the program to perform faster; these are 
 Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.java.net/projects/jdk/)[^6]:
 
 ```java
-//java.lang.String from OpenJDK JDK 14
-//http://hg.openjdk.java.net/jdk/jdk14/file/6c954123ee8d/src/java.base/share/classes/java/lang/String.java#l1526
+//java.lang.String from OpenJDK JDK 16
+//https://github.com/openjdk/jdk/blob/jdk-16-ga/src/java.base/share/classes/java/lang/String.java#L1531
 
 /** Cache the hash code for the string */
 private int hash; // Default to 0

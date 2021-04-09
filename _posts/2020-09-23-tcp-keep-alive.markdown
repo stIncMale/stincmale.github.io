@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2021-04-04T07:18:00Z
+custom_update_date: 2021-04-09T07:00:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -210,9 +210,9 @@ Start the client:
 
 ```shell
 $ java -cp examples/target/classes/ stincmale.sandbox.examples.tcpkeepalive.Client localhost 30000
-2020-09-25T07:30:10.434081900Z main      Connecting to localhost/127.0.0.1:30000 with timeout 1000ms
+2020-09-25T07:30:10.434081900Z main      Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
 2020-09-25T07:30:10.447577700Z main      Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=34974]
-2020-09-25T07:30:10.453081100Z main      Set read timeout 25000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=34974]
+2020-09-25T07:30:10.453081100Z main      Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=34974]
 Specify data to be sent:
 ```
 
@@ -226,13 +226,13 @@ The log below is combined from both client and server logs for convenience:
 ```
 2020-09-25T11:22:52.244467700Z main      Server  Starting listening on localhost/127.0.0.1:30001
 2020-09-25T11:22:52.260842500Z main      Server  Accepting connections on ServerSocket[addr=localhost/127.0.0.1,localport=30001]
-2020-09-25T11:22:54.938052500Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000ms
+2020-09-25T11:22:54.938052500Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
 2020-09-25T11:22:54.950853900Z main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34212,localport=30001]
 2020-09-25T11:22:54.951046500Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:22:54.956912800Z main      Client  Set read timeout 25000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:22:54.961998900Z main      Server  Set TCP_KEEPIDLE 5000ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:22:54.962774Z    main      Server  Set TCP_KEEPINTERVAL 5000ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:22:54.972156500Z server-0  Server  Set read timeout 25000ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
+2020-09-25T11:22:54.956912800Z main      Client  Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
+2020-09-25T11:22:54.961998900Z main      Server  Set TCP_KEEPIDLE 5000 ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
+2020-09-25T11:22:54.962774Z    main      Server  Set TCP_KEEPINTERVAL 5000 ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
+2020-09-25T11:22:54.972156500Z server-0  Server  Set read timeout 25000 ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
                                          Client  Specify data to be sent:
                                          Client  h
 2020-09-25T11:23:03.653316200Z input     Client  Sending 0x68 'LATIN SMALL LETTER H' via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
@@ -277,13 +277,13 @@ The log below is combined from both client and server logs for convenience:
 ```
 2020-09-25T10:21:43.275405200Z main      Server  Starting listening on localhost/127.0.0.1:30001
 2020-09-25T10:21:43.292033200Z main      Server  Accepting connections on ServerSocket[addr=localhost/127.0.0.1,localport=30001]
-2020-09-25T10:21:44.637776400Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000ms
+2020-09-25T10:21:44.637776400Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
 2020-09-25T10:21:44.651432Z    main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34132,localport=30001]
 2020-09-25T10:21:44.652275600Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:44.657658800Z main      Client  Set read timeout 25000ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:44.662740200Z main      Server  Set TCP_KEEPIDLE 5000ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
-2020-09-25T10:21:44.663288900Z main      Server  Set TCP_KEEPINTERVAL 5000ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
-2020-09-25T10:21:44.670764500Z server-0  Server  Set read timeout 25000ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
+2020-09-25T10:21:44.657658800Z main      Client  Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
+2020-09-25T10:21:44.662740200Z main      Server  Set TCP_KEEPIDLE 5000 ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
+2020-09-25T10:21:44.663288900Z main      Server  Set TCP_KEEPINTERVAL 5000 ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
+2020-09-25T10:21:44.670764500Z server-0  Server  Set read timeout 25000 ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
                                          Client  Specify data to be sent:
 2020-09-25T10:21:59.659921100Z main      Client  The server Socket[addr=localhost/127.0.0.1,port=30000,localport=35290] disconnected
 2020-09-25T10:21:59.660432100Z main      Client  Gracefully closing Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2020-09-26T18:32:00Z
+custom_update_date: 2021-04-11T04:20:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---
@@ -93,7 +93,7 @@ This is the best solution we may have because it uses immutable [`OffsetDateTime
 the time zone information is not lost, and the behavior does not depend on the [default time zone].
 
 ## [](#examples){:.section-link}Examples {#examples}
-[Junit 5] tests illustrating the problem and the solutions: [`JdbcTimestampTest.java`](https://github.com/stIncMale/sandbox/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampTest.java).
+[Junit 5] tests illustrating the problem and the solutions: [`JdbcTimestampIntegrationTest.java`](https://github.com/stIncMale/sandbox/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampIntegrationTest.java).
 
 [^1]: Java Time-Scale is similar to Epoch Time, a.k.a. POSIX time,
     see [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/)

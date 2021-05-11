@@ -1,12 +1,13 @@
 encoding: UTF-8
 timezone: Etc/UTC
 language: en
-baseurl:
 permalink: /blog/:slug
 # see https://jekyllrb.com/docs/configuration/options/#build-command-options
 show_drafts: false
 exclude: [readme.markdown, license.txt]
 kramdown:
+  # See https://jekyllrb.com/docs/configuration/markdown/
+  #
   # smart_quotes:
   #
   #   first parameter : how an opening apostrophe is transformed

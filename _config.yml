@@ -6,7 +6,7 @@ permalink: /blog/:slug
 show_drafts: false
 exclude: [readme.markdown, license.txt]
 kramdown:
-  # See https://jekyllrb.com/docs/configuration/markdown/
+  # See https://jekyllrb.com/docs/configuration/markdown/.
   #
   # smart_quotes:
   #
@@ -33,20 +33,26 @@ kramdown:
   #   Programmer's world compliant config
   #     smart_quotes: ["apos", "apos", "quot", "quot"]
   smart_quotes: ["apos", "apos", "quot", "quot"]
-  # Use ZERO WIDTH SPACE to "disable" Kramdown backlink text
+  # use ZERO WIDTH SPACE to "disable" Kramdown backlink text
   footnote_backlink: "\u200b"
 custom_title: '<span class="site-title1">DEAD</span><span class="site-title2 monospace">&lt;code/&gt;</span>'
-# Having all the HTML tags specified in custom_title is not particularly harmful for the Atom feed, but is also not helpful
-# because users may see that markup when importing my feed into their feed readers and this may confuse them. 
+# Having all the HTML tags specified in custom_title is not particularly harmful for the Atom feed,
+# but is also not helpful because users may see that markup when importing my feed into their
+# feed readers and this may confuse them.
 custom_plaintext_title: DEAD<code/>
-# LinkedIn (and maybe some other) sites/apps fail to display "DEAD<code/>" title specified in og:title, so I have to use a simplified version
+# LinkedIn (and maybe some other) sites/apps fail to display "DEAD<code/>" title
+# specified in `og:title`, so I have to use a simplified version.
 custom_simplified_title: DEADcode
 custom_author: Valentin Kovalenko
 custom_author_email: public.vkovalenko@gmail.com
 custom_feed_id_iri_inception_year: 2020
-# The only way to pass variable number of parameters to includes in Jekyll is to join them and pass a single parameter of type String
-# (see https://jekyllrb.com/docs/includes/#passing-parameters-to-includes and https://shopify.github.io/liquid/basics/types/#string).
+# The only way to pass variable number of parameters to includes in Jekyll is to join them
+# and pass a single parameter of type String
+# (see https://jekyllrb.com/docs/includes/#passing-parameters-to-includes
+# and https://shopify.github.io/liquid/basics/types/#string).
 # Thus, in order to pass an Array of tags,
-# I have to join them (https://shopify.github.io/liquid/filters/join/), pass the result and split it back (https://shopify.github.io/liquid/filters/split/).
-# This character (END OF TEXT) is used as a delimiter when joining/splitting tags, therefore it cannot be used as part of a tag.
+# I have to join them (https://shopify.github.io/liquid/filters/join/),
+# pass the result and split it back (https://shopify.github.io/liquid/filters/split/).
+# This character (END OF TEXT) is used as a delimiter when joining/splitting tags,
+# therefore it cannot be used as part of a tag.
 custom_post_tag_delimiter: \u0002

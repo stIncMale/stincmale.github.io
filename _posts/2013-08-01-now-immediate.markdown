@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2021-04-04T07:11:00Z
+custom_update_date: 2021-05-13T03:43:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -36,7 +36,7 @@ iff there is a total order over all events in the system.
 If there is absolute time, we can define what a snapshot is. 
 
 <div class="info-block" markdown="1">
-**Snapshot** &mdash; the state `S(t)` of `X` at a point `t` on its absolute timeline.
+**Snapshot**&mdash;the state `S(t)` of `X` at a point `t` on its absolute timeline.
 </div>
 
 Note that the term "snapshot" can be defined without introducing the notion of absolute time,
@@ -123,17 +123,17 @@ which was about the semantics of [`volatile` fields](https://docs.oracle.com/jav
 and apparently implied the temporal meaning of the word "immediately". I like the two following answers to this question:
 
 * [first](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011734.html)
-> No there is no requirement for writes to become visible "immediately".
+> "No there is no requirement for writes to become visible "immediately".
 > Only the happens-before ordering guarantees visibility&mdash;if you see a given write then you must also see writes that happen-before that first write.
-> In practice writes don't take long to become visible on most architectures&mdash;there is typically a delay until a write buffer drains.
+> In practice writes don't take long to become visible on most architectures&mdash;there is typically a delay until a write buffer drains."
 
 * [second](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011735.html)
-> When someone talks about "visible immediately", we need to ask them what they mean by "immediately".
+> "When someone talks about "visible immediately", we need to ask them what they mean by "immediately".
 > In particular, how would a external observer know that something became visible "not immediately".
 >
 > You will quickly see that the external observer can only make judgements about the order of some events with respect to other events.
 > If observing arrival of event A implies arrival of event B can be observed, i.e., A implies B, then you have B happens before A.
-> This is pretty much  all the external observer can figure out. But this is enough to reason about the state of the system.
+> This is pretty much  all the external observer can figure out. But this is enough to reason about the state of the system."
 
 See also [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
 

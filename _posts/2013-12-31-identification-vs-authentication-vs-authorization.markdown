@@ -6,7 +6,7 @@ categories: [tech]
 tags: [security, disambiguation]
 date: 2013-12-30T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2020-07-29T06:54:00Z
+custom_update_date: 2021-05-13T03:44:00Z
 custom_keywords: [identification, authentication, external authentication, perimeter authentication, authorization, subject, security domain, security realm, identity, credential, credentials, ]
 custom_description: Identification, authentication, and authorization are crucial parts of implementing access control in a system and they do not mean the same thing.
 ---
@@ -51,7 +51,7 @@ and [Oracle WebLogic Server Glossary](https://docs.oracle.com/en/middleware/stan
 
 ## [](#subject){:.section-link}Subject {#subject}
 <div class="info-block" markdown="1">
-**Subject** &mdash; an entity that interacts with objects. In other words, the source of a request to the system, e.g., a person or another system.
+**Subject**&mdash;an entity that interacts with objects. In other words, the source of a request to the system, e.g., a person or another system.
 </div>
 
 See also [JAAS subject](https://docs.oracle.com/en/java/javase/14/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-804BDE80-9E66-421C-BF0A-A96FBE7DE4E3),
@@ -59,22 +59,21 @@ See also [JAAS subject](https://docs.oracle.com/en/java/javase/14/security/java-
 
 ## [](#security-domain){:.section-link}Security domain {#security-domain}
 <div class="info-block" markdown="1">
-**Security domain/realm** &mdash; a set of [subjects] and objects the [subjects] can act upon, and security policies applied to them.
+**Security domain/realm**&mdash;a set of [subjects] and objects the [subjects] can act upon, and security policies applied to them.
 </div>
 
 See also [WebLogic security realm](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/scovr/glossary.html#GUID-8AAC41B0-82EF-459A-B5DC-2548AB00336E).
 
 ## [](#identity){:.section-link}Identity {#identity}
 <div class="info-block" markdown="1">
-**Identity** &mdash;
-data that distinguishes an entity (either a [subject] or an object) from other entities within a given scope, i.e., within a set of [security domains].
+**Identity**&mdash;data that distinguishes an entity (either a [subject] or an object) from other entities within a given scope, i.e., within a set of [security domains].
 </div>
 
 Note that a [subject] may have multiple identities, e.g., a login name or a [Social Insurance Number (SIN)](https://www.canada.ca/en/employment-social-development/services/sin.html)[^2].
 
 ## [](#principal){:.section-link}Principal {#principal}
 <div class="info-block" markdown="1">
-**Principal** &mdash; the [identity] of an [authenticated]<!-- --> [subject].
+**Principal**&mdash;the [identity] of an [authenticated]<!-- --> [subject].
 </div>
 
 See also [JAAS principal](https://docs.oracle.com/en/java/javase/14/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-8FAF9739-CD62-4A47-9582-884DBF3081F0),
@@ -83,7 +82,7 @@ See also [JAAS principal](https://docs.oracle.com/en/java/javase/14/security/jav
 
 ## [](#credential){:.section-link}Credential {#credential}
 <div class="info-block" markdown="1">
-**Credential** &mdash; a security-related attribute of a [subject] that may be used to [authenticate] the [subject]. 
+**Credential**&mdash;a security-related attribute of a [subject] that may be used to [authenticate] the [subject]. 
 </div>
 
 A [subject] may have multiple [credentials], which may be either public or private, i.e., requiring special protection.
@@ -92,7 +91,7 @@ Note that a login name is also an [identity] and it is not unusual for an [ident
 
 ## [](#identification){:.section-link}Identification {#identification}
 <div class="info-block" markdown="1">
-**Identification** &mdash; a process of unambiguous differentiation of a [subject] from other [subjects].
+**Identification**&mdash;a process of unambiguous differentiation of a [subject] from other [subjects].
 </div>
 
 For example, when I hear the name "Doug Lea" I can unambiguously differentiate ([identify]) that this name ([identity]) belongs to
@@ -104,7 +103,7 @@ but both a name and a birth date could have been sufficient.
 
 ## [](#authentication){:.section-link}Authentication {#authentication}
 <div class="info-block" markdown="1">
-**Authentication** &mdash; a process of verifying the [identity] of a [subject].
+**Authentication**&mdash;a process of verifying the [identity] of a [subject].
 </div>
 
 In other words, [authenticating] means determining whether a [subject] is in fact what it claims to be.
@@ -121,8 +120,8 @@ e.g., add the random text I sent him to the [Doug Lea's home page](http://gee.cs
 See also [WebLogic authentication](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/scovr/glossary.html#GUID-C1746E2C-29BF-4973-B12E-4C92DA0DF339).
 
 <div class="info-block" markdown="1">
-**External authentication**, a.k.a. **perimeter authentication** &mdash;
-[authentication] that occurs outside the system that is being accessed.
+**External authentication**, a.k.a. **perimeter authentication**&mdash;[authentication]
+that occurs outside the system that is being accessed.
 The external system that performs the [authentication] is usually called an [identity] provider or [authentication] agent/server
 and is trusted by the system that is being accessed.
 The [identity] provider communicates the result of successful [authentication], which includes the [identity] of the authenticated [subject],
@@ -139,7 +138,7 @@ See also [WebLogic perimeter authentication](https://docs.oracle.com/en/middlewa
 
 ## [](#authorization){:.section-link}Authorization {#authorization}
 <div class="info-block" markdown="1">
-**Authorization** &mdash; a process of establishing whether a [subject] is allowed to do the requested action according to the security policies.
+**Authorization**&mdash;a process of establishing whether a [subject] is allowed to do the requested action according to the security policies.
 </div>
 
 [Identification], [authentication], and [authorization] are crucial parts of implementing access control in a system.

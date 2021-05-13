@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-04-04T07:10:00Z
+custom_update_date: 2021-05-13T03:42:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -31,7 +31,8 @@ custom_description: Charset, a.k.a. character map (CM) = coded character set (CC
 *[BOM]:
 {:data-title="Byte Order Mark"}
 
-I have always been discouraged by the fact that the words "charset" and "encoding" seem to be used interchangeably&mdash;if they are the same term, why using both words?
+I have always been discouraged by the fact that the words "charset" and "encoding" seem to be
+used interchangeably&mdash;if they are the same term, why use both words?
 * The [HTML specification](https://html.spec.whatwg.org/multipage/) uses both words interchangeably:
 <q>"The <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset">`charset`</a> attribute specifies the character <a href="https://encoding.spec.whatwg.org/#encoding">encoding</a> used by the document."</q>
 * The [XML specification](https://www.w3.org/TR/xml/) seems to do a similar thing, only it specifies a declaration named `encoding` instead of `charset`,
@@ -48,7 +49,8 @@ I also recommend reading the article [The Absolute Minimum Every Software Develo
 
 ## [](#acr){:.section-link}Abstract character repertoire (ACR) {#acr}
 <div class="info-block" markdown="1">
-An unordered set of **abstract characters** is called an [**abstract character repertoire** (ACR)](https://unicode.org/reports/tr17/#Repertoire).
+[**Abstract character repertoire** (ACR)](https://unicode.org/reports/tr17/#Repertoire)&mdash;an
+unordered set of **abstract characters**.
 Abstract characters are often referred to as just characters.
 </div>
 
@@ -60,8 +62,9 @@ we mean the same abstract character.
 
 ## [](#cm){:.section-link}Character map (CM) {#cm}
 <div class="info-block" markdown="1">
-[**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps), a.k.a. [**charset**](https://www.rfc-editor.org/rfc/rfc2978#section-1.3) &mdash;
-a mapping from a sequence of members of an [abstract character repertoire (ACR)](https://www.unicode.org/reports/tr17/#Repertoire) to a sequence of bytes.
+[**Character map** (CM)](https://www.unicode.org/reports/tr17/#CharacterMaps),
+a.k.a. [**charset**](https://www.rfc-editor.org/rfc/rfc2978#section-1.3)&mdash;a mapping
+from a sequence of members of an ACR to a sequence of bytes.
 
 [CM](https://www.unicode.org/reports/tr17/#CharacterMaps) = [coded character set (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet) + [character encoding form (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm) + [character encoding scheme (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)
 </div>
@@ -75,15 +78,17 @@ though it does not seem like they are identical, and the definition in the RFC m
 ### [](#ccs){:.section-link}Coded character set (CCS) {#ccs}
 
 <div class="info-block" markdown="1">
-[**Coded character set** (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet), a.k.a. [code page](https://docs.microsoft.com/en-us/windows/win32/intl/code-pages) &mdash;
-a mapping from an ACR to the set of non-negative integers, which are called **code points**.
-If a CCS assigns a code point to an abstract character, then such a character is called an **encoded character**.
+[**Coded character set** (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet),
+a.k.a. [code page](https://docs.microsoft.com/en-us/windows/win32/intl/code-pages)&mdash;a mapping
+from an ACR to the set of non-negative integers, which are called **code points**.
+If a CCS assigns a code point to an abstract character,
+then such a character is called an **encoded character**.
 </div>
 
 ### [](#cef){:.section-link}Character encoding form (CEF) {#cef}
 <div class="info-block" markdown="1">
-[**Character encoding form** (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm) &mdash;
-a mapping from code points used in a CCS to the set of sequences of **code units**.
+[**Character encoding form** (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm)&mdash;a mapping
+from code points used in a CCS to the set of sequences of **code units**.
 While a code unit is an integer with a bit width fixed for a given CEF,
 the sequences of code units representing code points do not necessarily have the same length.
 </div>
@@ -94,13 +99,14 @@ For example, the UTF-8 CEF is a variable-width encoding form that represents cod
 
 ### [](#ces){:.section-link}Character encoding scheme (CES) {#ces}
 <div class="info-block" markdown="1">
-[**Character encoding scheme** (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme) &mdash;
-a reversible transformation of sequences of code units to sequences of bytes.
+[**Character encoding scheme** (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)&mdash;a reversible
+transformation of sequences of code units to sequences of bytes.
 </div>
 
-Applying CES is the last step in the process of representing an abstract character as binary data in a computer.
-It may introduce compression or care about [byte order](https://www.unicode.org/reports/tr17/#ByteOrder)
-(like UTF-16 CES does, hence the little endian (LE) / big endian (BE) byte order marks (BOM)).
+Applying CES is the last step in the process of representing an abstract character as binary data
+in a computer. It may introduce compression or care about
+[byte order](https://www.unicode.org/reports/tr17/#ByteOrder). For example, UTF-16 CES 
+cares about byte order and has the little endian (LE) / big endian (BE) byte order marks (BOM).
 
 ## [](#examples){:.section-link}Examples {#examples}
 

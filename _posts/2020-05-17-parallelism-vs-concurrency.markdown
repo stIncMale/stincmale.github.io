@@ -5,9 +5,9 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2021-04-04T07:17:00Z
+custom_update_date: 2021-05-13T03:47:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
-custom_description: Parallelism &mdash; a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
+custom_description: Parallelism&mdash;a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
 {% include common-links-abbreviations.markdown %}
 
@@ -22,7 +22,7 @@ this implies an immodest assumption that I have something meaningful to add to w
 
 ## [](#parallelism){:.section-link}Parallelism {#parallelism}
 <div class="info-block" markdown="1">
-**Parallelism** &mdash; a term referring to
+**Parallelism**&mdash;a term referring to
 techniques used to speedup execution by doing *independent* actions on multiple *independently* working processing units at the same physical time,
 a.k.a. simultaneously[^1]. Such actions are referred to as being done in parallel.
 </div>
@@ -46,7 +46,7 @@ But we do care about the order of actions that depend on each other (e.g., the r
 or may affect each other in other ways (such actions are often called *conflicting*).
 
 <div class="info-block" markdown="1">
-**Concurrency** &mdash; a term referring to
+**Concurrency**&mdash;a term referring to
 situations when there are *unordered* *conflicting* actions and techniques used to deal with them.
 Unordered actions are referred to as being concurrent.
 </div>

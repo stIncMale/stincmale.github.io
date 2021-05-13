@@ -6,7 +6,7 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2021-04-11T04:20:00Z
+custom_update_date: 2021-05-13T03:41:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---
@@ -84,8 +84,8 @@ introduced, besides others, the following two bidirectional mappings
 (see sections *"B.4 Java Object Types Mapped to JDBC Types"*,
 *"B.5 Conversions by setObject and setNull from Java Object Types to JDBC Types"*,
 *"B.6 Type Conversions Supported by ResultSet getter Methods"* in the specification):
-* [`OffsetDateTime`] &mdash; [`JDBCType.TIMESTAMP_WITH_TIMEZONE`]
-* [`LocalDateTime`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html) &mdash; [`JDBCType.TIMESTAMP`]
+* [`OffsetDateTime`]&mdash;[`JDBCType.TIMESTAMP_WITH_TIMEZONE`]
+* [`LocalDateTime`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html)&mdash;[`JDBCType.TIMESTAMP`]
 
 The methods [`PreparedStatement.setObject(int parameterIndex, Object x)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setObject(int,java.lang.Object))/[`ResultSet.getObject(int columnIndex, Class<T> type)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getObject(int,java.lang.Class))
 can now be used to write/read [`OffsetDateTime`]/[`timestamp with time zone`].

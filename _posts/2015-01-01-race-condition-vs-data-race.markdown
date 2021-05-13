@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2021-04-04T07:13:00Z
+custom_update_date: 2021-05-13T03:45:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -44,13 +44,13 @@ and a situation where there is a data race but there is no race condition.
 
 ## [](#race-condition){:.section-link}Race condition {#race-condition}
 <div class="info-block" markdown="1">
-**Race condition** &mdash; a property of an algorithm (or a program, a system, etc.) manifested in displaying anomalous outcomes / behaviour
+**Race condition**&mdash;a property of an algorithm (or a program, a system, etc.) manifested in displaying anomalous outcomes / behaviour
 because of unfortunate ordering / relative timing of events.
 </div>
 
 ## [](#data-race){:.section-link}Data race {#data-race}
 <div class="info-block" markdown="1">
-**Data race** &mdash; a property of an [execution of a program](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.6).
+**Data race**&mdash;a property of an [execution of a program](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.6).
 According to the JMM, an execution is said to contain a data race if it contains at least two conflicting accesses (reads of or writes to the same variable)
 that are not ordered by a [happens-before (`hb`) relation](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5)<!-- -->[^1].
 Two accesses to the same variable are said to be conflicting if at least one of the accesses is a write.

@@ -18,7 +18,6 @@ Concurrency and distributed systems
   </a>
   <a href="https://www.kovalenko.link/blog/tech/" title="DEAD<code/>">
     <img src="{% link /assets/img/favicon.png %}" alt="Logo" style="width: 1.7em; height: auto; vertical-align: -0.2em;">
-    kovalenko.link/blog/tech/
   </a>
 </div>
 ---
@@ -74,9 +73,11 @@ Concurrency and distributed systems
         <a href="https://git-scm.com/">Git</a>,
         <a href="https://www.docker.com/">Docker</a>,
         <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>,
-        good understanding of the Java memory model
-        (<a href="https://docs.oracle.com/javase/specs/jls/se15/html/jls-17.html#jls-17.4"><abbr data-title="Java Language Specification">JLS</abbr> 17.4</a>;
-        this <a href="{% post_url 2014-01-01-java-final-field-semantics %}">presentation</a> may back this claim)
+        good understanding of the
+        <a href="https://docs.oracle.com/javase/specs/jls/se16/html/jls-17.html#jls-17.4">
+        Java memory model</a>
+        (this <a href="{% post_url 2014-01-01-java-final-field-semantics %}">presentation</a>
+        may back the claim)
       </td>
     </tr>
   </tbody>
@@ -107,8 +108,8 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
 </h6>
 _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;Nov 2020</span>
 <div class="resume-experience" markdown="1">
-* **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server** (Tomcat, PostgreSQL, Hibernate ORM) &mdash;
-  stores and manages issues detected by code analysis tools
+* **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
+  (Tomcat, PostgreSQL, Hibernate ORM)&mdash;stores and manages issues detected by code analysis tools
   * designed and developed **export/import** functionality (the technical side is more complex than it sounds) in pair with a colleague,
   designed and implemented support of this functionality in a **cluster environment** on my own;
   {% comment %}
@@ -119,7 +120,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
     this was used to delete exported streams.
   {% endcomment %}   
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
-  * **cluster** &mdash; identified and fixed/mitigated multiple bugs, including replication failures caused by
+  * **cluster**&mdash;identified and fixed/mitigated multiple bugs, including replication failures caused by
     * incorrect inference of the order of replicated changes,
     here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
     * broken transaction isolation due to incorrect cache strategy;
@@ -136,7 +137,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
       In order to mitigate the problem, the mechanism was changed to work in a new transaction.
       An actual fix was not feasible due to complexity and resource intensity.
     {% endcomment %}
-  * incremental updates functionality &mdash; allows automatically updating client applications;
+  * incremental updates functionality&mdash;allows automatically updating client applications;
   fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
 </div>
 
@@ -158,8 +159,8 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
 * **Server and client homegrown frameworks** (Netty)
   * **developed from scratch**;
   * the server framework is similar to my [server project](https://github.com/stIncMale/server), which is based on it.
-* **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Tapestry) &mdash;
-  manages and delivers game configurations to game clients, supports having configurations for split-testing
+* **Configuration server** (Netty, Hibernate ORM, JGroups, PostgreSQL, Tapestry)&mdash;manages
+  and delivers game configurations to game clients, supports having configurations for split-testing
   * **redeveloped**;
   * a couple of dozen projects started using it compared to only a single one before redevelopment.
   {% comment %}
@@ -168,8 +169,9 @@ _Server-side developer_ / <span class="resume-insignificant">Dec 2014&ndash;Dec 
     Reading the config data does not require authorization.
     Read-only servers do not have persistent data and get configurations from the admin server via JGroups.
   {% endcomment %}
-* **Notifications server/client** (Netty, ZooKeeper + Curator, JGroups, Protocol Buffers, PostgreSQL) &mdash;
-  provides unified access to major push notification services, e.g., Amazon Device Messaging, Apple Push Notification Service
+* **Notifications server/client** (Netty, ZooKeeper + Curator, JGroups, Protocol Buffers, PostgreSQL)&mdash;provides
+  unified access to major push notification services,
+  e.g., Amazon Device Messaging, Apple Push Notification Service
   * **refactored the design** as inappropriate usage of ActiveMQ and Quartz Scheduler was causing performance bottlenecks;
   * **improved the throughput** by an order of magnitude;
   * when I resigned, this server was used by all ZeptoLab games.
@@ -209,10 +211,10 @@ _Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 20
 <div class="resume-experience" markdown="1">
 * [**TELUS Self Service Portal**](https://www.telus.com) (JMS, WebLogic Server, Oracle Database)
   * integrated with **Oracle OpenSSO**;
-  * **availability** &mdash; developed functionality allowing front-end servers to persist
+  * **availability**&mdash;developed functionality allowing front-end servers to persist
   and later initiate asynchronous execution of tasks on back-ends.
   This allowed users to use some features of the portal even when back-end servers are temporarily unavailable.
-* **Data objects**, a homegrown persistence library &mdash; developed various **concurrent caches**.
+* **Data objects**, a homegrown persistence library&mdash;developed various **concurrent caches**.
 * Implemented **OpenID authentication**.
 * **Data migration** (Oracle Database, Oracle PL/SQL).
 </div>

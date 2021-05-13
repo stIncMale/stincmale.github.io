@@ -5,7 +5,7 @@ title: No sense
 categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2011-08-13T12:00:00Z
-custom_update_date: 2020-07-29T06:50:00Z
+custom_update_date: 2021-05-13T03:40:00Z
 custom_keywords: [game highlights, frag highlights, defrag, Unreal Tournament 3, UT3, Unreal Tournament, UT]
 custom_description: A defrag & game highlights Unreal Tournament 3 video.
 ---
@@ -27,23 +27,23 @@ A review from a viewer on YouTube:
 * Rhapsody - The Dark Tower of Abyss
 
 ## [](#thanks){:.section-link}Thanks {#thanks}
-* **DENTNT** &mdash; 3D modelling and creation of a special font for the title of the movie.
+* **DENTNT**&mdash;3D modelling and creation of a special font for the title of the movie.
 
-* **FACH** &mdash; Modification of UT3 maps with the models created by **DENTNT** and some other modifications.
+* **FACH**&mdash;Modification of UT3 maps with the models created by **DENTNT** and some other modifications.
 
-* **UX.Loki** &mdash; Creation of monochromatic UT3 maps.
+* **UX.Loki**&mdash;Creation of monochromatic UT3 maps.
 
 These &#x1f446; guys really saved me from doing a lot of work!
 
-* **Rypel** &mdash; Creation of RypelCam that provides a powerful ability to take cool shots with free in-game camera.
+* **Rypel**&mdash;Creation of RypelCam that provides a powerful ability to take cool shots with free in-game camera.
 It would have been impossible to create this video without RypelCam for UT3.
 
-* **DiNoWaR** &mdash; Taught me an unusual way to make color correction and helped with Adobe After Effects during the beginning of my work.
+* **DiNoWaR**&mdash;Taught me an unusual way to make color correction and helped with Adobe After Effects during the beginning of my work.
 Unfortunately, later he turned out to be a very dishonest man.
 
-* **AlphaSt3XC~RTS~** &mdash; Inspired me by continuously asking about progress with my work on the movie &#x1f600;.
+* **AlphaSt3XC~RTS~**&mdash;Inspired me by continuously asking about progress with my work on the movie &#x1f600;.
 
-* **UTgamer**, a.k.a. **SNappy** &mdash; Participated in some tricks.
+* **UTgamer**, a.k.a. **SNappy**&mdash;Participated in some tricks.
 
 ## [](#links){:.section-link}Links {#links}
 I created a few tutorials describing some VFX techniques used in the video:

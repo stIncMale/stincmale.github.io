@@ -6,7 +6,7 @@
   z-index: 2;//appear on top of other elements (without this style transparent elements appear on top of this element)
   padding-left: $spacing-unit-em;
   padding-right: $spacing-unit-em;
-  background: linear-gradient(to right, $site-background-color, $toolbar-background-color, $site-background-color);
+  background: linear-gradient(to right, $site-navigation-background-color, $toolbar-background-color, $site-navigation-background-color);
 }
 
 #site-navigation-menu-toggle-container {
@@ -18,7 +18,7 @@
 
   #site-search-form {
     input[type="search"] {
-      background-image: url(/assets/img/search.svg);
+      background-image: url("/assets/img/search.svg");
       background-repeat: no-repeat;
       background-size: 1.3em;
       background-position: left 0.0em bottom 50%;

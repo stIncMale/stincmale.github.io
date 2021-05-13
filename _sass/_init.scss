@@ -1,11 +1,44 @@
-$base-font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+@font-face {
+  font-family: "Open Sans";
+  src:
+      local("OpenSans"),
+      local("OpenSans-Regular"),
+      local("Open Sans Regular"),
+      url("/assets/font/OpenSans/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Open Sans";
+  src:
+      local("OpenSans-Bold"),
+      local("Open Sans Bold"),
+      url("/assets/font/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Open Sans";
+  src:
+      local("OpenSans-Italic"),
+      local("Open Sans Italic"),
+      url("/assets/font/OpenSans/OpenSans-Italic.ttf") format("truetype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src:
+      local("OpenSans-BoldItalic"),
+      local("Open Sans Bold Italic"),
+      url("/assets/font/OpenSans/OpenSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+$base-font-family: "Open Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
 $monospace-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 
 $font-size: 1em;
-$medium-font-size: 0.9em;
-$small-font-size: 0.8em;
-$block-monospace-font-size: 0.8em;
-$inline-monospace-font-size: 0.85em;
+$medium-font-size: 0.9 * $font-size;
+$small-font-size: 0.8 * $font-size;
+$block-monospace-font-size: 0.8 * $font-size;
+$inline-monospace-font-size: 0.85 * $font-size;
 $post-metadata-font-size: $small-font-size;
 
 $font-weight: 400;
@@ -31,17 +64,17 @@ $insignificant-font-color: lighten($font-color, 30%);//see https://sass-lang.com
 $quotation-background-color: desaturate(lighten(linen, 2%), 20%);
 $quotation-border-color: darken($quotation-background-color, $border-color-darken-percentage);
 $quotation-font-color: desaturate(darken($quotation-background-color, 40%), 10%);
-$code-font-backgroung-color: lighten(lavender, 2.5%);
+$code-font-backgroung-color: lighten(lavender, 3.5%);
 $header-font-color: steelblue;
 $hover-header-font-color: lighten($header-font-color, 15%);
-$site-navigation-background-color: $site-background-color;
+$link-color: cornflowerblue;
+$link-hover-color: coral;
+$toolbar-background-color: lighten($link-color, 30%);
+$site-navigation-background-color: lighten($link-color, 33%);
 $site-layout-markup-color: darken($site-navigation-background-color, $border-color-darken-percentage);
 $site-navigation-menu-font-color: $header-font-color;
 $site-navigation-hover-font-color: coral;
 $page-layout-markup-color: lighten($header-font-color, 35%);
-$link-color: cornflowerblue;
-$link-hover-color: coral;
-$toolbar-background-color: lighten($link-color, 30%);
 $code-background-color: $site-background-color;
 $code-border-color: $quotation-border-color;
 $table-header-background-color: $code-font-backgroung-color;

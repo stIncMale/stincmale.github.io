@@ -36,6 +36,13 @@ main {
   padding-left: $spacing-unit-em;
   padding-right: $spacing-unit-em;
 }
+@media not print {
+  main {
+    max-width: 55em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 /**
  * Vertical rhythm.
@@ -90,22 +97,22 @@ h1, h2, h3, h4, h5, h6 {
   color: $header-font-color;
 }
 h1 {
-  font-size: $font-size * 1.6;
+  font-size: $font-size * 1.88;
 }
 h2 {
-  font-size: $font-size * 1.5;
+  font-size: $font-size * 1.75;
 }
 h3 {
-  font-size: $font-size * 1.4;
+  font-size: $font-size * 1.60;
 }
 h4 {
-  font-size: $font-size * 1.3;
+  font-size: $font-size * 1.47;
 }
 h5 {
-  font-size: $font-size * 1.2;
+  font-size: $font-size * 1.34;
 }
 h6 {
-  font-size: $font-size * 1.1;
+  font-size: $font-size * 1.22;
 }
 
 /**

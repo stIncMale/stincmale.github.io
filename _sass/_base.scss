@@ -285,7 +285,7 @@ input {
   background-color: $site-background-color;
 }
 input[type="search"] {
-  -webkit-appearance: none;//prevent fucking iOS Safari from changing the style
+  -webkit-appearance: none; // prevent fucking iOS Safari from changing the style
   width: 13em;
 }
 
@@ -317,7 +317,7 @@ div.info-block {
   background: $quotation-background-color;
   border: $border-widthstyle $quotation-border-color;
 
-  > :last-child {//this is usually a <p> element
+  > :last-child { // this is usually a <p> element
     margin-bottom: 0em;
   }
 
@@ -336,7 +336,7 @@ div.info-block {
   }
 }
 
-:not(code) > table {//<table> elements that are not children of <code> elements
+:not(code) > table { // <table> elements that are not children of <code> elements
   border-collapse: collapse;
   border: $border-widthstyle $table-border-color;
   th, td {
@@ -374,7 +374,7 @@ code,
   font-family: $monospace-font-family;
   font-size: $inline-monospace-font-size;
 }
-//inline code
+// inline code
 samp, kbd, var,
 :not(pre) > code {//a <code> element that is a child (direct descendant) of any element but a <pre> element
   border: 0em;

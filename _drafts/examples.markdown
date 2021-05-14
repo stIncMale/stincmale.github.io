@@ -48,6 +48,7 @@ Text before ToC.
 ## [](#todo){:.section-link}TODO {#todo}
 * Remove "​" (ZWSP characters), "﻿" (ZWNBSP).
 * Bold links are not rendered as links.
+* Use a custom font for menu pointers, emoji, etc.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)

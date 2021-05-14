@@ -4,7 +4,7 @@ div.footnotes {
   border-top: $border-widthstyle $page-layout-markup-color;
 }
 @media not print {
-  div.footnotes > ol > li {//highlight the selected footnote
+  div.footnotes > ol > li { // highlight the selected footnote
     @include highlightable2;
     padding: $block-padding;
   }
@@ -46,5 +46,5 @@ sup:target {
 
 a.reversefootnote::after {
   font-size: $small-font-size;
-  content: "back";
+  content: $reverse-footnote-link;
 }

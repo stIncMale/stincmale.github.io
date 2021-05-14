@@ -1,38 +1,39 @@
 @font-face {
   font-family: "Open Sans";
   src:
-      local("OpenSans"),
-      local("OpenSans-Regular"),
-      local("Open Sans Regular"),
-      url("/assets/font/OpenSans/OpenSans-Regular.ttf") format("truetype");
+    local("OpenSans"),
+    local("OpenSans-Regular"),
+    local("Open Sans Regular"),
+    url("/assets/font/OpenSans/OpenSans-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Open Sans";
   src:
-      local("OpenSans-Bold"),
-      local("Open Sans Bold"),
-      url("/assets/font/OpenSans/OpenSans-Bold.ttf") format("truetype");
+    local("OpenSans-Bold"),
+    local("Open Sans Bold"),
+    url("/assets/font/OpenSans/OpenSans-Bold.ttf") format("truetype");
   font-weight: bold;
 }
 @font-face {
   font-family: "Open Sans";
   src:
-      local("OpenSans-Italic"),
-      local("Open Sans Italic"),
-      url("/assets/font/OpenSans/OpenSans-Italic.ttf") format("truetype");
+    local("OpenSans-Italic"),
+    local("Open Sans Italic"),
+    url("/assets/font/OpenSans/OpenSans-Italic.ttf") format("truetype");
   font-style: italic;
 }
 @font-face {
   font-family: "Open Sans";
   src:
-      local("OpenSans-BoldItalic"),
-      local("Open Sans Bold Italic"),
-      url("/assets/font/OpenSans/OpenSans-BoldItalic.ttf") format("truetype");
+    local("OpenSans-BoldItalic"),
+    local("Open Sans Bold Italic"),
+    url("/assets/font/OpenSans/OpenSans-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
 $base-font-family: "Open Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
-$monospace-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$monospace-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono",
+  "Liberation Mono", "Courier New", monospace;
 
 $font-size: 1em;
 $medium-font-size: 0.9 * $font-size;
@@ -45,8 +46,8 @@ $font-weight: 400;
 $header-font-weight: 500;
 
 $site-navigation-width: 13.4em;
-$spacing-unit-em: 0.775em;//depends on the size of the text in the current element
-$spacing-unit-percentage: 1%;//depends on the size of the parent element
+$spacing-unit-em: 0.775em; // depends on the size of the text in the current element
+$spacing-unit-percentage: 1%; // depends on the size of the parent element
 $border-radius: 0.15em;
 $block-padding: 0.2em;
 $inline-code-padding: 0.25em;
@@ -60,7 +61,8 @@ $border-color-darken-percentage: 5%;
 $site-background-color: white;
 $font-color: rgb(50, 50, 50);
 $bolder-font-color: lighten($font-color, 10%);
-$insignificant-font-color: lighten($font-color, 30%);//see https://sass-lang.com/documentation/modules/color for other color functions
+// see https://sass-lang.com/documentation/modules/color for other color functions
+$insignificant-font-color: lighten($font-color, 30%);
 $quotation-background-color: desaturate(lighten(linen, 2%), 20%);
 $quotation-border-color: darken($quotation-background-color, $border-color-darken-percentage);
 $quotation-font-color: desaturate(darken($quotation-background-color, 40%), 10%);
@@ -71,7 +73,8 @@ $link-color: cornflowerblue;
 $link-hover-color: coral;
 $toolbar-background-color: lighten($link-color, 30%);
 $site-navigation-background-color: lighten($link-color, 33%);
-$site-layout-markup-color: darken($site-navigation-background-color, $border-color-darken-percentage);
+$site-layout-markup-color: darken(
+  $site-navigation-background-color, $border-color-darken-percentage);
 $site-navigation-menu-font-color: $header-font-color;
 $site-navigation-hover-font-color: coral;
 $page-layout-markup-color: lighten($header-font-color, 35%);
@@ -90,7 +93,8 @@ $button-hover-font-color: $link-color;
 $button-active-font-color: darken($link-color, 7%);
 
 $unhovered-svg-button-opacity: 0.5;
-$site-navigation-menu-arrow: "\25b6";//BLACK RIGHT-POINTING TRIANGLE
-$link-after-content: none;//"\25f9";//UPPER RIGHT TRIANGLE
-$section-link-after-content: "\00a7";//SECTION SIGN
+$site-navigation-menu-arrow: "\25b6"; // BLACK RIGHT-POINTING TRIANGLE
+$link-after-content: none;
+$section-link-after-content: "\00a7"; // SECTION SIGN
+$reverse-footnote-link: "\21a9"; // LEFTWARDS ARROW WITH HOOK
 $border-widthstyle: thin solid;

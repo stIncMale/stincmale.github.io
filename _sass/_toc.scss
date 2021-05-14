@@ -4,7 +4,8 @@
   border: $border-widthstyle $page-layout-markup-color;
 }
 
-//see https://www.w3.org/Style/Examples/007/color-bullets.en.html for details about changing list bullet colors
+/* See https://www.w3.org/Style/Examples/007/color-bullets.en.html for details about changing list
+ * bullet colors. */
 #markdown-toc, #markdown-toc ol {
   list-style: none;
   counter-reset: li;

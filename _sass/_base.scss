@@ -89,10 +89,6 @@ hr {
 
 b, strong {
   font-weight: bolder;
-
-  &:not(a) b, &:not(a) strong {
-    color: $bolder-font-color;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -335,7 +331,6 @@ div.info-block {
   }
   th {
     font-weight: bolder;
-    color: $bolder-font-color;
     background-color: $table-header-background-color;
     border: $border-widthstyle darken($table-header-background-color, $border-color-darken-percentage);
   }

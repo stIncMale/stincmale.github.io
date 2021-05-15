@@ -62,7 +62,7 @@ $monospace-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubun
 
 $font-size: 1em;
 $medium-font-size: 0.9 * $font-size;
-$small-font-size: 0.8 * $font-size;
+$small-font-size: 0.85 * $font-size;
 $block-monospace-font-size: 0.8 * $font-size;
 $inline-monospace-font-size: 0.85 * $font-size;
 $post-metadata-font-size: $small-font-size;
@@ -85,7 +85,6 @@ $outline-width: 0.2em;
 $border-color-darken-percentage: 5%;
 $site-background-color: white;
 $font-color: rgb(50, 50, 50);
-$bolder-font-color: lighten($font-color, 10%);
 // see https://sass-lang.com/documentation/modules/color for other color functions
 $insignificant-font-color: lighten($font-color, 30%);
 $quotation-background-color: desaturate(lighten(linen, 2%), 20%);

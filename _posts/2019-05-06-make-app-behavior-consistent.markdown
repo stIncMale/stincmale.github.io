@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2021-04-04T07:16:00Z
+custom_update_date: 2021-05-15T17:30:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -56,7 +56,7 @@ However, if we are developing an application that is supposed to run on its own,
 The Java SE API allows to explicitly specify all the aforementioned, thus, overriding the default values defined by the environment, for example:
 * [`LocalDateTime.now()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html#now())
   vs. [<code>LocalDateTime.now(<b>ZoneId zone</b>)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html#now(java.time.ZoneId))\\
-  <span class="insignificant">see also [Pitfalls with JDBC `PreparedStatement.setTimestamp`/`ResultSet.getTimestamp`]({% post_url 2012-01-01-jdbc-timestamp-pitfalls %})</span>
+  <span class="insignificant">see also [Pitfalls with JDBC `PreparedStatement.setTimestamp`/<wbr>`ResultSet.getTimestamp`]({% post_url 2012-01-01-jdbc-timestamp-pitfalls %})</span>
 * [`String.lines()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html#lines())
   vs. [<code>Scanner.useDelimiter(<b>Pattern pattern</b>)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Scanner.html#useDelimiter(java.util.regex.Pattern)).[`tokens()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Scanner.html#tokens())
 * [`String.format(String format, Object... args)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))

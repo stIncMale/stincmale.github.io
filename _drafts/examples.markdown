@@ -47,7 +47,7 @@ Text before ToC.
 
 ## [](#todo){:.section-link}TODO {#todo}
 * Remove "​" (ZWSP characters), "﻿" (ZWNBSP).
-* Use custom monospace font family.
+* Add `<wbr>` to explicitly allow word breaks if a page does not fit a vertical mobile screen.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)

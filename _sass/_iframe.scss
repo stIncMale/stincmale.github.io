@@ -1,14 +1,15 @@
-div.iframe-margins-right40,
-div.iframe-margins-right25 {
+div.iframe-margins, div.iframe-margins-right25, div.iframe-margins-right40 {
   margin-left: $margin-leftright-percentage;
-  margin-right: 40%;
+  margin-right: $margin-leftright-percentage;
 }
 div.iframe-margins-right25 {
   margin-right: 25%;
 }
+div.iframe-margins-right40 {
+  margin-right: 40%;
+}
 @media print {
-  .iframe-margins-right40,
-  .iframe-margins-right25 {
+  .iframe-margins, .iframe-margins-right25, .iframe-margins-right40 {
     display: none;
   }
 
@@ -41,30 +42,30 @@ div.iframe-margins-right25 {
     display: none;
   }
 }
-div.iframe-ratio-64-33 {//this element should be inside div.iframe-margins
+div.iframe-ratio-64-33 { // this element should be inside div.iframe-margins*
   position: relative;
   overflow: hidden;
-  padding-top: 51.5625%;//64:33 aspect ratio (33 / 64 = 0.515625)
+  padding-top: 51.5625%; // 64:33 aspect ratio (33 / 64 = 0.515625)
 }
-div.iframe-ratio-16-9 {//this element should be inside div.iframe-margins
+div.iframe-ratio-16-9 { // this element should be inside div.iframe-margins*
   position: relative;
   overflow: hidden;
-  padding-top: 56.25%;//16:9 aspect ratio (9 / 16 = 0.5625)
+  padding-top: 56.25%; // 16:9 aspect ratio (9 / 16 = 0.5625)
 }
-div.iframe-ratio-480-299 {//this element should be inside div.iframe-margins
+div.iframe-ratio-480-299 { // this element should be inside div.iframe-margins*
   position: relative;
   overflow: hidden;
-  padding-top: 62.2917%;//480:299 aspect ratio (299 / 480 = 0.622917)
+  padding-top: 62.2917%; // 480:299 aspect ratio (299 / 480 = 0.622917)
 }
-div.iframe-ratio-22-15 {//this element should be inside div.iframe-margins
+div.iframe-ratio-22-15 { // this element should be inside div.iframe-margins*
   position: relative;
   overflow: hidden;
-  padding-top: 68.18182%;//68.18182%;//22:15 aspect ratio (15 / 22 = 0.6818182)
+  padding-top: 68.18182%; // 68.18182%;//22:15 aspect ratio (15 / 22 = 0.6818182)
 }
-div.iframe-ratio-4-3 {//this element should be inside div.iframe-margins
+div.iframe-ratio-4-3 { // this element should be inside div.iframe-margins*
   position: relative;
   overflow: hidden;
-  padding-top: 75%;//4:3 aspect ratio (3 / 4 = 0.75)
+  padding-top: 75%; // 4:3 aspect ratio (3 / 4 = 0.75)
 }
 iframe {
   position: absolute;

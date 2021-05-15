@@ -89,7 +89,10 @@ hr {
 
 b, strong {
   font-weight: bolder;
-  color: $bolder-font-color;
+
+  &:not(a) b, &:not(a) strong {
+    color: $bolder-font-color;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -302,10 +305,6 @@ q {
   &:after {
     content: none;
   }
-
-  b, strong {
-    color: $quotation-font-color;
-  }
 }
 blockquote,
 div.info-block {
@@ -320,20 +319,12 @@ div.info-block {
   > :last-child { // this is usually a <p> element
     margin-bottom: 0em;
   }
-
-  b, strong {
-    color: $quotation-font-color;
-  }
 }
 div.info-block {
   font-style: normal;
   color: $info-font-color;
   background: $info-background-color;
   border: $border-widthstyle $info-border-color;
-
-  b, strong {
-    color: $info-font-color;
-  }
 }
 
 :not(code) > table { // <table> elements that are not children of <code> elements

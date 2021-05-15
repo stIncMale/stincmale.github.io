@@ -47,8 +47,7 @@ Text before ToC.
 
 ## [](#todo){:.section-link}TODO {#todo}
 * Remove "​" (ZWSP characters), "﻿" (ZWNBSP).
-* Bold links are not rendered as links.
-* Use a custom font for menu pointers, emoji, etc.
+* Use custom monospace font family.
 
 ## [](#useful-links){:.section-link}Useful links {#useful-links}
 * [color names](https://htmlcolorcodes.com/color-names/)
@@ -99,17 +98,21 @@ long text.
 
 **_~~Bold italic strikethrough text.~~_**
 
-[Link to The Internet Engineering Task Force](https://www.ietf.org), automatic link <https://www.ietf.org>.
+[**Bold** _italic_ link](https://developer.mozilla.org/en-US/).
+
+Automatic link <https://www.ietf.org>.
 
 <span class="monospace">Monospace text.</span>
 
-Quotation <q>"inlined in text"</q>.
+Quotation <q>"inlined with [**bold** _italic_ link](https://developer.mozilla.org/en-US/)"</q>.
 
 Quotation block:
 > "**Quoted text.**
 >
-> [Link](https://www.ietf.org)
+> [**Bold** _italic_ link](https://developer.mozilla.org/en-US/).
 >
+> HTML
+> 
 > Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
@@ -119,7 +122,9 @@ Information block that supports kramdown syntax inside:
 <div class="info-block" markdown="1">
 **Info text.**
 
-[Link](https://www.ietf.org)
+[**Bold** _italic_ link](https://developer.mozilla.org/en-US/).
+
+HTML
 
 Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
 very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
@@ -188,6 +193,7 @@ Table column 1 header | Table column 2 header
 - | -
 cell 11 | cell 12
 cell 21 | cell 22
+**bold** | [**bold** _italic_ link](https://developer.mozilla.org/en-US/)
 
 Table with long text:
 
@@ -215,8 +221,11 @@ Figure:
 </figure>
 
 ## [](#code){:.section-link}Code {#code}
-Inlined code: `java.lang.Object`, [`java.lang.Object`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html),
-`select * from my_table where id > 10`{:.highlight .language-sql}.
+Inlined code: `java.lang.Object`,
+[`java.lang.Object`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html),
+`select * from my_table where id > 10`{:.highlight .language-sql},
+<code><b>bold</b> <em>italic</em></code>,
+[<code>link <b>bold</b> <em>italic</em></code>](https://github.com/stIncMale).
 
 `Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.`
 

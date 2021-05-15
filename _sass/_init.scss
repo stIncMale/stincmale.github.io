@@ -35,6 +35,7 @@
     local("Open Sans Bold Italic"),
     url("/assets/font/OpenSans/OpenSans-BoldItalic.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Inter";
   unicode-range: U+21a9, U+25b6;
@@ -55,10 +56,49 @@
     local("Inter Bold"),
     url("/assets/font/Inter/Inter-Bold.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "JetBrainsMono";
+  font-display: swap;
+  src:
+    local("JetBrainsMono"),
+    local("JetBrainsMono-Regular"),
+    local("JetBrainsMono Regular"),
+    url("/assets/font/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-weight: bold;
+  font-display: swap;
+  src:
+    local("JetBrainsMono-Bold"),
+    local("JetBrainsMono Bold"),
+    url("/assets/font/JetBrainsMono/JetBrainsMono-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-style: italic;
+  font-display: swap;
+  src:
+    local("JetBrainsMono-Italic"),
+    local("JetBrainsMono Italic"),
+    url("/assets/font/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local("JetBrainsMono-BoldItalic"),
+    local("JetBrainsMono Bold Italic"),
+    url("/assets/font/JetBrainsMono/JetBrainsMono-BoldItalic.woff2") format("woff2");
+}
+
 $base-font-family: "Open Sans", "Inter",
   "Segoe UI", "Segoe UI Emoji", "Roboto", "Helvetica Neue", "Arial", sans-serif;
-$monospace-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono",
-  "Liberation Mono", "Courier New", monospace;
+$monospace-font-family: "JetBrainsMono",
+  "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", monospace;
 
 $font-size: 1em;
 $medium-font-size: 0.9 * $font-size;

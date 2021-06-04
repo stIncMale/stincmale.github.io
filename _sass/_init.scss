@@ -136,7 +136,7 @@ $hover-header-font-color: lighten($header-font-color, 15%);
 $link-color: cornflowerblue;
 $link-hover-color: coral;
 $toolbar-background-color: lighten($link-color, 30%);
-$site-navigation-background-color: lighten($link-color, 33%);
+$site-navigation-background-color: $site-background-color;
 $site-layout-markup-color: darken(
   $site-navigation-background-color, $border-color-darken-percentage);
 $site-navigation-menu-font-color: $header-font-color;

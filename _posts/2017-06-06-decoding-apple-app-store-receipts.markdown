@@ -5,7 +5,7 @@ title: Decoding Apple App Store receipts (PKCS &num;7, ASN.1) in Java
 categories: [tech]
 tags: [Java]
 date: 2017-06-06T12:00:00Z
-custom_update_date: 2021-04-04T07:14:00Z
+custom_update_date: 2021-06-06T21:45:00Z
 custom_keywords: [Apple App Store, receipt, in-app purchase, subscription, decode, PKCS &num;7, ASN.1]
 custom_description: It appears Apple thinks that no one needs to decode receipts on the server side. In practice, however, things are not necessary as smooth and we had to decode receipts before validating them in order to handle and restore subscriptions. This post describes how to do this in Java.
 ---
@@ -44,17 +44,17 @@ ReceiptModule DEFINITIONS ::=
 BEGIN
 
 ReceiptAttribute ::= SEQUENCE {
-    type    INTEGER,
-    version INTEGER,
-    value   OCTET STRING
+  type    INTEGER,
+  version INTEGER,
+  value   OCTET STRING
 }
 
 Payload ::= SET OF ReceiptAttribute
 
 InAppAttribute ::= SEQUENCE {
-    type                   INTEGER,
-    version                INTEGER,
-    value                  OCTET STRING
+  type                   INTEGER,
+  version                INTEGER,
+  value                  OCTET STRING
 }
 
 InAppReceipt ::= SET OF InAppAttribute
@@ -90,7 +90,7 @@ Before using it, we must make sure
 
 ```java
 static {
-  Security.addProvider(new BouncyCastleProvider());
+    Security.addProvider(new BouncyCastleProvider());
 }
 ```
 
@@ -99,19 +99,19 @@ With Bouncy Castle and the previously generated `Payload` class extracting and d
 
 ```java
 Payload decodeReceipt(byte[] receipt) {
-  Payload payload;
-  try {
-    CMSSignedData signedData = new CMSSignedData(receipt);
-    CMSTypedData signedContent = signedData.getSignedContent();
-    ByteArrayOutputStream signedDataStream = new ByteArrayOutputStream();
-    signedContent.write(signedDataStream);
-    byte[] signedDataBytes = signedDataStream.toByteArray();
-    payload = new Payload();
-    payload.decode(new ByteArrayInputStream(signedDataBytes));
-  } catch (CMSException | IOException e) {
-    throw new RuntimeException(e);
-  }
-  return payload;
+    Payload payload;
+    try {
+        CMSSignedData signedData = new CMSSignedData(receipt);
+        CMSTypedData signedContent = signedData.getSignedContent();
+        ByteArrayOutputStream signedDataStream = new ByteArrayOutputStream();
+        signedContent.write(signedDataStream);
+        byte[] signedDataBytes = signedDataStream.toByteArray();
+        payload = new Payload();
+        payload.decode(new ByteArrayInputStream(signedDataBytes));
+    } catch (CMSException | IOException e) {
+        throw new RuntimeException(e);
+    }
+    return payload;
 }
 ```
 

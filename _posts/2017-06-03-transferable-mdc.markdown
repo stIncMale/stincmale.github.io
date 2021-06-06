@@ -5,7 +5,7 @@ title: Using SLF4J MDC across threads
 categories: [tech]
 tags: [Java]
 date: 2017-06-03T12:00:00Z
-custom_update_date: 2020-09-26T18:33:00Z
+custom_update_date: 2021-06-06T21:44:00Z
 custom_keywords: [MDC, mapped diagnostic context, ThreadContext, SLF4J, Log4j, logging]
 custom_description: When a single task is done by multiple threads one may want to pass MDC between the threads to achieve task-scoped behavior. TransferableMdc is the tool that does this for you.
 ---
@@ -36,10 +36,10 @@ The API can be used like this:
 ```java
 TransferableMdc outerMdc = TransferableMdc.current();
 executor.submit(() -> {
-  try (var transferredMdc = outerMdc.transfer()) {
-    logger.info("This call can access contents of outerMdc via org.slf4j.MDC");
-  }
-  logger.info("This call cannot access contents of outerMdc via org.slf4j.MDC");
+    try (var transferredMdc = outerMdc.transfer()) {
+        logger.info("This call can access contents of outerMdc via org.slf4j.MDC");
+    }
+    logger.info("This call cannot access contents of outerMdc via org.slf4j.MDC");
 });
 ```
 

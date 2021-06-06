@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2021-04-09T07:00:00Z
+custom_update_date: 2021-06-06T21:49:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -45,7 +45,7 @@ Below are some notable points from the specification.
    
    In other words, the **keep-alive mechanism is meant to detect whether a connection is worth closing** and releasing the occupied resources,
    as it is unlikely that the peer is still out there intending to communicate.
-2. > "Implementors **MAY include** "keep-alives" in their TCP implementations&hellip;"
+2. > "Implementors **MAY include** "keep-alives" in their TCP implementations &hellip;"
    
    This means that the mechanism **may not even be implemented**.
 3. > "Keep-alive packets MUST only be sent when no data or acknowledgement packets have been received for the connection within an interval.

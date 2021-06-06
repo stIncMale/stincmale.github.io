@@ -5,7 +5,7 @@ title: Consider using an <code>array</code> with <code>value_expression in (sele
 categories: [tech]
 tags: [SQL]
 date: 2019-02-14T12:00:00Z
-custom_update_date: 2020-08-13T09:00:00Z
+custom_update_date: 2021-06-06T21:47:00Z
 custom_keywords: [in, any, some, array, unnest, batch, dynamic statement, SQL]
 custom_description: Imagine, you have a set of n identifiers (IDs) that cannot be represented by a range, and you want to delete/update all rows containing these IDs from/in a relational database. How would you do this? What if n is huge?
 ---
@@ -118,19 +118,20 @@ Here is an example code demonstrating the situation:
 Map<String, Set<Long>> valueToIds = ...;
 JdbcTemplate jdbcTemplate = ...;
 jdbcTemplate.execute((Connection connection) -> {
-  try (PreparedStatement statement = connection.prepareStatement(
-      "update my_table set value = ? where id in (select unnest(?))")) {
-    valueToIds.forEach((value, ids) -> {
-      try {
-        statement.setString(1, value);
-        statement.setArray(2, connection.createArrayOf(JDBCType.BIGINT.getName(), ids.toArray()));
-        statement.addBatch();
-      } catch (SQLException e) {
-        throw new RuntimeException(e);
-      }
-    });
-    return statement.executeBatch();
-  }
+    try (PreparedStatement statement = connection.prepareStatement(
+            "update my_table set value = ? where id in (select unnest(?))")) {
+        valueToIds.forEach((value, ids) -> {
+            try {
+                statement.setString(1, value);
+                statement.setArray(2, connection.createArrayOf(
+                        JDBCType.BIGINT.getName(), ids.toArray()));
+                statement.addBatch();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        return statement.executeBatch();
+    }
 });
 ```
 

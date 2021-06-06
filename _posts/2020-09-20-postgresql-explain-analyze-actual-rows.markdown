@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2020-12-30T11:42:00Z
+custom_update_date: 2021-06-06T21:48:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -42,7 +42,7 @@ but actually the number of rows stored in it. By providing the constructed hash 
 which is the set of rows produced by the node.
 And if `Materialize` is used by a `Nested Loop`, then `loops` reported by the `Materialize` node tell us how many times the outer loop
 had to go through the materialized set of rows[^1].
-* And so on&hellip;
+* And so on &hellip;
 
 Recently, I was shown a plan that did not fit the presented above view of the world:
 
@@ -64,10 +64,10 @@ Turns out, we can observe the aforementioned effect with a simple SQL query:
 # explain analyze
 # select *
 # from
-#   (values (0), (0), (0), (0), (0) order by 1) as a (v)
-#   inner join
-#   (values (0), (0) order by 1) as b (v)
-#   on a.v = b.v;
+#     (values (0), (0), (0), (0), (0) order by 1) as a (v)
+#     inner join
+#     (values (0), (0) order by 1) as b (v)
+#     on a.v = b.v;
                                                         QUERY PLAN
 ---------------------------------------------------------------------------------------------------------------------------
 Merge Join  (cost=0.16..0.29 rows=2 width=8) (actual time=0.034..0.040 rows=10 loops=1)
@@ -93,13 +93,13 @@ Here we can see a `Sort` node producing 2 rows which are fed to a `Materialize` 
 The following excerpt from the PostgreSQL code comments gives us a hint:
 
 ```c
-//nodeMergejoin.c
-//https://github.com/postgres/postgres/blob/7559d8ebfa11d98728e816f6b655582ce41150f3/src/backend/executor/nodeMergejoin.c
+// nodeMergejoin.c
+// https://github.com/postgres/postgres/blob/7559d8ebfa11d98728e816f6b655582ce41150f3/src/backend/executor/nodeMergejoin.c
 
 /*
- *    ...
+ *    …
  *    Merge-join is done by joining the inner and outer tuples satisfying
- *    join clauses of the form ((= outerKey innerKey) ...).
+ *    join clauses of the form ((= outerKey innerKey) …).
  *    The join clause list is provided by the query planner and may contain
  *    more than one (= outerKey innerKey) clause (for composite sort key).
  *
@@ -137,29 +137,29 @@ The following excerpt from the PostgreSQL code comments gives us a hint:
  *    Essential operation of the merge join algorithm is as follows:
  *
  *    Join {
- *      get initial outer and inner tuples      INITIALIZE
- *      do forever {
- *        while (outer != inner) {              SKIP_TEST
- *          if (outer < inner)
- *            advance outer                     SKIPOUTER_ADVANCE
- *          else
- *            advance inner                     SKIPINNER_ADVANCE
- *        }
- *        mark inner position                   SKIP_TEST
+ *        get initial outer and inner tuples          INITIALIZE
  *        do forever {
- *          while (outer == inner) {
- *            join tuples                       JOINTUPLES
- *            advance inner position            NEXTINNER
- *          }
- *          advance outer position              NEXTOUTER
- *          if (outer == mark)                  TESTOUTER
- *            restore inner position to mark     TESTOUTER
- *          else
- *            break // return to top of outer loop
+ *            while (outer != inner) {                SKIP_TEST
+ *                if (outer < inner)
+ *                    advance outer                   SKIPOUTER_ADVANCE
+ *                else
+ *                    advance inner                   SKIPINNER_ADVANCE
+ *            }
+ *            mark inner position                     SKIP_TEST
+ *            do forever {
+ *                while (outer == inner) {
+ *                    join tuples                     JOINTUPLES
+ *                    advance inner position          NEXTINNER
+ *                }
+ *                advance outer position              NEXTOUTER
+ *                if (outer == mark)                  TESTOUTER
+ *                    restore inner position to mark  TESTOUTER
+ *                else
+ *                    break // return to top of outer loop
+ *            }
  *        }
- *      }
  *    }
- *    ...
+ *    …
  */
 ```
 
@@ -183,10 +183,10 @@ Interestingly, the same does not seem to happen for the `Hash` node which has a 
 # explain analyze
 # select *
 # from
-#   (values (0), (0), (0), (0), (0)) as a (v)
-#   inner join
-#   (values (0), (0)) as b (v)
-#   on a.v = b.v;
+#     (values (0), (0), (0), (0), (0)) as a (v)
+#     inner join
+#     (values (0), (0)) as b (v)
+#     on a.v = b.v;
                                                      QUERY PLAN
 ---------------------------------------------------------------------------------------------------------------------
 Hash Join  (cost=0.05..0.15 rows=2 width=8) (actual time=0.016..0.024 rows=10 loops=1)
@@ -205,8 +205,8 @@ is considered to be equal to the number of rows stored by the `Hash` node for th
 or maybe this is because the constructed hash table is not actually treated as a node:
 
 ```c
-//nodeHash.c
-//https://github.com/postgres/postgres/blob/7559d8ebfa11d98728e816f6b655582ce41150f3/src/backend/executor/nodeHash.c
+// nodeHash.c
+// https://github.com/postgres/postgres/blob/7559d8ebfa11d98728e816f6b655582ce41150f3/src/backend/executor/nodeHash.c
 
 /*
  * We do not return the hash table directly because it's not a subtype of

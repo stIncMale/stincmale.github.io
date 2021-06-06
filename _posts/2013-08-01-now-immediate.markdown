@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2021-05-13T03:43:00Z
+custom_update_date: 2021-06-06T21:42:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -118,7 +118,7 @@ When using the word "now" with regard to a logical system, consider if it is act
 and even if it is applicable, do you actually need it?
 Use the word "immediately" only to express ordering relations because its temporal meaning is vague.
 The idea to write this post came to me as a result of seeing [the question](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011733.html)
-<q>"Can you confirm if this is correct&mdash;a volatile write or atomic dec/inc becomes visible immediately to other threads&hellip;?"</q>,
+<q>"Can you confirm if this is correct&mdash;a volatile write or atomic dec/inc becomes visible immediately to other threads &hellip;?"</q>,
 which was about the semantics of [`volatile` fields](https://docs.oracle.com/javase/specs/jls/se14/html/jls-8.html#jls-8.3.1.4) in Java,
 and apparently implied the temporal meaning of the word "immediately". I like the two following answers to this question:
 

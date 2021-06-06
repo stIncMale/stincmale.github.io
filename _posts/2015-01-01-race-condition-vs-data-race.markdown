@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2021-05-13T03:45:00Z
+custom_update_date: 2021-06-06T21:43:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -72,7 +72,8 @@ for the [Java Platform, Standard Edition (Java SE) 14](https://cr.openjdk.java.n
 * <q>"Is volatile read happens-before volatile write?"</q>\\
 <span class="insignificant">[stackoverflow.com](https://stackoverflow.com/questions/16615140/is-volatile-read-happens-before-volatile-write), 2013</span>
 * <q>"The way "data race" and "correctly synchronized" programs are defined in JMM continue bothering me.
-It makes completely legit programs producing consistent results with all shared variables declared volatile ... to be "incorrectly synchronized"
+It makes completely legit programs producing consistent results with all shared variables declared
+volatile &hellip; to be "incorrectly synchronized"
 because data race definition is equally applicable to plain and volatile accesses.
 So my question is: shouldn't data race be specified in JMM for non-volatile conflicting accesses only?"</q>\\
 <span class="insignificant">I asked this question in [concurrency-interest discussion list](http://cs.oswego.edu/pipermail/concurrency-interest/2017-December/016272.html)
@@ -102,16 +103,16 @@ which has this condition, just to emphasize that data race and race condition do
 
 ```java
 class RaceConditionExample {
-  static volatile boolean flag = false;
+    static volatile boolean flag = false;
 
-  static void raiseFlag() {
-    flag = true;//w1
-  }
+    static void raiseFlag() {
+        flag = true; // w1
+    }
 
-  public static void main(String... args) {
-    ForkJoinPool.commonPool().execute(RaceConditionExample::raiseFlag);
-    System.out.print(flag);//r
-  }
+    public static void main(String... args) {
+        ForkJoinPool.commonPool().execute(RaceConditionExample::raiseFlag);
+        System.out.print(flag); // r
+    }
 }
 ```
 
@@ -137,17 +138,17 @@ of accomplishing the same goal):
 {% comment %}<!-- The character '∈' used here is ELEMENT OF -->{% endcomment %}
 ```java
 class FixedRaceConditionExample {
-  static volatile boolean flag = false;//w0
+    static volatile boolean flag = false; // w0
 
-  static void raiseFlag() {
-    flag = true;//w1
-  }
+    static void raiseFlag() {
+        flag = true; // w1
+    }
 
-  public static void main(String... args) {
-    ForkJoinPool.commonPool().execute(RaceConditionExample::raiseFlag);
-    while (!flag);//r_i, where i ∈ [1, k], k is finite
-    System.out.print(flag);//r
-  }
+    public static void main(String... args) {
+        ForkJoinPool.commonPool().execute(RaceConditionExample::raiseFlag);
+        while (!flag); // r_i, where i ∈ [1, k], k is finite
+        System.out.print(flag); // r
+    }
 }
 ```
 
@@ -170,17 +171,17 @@ Let us change the example by getting rid of the `volatile` modifier.
 
 ```java
 class DataRaceExample {
-  static boolean flag = false;//w0
+    static boolean flag = false; // w0
 
-  static void raiseFlag() {
-    flag = true;//w1
-  }
+    static void raiseFlag() {
+        flag = true; // w1
+    }
 
-  public static void main(String... args) {
-    ForkJoinPool.commonPool().execute(DataRaceExample::raiseFlag);
-    while (!flag);//r_i, where i ∈ [1, k), k may be infinite
-    System.out.print(flag);//r
-  }
+    public static void main(String... args) {
+        ForkJoinPool.commonPool().execute(DataRaceExample::raiseFlag);
+        while (!flag); // r_i, where i ∈ [1, k), k may be infinite
+        System.out.print(flag); // r
+    }
 }
 ```
 
@@ -196,8 +197,8 @@ Sometimes data races are used to allow the program to perform faster; these are 
 Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.java.net/projects/jdk/)[^6]:
 
 ```java
-//java.lang.String from OpenJDK JDK 16
-//https://github.com/openjdk/jdk/blob/jdk-16-ga/src/java.base/share/classes/java/lang/String.java#L1531
+// java.lang.String from OpenJDK JDK 16
+// https://github.com/openjdk/jdk/blob/jdk-16-ga/src/java.base/share/classes/java/lang/String.java#L1531
 
 /** Cache the hash code for the string */
 private int hash; // Default to 0

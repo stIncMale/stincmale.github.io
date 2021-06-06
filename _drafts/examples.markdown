@@ -25,7 +25,7 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2021-05-13T03:48:00Z
+custom_update_date: 2021-06-06T21:40:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
@@ -180,7 +180,7 @@ Normal text.
     rock-hard cake is absolutely impossible to eat.</q>
   * En dash &ndash; <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
   * Em dash &mdash; <q>He is afraid of two things&mdash;spiders and senior prom.</q>
-* Ellipsis &hellip; <q>Andrew, can you, um&hellip; never mind.</q>
+* Ellipsis &hellip; <q>Andrew, can you, um &hellip; never mind.</q>
 
 ## [](#footnotes){:.section-link}Footnotes {#footnotes}
 <!-- see https://kramdown.gettalong.org/syntax.html#footnotes for details -->
@@ -316,33 +316,33 @@ where id > 10;
 --SQL code block with Jekyll (line numbers, long)
 --Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.
 select
-  event_tree_id,
-  string_agg(
-    array_to_string(
-      model_attr_array[:1] ||
-      pg_temp.check_not_null(
-        files.?,
-        array['files for event_tree', event_tree_id::text, 'model_idx', model_idx::text] || 'model_attr_array'::text || model_attr_array)::text ||
-      model_attr_array[3] ||
-      pg_temp.check_not_null(
-        stream_function.?,
-        array['stream_function for event_tree', event_tree_id::text, 'model_idx', model_idx::text] || 'model_attr_array'::text || model_attr_array)::text ||
-      pg_temp.check_not_null(
-        function_metrics.?,
-        array['function_metrics for event_tree', event_tree_id::text, 'model_idx', model_idx::text] || 'model_attr_array'::text || model_attr_array)::text,
-      ','
-    ),
-    ';' order by model_idx
-  ) as new_model_lob
+    event_tree_id,
+    string_agg(
+        array_to_string(
+            model_attr_array[:1] ||
+            pg_temp.check_not_null(
+                files.?,
+                array['files for event_tree', event_tree_id::text, 'model_idx', model_idx::text] || 'model_attr_array'::text || model_attr_array)::text ||
+            model_attr_array[3] ||
+            pg_temp.check_not_null(
+                stream_function.?,
+                array['stream_function for event_tree', event_tree_id::text, 'model_idx', model_idx::text] || 'model_attr_array'::text || model_attr_array)::text ||
+            pg_temp.check_not_null(
+                function_metrics.?,
+                array['function_metrics for event_tree', event_tree_id::text, 'model_idx', model_idx::text] || 'model_attr_array'::text || model_attr_array)::text,
+            ','
+        ),
+        ';' order by model_idx
+    ) as new_model_lob
 from
-  (select ? as event_tree_id, model_idx, string_to_array(model, ',') as model_attr_array
-  from
-    (select * from ?.event_tree where id >= ? order by id limit 100) as event_tree
-    cross join unnest(string_to_array(model_lob, ';')) with ordinality as model (model, model_idx)
-  ) as parsed_model_lob
-  left join ?.files on model_attr_array[2]::bigint = files.?
-  left join ?.stream_function on model_attr_array[4]::bigint = stream_function.?
-  left join ?.function_metrics on model_attr_array[5]::bigint = function_metrics.?
+    (select ? as event_tree_id, model_idx, string_to_array(model, ',') as model_attr_array
+    from
+        (select * from ?.event_tree where id >= ? order by id limit 100) as event_tree
+        cross join unnest(string_to_array(model_lob, ';')) with ordinality as model (model, model_idx)
+    ) as parsed_model_lob
+    left join ?.files on model_attr_array[2]::bigint = files.?
+    left join ?.stream_function on model_attr_array[4]::bigint = stream_function.?
+    left join ?.function_metrics on model_attr_array[5]::bigint = function_metrics.?
 group by event_tree_id;
 --
 --These comments are here to cause rendering a vertical scrollbar.
@@ -368,31 +368,31 @@ group by event_tree_id;
 {%- endhighlight -%}
 
 {%- highlight java -%}
-//Java code block with Jekyll
+// Java code block with Jekyll
 package my.package;
 
 /**
  * Javadoc {@link java.lang.Object}.
  */
-//single line comment
+// single line comment
 public final class MyClass {
-  private MyClass() throws UnsupportedOperationException {
-    throw new UnsupportedOperationException("The class isn't designed to be instantiated");
-  }
+    private MyClass() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("The class isn't designed to be instantiated");
+    }
 
-  /**
-   * @param o The reference object with which to compare.
-   */
-  @Override
-  public final boolean equals(@Nullable final Object o) {
-    return super.equals(o);
-  }
+    /**
+     * @param o The reference object with which to compare.
+     */
+    @Override
+    public final boolean equals(@Nullable final Object o) {
+        return super.equals(o);
+    }
 
-  @Override
-  public final String toString() {
-    int i = 10;
-    return "Hello World!";
-  }
+    @Override
+    public final String toString() {
+        int i = 10;
+        return "Hello World!";
+    }
 }
 {%- endhighlight -%}
 

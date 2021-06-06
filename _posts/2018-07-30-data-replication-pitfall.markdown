@@ -5,7 +5,7 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2021-04-04T07:15:00Z
+custom_update_date: 2021-06-06T21:46:00Z
 custom_keywords: [replication, incremental replication, logical replication, asynchronous replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
@@ -106,9 +106,9 @@ Let us expand the `replicate` process actions in the above execution:
 The above form of describing an execution of the `replicate` process is cumbersome, I will use the following form instead:
 
 ```java
-master{(2, "a")} -> slave{} //replicate the sorted master state {(2. "a")} into the slave with the state {}
-  5.2: create(2, "a") //the algorithm step and its action on a single entity separated with ':'
-slave{(2, "a")} //the slave state after replication finishes
+master{(2, "a")} -> slave{} // replicate the sorted master state {(2. "a")} into the slave with the state {}
+    5.2: create(2, "a") // the algorithm step and its action on a single entity separated with ':'
+slave{(2, "a")} // the slave state after replication finishes
 ```
 
 So far so good. Here come new changes in the master:
@@ -129,10 +129,10 @@ The second `replicate` execution:
 
 {:#execution-E}
 ```java
-//replicate execution E
+// replicate execution E
 master{(1, "a"), (2, "b")} -> slave{(2, "a")}
-  5.2: create(1, "a") //the order of actions from the steps 5.1 and 5.2 is defined by the order of entities that came from the master, not by the index number of steps in the description of the algorithm
-  //5.1: update(2, "a", "b") this action is not executed because the previous action fails
+    5.2: create(1, "a") // the order of actions from the steps 5.1 and 5.2 is defined by the order of entities that came from the master, not by the index number of steps in the description of the algorithm
+    // 5.1: update(2, "a", "b") this action is not executed because the previous action fails
 unique constraint violation
 ```
 
@@ -154,13 +154,13 @@ before executing any of `create` actions. The <span style="color: green;">update
 5. <span style="color: green;">In each slave iterate over all the received entities preserving the order and `update` all entities that the slave has.</span>
 6. <span style="color: green;">In each slave iterate over all the received entities preserving the order and `create` all entities that the slave does not have.</span>
 
-With this algorithm the [execution `E`](#execution-E) becomes
+With this algorithm the [execution `E`](#execution-E) becomes `E'`
 
 ```java
-//replicate execution E'
+// replicate execution E'
 master{(1, "a"), (2, "b")} -> slave{(2, "a")}
-  5: update(2, "a", "b")
-  6: create(1, "a")
+    5: update(2, "a", "b")
+    6: create(1, "a")
 slave{(2, "b"), (1, "a")}
 ```
 
@@ -180,8 +180,8 @@ The corresponding `replicate` execution:
 
 ```java
 master{(1, "a"), (2, "b")} -> slave{}
-  6: create(1, "a")
-  6: create(2, "b")
+    6: create(1, "a")
+    6: create(2, "b")
 slave{(1, "a"), (2, "b")}
 ```
 
@@ -198,8 +198,8 @@ The new master state is `{(1, "b"), (2, "a")}`{:.highlight .language-java}. The 
 
 ```java
 master{(1, "b"), (2, "a")} -> slave{(1, "a"), (2, "b")}
-  5: update(1, "a", "b")
-  //5: update(2, "b", "a") this action is not executed
+    5: update(1, "a", "b")
+    // 5: update(2, "b", "a") this action is not executed
 unique constraint violation
 ```
 
@@ -235,7 +235,7 @@ If you are interested in further reading about Hibernate ORM flushing order, I r
     <q>"if no new updates are made to the object, eventually all accesses will return the last updated value"</q>.
     See [Eventually Consistent](https://doi.org/10.1145/1435417.1435432)<span class="insignificant">&nbsp;by [Werner Vogels](https://www.allthingsdistributed.com/)</span>
     for more details.
-    
+
     As a side note, if you are curious about those 1-safe, 2-safe, group-safe criteria mentioned in the
     [PostgreSQL replication docs](https://www.postgresql.org/docs/current/warm-standby.html#SYNCHRONOUS-REPLICATION),
     I recommend reading [Beyond 1-Safety and 2-Safety for replicated databases: Group-Safety](https://www.researchgate.net/publication/2875732_Beyond_1-Safety_and_2-Safety_for_replicated_databases)<span class="insignificant">&nbsp;by [Matthias Wiesmann](https://wiesmann.codiferes.net/wordpress/?page_id=503), [André Schiper](https://people.epfl.ch/andre.schiper)</span>.

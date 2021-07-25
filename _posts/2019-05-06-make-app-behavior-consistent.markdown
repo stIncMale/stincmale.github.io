@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2021-05-15T17:30:00Z
+custom_update_date: 2021-07-25T03:30:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -65,7 +65,8 @@ The Java SE API allows to explicitly specify all the aforementioned, thus, overr
   vs. [<code>PrintStream(OutputStream out, boolean autoFlush, <b>Charset charset</b>)</code>](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/PrintStream.html#%3Cinit%3E(java.io.OutputStream,boolean,java.nio.charset.Charset))
 
 However, in any complex project programmers often forget to explicitly specify the environment-specific values.
-It is also not very convenient to always have to specify them explicitly, and may not always be possible when using 3rd-party APIs.
+It is also not very convenient to always have to specify them explicitly,
+and may not always be possible when using 3rd-party APIs.
 So it is worth specifying environment-independent JVM-wide defaults at least as a safeguard mechanism.
 
 {% include toc.markdown %}
@@ -209,14 +210,15 @@ Hello 🌎!
 
 You may notice that these programs use [`java.io.InputStreamReader`] and [`java.io.OutputStreamWriter`] with explicit charsets instead of setting the charset
 on the [`System.out`]<!-- --> [`PrintStream`] as was shown above. This is because the Java SE API provides a straightforward tool for transferring character data
-from a [`java.io.Reader`] to a [`java.io.Writer`]&mdash;[`Reader.ransferTo(Writer)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/Reader.html#transferTo(java.io.Writer)).
+from a [`java.io.Reader`] to a
+[`java.io.Writer`]&mdash;[`Reader.ransferTo(Writer out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/Reader.html#transferTo(java.io.Writer)).
 It is important to note that we cannot use the method
 [`java.io.InputStream.transferTo(OutputStream out)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/InputStream.html#transferTo(java.io.OutputStream))
 because this way we would be transferring binary data
 from the stdin to the stdout instead of transferring character data, which would break the semantics of the programs.
 
 [^1]: {%- comment -%}<!-- This footnote is linked from 2015-01-01-race-condition-vs-data-race.markdown, 2019-02-16-directory.markdown -->{%- endcomment -%}
-    ##### Java Platform
+    <h5>Java Platform</h5>
     A Java Development Kit (JDK) is the common name for an implementation of the Java Platform, Standard Edition (Java SE) Specification.
     For example, here is a link to the [Java SE 14 Specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/),
     which formal name is the [Java Specification Request (JSR)](https://jcp.org/en/jsr/overview) [389](https://jcp.org/en/jsr/detail?id=389).
@@ -237,7 +239,7 @@ from the stdin to the stdout instead of transferring character data, which would
     Java ME is dead, Java EE [evolved](https://blogs.oracle.com/javamagazine/transition-from-java-ee-to-jakarta-ee) into [Jakarta EE](https://jakarta.ee/about/)
     after [Java EE 8](https://www.jcp.org/en/jsr/detail?id=366), thus, the "SE" qualifier is an atavism.
 
-    ###### JRE
+    <h6>JRE</h6>
     A subset of a JDK that is sufficient to run a Java application but is not sufficient to develop one is commonly named a Java Runtime Environment (JRE).
     The key part of any JDK or JRE is a Java Virtual Machine (JVM), it is responsible for hardware- and operating system&ndash;independence of any programming language
     compiled into JVM instructions called bytecodes (such languages are often called JVM languages).
@@ -247,9 +249,9 @@ from the stdin to the stdout instead of transferring character data, which would
     as the [Executable and Linking Format (ELF)](https://man7.org/linux/man-pages/man5/elf.5.html) / [Portable Executable (PE) format](https://docs.microsoft.com/en-us/windows/win32/debug/pe-format)
     is to a machine controlled by the Linux/Windows operating system respectively.
 
-    ##### OpenJDK
+    <h5>OpenJDK</h5>
     [OpenJDK] is a [community](https://openjdk.java.net/groups/) whose main goal is developing an
-    [open-source](https://opensource.com/resources/what-open-source) implementation of the Java SE Specification.
+    [open-source](https://opensource.org/osd) implementation of the Java SE Specification.
     [OpenJDK JDK] is a proper name of the JDK developed by the OpenJDK community
     ("OpenJDK" is an adjective here according to [JDK-8205956 Fix usage of “OpenJDK” in build and test instructions](https://bugs.openjdk.java.net/browse/JDK-8205956)),
     but it is ridiculous and is usually shortened to just OpenJDK where it does not cause ambiguity.

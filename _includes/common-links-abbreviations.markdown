@@ -51,6 +51,8 @@
 {:data-title="Database Management System"}
 *[API]:
 {:data-title="Application Programming Interface"}
+*[APIs]:
+{:data-title="Application Programming Interface"}
 *[SPI]:
 {:data-title="Service Provider Interface"}
 *[Java SE]:

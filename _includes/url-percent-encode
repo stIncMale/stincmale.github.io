@@ -1,15 +1,25 @@
 {%- comment -%}<!--
   A percent-encoded tag (see https://www.rfc-editor.org/rfc/rfc3986#section-2.1).
-  
-  The url_encode filter (https://shopify.github.io/liquid/filters/url_encode/) cannot be used as it appears to use application/x-www-form-urlencoded format (https://url.spec.whatwg.org/#application/x-www-form-urlencoded),
+
+  The url_encode filter (https://shopify.github.io/liquid/filters/url_encode/)
+  cannot be used as it appears to use application/x-www-form-urlencoded format
+  (https://url.spec.whatwg.org/#application/x-www-form-urlencoded),
   which is not what I need.
-  
-  The escape filter (https://shopify.github.io/liquid/filters/escape/) cannot be used as it appears to encode with HTML character references (see https://html.spec.whatwg.org/multipage/syntax.html#character-references),
+
+  The escape filter (https://shopify.github.io/liquid/filters/escape/)
+  cannot be used as it appears to encode with HTML character references
+  (see https://html.spec.whatwg.org/multipage/syntax.html#character-references),
   which is not what I need.
-  
-  The uri_escape filter (https://jekyllrb.com/docs/liquid/filters/) can and is used, but it does not encode reserved characters (https://www.rfc-editor.org/rfc/rfc3986#section-2.2).
-  Apparently, it was implemented this way to allow encoding a complete URL (not only its component parts) without messing up the URL in the process.
-  While it may appear useful, it is actually an incorrect way to encode characters in URL. Instead, each component part must be encoded separately
-  before they are combined in a complete URL by using reserved characters. As a result, I had to implement the percent encoding for reserved characters on my own. 
+
+  The uri_escape filter (https://jekyllrb.com/docs/liquid/filters/) can and is used,
+  but it does not encode reserved characters (https://www.rfc-editor.org/rfc/rfc3986#section-2.2).
+  Apparently, it was implemented this way to allow encoding a complete URI (not only its component
+  parts) without messing up the URI in the process. While it may appear useful, it is actually an
+  incorrect way to encode characters in URI. Instead, each component part must be encoded
+  separately before they are combined in a complete URI by using reserved characters.
+  As a result, I had to implement the percent encoding for reserved characters on my own.
+
+  Make sure the content of this file does not end end with a newline character,
+  otherwise including it does not work as intended, making the tags page to not working correctly.
 -->{%- endcomment -%}
 {{ include.content | uri_escape | replace: ":", "%3A" | replace: "/", "%2F" | replace: "?", "%3F" | replace: "#", "%23" | replace: "[", "%5B" | replace: "]", "%5D" | replace: "@", "%40" | replace: "!", "%21" | replace: "$", "%24" | replace: "&", "%26" | replace: "'", "%27" | replace: "(", "%28" | replace: ")", "%29" | replace: "*", "%2A" | replace: "+", "%2B" | replace: ",", "%2C" | replace: ";", "%3B" | replace: "=", "%3D" }}

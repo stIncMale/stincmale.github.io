@@ -22,7 +22,8 @@ but those are deprecated and just like the [new Google Sites](https://sites.goog
 while with GitHub Pages I have full control over those things.
 
 ## Misc
-The original GitHub URL <https://stincmale.github.io> is redirected to the canonical URL <https://www.kovalenko.link>.
+The original GitHub URI <https://stincmale.github.io> is redirected to
+the canonical URI <https://www.kovalenko.link>.
 
 ---
 

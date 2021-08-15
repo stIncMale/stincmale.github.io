@@ -56,7 +56,7 @@ Text before ToC.
 * [Validate XML against XSD online](https://www.freeformatter.com/xml-validator-xsd.html)
 * [All HTML named entities](https://dev.w3.org/html5/html-author/charref)
 
-## [](#urls-to-check){:.section-link}URLs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](https://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#urls-to-check}
+## [](#uris-to-check){:.section-link}URIs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](https://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#uris-to-check}
 * W3C markup validator
   * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)

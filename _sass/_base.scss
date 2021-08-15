@@ -194,9 +194,11 @@ abbr {
 
 @mixin highlightable {
   opacity: 0.5;
+  filter: blur(0.06em);
 
   &:target {
     opacity: 1;
+    filter: none;
   }
 }
 @mixin highlightable2 {

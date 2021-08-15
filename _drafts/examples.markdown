@@ -180,7 +180,7 @@ Normal text.
     rock-hard cake is absolutely impossible to eat.</q>
   * En dash &ndash; <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
   * Em dash &mdash; <q>He is afraid of two things&mdash;spiders and senior prom.</q>
-* Ellipsis &hellip; <q>Andrew, can you, um &hellip; never mind.</q>
+* Ellipsis … <q>Andrew, can you, um … never mind.</q>
 
 ## [](#footnotes){:.section-link}Footnotes {#footnotes}
 <!-- see https://kramdown.gettalong.org/syntax.html#footnotes for details -->

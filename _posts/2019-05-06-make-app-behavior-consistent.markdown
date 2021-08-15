@@ -97,7 +97,7 @@ Note that the method [`System.getProperties()`](https://cr.openjdk.java.net/~iri
 states
 > "**Changing a standard system property may have unpredictable results unless otherwise specified.**
 > Property values may be cached during initialization or on first use.
-> Setting a standard property after initialization &hellip; may not have the desired effect."
+> Setting a standard property after initialization … may not have the desired effect."
 
 So the only reliable way of setting the default line separator is by specifying the value of the `line.separator` Java system property when starting a JVM process.
 Once this is done, methods like [`java.io.PrintStream.println()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/io/PrintStream.html#println())

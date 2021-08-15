@@ -73,7 +73,7 @@ for the [Java Platform, Standard Edition (Java SE) 14](https://cr.openjdk.java.n
 <span class="insignificant">[stackoverflow.com](https://stackoverflow.com/questions/16615140/is-volatile-read-happens-before-volatile-write), 2013</span>
 * <q>"The way "data race" and "correctly synchronized" programs are defined in JMM continue bothering me.
 It makes completely legit programs producing consistent results with all shared variables declared
-volatile &hellip; to be "incorrectly synchronized"
+volatile … to be "incorrectly synchronized"
 because data race definition is equally applicable to plain and volatile accesses.
 So my question is: shouldn't data race be specified in JMM for non-volatile conflicting accesses only?"</q>\\
 <span class="insignificant">I asked this question in [concurrency-interest discussion list](http://cs.oswego.edu/pipermail/concurrency-interest/2017-December/016272.html)
@@ -158,7 +158,7 @@ For this modified program the JMM allows executions with *only* the following `s
 
   which gives [synchronized-with (`sw`)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4) relation `sw(w1, r)`
   because `w1` and `r` both affect the same `volatile` variable `flag`, and hence `hb(w1, r)`, thus `r == true`.
-* `so2`: `w0`, `r_1`, &hellip;, `w1`, &hellip; `r_k`, `r`
+* `so2`: `w0`, `r_1`, …, `w1`, …, `r_k`, `r`
 
   which gives `r == true` for the same reasons as above.
 

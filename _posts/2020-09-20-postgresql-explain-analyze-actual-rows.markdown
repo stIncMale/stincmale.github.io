@@ -42,7 +42,7 @@ but actually the number of rows stored in it. By providing the constructed hash 
 which is the set of rows produced by the node.
 And if `Materialize` is used by a `Nested Loop`, then `loops` reported by the `Materialize` node tell us how many times the outer loop
 had to go through the materialized set of rows[^1].
-* And so on &hellip;
+* And so on …
 
 Recently, I was shown a plan that did not fit the presented above view of the world:
 
@@ -218,7 +218,7 @@ or maybe this is because the constructed hash table is not actually treated as a
 ``` 
 
 [^1]: <q>["In some query plans, it is possible for a subplan node to be executed more than once.
-    &hellip;
+    …
     In such cases, the `loops` value reports the total number of executions of the node,
     and the actual `time` and `rows` values shown are averages per-execution."](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE)</q>
     

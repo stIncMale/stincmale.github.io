@@ -26,7 +26,7 @@ the majority of code that software engineers write in their spare time ends up b
 
 ## [](#personality){:.section-link}Personality {#personality}
 This particular page is about sharing something with regard to my personality rather than technical things.
-For example, here are a few examples of [lyrics]({% link lyrics.markdown %}) and quotes/sayings I like:
+Here are a few examples of [lyrics]({% link lyrics.markdown %}) and quotes/sayings I like:
 * <q>"… it takes all the running you can do to keep in the same place.[^1] If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
   <span class="insignificant">Lewis Carroll, [Through the looking-glass, and what Alice found there](https://www.loc.gov/item/00000848/), 1871</span>
 * <q>"Those who would give up essential Liberty, to purchase a little temporary Safety, deserve neither Liberty nor Safety."</q>\\

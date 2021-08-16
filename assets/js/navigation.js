@@ -110,7 +110,7 @@ function displayOrNoneIfMediaPrint(display) {
  *
  * This function scrolls the window so that the element a user jumped to appears right under
  * the toolbar. Some solutions to the problem: https://css-tricks.com/hash-tag-links-padding/.
- * I  used this one https://stackoverflow.com/a/17535094/1285873.
+ * I used this one https://stackoverflow.com/a/17535094/1285873.
  *
  * Note that for some reason window.scrollTo has to be called with a timeout
  * (even if the timeout is 0). I do not know whether this is a robust

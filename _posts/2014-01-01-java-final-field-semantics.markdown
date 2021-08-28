@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java]
 date: 2014-01-01T12:00:00Z
 custom_post_date: 2014
-custom_update_date: 2021-04-04T07:12:00Z
+custom_update_date: 2021-08-27T23:42:00Z
 custom_keywords: [final field, final fields, semantics, JMM, Java memory model]
 custom_description: A final field in Java is not the same thing as a final variable that may only be assigned to once.
 ---
@@ -26,9 +26,13 @@ made a [public talk](https://youtu.be/f6joeCiz440) in Russian.
 
 {% include google-slides.html id = "2PACX-1vTcmsM3pyonfM4GcNs1MbHm7Cj1PYLckuAXhjkXPig98Zlh3xVQzXK9-jaz9AuctKzYjjy14wUfFD7p" title = "Java <code>final</code> field semantics" %}
 
-## [](#links){:.section-link}Links to useful resources about the JMM {#links}
+## [](#links){:.section-link}Links to useful resources about the JMM and memory models in general {#links}
 <!-- This section is linked from 2015-01-01-race-condition-vs-data-race.markdown -->
 * [Теоретический минимум для понимания Java Memory Model](https://youtu.be/hxIRyqHRnjE)<span class="insignificant">&nbsp;by [Roman Elizarov](https://github.com/elizarov)</span> (in Russian)
 * [Close Encounters of The Java Memory Model Kind](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
 * [Using JDK 9 Memory Order Modes](http://gee.cs.oswego.edu/dl/html/j9mm.html)<span class="insignificant">&nbsp;by [Doug Lea](http://gee.cs.oswego.edu/)</span>
 * [A Formalization of Java's Concurrent Access Modes](http://compiler.cs.ucla.edu/papers/jam/)<span class="insignificant">&nbsp;by [John Bender](https://johnbender.us/), [Jens Palsberg](https://web.cs.ucla.edu/~palsberg/)</span>
+* [The JSR-133 Cookbook for Compiler Writers](http://gee.cs.oswego.edu/dl/jmm/cookbook.html)<span class="insignificant">&nbsp;by [Doug Lea](http://gee.cs.oswego.edu/)</span>
+* [Hardware Memory Models](https://research.swtch.com/hwmm),
+  [Programming Language Memory Models](https://research.swtch.com/plmm)<span class="insignificant">&nbsp;by [Russ Cox](https://swtch.com/~rsc/)</span>
+* [What do `Atomic*::lazySet`/`Atomic*FieldUpdater::lazySet`/`Unsafe::putOrdered*` actually mean?](https://psy-lob-saw.blogspot.com/2016/12/what-is-lazyset-putordered.html)<span class="insignificant">&nbsp;by [Nitsan Wakart](https://github.com/nitsanw)</span>

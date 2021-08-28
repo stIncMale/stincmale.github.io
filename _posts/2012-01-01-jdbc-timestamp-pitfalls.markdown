@@ -6,7 +6,7 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2021-05-13T03:41:00Z
+custom_update_date: 2021-08-27T23:43:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---
@@ -34,7 +34,7 @@ Imagine the following Java application:
 * in the application timestamps are represented as [`Timestamp`].
 They are created via the constructor [`Timestamp(long time)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Timestamp.html#%3Cinit%3E(long))
 and hence are expected to represent [Java Time-Scale](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/Instant.html)[^1].
-Values and are bound to a [`PreparedStatement`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html)
+Values are bound to a [`PreparedStatement`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html)
 via [`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x)`]
 and retrieved from a [`ResultSet`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html)
 via [`ResultSet.getTimestamp(int columnIndex)`].

@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2021-08-15T07:17:00Z
+custom_update_date: 2021-08-29T05:01:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -40,7 +40,7 @@ If there is absolute time, we can define what a snapshot is.
 </div>
 
 Note that the term "snapshot" can be defined without introducing the notion of absolute time,
-see [Distributed Snapshots: Determining Global States of Distributed Systems](https://lamport.azurewebsites.net/pubs/pubs.html#chandy)<span class="insignificant">&nbsp;by [K. Mani Chandy](https://en.wikipedia.org/wiki/K._Mani_Chandy) and [Leslie Lamport](http://lamport.azurewebsites.net/)</span>[^2].
+see ["Distributed Snapshots: Determining Global States of Distributed Systems"](https://lamport.azurewebsites.net/pubs/pubs.html#chandy)<span class="insignificant">&nbsp;by [K. Mani Chandy](https://en.wikipedia.org/wiki/K._Mani_Chandy) and [Leslie Lamport](http://lamport.azurewebsites.net/)</span>[^2].
 This is, however, not very relevant to our discussion about "now" because discussing this term requires discussing time.
 
 According to the theory of special relativity, there is no absolute time in which the universe exists.
@@ -56,7 +56,7 @@ What if we are talking about a logical system, may it have absolute time?&mdash;
   This may be done for an object as simple as a linearizable, a.k.a. atomic[^3], register,
   or as complex as a DB managed by a DBMS that guarantees that all transactions are serializable;
 * the work
-  [Time, Clocks, and the Ordering of Events in a Distributed System](https://lamport.azurewebsites.net/pubs/pubs.html#time-clocks)<span class="insignificant">&nbsp;by [Leslie Lamport](http://lamport.azurewebsites.net/)</span>
+  ["Time, Clocks, and the Ordering of Events in a Distributed System"](https://lamport.azurewebsites.net/pubs/pubs.html#time-clocks)<span class="insignificant">&nbsp;by [Leslie Lamport](http://lamport.azurewebsites.net/)</span>
   describes the synchronization of logical clocks, allowing to totally order all events in a distributed system.
 
 Do not get too excited, though&mdash;there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
@@ -135,21 +135,21 @@ and apparently implied the temporal meaning of the word "immediately". I like th
 > If observing arrival of event A implies arrival of event B can be observed, i.e., A implies B, then you have B happens before A.
 > This is pretty much  all the external observer can figure out. But this is enough to reason about the state of the system."
 
-See also [There is No Now](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
+See also ["There is No Now"](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
 
 [^1]: {%- comment -%}<!-- This footnote is linked from 2020-05-17-parallelism-vs-concurrency.markdown -->{%- endcomment -%}
     The concept of physical time is not trivial, and I am not qualified in this area,
     but I can recommend a few videos of qualified people talking about / discussing this topic:
 
-    * [Is Time Real?](https://youtu.be/PdL8CudJTcs)\\
+    * ["Is Time Real?"](https://youtu.be/PdL8CudJTcs)\\
       <span class="insignificant">[Sabine Hossenfelder](http://sabinehossenfelder.com/)</span>
-    * [The Distinction of Past and Future](https://youtu.be/VU0mpPm9U-4)\\
+    * ["The Distinction of Past and Future"](https://youtu.be/VU0mpPm9U-4)\\
       <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
-    * [Time Is of the Essence… or Is It?](https://youtu.be/N-NTXoYTvao)\\
+    * ["Time Is of the Essence… or Is It?"](https://youtu.be/N-NTXoYTvao)\\
       <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/), [Lee Smolin](https://leesmolin.com); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
-    * [The Physics and Philosophy of Time](https://youtu.be/-6rWqJhDv7M)\\
+    * ["The Physics and Philosophy of Time"](https://youtu.be/-6rWqJhDv7M)\\
       <span class="insignificant">[Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/)</span>
-    * [The Richness of Time](https://youtu.be/1FJWvEbeBps)\\
+    * ["The Richness of Time"](https://youtu.be/1FJWvEbeBps)\\
       <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](https://www.briangreene.org/)</span> 
 
 [^2]: By the way, despite the paper does not mention the term "consistent cut",

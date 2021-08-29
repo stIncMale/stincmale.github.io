@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2021-06-06T21:48:00Z
+custom_update_date: 2021-08-29T05:08:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---
@@ -221,8 +221,8 @@ or maybe this is because the constructed hash table is not actually treated as a
     …
     In such cases, the `loops` value reports the total number of executions of the node,
     and the actual `time` and `rows` values shown are averages per-execution."](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE)</q>
-    
-    [Explaining the unexplainable](https://www.depesz.com/tag/unexplainable/)
+
+    ["Explaining the unexplainable"](https://www.depesz.com/tag/unexplainable/)
     <span class="insignificant">by [Hubert Lubaczewski](https://www.depesz.com/) (a.k.a. [depesz](https://www.depesz.com/))</span>
     is a great series of posts explaining how to understand the output of the `explain` command in much more details
     than the [existing documentation](https://www.postgresql.org/docs/current/using-explain.html).

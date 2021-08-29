@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-05-13T03:42:00Z
+custom_update_date: 2021-08-29T05:00:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -43,7 +43,7 @@ be referred to using their registered names"</q>.
 My patience burst, and I decided to dive into the matter.
 This post is essentially a version of the [Unicode Character Encoding Model](https://unicode.org/reports/tr17/) shortened and creatively retold by me,
 and I invite you to read the original instead, if you are so inclined.
-I also recommend reading the article [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)<span class="insignificant">&nbsp;by [Joel Spolsky](https://www.joelonsoftware.com/about-me/)</span>.
+I also recommend reading the article ["The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)"](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)<span class="insignificant">&nbsp;by [Joel Spolsky](https://www.joelonsoftware.com/about-me/)</span>.
 
 {% include toc.markdown %}
 

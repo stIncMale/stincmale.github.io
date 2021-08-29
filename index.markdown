@@ -28,13 +28,13 @@ the majority of code that software engineers write in their spare time ends up b
 This particular page is about sharing something with regard to my personality rather than technical things.
 Here are a few examples of [lyrics]({% link lyrics.markdown %}) and quotes/sayings I like:
 * <q>"… it takes all the running you can do to keep in the same place.[^1] If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
-  <span class="insignificant">Lewis Carroll, [Through the looking-glass, and what Alice found there](https://www.loc.gov/item/00000848/), 1871</span>
+  <span class="insignificant">Lewis Carroll, ["Through the looking-glass, and what Alice found there"](https://www.loc.gov/item/00000848/), 1871</span>
 * <q>"Those who would give up essential Liberty, to purchase a little temporary Safety, deserve neither Liberty nor Safety."</q>\\
   <span class="insignificant">Benjamin Franklin, [Pennsylvania Assembly: Reply to the Governor](https://franklinpapers.org/framedVolumes.jsp?vol=6&page=238a), November 11, 1755</span>
 * <q>"Never attempt to teach a pig to sing; it wastes your time and annoys the pig."</q>\\
-  <span class="insignificant">Robert A. Heinlein, [Time enough for love, the lives of Lazarus Long](https://catalog.loc.gov/vwebv/search?searchCode=LCCN&searchArg=72098131&searchType=1&permalink=y), 1973</span>
+  <span class="insignificant">Robert A. Heinlein, ["Time enough for love, the lives of Lazarus Long"](https://catalog.loc.gov/vwebv/search?searchCode=LCCN&searchArg=72098131&searchType=1&permalink=y), 1973</span>
 * <q>"When the going gets tough, the tough get going."</q>\\
-  <span class="insignificant">this saying [is ridiculously interpreted](https://youtu.be/z52kKE8qngs) in [South Park s16e7](https://www.southparkstudios.com/episodes/iyw8ps/south-park-cartman-finds-love-season-16-ep-7)</span>
+  <span class="insignificant">this saying [is ridiculously interpreted](https://youtu.be/z52kKE8qngs) in ["South Park" s16e7](https://www.southparkstudios.com/episodes/iyw8ps/south-park-cartman-finds-love-season-16-ep-7)</span>
 * <q>"Do your duty, come what may."</q>
 * <q>"Live as if you were to die tomorrow. Learn as if you were to live forever."</q>
 
@@ -67,5 +67,5 @@ Following are examples of YouTube channels I am subscribed to and watching regul
 
 [^1]: Albert Einstein went even further than Lewis Carroll in his general theory of relativity, which tells us that in curved spacetime a body must
     have non-zero proper acceleration (it may be measured by an accelerometer) to stay in the same place.
-    See [Is Gravity An Illusion? (at 9:56)](https://youtu.be/XRr1kaXKBsU?t=596)<span class="insignificant">&nbsp;by [Derek Muller](https://www.veritasium.com)</span>
+    See ["Is Gravity An Illusion?" (at 9:56)](https://youtu.be/XRr1kaXKBsU?t=596)<span class="insignificant">&nbsp;by [Derek Muller](https://www.veritasium.com)</span>
     for a popular science explanation.

@@ -5,7 +5,7 @@ title: Consider using an <code>array</code> with <code>value_expression in (sele
 categories: [tech]
 tags: [SQL]
 date: 2019-02-14T12:00:00Z
-custom_update_date: 2021-06-06T21:47:00Z
+custom_update_date: 2021-08-29T05:05:00Z
 custom_keywords: [in, any, some, array, unnest, batch, dynamic statement, SQL]
 custom_description: Imagine, you have a set of n identifiers (IDs) that cannot be represented by a range, and you want to delete/update all rows containing these IDs from/in a relational database. How would you do this? What if n is huge?
 ---
@@ -49,7 +49,7 @@ With JDBC this can be done by using
 Despite the commands being issued more efficiently this way, you still request `n` commands which a DBMS executes one by one.
 It is reasonable to assume that executing `n` commands takes more time than executing a single one that does the same thing as those `n` commands,
 and it seems to be true according to
-[The Performance Difference Between SQL Row-by-row Updating, Batch Updating, and Bulk Updating](https://blog.jooq.org/2018/04/19/the-performance-difference-between-sql-row-by-row-updating-batch-updating-and-bulk-updating/)<span class="insignificant">&nbsp;by
+["The Performance Difference Between SQL Row-by-row Updating, Batch Updating, and Bulk Updating"](https://blog.jooq.org/2018/04/19/the-performance-difference-between-sql-row-by-row-updating-batch-updating-and-bulk-updating/)<span class="insignificant">&nbsp;by
 [Lukas Eder](https://github.com/lukaseder) working with [JOOQ]</span>.
 
 ### [](#solution-n-parameters){:.section-link}A dynamic prepared statement with `n` parameters {#solution-n-parameters}
@@ -73,7 +73,7 @@ Another problem with this approach, is that you may end up generating many simil
 If there is a cache of execution plans in the DBMS or a cache of prepared statements in the JDBC API implementation / JDBC driver,
 then not only you can hardly benefit from it, but you also pollute the cache.
 [Hibernate ORM](https://hibernate.org/orm/) tries to mitigate this by using `in` clause parameter padding
-(see [How to improve statement caching efficiency with IN clause parameter padding](https://vladmihalcea.com/improve-statement-caching-efficiency-in-clause-parameter-padding/)<span class="insignificant">&nbsp;by [Vlad Mihalcea](https://vladmihalcea.com)</span>
+(see ["How to improve statement caching efficiency with IN clause parameter padding"](https://vladmihalcea.com/improve-statement-caching-efficiency-in-clause-parameter-padding/)<span class="insignificant">&nbsp;by [Vlad Mihalcea](https://vladmihalcea.com)</span>
 and [`hibernate.query.in_clause_parameter_padding`](https://docs.jboss.org/hibernate/orm/5.4/javadocs/constant-values.html#org.hibernate.cfg.AvailableSettings.IN_CLAUSE_PARAMETER_PADDING)).
 
 ### [](#solution-array){:.section-link}A static prepared statement with one parameter of the [`array`] type of size `n` {#solution-array}
@@ -97,7 +97,7 @@ The function [`unnest`] converts an [`array`] to a set of rows, this is also cal
 What about the performance of the [`in` comparison] with `n` parameters and
 the [`in` subquery expression] with a single parameter of the [`array`] type?
 I am so glad the measurements have already been done and described in
-[SQL IN Predicate: With IN List or With Array? Which is Faster?](https://blog.jooq.org/2017/03/30/sql-in-predicate-with-in-list-or-with-array-which-is-faster/)<span class="insignificant">&nbsp;by
+["SQL IN Predicate: With IN List or With Array? Which is Faster?"](https://blog.jooq.org/2017/03/30/sql-in-predicate-with-in-list-or-with-array-which-is-faster/)<span class="insignificant">&nbsp;by
 [Lukas Eder](https://github.com/lukaseder) working with [JOOQ]</span>. In short:
 * for [PostgreSQL], the approach with `n` parameters seem to result in a smaller latency than the approach with an [`array`] for `n` < 128,
 and the situations changes in favour of using an [`array`] for `n` >= 128;
@@ -156,7 +156,7 @@ but this [comment](https://stackoverflow.com/questions/2861230/what-is-the-best-
 seems to describe one such situation.
 
 ## [](#notes){:.section-link}Notes {#notes}
-[100x faster Postgres performance by changing 1 line](https://www.datadoghq.com/blog/100x-faster-postgres-performance-by-changing-1-line/)<span class="insignificant">&nbsp;by [Alexis Lê-Quôc](https://www.linkedin.com/in/alexislequoc/) a co-founder of [Datadog](https://www.datadoghq.com)</span>
+["100x faster Postgres performance by changing 1 line"](https://www.datadoghq.com/blog/100x-faster-postgres-performance-by-changing-1-line/)<span class="insignificant">&nbsp;by [Alexis Lê-Quôc](https://www.linkedin.com/in/alexislequoc/) a co-founder of [Datadog](https://www.datadoghq.com)</span>
 reports poor performance of
 
 ```sql

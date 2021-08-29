@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2021-06-06T21:43:00Z
+custom_update_date: 2021-08-29T05:03:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -24,7 +24,7 @@ custom_description: Not all race conditions are data races, and not all data rac
 {:data-title="Micro Edition"}
 
 It may seem that the terms "race condition" and "data race" have the same meaning, while in fact, they are different.
-[Java Concurrency in Practice](https://jcip.net/)<span class="insignificant">&nbsp;ISBN: 0321349601</span> book says:
+["Java Concurrency in Practice"](https://jcip.net/)<span class="insignificant">&nbsp;ISBN: 0321349601</span> book says:
 
 > "Not all race conditions are data races, and not all data races are race conditions,
 but they both can cause concurrent programs to fail in unpredictable ways."
@@ -94,7 +94,7 @@ that it has a race condition.
 ## [](#examples){:.section-link}Examples {#examples}
 I will try to give links to the JMM sections needed to understand the explanations below, but it is still better if the reader is familiar with the JMM.
 If you feel a bit scared reading [the JMM](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4),
-maybe reading [Close Encounters of The Java Memory Model Kind](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
+maybe reading ["Close Encounters of The Java Memory Model Kind"](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
 is going to be more fun[^4].
 
 ### [](#race-condition-example){:.section-link}Race condition example {#race-condition-example}

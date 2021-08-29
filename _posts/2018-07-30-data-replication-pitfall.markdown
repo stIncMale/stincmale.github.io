@@ -5,7 +5,7 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2021-06-06T21:46:00Z
+custom_update_date: 2021-08-29T05:04:00Z
 custom_keywords: [replication, incremental replication, logical replication, asynchronous replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
@@ -229,15 +229,15 @@ e.g., [Hibernate ORM](https://hibernate.org/orm/), try to save users some troubl
 which is meant to reduce the chances of violating database constraints when flushing.
 If you are interested in further reading about Hibernate ORM flushing order, I recommend the following:
 [How is Hibernate deciding order of update/insert/delete](https://stackoverflow.com/questions/12616336/how-is-hibernate-deciding-order-of-update-insert-delete),
-[A beginner’s guide to Hibernate flush operation order](https://vladmihalcea.com/hibernate-facts-knowing-flush-operations-order-matters/)<span class="insignificant">&nbsp;by [Vlad Mihalcea](https://vladmihalcea.com)</span>.
+["A beginner’s guide to Hibernate flush operation order"](https://vladmihalcea.com/hibernate-facts-knowing-flush-operations-order-matters/)<span class="insignificant">&nbsp;by [Vlad Mihalcea](https://vladmihalcea.com)</span>.
 
 [^1]: Eventual consistency is a class of consistency models that all have the following common guarantee:
     <q>"if no new updates are made to the object, eventually all accesses will return the last updated value"</q>.
-    See [Eventually Consistent](https://doi.org/10.1145/1435417.1435432)<span class="insignificant">&nbsp;by [Werner Vogels](https://www.allthingsdistributed.com/)</span>
+    See ["Eventually Consistent"](https://doi.org/10.1145/1435417.1435432)<span class="insignificant">&nbsp;by [Werner Vogels](https://www.allthingsdistributed.com/)</span>
     for more details.
 
     As a side note, if you are curious about those 1-safe, 2-safe, group-safe criteria mentioned in the
     [PostgreSQL replication docs](https://www.postgresql.org/docs/current/warm-standby.html#SYNCHRONOUS-REPLICATION),
-    I recommend reading [Beyond 1-Safety and 2-Safety for replicated databases: Group-Safety](https://www.researchgate.net/publication/2875732_Beyond_1-Safety_and_2-Safety_for_replicated_databases)<span class="insignificant">&nbsp;by [Matthias Wiesmann](https://wiesmann.codiferes.net/wordpress/?page_id=503), [André Schiper](https://people.epfl.ch/andre.schiper)</span>.
+    I recommend reading ["Beyond 1-Safety and 2-Safety for replicated databases: Group-Safety"](https://www.researchgate.net/publication/2875732_Beyond_1-Safety_and_2-Safety_for_replicated_databases)<span class="insignificant">&nbsp;by [Matthias Wiesmann](https://wiesmann.codiferes.net/wordpress/?page_id=503), [André Schiper](https://people.epfl.ch/andre.schiper)</span>.
 
 [^2]: Formerly known as Java Persistence API (JPA).

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-08-29T05:00:00Z
+custom_update_date: 2021-09-02T04:14:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -80,27 +80,38 @@ though it does not seem like they are identical, and the definition in the RFC m
 <div class="info-block" markdown="1">
 [**Coded character set** (CCS)](https://www.unicode.org/reports/tr17/#CodedCharacterSet),
 a.k.a. [code page](https://docs.microsoft.com/en-us/windows/win32/intl/code-pages)&mdash;a mapping
-from an ACR to the set of non-negative integers, which are called **code points**.
+from an ACR to the set of non-negative integers, which are called
+[**code points**](https://unicode.org/glossary/#code_point).
 If a CCS assigns a code point to an abstract character,
-then such a character is called an **encoded character**.
+then such a code point is called
+[**assigned character**](https://unicode.org/glossary/#assigned_character),
+while the associating itself is called an
+[**encoded character**](https://unicode.org/glossary/#encoded_character).
 </div>
+
+Not all code points are assigned to abstract characters, there are different
+[types of code points](https://unicode.org/glossary/#code_point_type).
+The code points we are interested in are called
+[**Unicode scalar values**](https://unicode.org/glossary/#unicode_scalar_value)[^1].
 
 ### [](#cef){:.section-link}Character encoding form (CEF) {#cef}
 <div class="info-block" markdown="1">
-[**Character encoding form** (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm)&mdash;a mapping
-from code points used in a CCS to the set of sequences of **code units**.
+[**Character encoding form** (CEF)](https://www.unicode.org/reports/tr17/#CharacterEncodingForm)&mdash;a
+mapping from Unicode scalar values used in a CCS to the set of sequences of
+[**code units**](https://unicode.org/glossary/#code_unit).
 While a code unit is an integer with a bit width fixed for a given CEF,
 the sequences of code units representing code points do not necessarily have the same length.
 </div>
 
 This concept arises from the way numbers are represented in computers&mdash;as sequences of bytes;
 thus a CES enables character representation as actual data in a computer.
-For example, the UTF-8 CEF is a variable-width encoding form that represents code points as a mix of one to four 8-bit code units in the Unicode standard.
+For example, the UTF-8 CEF is a variable-width encoding form that represents code points as
+a mix of one to four 8-bit code units in the Unicode standard.
 
 ### [](#ces){:.section-link}Character encoding scheme (CES) {#ces}
 <div class="info-block" markdown="1">
-[**Character encoding scheme** (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)&mdash;a reversible
-transformation of sequences of code units to sequences of bytes.
+[**Character encoding scheme** (CES)](https://www.unicode.org/reports/tr17/#CharacterEncodingScheme)&mdash;a
+reversible transformation of sequences of code units to sequences of bytes.
 </div>
 
 Applying CES is the last step in the process of representing an abstract character as binary data
@@ -117,10 +128,8 @@ UCS includes many interesting characters, e.g., &#x2467; &#x1f9a0; &#x222c;, but
 it [does not include Apple logo](https://hea-www.harvard.edu/~fine/OSX/unicode_apple_logo.html).
 The complete CCS used by the Unicode standard is available at <https://www.unicode.org/charts/>.
 
-Unicode code points are written in the format `U+HHHH` or `U+HHHHHH`, where `H` is a hexadecimal digit,
-and have values from `U+0000` (0) to `U+10FFFF` (1_114_111).
-Note that some values do not have assigned characters and are reserved in the Unicode standard for internal use.
-Such code points are called [noncharacters](https://www.unicode.org/faq/private_use.html#noncharacters).
+Unicode code points are written in the format `U+HHHH` or `U+HHHHHH`,
+where `H` is a hexadecimal digit, and range from `U+0000` (0) to `U+10FFFF` (1_114_111).
 
 ### [](#cm-example){:.section-link}Character map {#cm-example}
 We often refer to something called "UTF-8" as "encoding",
@@ -133,3 +142,16 @@ So we may say that
 <div class="info-block" markdown="1">
 UTF-8 charset = UCS CCS + UTF-8 CEF + UTF-8 CES.
 </div>
+
+[^1]: Values of the primitive type [`char`](https://doc.rust-lang.org/std/primitive.char.html) in
+    [Rust](https://www.rust-lang.org/) are Unicode scalar values,
+    and are always 32 bit in size. Unfortunately, values of its counterpart in
+    [Java](https://docs.oracle.com/en/java/javase/index.html) are
+    [16-bit unsigned integers representing UTF-16 code units](https://docs.oracle.com/javase/specs/jls/se14/html/jls-4.html#jls-4.2).
+    This is because the Java language was unfortunate enough to appear when Unicode
+    was still representing all abstract characters as 16-bit numbers, i.e., it was representing 
+    less characters than it currently does. Since then, the Java SE
+    [`String`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html) class
+    gained methods that can work with Unicode code points, but the
+    [`char`](https://docs.oracle.com/javase/specs/jls/se14/html/jls-4.html#jls-4.2) stayed unchanged
+    for the sake of backward compatibility.

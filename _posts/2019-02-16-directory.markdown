@@ -5,7 +5,7 @@ title: Directory vs directory service vs naming service vs LDAP vs JNDI
 categories: [tech]
 tags: [Java, security, disambiguation]
 date: 2019-02-16T12:00:00Z
-custom_update_date: 2021-05-13T03:46:00Z
+custom_update_date: 2021-12-19T18:34:00Z
 custom_keywords: [directory, directory service, naming service, LDAP, JNDI]
 custom_description: This article briefly explains what directory and naming services are, and how they can be accessed.
 ---
@@ -21,10 +21,10 @@ custom_description: This article briefly explains what directory and naming serv
 [naming]: <#naming-service>
 [PostgreSQL JDBC Driver]: <https://jdbc.postgresql.org/>
 [Spring Security]: <https://spring.io/projects/spring-security>
-[Java Naming and Directory Interface (JNDI)]: <https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.naming/module-summary.html>
-[JNDI]: <https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.naming/module-summary.html>
+[Java Naming and Directory Interface (JNDI)]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.naming/module-summary.html>
+[JNDI]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.naming/module-summary.html>
 [LDAP Naming Service Provider for JNDI]: <https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/jndi-ldap.html>
-[JDBC]: <https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.sql/module-summary.html>
+[JDBC]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/module-summary.html>
 
 *[CQL]:
 {:data-title="Cassandra Query Language"}
@@ -112,13 +112,13 @@ and the latter one is called
 Usually, authentication is not the only thing that an application wants, and other interactions with a [directory service] may be required.
 <div class="info-block" markdown="1">
 **Java Naming and Directory Interface** ([JNDI])&mdash;a part of the
-[Java SE API Specification](https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/index.html)
+[Java SE API Specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html)
 that provides API for working with [naming] and [directory services] and SPI for plugging in implementations of this API for different services
 (see also [JNDI docs published by Oracle](https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html)).
 </div>
 
-Both [OpenJDK JDK] and [Oracle JDK] have [LDAP Naming Service Provider for JNDI](https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/jndi-ldap.html)
-which implements [`javax.naming.ldap.LdapContext`](https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.naming/javax/naming/ldap/LdapContext.html)
+Both [OpenJDK JDK] and [Oracle JDK] have [LDAP Naming Service Provider for JNDI]
+which implements [`javax.naming.ldap.LdapContext`](https://docs.oracle.com/en/java/javase/17/docs/api/java.naming/javax/naming/ldap/LdapContext.html)
 (see also [`com.sun.jndi.ldap.LdapCtxFactory`](https://github.com/openjdk/jdk/blob/master/src/java.naming/share/classes/com/sun/jndi/ldap/LdapCtxFactory.java)
 and [LDAP and JNDI tutorial published by Oracle](https://docs.oracle.com/javase/tutorial/jndi/ldap/index.html)).
 [Spring LDAP](https://spring.io/projects/spring-ldap) provides a JNDI facade
@@ -132,18 +132,18 @@ to simplify interactions with an [LDAP server].
   * [JDBC].
 </div>
 
-Unlike JDBC with its [`java.sql.Connection`](https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.sql/java/sql/Connection.html),
+Unlike JDBC with its [`java.sql.Connection`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html),
 JNDI does not expose connections and manages them under the hood. In some cases, one may want to be aware of the connection management
 and have some control over it. This [connection management tutorial](https://docs.oracle.com/javase/tutorial/jndi/ldap/connect.html) 
 explains how to do so for the [LDAP Naming Service Provider for JNDI].
 
 DNS, being a [naming service], can also be accessed via JNDI, and both [OpenJDK JDK] and [Oracle JDK]
 have [DNS Service Provider for JNDI](https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/jndi-dns.html)
-which implements [`javax.naming.directory.DirContext`](https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.naming/javax/naming/directory/DirContext.html)
+which implements [`javax.naming.directory.DirContext`](https://docs.oracle.com/en/java/javase/17/docs/api/java.naming/javax/naming/directory/DirContext.html)
 (see also [`com.sun.jndi.dns.DnsContextFactory`](https://github.com/openjdk/jdk/blob/master/src/jdk.naming.dns/share/classes/com/sun/jndi/dns/DnsContextFactory.java)).
 
 [^1]: A [Jakarta EE server](https://jakarta.ee/specifications/platform/9/jakarta-platform-spec-9.html#jakarta-ee-servers) is a runtime portion of
     a [Jakarta EE product](https://jakarta.ee/specifications/platform/9/jakarta-platform-spec-9.html#flexibility-of-product-requirements),
     and is analogue of a [Java EE server](https://javaee.github.io/tutorial/overview005.html#BNABR), a.k.a. application server
-    ([Jakarta EE](https://jakarta.ee/about/) is a successor of [Java EE](https://javaee.github.io/javaee-spec/)).
+    ([Jakarta EE] is a successor of [Java EE]).
     See this [footnote]({% post_url 2019-05-06-make-app-behavior-consistent %}#fn:1) for more info about Java platform.

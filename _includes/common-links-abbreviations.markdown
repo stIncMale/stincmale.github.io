@@ -1,8 +1,14 @@
 [WTFPL]: <http://www.wtfpl.net/>
 [MIPT]: <https://mipt.ru/english/>
+[Java EE]: <https://www.oracle.com/ca-en/java/technologies/java-ee-glance.html>
+[Java Platform, Enterprise Edition (Java EE)]: <https://www.oracle.com/ca-en/java/technologies/java-ee-glance.html>
+[Java ME]: <https://www.oracle.com/java/technologies/javameoverview.html>
+[Java Platform, Micro Edition (Java ME)]: <https://www.oracle.com/java/technologies/javameoverview.html>
+[Jakarta EE]: <https://jakarta.ee/specifications/>
+[Jakarta Enterprise Edition Platform (Jakarta EE)]: <https://jakarta.ee/specifications/>
 [OpenJDK]: <https://openjdk.java.net/>
 [OpenJDK JDK]: <https://openjdk.java.net/projects/jdk/>
-[Oracle JDK]: <https://www.oracle.com/java/technologies/javase-downloads.html>
+[Oracle JDK]: <https://www.oracle.com/java/technologies/downloads/>
 [Junit 5]: <https://junit.org/junit5/>
 [PostgreSQL]: <https://www.postgresql.org/>
 [Cassandra]: <https://cassandra.apache.org/>
@@ -118,7 +124,7 @@
 *[SQL]:
 {:data-title="Structured Query Language"}
 *[POSIX]:
-{:data-title="Portable Operating System Interface for Computer Environments"}
+{:data-title="Portable Operating System Interface"}
 *[RFC]:
 {:data-title="Request for Comments"}
 *[HTML]:

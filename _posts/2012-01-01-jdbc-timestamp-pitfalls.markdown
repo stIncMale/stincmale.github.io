@@ -6,22 +6,22 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2021-08-27T23:43:00Z
+custom_update_date: 2021-12-19T18:27:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
 ---
 {% include common-links-abbreviations.markdown %}
 
 [`timestamp with time zone`]: <https://www.postgresql.org/docs/current/datatype-datetime.html>
-[default time zone]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/TimeZone.html#getDefault()>
-[`Timestamp`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Timestamp.html>
-[`OffsetDateTime`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/OffsetDateTime.html>
-[`JDBCType.TIMESTAMP`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/JDBCType.html#TIMESTAMP>
-[`JDBCType.TIMESTAMP_WITH_TIMEZONE`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/JDBCType.html#TIMESTAMP_WITH_TIMEZONE>
-[`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x)`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setTimestamp(int,java.sql.Timestamp)>
-[`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x, Calendar cal)`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setTimestamp(int,java.sql.Timestamp,java.util.Calendar)>
-[`ResultSet.getTimestamp(int columnIndex)`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getTimestamp(int)>
-[`ResultSet.getTimestamp(int columnIndex, Calendar cal)`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getTimestamp(int,java.util.Calendar)>
+[default time zone]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html#getDefault()>
+[`Timestamp`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Timestamp.html>
+[`OffsetDateTime`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/OffsetDateTime.html>
+[`JDBCType.TIMESTAMP`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/JDBCType.html#TIMESTAMP>
+[`JDBCType.TIMESTAMP_WITH_TIMEZONE`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/JDBCType.html#TIMESTAMP_WITH_TIMEZONE>
+[`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x)`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html#setTimestamp(int,java.sql.Timestamp)>
+[`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x, Calendar cal)`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html#setTimestamp(int,java.sql.Timestamp,java.util.Calendar)>
+[`ResultSet.getTimestamp(int columnIndex)`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html#getTimestamp(int)>
+[`ResultSet.getTimestamp(int columnIndex, Calendar cal)`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html#getTimestamp(int,java.util.Calendar)>
 
 {% include toc.markdown %}
 
@@ -32,11 +32,11 @@ Imagine the following Java application:
 * in the DB timestamps are represented as [`timestamp [without time zone]`](https://www.postgresql.org/docs/current/datatype-datetime.html) SQL data type
 (the Java SE API counterpart is [`JDBCType.TIMESTAMP`]);
 * in the application timestamps are represented as [`Timestamp`].
-They are created via the constructor [`Timestamp(long time)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Timestamp.html#%3Cinit%3E(long))
-and hence are expected to represent [Java Time-Scale](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/Instant.html)[^1].
-Values are bound to a [`PreparedStatement`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html)
+They are created via the constructor [`Timestamp(long time)`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Timestamp.html#%3Cinit%3E(long))
+and hence are expected to represent [Java Time-Scale](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Instant.html)[^1].
+Values are bound to a [`PreparedStatement`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html)
 via [`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x)`]
-and retrieved from a [`ResultSet`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html)
+and retrieved from a [`ResultSet`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html)
 via [`ResultSet.getTimestamp(int columnIndex)`].
 
 It is working fine&mdash;stores timestamps and reads them back as expected. But then you start it on a different machine all of a sudden,
@@ -66,8 +66,8 @@ stops using the [default time zone]. I do not know how JDBC API users are suppos
 ## [](#solutions){:.section-link}Solutions {#solutions}
 ### [](#solution-ugly){:.section-link}The Ugly {#solution-ugly}
 Use the methods [`PreparedStatement.setTimestamp(int parameterIndex, Timestamp x, Calendar cal)`]/[`ResultSet.getTimestamp(int columnIndex, Calendar cal)`]
-with explicitly specified [`Calendar`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Calendar.html) objects
-[constructed with the same time zone](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/Calendar.html#getInstance(java.util.TimeZone)).
+with explicitly specified [`Calendar`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Calendar.html) objects
+[constructed with the same time zone](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Calendar.html#getInstance(java.util.TimeZone)).
 This solution is ugly because once the data is stored in the DB its time zone information is still lost and no one but the writer at best knows what it is.
 
 ### [](#solution-bad){:.section-link}The Bad {#solution-bad}
@@ -85,9 +85,9 @@ introduced, besides others, the following two bidirectional mappings
 *"B.5 Conversions by setObject and setNull from Java Object Types to JDBC Types"*,
 *"B.6 Type Conversions Supported by ResultSet getter Methods"* in the specification):
 * [`OffsetDateTime`]&mdash;[`JDBCType.TIMESTAMP_WITH_TIMEZONE`]
-* [`LocalDateTime`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/time/LocalDateTime.html)&mdash;[`JDBCType.TIMESTAMP`]
+* [`LocalDateTime`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDateTime.html)&mdash;[`JDBCType.TIMESTAMP`]
 
-The methods [`PreparedStatement.setObject(int parameterIndex, Object x)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setObject(int,java.lang.Object))/[`ResultSet.getObject(int columnIndex, Class<T> type)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/ResultSet.html#getObject(int,java.lang.Class))
+The methods [`PreparedStatement.setObject(int parameterIndex, Object x)`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html#setObject(int,java.lang.Object))/[`ResultSet.getObject(int columnIndex, Class<T> type)`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html#getObject(int,java.lang.Class))
 can now be used to write/read [`OffsetDateTime`]/[`timestamp with time zone`].
 This is the best solution we may have because it uses immutable [`OffsetDateTime`],
 the time zone information is not lost, and the behavior does not depend on the [default time zone].

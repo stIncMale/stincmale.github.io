@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2021-08-29T05:07:00Z
+custom_update_date: 2021-12-19T18:36:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism&mdash;a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -131,9 +131,9 @@ we may conclude that the actions `a` and `b` are concurrent.
     Physical time is not a straightforward concept.
     [Here]({% post_url 2013-08-01-now-immediate %}#fn:1) is a compilation of interesting talks about time.
 
-[^2]: The happens-before order introduced in the paper is the same order that is [specified in the Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5),
+[^2]: The happens-before order introduced in the paper is the same order that is [specified in the Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.5),
     with the only difference that the article defines it as an irreflexive, a.k.a. strict, partial order, while the JMM requires it to be reflexive
-    in a [well-formed execution](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.7).
+    in a [well-formed execution](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.7).
     But as far as I can see, neither uses the reflexivity or irreflexivity properties of the happens-before order, thus the difference is merely the author's choice.
 
 [^3]: For example, the JMM says <q>"It should be noted that the presence of a happens-before relationship between two actions

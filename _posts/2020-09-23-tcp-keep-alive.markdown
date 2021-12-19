@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2021-08-29T05:09:00Z
+custom_update_date: 2021-12-19T18:37:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -24,13 +24,13 @@ It also shows an example of using HAProxy where the approach fails.
 {% include toc.markdown %}
 
 ## [](#environment){:.section-link}Environment {#environment}
-The information specified in this article was verified in following environment
+The information specified in this article was verified in the following environment
 
 Software | Version
 - | -
 [Ubuntu] on [WSL 2] | 20.04
-[Windows] | 10 version 2004
-[OpenJDK JDK] | 15
+[Windows] | 10 Home, version 21H1
+[OpenJDK JDK] | 17
 [HAProxy](https://www.haproxy.org) | 2.0.13
 
 ## [](#theory){:.section-link}Theory {#theory}
@@ -54,27 +54,30 @@ Below are some notable points from the specification.
    The interval mentioned here is called
    [`TCP_KEEPIDLE` in Linux](https://man7.org/linux/man-pages/man7/tcp.7.html),
    [`TCP_KEEPIDLE` in Windows](https://docs.microsoft.com/en-us/windows/win32/winsock/ipproto-tcp-socket-options),
-   [`TCP_KEEPIDLE` in OpenJDK](https://docs.oracle.com/en/java/javase/15/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE)[^3],
+   [`TCP_KEEPIDLE` in OpenJDK JDK / Oracle JDK, etc.](https://docs.oracle.com/en/java/javase/17/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE)[^3],
    and we most likely would want to adjust the default value. Unfortunately,
-   [OpenJDK JDK] does not support the [`TCP_KEEPIDLE`](https://docs.oracle.com/en/java/javase/15/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE) option on Windows
+   [OpenJDK JDK] does not support the [`TCP_KEEPIDLE`](https://docs.oracle.com/en/java/javase/17/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE) option on Windows
    (at least at the time of writing this article).
-   Following is the output of [`ServerSocket.accept().supportedOptions()`](https://cr.openjdk.java.net/~iris/se/15/spec/fr/java-se-15-fr-spec/api/java.base/java/net/Socket.html#supportedOptions()){:.highlight .language-java}
-   *  Windows: `IP_TOS, SO_KEEPALIVE, SO_LINGER, SO_RCVBUF, SO_REUSEADDR, SO_SNDBUF, TCP_NODELAY`;
-   *  Ubuntu: `IP_TOS, SO_INCOMING_NAPI_ID, SO_KEEPALIVE, SO_LINGER, SO_RCVBUF, SO_REUSEADDR, SO_REUSEPORT, SO_SNDBUF, TCP_KEEPCOUNT, TCP_KEEPIDLE, TCP_KEEPINTERVAL, TCP_NODELAY, TCP_QUICKACK`.
+   Following is the output of
+   [`ServerSocket.accept().supportedOptions()`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/Socket.html#supportedOptions()){:.highlight .language-java}
+   * Windows: `SO_LINGER, TCP_NODELAY, SO_SNDBUF, SO_RCVBUF, SO_KEEPALIVE, SO_REUSEADDR, IP_TOS`;
+   * Ubuntu: `IP_TOS, SO_INCOMING_NAPI_ID, SO_RCVBUF, SO_REUSEADDR, SO_REUSEPORT, TCP_KEEPIDLE,
+   TCP_KEEPINTERVAL, TCP_NODELAY, SO_KEEPALIVE, TCP_QUICKACK, SO_SNDBUF, SO_LINGER, TCP_KEEPCOUNT`.
    
-   This leaves us with **adjusting the keep-alive idle interval globally in Windows** (as opposed to adjusting it on a per-socket basis programmatically)
+   This leaves us with **adjusting the keep-alive idle interval globally in Windows**
+   (as opposed to adjusting it on a per-socket basis programmatically)
    via the [`KeepAliveTime`](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc782936(v=ws.10)) registry entry
-   ([`SO_KEEPALIVE` socket option](https://docs.microsoft.com/en-us/windows/win32/winsock/so-keepalive) mentions also
+   (the [`SO_KEEPALIVE` socket option](https://docs.microsoft.com/en-us/windows/win32/winsock/so-keepalive) mentions also
    [`KeepAliveInterval`](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc758083(v=ws.10))
    and [`TcpMaxDataRetransmissions`](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780586(v=ws.10))
    registry entries).
-   Adjusting this registry entry also requires restarting the operating system.
+   Adjusting this registry entry requires restarting the operating system.
 
 Taking all the aforementioned into account, it is safe to say that using the TCP keep-alive mechanism with an intent to keep connections active
 is an abuse of an optional mechanism, which may not be always easily configurable.
 TCP proxies do not have to behave in a way we may expect when trying to prevent connections from idling via the keep-alive mechanism[^4].
 
-### [](#right-way){:.section-link}The right way {#right-way}
+### [](#right-way){:.section-link}How to actually keep connection alive {#right-way}
 Sure, one may imagine a TCP proxy interpreting keep-alive probes as activity in a connection, but the important thing here is that
 this would have been just an implementation quirk of the proxy. On the other hand, if two peers implement ping/pong messages
 on top of TCP[^5], then a TCP proxy has to treat such messages like any other TCP traffic,
@@ -219,50 +222,53 @@ Specify data to be sent:
 As we can see, the client connected to the proxy on the port 30000, while the server was listening on the port 30001.
 
 ### [](#within-timeout){:.section-link}Experiment with inactivity within the `timeout server` {#within-timeout}
-In this experiment, we will try to sustain a client-server dialogue for longer than the `timeout server`, which is 15s,
+In this experiment, we will try to sustain a client-server dialogue for longer than
+the `timeout server`, which is 15 s,
 by regularly sending data between the client and the server.
 The log below is combined from both client and server logs for convenience:
 
 ```
-2020-09-25T11:22:52.244467700Z main      Server  Starting listening on localhost/127.0.0.1:30001
-2020-09-25T11:22:52.260842500Z main      Server  Accepting connections on ServerSocket[addr=localhost/127.0.0.1,localport=30001]
-2020-09-25T11:22:54.938052500Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
-2020-09-25T11:22:54.950853900Z main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:22:54.951046500Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:22:54.956912800Z main      Client  Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:22:54.961998900Z main      Server  Set TCP_KEEPIDLE 5000 ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:22:54.962774Z    main      Server  Set TCP_KEEPINTERVAL 5000 ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:22:54.972156500Z server-0  Server  Set read timeout 25000 ms for Socket[addr=/127.0.0.1,port=34212,localport=30001]
+2021-10-10T02:37:39.729764800Z main      Server  Starting listening on localhost/127.0.0.1:30001
+2021-10-10T02:37:39.738215700Z main      Server  Accepting connections on ServerSocket[addr=localhost/127.0.0.1,localport=30001]
+2021-10-10T02:37:44.281901700Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
+2021-10-10T02:37:44.288878400Z main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:37:44.289386100Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:37:44.296470500Z main      Client  Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:37:44.301891300Z main      Server  Set TCP_KEEPIDLE 5000 ms for Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:37:44.302720Z    main      Server  Set TCP_KEEPINTERVAL 5000 ms for Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:37:44.308110700Z main      Server  Set TCP_KEEPCOUNT 8 for Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:37:44.314504300Z server-0  Server  Set read timeout 25000 ms for Socket[addr=/127.0.0.1,port=34264,localport=30001]
                                          Client  Specify data to be sent:
                                          Client  h
-2020-09-25T11:23:03.653316200Z input     Client  Sending 0x68 'LATIN SMALL LETTER H' via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:23:03.665256400Z server-0  Server  Received 0x68 'LATIN SMALL LETTER H' via Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:23:03.665803100Z server-0  Server  Sending 0x68 'LATIN SMALL LETTER H' via Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:23:03.666869500Z main      Client  Received 0x68 'LATIN SMALL LETTER H' via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
+2021-10-10T02:37:56.803724300Z input     Client  Sending 0x68 'LATIN SMALL LETTER H' via Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:37:56.816179600Z server-0  Server  Received 0x68 'LATIN SMALL LETTER H' via Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:37:56.816564700Z server-0  Server  Sending 0x68 'LATIN SMALL LETTER H' via Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:37:56.817674800Z main      Client  Received 0x68 'LATIN SMALL LETTER H' via Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
                                          Client  Specify data to be sent:
                                          Client  b
-2020-09-25T11:23:13.883132800Z input     Client  Sending 0x62 'LATIN SMALL LETTER B' via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:23:13.883929900Z server-0  Server  Received 0x62 'LATIN SMALL LETTER B' via Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:23:13.884469Z    server-0  Server  Sending 0x62 'LATIN SMALL LETTER B' via Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:23:13.885314700Z main      Client  Received 0x62 'LATIN SMALL LETTER B' via Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:23:13.885880600Z main      Client  Gracefully closing Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:23:13.886443700Z main      Client  Disconnected Socket[addr=localhost/127.0.0.1,port=30000,localport=35370]
-2020-09-25T11:23:13.888634800Z server-0  Server  The client Socket[addr=/127.0.0.1,port=34212,localport=30001] disconnected
-2020-09-25T11:23:13.889058Z    server-0  Server  Gracefully closing Socket[addr=/127.0.0.1,port=34212,localport=30001]
-2020-09-25T11:23:13.889695500Z server-0  Server  Disconnected Socket[addr=/127.0.0.1,port=34212,localport=30001]
+2021-10-10T02:38:08.717390400Z input     Client  Sending 0x62 'LATIN SMALL LETTER B' via Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:38:08.718192400Z server-0  Server  Received 0x62 'LATIN SMALL LETTER B' via Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:38:08.718540400Z server-0  Server  Sending 0x62 'LATIN SMALL LETTER B' via Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:38:08.719041900Z main      Client  Received 0x62 'LATIN SMALL LETTER B' via Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:38:08.719642500Z main      Client  Gracefully closing Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:38:08.720591800Z main      Client  Disconnected Socket[addr=localhost/127.0.0.1,port=30000,localport=33226]
+2021-10-10T02:38:08.722526500Z server-0  Server  The client Socket[addr=/127.0.0.1,port=34264,localport=30001] disconnected
+2021-10-10T02:38:08.722840400Z server-0  Server  Gracefully closing Socket[addr=/127.0.0.1,port=34264,localport=30001]
+2021-10-10T02:38:08.723302500Z server-0  Server  Disconnected Socket[addr=/127.0.0.1,port=34264,localport=30001]
 ```
 
-The client connected at 11:22:54 and received the last byte at 11:23:13,
-which means that the dialogue lasted for more than 15s without being terminated by the proxy.
+The client connected at 02:37:44 and received the last byte at 02:38:08,
+which means that the dialogue lasted for more than 15 s without being terminated by the proxy.
 This is as expected because the client was regularly sending data to the server, and the server was regularly sending data back.
 
-Note that the server/client read timeout, which is 25s,
-is greater than the proxy `timeout server`, which is 15s. Therefore, neither server nor client timeouts may affect the next experiment,
-where we will not be sending data between the client and the server.
-Note also that the server sends TCP keep-alive probes every 5s after 5s of idling.
+Note that the both the server and the client read timeout, which is 25 s,
+are greater than the proxy `timeout server`, which is 15 s. Therefore, they cannot affect the next 
+experiment, where we will not be sending data between the client and the server.
+Note also that the server sends TCP keep-alive probes every 5 s after 5 s of idling.
 
 ### [](#exceeding-timeout){:.section-link}Experiment with inactivity exceeding the `timeout server` {#exceeding-timeout}
-In this experiment, we will try to sustain a client-server dialogue for longer than the `timeout server`, which is 15s,
+In this experiment we will try to sustain a client-server dialogue for longer than
+the `timeout server`, which is 15 s,
 despite not sending any data between the client and the server.
 Let us see if the TCP keep-alive probes alone will prevent the proxy from terminating connections.
 We will use [`tcpdump`](https://man7.org/linux/man-pages/man1/tcpdump.1.html) to see what is exactly going on
@@ -275,54 +281,58 @@ $ sudo tcpdump -ttttt --number -nn -i lo port 30001
 The log below is combined from both client and server logs for convenience:
 
 ```
-2020-09-25T10:21:43.275405200Z main      Server  Starting listening on localhost/127.0.0.1:30001
-2020-09-25T10:21:43.292033200Z main      Server  Accepting connections on ServerSocket[addr=localhost/127.0.0.1,localport=30001]
-2020-09-25T10:21:44.637776400Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
-2020-09-25T10:21:44.651432Z    main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34132,localport=30001]
-2020-09-25T10:21:44.652275600Z main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:44.657658800Z main      Client  Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:44.662740200Z main      Server  Set TCP_KEEPIDLE 5000 ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
-2020-09-25T10:21:44.663288900Z main      Server  Set TCP_KEEPINTERVAL 5000 ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
-2020-09-25T10:21:44.670764500Z server-0  Server  Set read timeout 25000 ms for Socket[addr=/127.0.0.1,port=34132,localport=30001]
+2021-10-10T21:36:00.998541700Z main      Server  Starting listening on localhost/127.0.0.1:30001
+2021-10-10T21:36:01.007406900Z main      Server  Accepting connections on ServerSocket[addr=localhost/127.0.0.1,localport=30001]
+2021-10-10T21:36:01.548790600Z main      Client  Connecting to localhost/127.0.0.1:30000 with timeout 1000 ms
+2021-10-10T21:36:01.555827Z    main      Client  Connected via Socket[addr=localhost/127.0.0.1,port=30000,localport=33274]
+2021-10-10T21:36:01.555990Z    main      Server  Accepted a new connection Socket[addr=/127.0.0.1,port=34312,localport=30001]
+2021-10-10T21:36:01.564353200Z main      Client  Set read timeout 25000 ms for Socket[addr=localhost/127.0.0.1,port=30000,localport=33274]
+2021-10-10T21:36:01.569454600Z main      Server  Set TCP_KEEPIDLE 5000 ms for Socket[addr=/127.0.0.1,port=34312,localport=30001]
+2021-10-10T21:36:01.570259100Z main      Server  Set TCP_KEEPINTERVAL 5000 ms for Socket[addr=/127.0.0.1,port=34312,localport=30001]
+2021-10-10T21:36:01.576376800Z main      Server  Set TCP_KEEPCOUNT 8 for Socket[addr=/127.0.0.1,port=34312,localport=30001]
+2021-10-10T21:36:01.583758100Z server-0  Server  Set read timeout 25000 ms for Socket[addr=/127.0.0.1,port=34312,localport=30001]
                                          Client  Specify data to be sent:
-2020-09-25T10:21:59.659921100Z main      Client  The server Socket[addr=localhost/127.0.0.1,port=30000,localport=35290] disconnected
-2020-09-25T10:21:59.660432100Z main      Client  Gracefully closing Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:59.661202500Z main      Client  Disconnected Socket[addr=localhost/127.0.0.1,port=30000,localport=35290]
-2020-09-25T10:21:59.663030700Z server-0  Server  The client Socket[addr=/127.0.0.1,port=34132,localport=30001] disconnected
-2020-09-25T10:21:59.663392Z    server-0  Server  Gracefully closing Socket[addr=/127.0.0.1,port=34132,localport=30001]
-2020-09-25T10:21:59.664103500Z server-0  Server  Disconnected Socket[addr=/127.0.0.1,port=34132,localport=30001]
+2021-10-10T21:36:16.558253900Z main      Client  The server Socket[addr=localhost/127.0.0.1,port=30000,localport=33274] disconnected
+2021-10-10T21:36:16.558934Z    main      Client  Gracefully closing Socket[addr=localhost/127.0.0.1,port=30000,localport=33274]
+2021-10-10T21:36:16.560088800Z main      Client  Disconnected Socket[addr=localhost/127.0.0.1,port=30000,localport=33274]
+2021-10-10T21:36:16.562098900Z server-0  Server  The client Socket[addr=/127.0.0.1,port=34312,localport=30001] disconnected
+2021-10-10T21:36:16.562558500Z server-0  Server  Gracefully closing Socket[addr=/127.0.0.1,port=34312,localport=30001]
+2021-10-10T21:36:16.563216400Z server-0  Server  Disconnected Socket[addr=/127.0.0.1,port=34312,localport=30001]
 ```
 
-The client connected at 10:21:44 and at 10:21:59 discovered that the server (actually, the proxy) disconnected,
-which means that the dialogue lasted for about 15s and then was terminated by the proxy. Here is what the `tcpdump` tool captured:
+The client connected at 21:24:56 and at 21:25:11 discovered that the server (actually, the proxy) disconnected,
+which means that the dialogue lasted for about 15 s and then was terminated by the proxy.
+Here is what the `tcpdump` tool captured:
 
 ```
-1   00:00:00.000000 IP 127.0.0.1.34132 > 127.0.0.1.30001: Flags [S], seq 1583506134, win 65495, options [mss 65495,sackOK,TS val 3606665525 ecr 0,nop,wscale 7], length 0
-2   00:00:00.000006 IP 127.0.0.1.30001 > 127.0.0.1.34132: Flags [S.], seq 2142000154, ack 1583506135, win 65483, options [mss 65495,sackOK,TS val 3606665525 ecr 3606665525,nop,wscale 7], length 0
-3   00:00:00.000011 IP 127.0.0.1.34132 > 127.0.0.1.30001: Flags [.], ack 1, win 512, options [nop,nop,TS val 3606665525 ecr 3606665525], length 0
+1   00:00:00.000000 IP 127.0.0.1.34312 > 127.0.0.1.30001: Flags [S], seq 789648686, win 65495, options [mss 65495,sackOK,TS val 2360756096 ecr 0,nop,wscale 7], length 0
+2   00:00:00.000006 IP 127.0.0.1.30001 > 127.0.0.1.34312: Flags [S.], seq 866552652, ack 789648687, win 65483, options [mss 65495,sackOK,TS val 2360756096 ecr 2360756096,nop,wscale 7], length 0
+3   00:00:00.000011 IP 127.0.0.1.34312 > 127.0.0.1.30001: Flags [.], ack 1, win 512, options [nop,nop,TS val 2360756096 ecr 2360756096], length 0
 
-4   00:00:05.011999 IP 127.0.0.1.30001 > 127.0.0.1.34132: Flags [.], ack 1, win 512, options [nop,nop,TS val 3606670537 ecr 3606665525], length 0
-5   00:00:05.012024 IP 127.0.0.1.34132 > 127.0.0.1.30001: Flags [.], ack 1, win 512, options [nop,nop,TS val 3606670537 ecr 3606665525], length 0
+4   00:00:05.016581 IP 127.0.0.1.30001 > 127.0.0.1.34312: Flags [.], ack 1, win 512, options [nop,nop,TS val 2360761113 ecr 2360756096], length 0
+5   00:00:05.016588 IP 127.0.0.1.34312 > 127.0.0.1.30001: Flags [.], ack 1, win 512, options [nop,nop,TS val 2360761113 ecr 2360756096], length 0
 
-6   00:00:10.051814 IP 127.0.0.1.30001 > 127.0.0.1.34132: Flags [.], ack 1, win 512, options [nop,nop,TS val 3606675576 ecr 3606670537], length 0
-7   00:00:10.051820 IP 127.0.0.1.34132 > 127.0.0.1.30001: Flags [.], ack 1, win 512, options [nop,nop,TS val 3606675576 ecr 3606665525], length 0
+6   00:00:10.056600 IP 127.0.0.1.30001 > 127.0.0.1.34312: Flags [.], ack 1, win 512, options [nop,nop,TS val 2360766153 ecr 2360761113], length 0
+7   00:00:10.056611 IP 127.0.0.1.34312 > 127.0.0.1.30001: Flags [.], ack 1, win 512, options [nop,nop,TS val 2360766153 ecr 2360756096], length 0
 
-8   00:00:15.010045 IP 127.0.0.1.34132 > 127.0.0.1.30001: Flags [F.], seq 1, ack 1, win 512, options [nop,nop,TS val 3606680535 ecr 3606665525], length 0
-9   00:00:15.010072 IP 127.0.0.1.34132 > 127.0.0.1.30001: Flags [R.], seq 2, ack 1, win 512, options [nop,nop,TS val 3606680535 ecr 3606665525], length 0
+8   00:00:15.004328 IP 127.0.0.1.34312 > 127.0.0.1.30001: Flags [F.], seq 1, ack 1, win 512, options [nop,nop,TS val 2360771100 ecr 2360756096], length 0
+9   00:00:15.004358 IP 127.0.0.1.34312 > 127.0.0.1.30001: Flags [R.], seq 2, ack 1, win 512, options [nop,nop,TS val 2360771101 ecr 2360756096], length 0
 ```
 
 * Segments 1-3 with flags `S` (`SYN`), `S.` (`SYN-ACK`), `.` (`ACK`) respectively
 represent [three-way TCP handshake](https://www.rfc-editor.org/rfc/rfc793#section-3.4) between the proxy and the server.
-The proxy initiated the handshake because the client connected to it
-(the respective segments are not in the log because they involved the proxy frontend port 30000,
-not the proxy backend port 30001, for which we were capturing segments)
+The proxy initiated the handshake because the client connected to it;
+the respective segments are not in the log because they involved the proxy frontend port 30000,
+not the proxy backend port 30001, for which we were capturing segments.
 * Segment 4 is a TCP keep-alive probe sent by the server to the proxy, segment 5 is a response to the probe sent by the proxy.
-The same is true for segments 6 and 7 respectively. Note that the first probe was sent after about 5s of idling, the next probe was sent in another 5s.
+The same is true for segments 6 and 7 respectively. Note that the first probe was sent after
+about 5 s of idling, the next probe was sent in another 5 s.
 * Segments 8 and 9 with flags `F.` (`FYN-ACK`), `R.` (`RST-ACK`) respectively is how the proxy terminated its connection with the server.
 
 Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to prevent it from terminating connections.
 
-[^1]: The "connection" referred to here is not a single TCP connection,
+[^1]: The "connection" referred to here is not a single
+    [TCP connection](https://www.rfc-editor.org/rfc/rfc793#section-1.5),
     but an abstraction over two linked TCP connections&mdash;client-proxy & proxy-server, 
     that together allows client-server communication.
 
@@ -338,7 +348,8 @@ Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to pr
     e.g., [NAT](https://www.rfc-editor.org/rfc/rfc2663) implementations and firewalls operating on the IP level, the situation is different
     because TCP keep-alive probes are traffic for them just like any other traffic.
 
-[^5]: For example, the [WebSocket](https://www.rfc-editor.org/rfc/rfc6455) protocol [does this](https://www.rfc-editor.org/rfc/rfc6455#section-5.5.2).
+[^5]: For example, the [WebSocket](https://www.rfc-editor.org/rfc/rfc6455) protocol has
+    [ping/pong frames](https://www.rfc-editor.org/rfc/rfc6455#section-5.5.2).
 
 [^6]: The protocol is documented in
     [`Server.java`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java),

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2021-08-29T05:03:00Z
+custom_update_date: 2021-12-19T18:32:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -29,8 +29,8 @@ It may seem that the terms "race condition" and "data race" have the same meanin
 > "Not all race conditions are data races, and not all data races are race conditions,
 but they both can cause concurrent programs to fail in unpredictable ways."
 
-The [Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4) does not directly mention race conditions,
-but there is a phrase:
+The [Java memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4)
+does not directly mention race conditions, but there is a phrase:
 
 > "freedom from data races still allows errors arising from groups of operations that need to be perceived atomically and are not"
 
@@ -50,18 +50,18 @@ because of unfortunate ordering / relative timing of events.
 
 ## [](#data-race){:.section-link}Data race {#data-race}
 <div class="info-block" markdown="1">
-**Data race**&mdash;a property of an [execution of a program](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.6).
+**Data race**&mdash;a property of an [execution of a program](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.6).
 According to the JMM, an execution is said to contain a data race if it contains at least two conflicting accesses (reads of or writes to the same variable)
-that are not ordered by a [happens-before (`hb`) relation](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.5)<!-- -->[^1].
+that are not ordered by a [happens-before (`hb`) relation](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.5)<!-- -->[^1].
 Two accesses to the same variable are said to be conflicting if at least one of the accesses is a write.
 </div>
 
 This definition can probably be generalized by saying that an execution contains a data race if it contains at least two conflicting accesses
-that are not properly coordinated (a.k.a synchronized), but I am going to talk about data races as they are defined by the JMM.
+that are not properly coordinated, a.k.a synchronized, but I am going to talk about data races as they are defined by the JMM.
 Unfortunately, the above definition has a significant flaw in it, which was pointed out many times by different people,
 though the problem has not been fixed as of
-the [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se14/html/index.html)
-for the [Java Platform, Standard Edition (Java SE) 14](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/):
+the [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se17/html/index.html)
+for the [Java Platform, Standard Edition (Java SE) 17](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/):
 
 * <q>"JLS3 seems to contain a glitch that prevents me from proving that my program is free of data races"</q>\\
 <span class="insignificant">[Java Memory Model discussions list](https://www.cs.umd.edu/~pugh/java/memoryModel/archive/2477.html),
@@ -82,7 +82,7 @@ and recommend reading it for those who are interested in a formal explanation of
 Despite the incorrect definition stated by the JMM stays unchanged, I am going to use a fixed version:
 <div class="info-block" markdown="1">
 An execution is said to contain a **data race** if it contains at least two conflicting *non-volatile*[^2] accesses 
-to a [shared variable](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.1) that are not ordered by an `hb` relation.
+to a [shared variable](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.1) that are not ordered by an `hb` relation.
 </div>
 
 Despite data race is a property of an execution and not a program, you may hear people saying that a program has a data race.
@@ -93,7 +93,7 @@ that it has a race condition.
 
 ## [](#examples){:.section-link}Examples {#examples}
 I will try to give links to the JMM sections needed to understand the explanations below, but it is still better if the reader is familiar with the JMM.
-If you feel a bit scared reading [the JMM](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4),
+If you feel a bit scared reading the [JMM](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4),
 maybe reading ["Close Encounters of The Java Memory Model Kind"](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
 is going to be more fun[^4].
 
@@ -120,8 +120,8 @@ The only shared variable in the program is `flag`[^5], and it is marked as volat
 there are no data races in any execution of this program.
 And yet it is obvious that the program may print not only "true" (let us say the desired outcome), but also "false",
 because we do not impose any order between the action `r` reading `flag` for printing and the action `w1` writing true to `flag` in the method `raiseFlag`.
-More specifically, these two actions are [synchronization actions](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.2),
-thus they are totally ordered with [synchronization order (`so`)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4).
+More specifically, these two actions are [synchronization actions](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.2),
+thus they are totally ordered with [synchronization order (`so`)](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.4).
 But both orders
 
 * `so1`: `r`, `w1`
@@ -156,7 +156,7 @@ For this modified program the JMM allows executions with *only* the following `s
 
 * `so1`: `w0`, `w1`, `r_1`, `r`
 
-  which gives [synchronized-with (`sw`)](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.4) relation `sw(w1, r)`
+  which gives [synchronized-with (`sw`)](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.4) relation `sw(w1, r)`
   because `w1` and `r` both affect the same `volatile` variable `flag`, and hence `hb(w1, r)`, thus `r == true`.
 * `so2`: `w0`, `r_1`, …, `w1`, …, `r_k`, `r`
 
@@ -197,8 +197,8 @@ Sometimes data races are used to allow the program to perform faster; these are 
 Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.java.net/projects/jdk/)[^6]:
 
 ```java
-// java.lang.String from OpenJDK JDK 16
-// https://github.com/openjdk/jdk/blob/jdk-16-ga/src/java.base/share/classes/java/lang/String.java#L1531
+// java.lang.String from OpenJDK JDK 17
+// https://github.com/openjdk/jdk/blob/jdk-17-ga/src/java.base/share/classes/java/lang/String.java#L2328-L2348
 
 /** Cache the hash code for the string */
 private int hash; // Default to 0
@@ -238,19 +238,19 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
 
 [^1]: Relations and partial/total orders mentioned in the JMM are all [binary relations](https://web.stanford.edu/class/archive/cs/cs103/cs103.1142/lectures/07/Slides07.pdf).
 
-[^2]: We can do volatile read/write [actions](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.2) in Java
-    either by accessing a [`volatile` field](https://docs.oracle.com/javase/specs/jls/se14/html/jls-8.html#jls-8.3.1.4)
-    or by using [`VarHandle.AccessMode.GET_VOLATILE`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#GET_VOLATILE)/<wbr>[`VarHandle.AccessMode.SET_VOLATILE`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#SET_VOLATILE).
+[^2]: We can do volatile read/write [actions](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.2) in Java
+    either by accessing a [`volatile` field](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1.4)
+    or by using [`VarHandle.AccessMode.GET_VOLATILE`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#GET_VOLATILE)/<wbr>[`VarHandle.AccessMode.SET_VOLATILE`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html#SET_VOLATILE).
 
 [^3]: An execution is allowed by the JMM iff it
-    * is [well-formed](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.7),
-    * satisfies the [causality requirements](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.8),
-    * satisfies the [requirements for observable behavior](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.9),
-    * obeys the [`final` field semantics](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.5),
-    * does not display [word tearing](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.6).
+    * is [well-formed](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.7),
+    * satisfies the [causality requirements](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.8),
+    * satisfies the [requirements for observable behavior](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.9),
+    * obeys the [`final` field semantics](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.5),
+    * does not display [word tearing](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.6).
 
 [^4]: More links to resources about the JMM and its new developments like
-    [access modes](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/invoke/VarHandle.AccessMode.html)
+    [access modes](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html)
     may be found [here]({% post_url 2014-01-01-java-final-field-semantics %}#links).
 
 [^5]: Here we are ignoring any shared variables used inside <code>ForkJoinPool.commonPool()<wbr>.execute(<wbr>DataRaceExample::raiseFlag)</code> without loss of generality.

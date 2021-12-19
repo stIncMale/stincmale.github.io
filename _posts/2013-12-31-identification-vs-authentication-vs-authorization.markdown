@@ -6,7 +6,7 @@ categories: [tech]
 tags: [security, disambiguation]
 date: 2013-12-30T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-05-13T03:44:00Z
+custom_update_date: 2021-12-19T18:30:00Z
 custom_keywords: [identification, authentication, external authentication, perimeter authentication, authorization, subject, security domain, security realm, identity, credential, credentials, ]
 custom_description: Identification, authentication, and authorization are crucial parts of implementing access control in a system and they do not mean the same thing.
 ---
@@ -44,7 +44,7 @@ So there is no wonder these words are confused sometimes.
 
 Lately, I have been doing security-related work, and documenting was a part of the task. I had to define some commonly used security-related terms
 and decided to save the definitions for myself and others here.
-I also recommend looking at [Java Authentication and Authorization Service (JAAS) Reference Guide](https://docs.oracle.com/en/java/javase/14/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
+I also recommend looking at [Java Authentication and Authorization Service (JAAS) Reference Guide](https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
 and [Oracle WebLogic Server Glossary](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/scovr/glossary.html#GUID-74223FB6-8078-472E-8C20-B3BCFF85394E).
 
 {% include toc.markdown %}
@@ -54,8 +54,8 @@ and [Oracle WebLogic Server Glossary](https://docs.oracle.com/en/middleware/stan
 **Subject**&mdash;an entity that interacts with objects. In other words, the source of a request to the system, e.g., a person or another system.
 </div>
 
-See also [JAAS subject](https://docs.oracle.com/en/java/javase/14/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-804BDE80-9E66-421C-BF0A-A96FBE7DE4E3),
-[`javax.security.auth.Subject`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/javax/security/auth/Subject.html).
+See also [JAAS subject](https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-804BDE80-9E66-421C-BF0A-A96FBE7DE4E3),
+[`javax.security.auth.Subject`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/javax/security/auth/Subject.html).
 
 ## [](#security-domain){:.section-link}Security domain {#security-domain}
 <div class="info-block" markdown="1">
@@ -76,8 +76,8 @@ Note that a [subject] may have multiple identities, e.g., a login name or a [Soc
 **Principal**&mdash;the [identity] of an [authenticated]<!-- --> [subject].
 </div>
 
-See also [JAAS principal](https://docs.oracle.com/en/java/javase/14/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-8FAF9739-CD62-4A47-9582-884DBF3081F0),
-[`java.security.Principal`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/security/Principal.html),
+See also [JAAS principal](https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-8FAF9739-CD62-4A47-9582-884DBF3081F0),
+[`java.security.Principal`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Principal.html),
 [WebLogic principal](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/scovr/glossary.html#GUID-2934BD38-E5E9-43EB-893D-F204826F93B9).
 
 ## [](#credential){:.section-link}Credential {#credential}

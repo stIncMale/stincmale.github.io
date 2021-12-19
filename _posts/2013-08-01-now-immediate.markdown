@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2021-08-29T05:01:00Z
+custom_update_date: 2021-12-19T18:29:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -60,12 +60,12 @@ What if we are talking about a logical system, may it have absolute time?&mdash;
   describes the synchronization of logical clocks, allowing to totally order all events in a distributed system.
 
 Do not get too excited, though&mdash;there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
-exist in different timelines, i.e., the events are ordered not totally, but partially. [`LongAdder`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
-from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/index.html)
+exist in different timelines, i.e., the events are ordered not totally, but partially. [`LongAdder`](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
+from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html)
 is an example of a simple concurrent object with no absolute timeline and no snapshots,
-and the [specification](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html#sum()) is explicit about this:
+and the [specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html#sum()) is explicit about this:
 <q>"The returned value is NOT an atomic snapshot; invocation in the absence of concurrent updates returns an accurate result,
-but concurrent updates that occur while the sum is being calculated might not be incorporated."</q>
+but concurrent updates that occur while the `sum` is being calculated might not be incorporated."</q>
 
 ### [](#stop-time){:.section-link}The ability to stop time {#stop-time}
 At least on the macroscopic scale, we perceive time as flowing unstoppably and irreversibly.
@@ -119,7 +119,7 @@ and even if it is applicable, do you actually need it?
 Use the word "immediately" only to express ordering relations because its temporal meaning is vague.
 The idea to write this post came to me as a result of seeing [the question](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011733.html)
 <q>"Can you confirm if this is correct&mdash;a volatile write or atomic dec/inc becomes visible immediately to other threads …?"</q>,
-which was about the semantics of [`volatile` fields](https://docs.oracle.com/javase/specs/jls/se14/html/jls-8.html#jls-8.3.1.4) in Java,
+which was about the semantics of [`volatile` fields](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1.4) in Java,
 and apparently implied the temporal meaning of the word "immediately". I like the two following answers to this question:
 
 * [first](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011734.html)
@@ -135,7 +135,7 @@ and apparently implied the temporal meaning of the word "immediately". I like th
 > If observing arrival of event A implies arrival of event B can be observed, i.e., A implies B, then you have B happens before A.
 > This is pretty much  all the external observer can figure out. But this is enough to reason about the state of the system."
 
-See also ["There is No Now"](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
+See also ["There is No Now: Problems with simultaneity in distributed systems"](https://dl.acm.org/doi/10.1145/2742694.2745385)<span class="insignificant">&nbsp;by Justin Sheehy</span>.
 
 [^1]: {%- comment -%}<!-- This footnote is linked from 2020-05-17-parallelism-vs-concurrency.markdown -->{%- endcomment -%}
     The concept of physical time is not trivial, and I am not qualified in this area,

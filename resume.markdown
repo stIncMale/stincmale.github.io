@@ -38,7 +38,7 @@ Concurrency and distributed systems
   <tbody>
     <tr class="resume-table-no-background">
       <td><code>Main&nbsp;language</code></td>
-      <td><a href="https://docs.oracle.com/javase/specs/index.html">Java</a></td>
+      <td><a href="https://dev.java/">Java</a></td>
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Frameworks/libraries</code></td>
@@ -74,7 +74,7 @@ Concurrency and distributed systems
         <a href="https://www.docker.com/">Docker</a>,
         <a href="https://github.com/stIncMale/stincmale.github.io">basic front-end knowledge</a>,
         good understanding of the
-        <a href="https://docs.oracle.com/javase/specs/jls/se16/html/jls-17.html#jls-17.4">
+        <a href="https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4">
         Java memory model</a>
         (this <a href="{% post_url 2014-01-01-java-final-field-semantics %}">presentation</a>
         may back the claim)

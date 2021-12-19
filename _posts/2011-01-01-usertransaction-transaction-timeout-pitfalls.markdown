@@ -6,7 +6,7 @@ categories: [tech]
 tags: [Jakarta EE, Java]
 date: 2011-01-01T12:00:00Z
 custom_post_date: 2011
-custom_update_date: 2021-06-06T21:41:00Z
+custom_update_date: 2021-12-19T18:26:00Z
 custom_keywords: [UserTransaction.setTransactionTimeout, setTransactionTimeout, transaction timeout]
 custom_description: Things to pay attention to when using UserTransaction.setTransactionTimeout.
 ---
@@ -16,7 +16,7 @@ custom_description: Things to pay attention to when using UserTransaction.setTra
 [`UserTransaction.begin`]: <https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#begin-->
 
 First and foremost, [`UserTransaction.setTransactionTimeout`]<!-- -->[^1]
-affects only subsequent[^2] transactions associated with the [current thread](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Thread.html#currentThread()).
+affects only subsequent[^2] transactions associated with the [current thread](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html#currentThread()).
 This behavior is explicitly stated in the documentation, but may not be intuitively expected. However, if we think about this behavior, it becomes obvious that
 if the method were affecting transactions [started](https://jakarta.ee/specifications/transactions/2.0/apidocs/jakarta/transaction/UserTransaction.html#begin--) by other threads,
 then setting a transaction timeout would have been inherently racy[^3]: another thread could have called [`UserTransaction.setTransactionTimeout`] with a different timeout
@@ -52,6 +52,6 @@ e.g., via [Spring Framework](https://docs.spring.io/spring-framework/docs/curren
 
     This setting is not to be confused with e.g. PostgreSQL [`idle_in_transaction_session_timeout`](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-IDLE-IN-TRANSACTION-SESSION-TIMEOUT).
 
-[^2]: "Subsequent"/"right before" is defined according to the [program order](https://docs.oracle.com/javase/specs/jls/se14/html/jls-17.html#jls-17.4.3).
+[^2]: "Subsequent"/"right before" is defined according to the [program order](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4.3).
 
 [^3]: I am talking about a [race condition]({% post_url 2015-01-01-race-condition-vs-data-race %}#race-condition) here.

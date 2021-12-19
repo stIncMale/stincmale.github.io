@@ -25,7 +25,7 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2021-06-06T21:40:00Z
+custom_update_date: 2021-12-19T18:25:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
@@ -150,7 +150,7 @@ that can be used to clarify any text.
 
 ## [](#link-definitions){:.section-link}Link definitions {#link-definitions}
 
-[`java.lang.Object`]: <https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html>
+[`java.lang.Object`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html>
 [Java SE]: <https://docs.oracle.com/en/java/javase/index.html> "Java Platform, Standard Edition Documentation by Oracle"
 This is a link to [Java SE] that has a title, and this one does not [`java.lang.Object`].
 
@@ -222,7 +222,7 @@ Figure:
 
 ## [](#code){:.section-link}Code {#code}
 Inlined code: `java.lang.Object`,
-[`java.lang.Object`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/Object.html),
+[`java.lang.Object`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html),
 `select * from my_table where id > 10`{:.highlight .language-sql},
 <code><b>bold</b> <em>italic</em></code>,
 [<code>link <b>bold</b> <em>italic</em></code>](https://github.com/stIncMale).

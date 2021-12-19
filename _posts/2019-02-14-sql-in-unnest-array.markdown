@@ -5,7 +5,7 @@ title: Consider using an <code>array</code> with <code>value_expression in (sele
 categories: [tech]
 tags: [SQL]
 date: 2019-02-14T12:00:00Z
-custom_update_date: 2021-08-29T05:05:00Z
+custom_update_date: 2021-12-19T18:33:00Z
 custom_keywords: [in, any, some, array, unnest, batch, dynamic statement, SQL]
 custom_description: Imagine, you have a set of n identifiers (IDs) that cannot be represented by a range, and you want to delete/update all rows containing these IDs from/in a relational database. How would you do this? What if n is huge?
 ---
@@ -43,9 +43,9 @@ delete from my_table where id = ?;
 
 Of course, you would not want to issue the commands one by one&mdash;it is better to organize them into a batch.
 With JDBC this can be done by using
-[`java.sql.PreparedStatement.addBatch()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#addBatch())/<wbr>
-[`java.sql.Statement.executeBatch()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Statement.html#executeBatch())/<wbr>
-[`Statement.executeLargeBatch()`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Statement.html#executeLargeBatch()).
+[`java.sql.PreparedStatement.addBatch()`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html#addBatch())/<wbr>
+[`java.sql.Statement.executeBatch()`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Statement.html#executeBatch())/<wbr>
+[`java.sql.Statement.executeLargeBatch()`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Statement.html#executeLargeBatch()).
 Despite the commands being issued more efficiently this way, you still request `n` commands which a DBMS executes one by one.
 It is reasonable to assume that executing `n` commands takes more time than executing a single one that does the same thing as those `n` commands,
 and it seems to be true according to
@@ -79,16 +79,16 @@ and [`hibernate.query.in_clause_parameter_padding`](https://docs.jboss.org/hiber
 ### [](#solution-array){:.section-link}A static prepared statement with one parameter of the [`array`] type of size `n` {#solution-array}
 As a result of all the aforementioned, it appears to me that a good option may be to use
 the SQL [`array`] type represented by
-[`java.sql.Array`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Array.html) in JDBC:
+[`java.sql.Array`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Array.html) in JDBC:
 
 ```sql
 delete from my_table where id in (select unnest(?));
 ```
 
 We can create an [`array`] with
-[`java.sql.Connection.createArrayOf(String typeName, Object[] elements)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/Connection.html#createArrayOf(java.lang.String,java.lang.Object%5B%5D))
+[`java.sql.Connection.createArrayOf(String typeName, Object[] elements)`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html#createArrayOf(java.lang.String,java.lang.Object[]))
 and specify it by using
-[`PreparedStatement.setArray(int parameterIndex, Array x)`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html#setArray(int,java.sql.Array)).
+[`PreparedStatement.setArray(int parameterIndex, Array x)`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html#setArray(int,java.sql.Array)).
 The reason for using the [`unnest`] function is that the [`in` subquery expression] expects (you guessed it)
 a subquery which returns a set of rows, a.k.a. a table, not an [`array`].
 Note that previously we were using the [`in` comparison], while now we are using the [`in` subquery expression].
@@ -178,7 +178,7 @@ Note also that in [PostgreSQL] the [`any` comparison] accepts an [`array`] expre
 [value expressions](https://www.postgresql.org/docs/current/sql-expressions.html), a.k.a. scalar expressions.
 
 [^1]: [JDBC API Specification](https://jcp.org/en/jsr/detail?id=221) also supports prepared statements via
-    [`java.sql.PreparedStatement`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.sql/java/sql/PreparedStatement.html).
+    [`java.sql.PreparedStatement`](https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html).
     Section *"13.2 The PreparedStatement Interface"* of the [JDBC API Specification 4.3](https://jcp.org/aboutJava/communityprocess/mrel/jsr221/index3.html) states
     <q>"Parameter markers, represented by "`?`" in the SQL string, are used to specify input values to the statement that may vary at runtime."</q>
     I am using this JDBC SQL syntax in the article.

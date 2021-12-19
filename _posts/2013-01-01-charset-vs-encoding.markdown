@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-09-02T04:14:00Z
+custom_update_date: 2021-12-19T18:28:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -133,7 +133,7 @@ where `H` is a hexadecimal digit, and range from `U+0000` (0) to `U+10FFFF` (1_1
 
 ### [](#cm-example){:.section-link}Character map {#cm-example}
 We often refer to something called "UTF-8" as "encoding",
-but Java SE API specification refers to it as [`Charset`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8). 
+but Java SE API specification refers to it as [`Charset`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8). 
 So what is it exactly? According to [ISO/IEC 10646](https://www.iso.org/standard/69119.html), or the [Unicode standard](https://unicode.org/standard/standard.html)
 (they are [kept synchronized](https://www.unicode.org/faq/unicode_iso.html)),
 there is UTF-8 CEF and UTF-8 CES.
@@ -146,12 +146,12 @@ UTF-8 charset = UCS CCS + UTF-8 CEF + UTF-8 CES.
 [^1]: Values of the primitive type [`char`](https://doc.rust-lang.org/std/primitive.char.html) in
     [Rust](https://www.rust-lang.org/) are Unicode scalar values,
     and are always 32 bit in size. Unfortunately, values of its counterpart in
-    [Java](https://docs.oracle.com/en/java/javase/index.html) are
-    [16-bit unsigned integers representing UTF-16 code units](https://docs.oracle.com/javase/specs/jls/se14/html/jls-4.html#jls-4.2).
+    [Java](https://dev.java/) are
+    [16-bit unsigned integers representing UTF-16 code units](https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2).
     This is because the Java language was unfortunate enough to appear when Unicode
     was still representing all abstract characters as 16-bit numbers, i.e., it was representing 
     less characters than it currently does. Since then, the Java SE
-    [`String`](https://cr.openjdk.java.net/~iris/se/14/spec/fr/java-se-14-fr-spec/api/java.base/java/lang/String.html) class
+    [`String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) class
     gained methods that can work with Unicode code points, but the
-    [`char`](https://docs.oracle.com/javase/specs/jls/se14/html/jls-4.html#jls-4.2) stayed unchanged
+    [`char`](https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2) stayed unchanged
     for the sake of backward compatibility.

@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2021-12-19T18:37:00Z
+custom_update_date: 2022-01-15T22:03:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -86,8 +86,8 @@ thus considering a connection active regardless of the proxy implementation.
 ## [](#practice){:.section-link}Practice {#practice}
 Let us try and see how a [production-grade](https://www.haproxy.org/they-use-it.html) HAProxy reacts to TCP keepalive probes
 when operating as a TCP reverse proxy. I am going to use a self-written TCP
-[client](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Client.java)
-and [server](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java)
+[client](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Client.java)
+and [server](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java)
 that communicate via a protocol mostly compliant with the [echo protocol](https://www.rfc-editor.org/rfc/rfc862)[^6].
 
 ### [](#preparation){:.section-link}Preparation {#preparation}
@@ -191,7 +191,7 @@ tcp        0      0 127.0.0.1:30000         0.0.0.0:*               LISTEN      
 #### [](#prepare-client-server){:.section-link}Prepare the client and the server {#prepare-client-server}
 ##### [](#download-build-client-server){:.section-link}Download and build from sources {#download-build-client-server}
 ```shell
-$ git clone https://github.com/stIncMale/sandbox.git
+$ git clone https://github.com/stIncMale/sandbox-java.git
 ...
 $ cd sandbox
 $ mvn clean verify -f examples/pom.xml
@@ -352,7 +352,7 @@ Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to pr
     [ping/pong frames](https://www.rfc-editor.org/rfc/rfc6455#section-5.5.2).
 
 [^6]: The protocol is documented in
-    [`Server.java`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java),
+    [`Server.java`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java),
     and besides treating bytes
     `0x68` (`LATIN SMALL LETTER H` in [UTF-8](https://www.rfc-editor.org/rfc/rfc3629))
     and `0x62` (`LATIN SMALL LETTER B`) as `hello` and `bye` respectively, implements what I believe is the correct approach of gracefully terminating

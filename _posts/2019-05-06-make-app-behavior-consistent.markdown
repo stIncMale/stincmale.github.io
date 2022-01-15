@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2021-12-19T18:35:00Z
+custom_update_date: 2022-01-15T22:02:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -34,7 +34,7 @@ custom_description: The behavior of a process is usually partly dependent on the
 [`System.out`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#out>
 [`System.err`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.html#err>
 [source-file mode]: <https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs>
-[`ConsistentAppExample.java`]: <https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/ConsistentAppExample.java>
+[`ConsistentAppExample.java`]: <https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/ConsistentAppExample.java>
 [`java.io.InputStreamReader`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/InputStreamReader.html>
 [`java.io.OutputStreamWriter`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/OutputStreamWriter.html>
 [`java.io.Reader`]: <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Reader.html>
@@ -197,9 +197,9 @@ which has <q>["hardware- and operating system-independent binary format"](https:
 As a bonus topic, which is to some extent related to the main topic of the article, I would like to mention the
 [`iconv`](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/iconv.html) POSIX CLI utility for converting between charsets.
 We have two CLI Java programs represented as ["shebang" files](https://openjdk.java.net/jeps/330#Shebang_files):
-* [`inShellOutUtf16`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/inShellOutUtf16)
+* [`inShellOutUtf16`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/inShellOutUtf16)
 that reads character data from the stdin using the charset specified by the shell and writes the data to the stdout using UTF-16 charset;
-* [`inUtf8OutShell`](https://github.com/stIncMale/sandbox/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/inUtf8OutShell)
+* [`inUtf8OutShell`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/inUtf8OutShell)
 that reads character data from the stdin using the UTF-8 charset and writes the data to the stdout using the charset specified by the shell.
 
 If we try feeding the stdout of the first to the stdin of the second in Bash running in macOS or Ubuntu, we see

@@ -5,7 +5,7 @@ title: A pitfall with asynchronous incremental logical data replication
 categories: [tech]
 tags: [distributed systems]
 date: 2018-07-30T12:00:00Z
-custom_update_date: 2021-08-29T05:04:00Z
+custom_update_date: 2022-01-16T00:19:00Z
 custom_keywords: [replication, incremental replication, logical replication, asynchronous replication]
 custom_description: Instead of transferring master diffs and inferring the master action history in slaves, logical replication should transfer the changes in the master action history to slaves.
 ---
@@ -20,18 +20,18 @@ which I am going to describe, would have felt the same and yet trapped into the 
 ## [](#system-description){:.section-link}Description of the system {#system-description}
 The application stores data represented as entities with the following fields:
 
-Field | Type | Constraints
-- | -
-`id` | integer | unique
-`name` | string | unique
+| Field | Type | Constraints |
+|-|-|-|
+| `id` | integer | unique |
+| `name` | string | unique |
 
 The application supports the following actions (read actions are irrelevant for this discussion, so I am omitting them):
 
-Action | Description
-- | -
-`create(id, name)` | A write action that creates a new entity `(id, name)`.
-`update(id, name1, name2)` | A write action that updates the `name` of the entity specified by `id` from `name1` to `name2`.
-`delete(id)` | A write action that deletes the entity specified by `id`.
+| Action | Description |
+|-|-|
+| `create(id, name)` | A write action that creates a new entity `(id, name)`. |
+| `update(id, name1, name2)` | A write action that updates the `name` of the entity specified by `id` from `name1` to `name2`. |
+| `delete(id)` | A write action that deletes the entity specified by `id`. |
 
 All write actions executed in a single application are totally ordered. I express this total order by using a top-down order of narration.
 

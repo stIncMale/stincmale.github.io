@@ -6,7 +6,7 @@ categories: [tech]
 tags: [archived, .NET Framework, C#]
 date: 2008-01-01T12:00:00Z
 custom_post_date: 2008
-custom_update_date: 2020-07-11T18:04:00Z
+custom_update_date: 2022-01-16T00:17:00Z
 custom_description: A tiny program I wrote when I was learning C#.
 ---
 {% include common-links-abbreviations.markdown %}
@@ -21,8 +21,8 @@ This tiny program was written in the beginning of those times and is mentioned i
 
 ## [](#requirements){:.section-link}Requirements {#requirements}
 
-Operating system | Windows XP or newer
-.NET Framework | 2.0 or newer
+| Operating system | Windows XP or newer |
+| .NET Framework | 2.0 or newer |
 
 ## [](#links){:.section-link}Download links {#links}
 * [unpack and run](https://docs.google.com/leaf?id=0B_4a-5REfZ5jZGYyMWYzMmYtZmYwMy00MGFlLTg2N2ItMTQyY2I2NTk2MDc5&sort=name&layout=list&num=50)

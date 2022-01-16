@@ -25,7 +25,7 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2021-12-19T18:25:00Z
+custom_update_date: 2022-01-16T00:15:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
@@ -189,20 +189,20 @@ Text with footnotes[^footnoteA] in it[^footnoteB].
 ## [](#tables){:.section-link}Tables {#tables}
 Table:
 
-Table column 1 header | Table column 2 header
-- | -
-cell 11 | cell 12
-cell 21 | cell 22
-**bold** | [**bold** _italic_ link](https://developer.mozilla.org/en-US/)
+| Table column 1 header | Table column 2 header |
+|-|-|
+| cell 11 | cell 12 |
+| cell 21 | cell 22 |
+| **bold** | [**bold** _italic_ link](https://developer.mozilla.org/en-US/) |
 
 Table with long text:
 
-Table column 1 header | Table column 2 header
-- | -
-cell 11 | cell 12
-cell 21 | cell 22
-cell 31 | Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.
-cell 41 | cell 42
+| Table column 1 header | Table column 2 header |
+|-|-|
+| cell 11 | cell 12 |
+| cell 21 | cell 22 |
+| cell 31 | Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text. |
+| cell 41 | cell 42 |
 
 ## [](#separator){:.section-link}Thematic separators {#separator}
 HTML thematic break (horizontal line)

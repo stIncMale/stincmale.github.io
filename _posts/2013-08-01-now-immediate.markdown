@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2021-12-19T18:29:00Z
+custom_update_date: 2022-02-26T03:21:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
 ---
@@ -143,6 +143,8 @@ See also ["There is No Now: Problems with simultaneity in distributed systems"](
 
     * ["Is Time Real?"](https://youtu.be/PdL8CudJTcs)\\
       <span class="insignificant">[Sabine Hossenfelder](http://sabinehossenfelder.com/)</span>
+    * ["Are Space and Time An Illusion?"](https://youtu.be/YycAzdtUIko)\\
+      <span class="insignificant">[PBS Space Time](https://www.youtube.com/c/pbsspacetime), host: [Gabe Perez-Giz](https://twitter.com/fizziksgabe)</span>
     * ["The Distinction of Past and Future"](https://youtu.be/VU0mpPm9U-4)\\
       <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
     * ["Time Is of the Essence… or Is It?"](https://youtu.be/N-NTXoYTvao)\\

@@ -98,14 +98,16 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
 <div class="resume-experience" markdown="1">
 * **[MongoDB Java Drivers](https://docs.mongodb.com/drivers/java-drivers/)**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-java-driver);
-  * implemented a large
-    [set of improvements that help avoiding connection storms](https://jira.mongodb.org/browse/JAVA-3890);
+  * implemented a large set of improvements that help
+    [**avoiding connection storms**](https://jira.mongodb.org/browse/JAVA-3890);
     the most interesting parts are
-    * [limiting the number of connections that can be established concurrently, featuring the connection hand-over mechanism to support fairness](https://github.com/mongodb/mongo-java-driver/blob/8c68972b6b5278bc42b702b6837236b2c6fedbc2/driver-core/src/main/com/mongodb/internal/connection/DefaultConnectionPool.java#L830-L1118);
-    * [refactoring the read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782);
+    * implemented a
+      [mechanism of limiting the number of connections that can be established concurrently](https://github.com/mongodb/mongo-java-driver/blob/8c68972b6b5278bc42b702b6837236b2c6fedbc2/driver-core/src/main/com/mongodb/internal/connection/DefaultConnectionPool.java#L830-L1118),
+      featuring the connection hand-over mechanism to support fairness;
+    * [refactored read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782);
   * investigated and fixed an interesting
-    [performance degradation caused by fair locking](https://jira.mongodb.org/browse/JAVA-4452?focusedCommentId=4316187&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-4316187)
-    without blowing up high percentile latencies.
+    [**performance** degradation](https://jira.mongodb.org/browse/JAVA-4452?focusedCommentId=4316187&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-4316187)
+    caused by fair locking without blowing up high percentile latencies.
 * **[MongoDB Kafka Connector](https://docs.mongodb.com/kafka-connector/)**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-kafka).
 </div>

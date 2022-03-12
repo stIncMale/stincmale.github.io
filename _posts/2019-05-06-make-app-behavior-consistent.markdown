@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2022-01-15T22:02:00Z
+custom_update_date: 2022-03-11T06:39:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -141,7 +141,7 @@ except for the
 [`java.io.Console`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Console.html)
 API, where the
 [charset](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Console.html#charset())
-must be match the operating system's shell charset.
+must match the operating system's shell charset.
 Before JEP 400, i.e., before OpenJDK JDK 18, one could set the default charset to UTF-8 via
 the Java system property `file.encoding`, but this property is an implementation detail and is not
 part of the Java SE.

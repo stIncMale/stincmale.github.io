@@ -1,5 +1,6 @@
 [WTFPL]: <http://www.wtfpl.net/>
 [MIPT]: <https://mipt.ru/english/>
+[Java]: <https://dev.java/>
 [Java EE]: <https://www.oracle.com/ca-en/java/technologies/java-ee-glance.html>
 [Java Platform, Enterprise Edition (Java EE)]: <https://www.oracle.com/ca-en/java/technologies/java-ee-glance.html>
 [Java ME]: <https://www.oracle.com/java/technologies/javameoverview.html>
@@ -21,6 +22,7 @@
 [DNS]: <https://www.rfc-editor.org/info/std13>
 [IP]: <https://www.rfc-editor.org/info/std86>
 [LDAP]: <https://www.rfc-editor.org/rfc/rfc4510>
+[Rust]: <https://www.rust-lang.org/>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [authentication]: <{% post_url 2013-12-31-identification-vs-authentication-vs-authorization %}#authentication>

@@ -2,12 +2,10 @@
 
 // update the window each time it is opened
 updateWindowAccordingToOrientation(false);
-/*
- * These event listeners update the window either before printing or when orientation changes.
- * I have to do this because I change some elements from a script,
- * and as a result they are not automatically updated with accordance to CSS @display rules
- * when orientation changes.
- */
+// These event listeners update the window either before printing or when orientation changes.
+// I have to do this because I change some elements from a script,
+// and as a result they are not automatically updated with accordance to CSS @display rules
+// when orientation changes.
 window.matchMedia("print").addListener(()=> {
   updateWindowAccordingToOrientation(false);
 });
@@ -64,8 +62,8 @@ function updateWindowAccordingToOrientation(toggleMenu) {
     if (newSiteNavigationOpened) {
       window.sessionStorage.setItem(siteNavigationOpenedKey, true);
       siteNavigation.style.display = displayOrNoneIfMediaPrint("block");
-      /* Writing an empty string results in CSS values being used, I have no idea if this is a
-       * behaviour I can rely on. */
+      // Writing an empty string results in CSS values being used,
+      // I have no idea if this is a behaviour I can rely on.
       rightSideArea.style.marginLeft = "";
       toolbar.style.marginLeft = "";
     } else {

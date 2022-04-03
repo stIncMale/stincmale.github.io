@@ -25,7 +25,7 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2022-01-16T00:15:00Z
+custom_update_date: 2022-04-03T09:40:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
@@ -45,18 +45,21 @@ Text before ToC.
 
 {% include toc.markdown %}
 
-## [](#todo){:.section-link}TODO {#todo}
+## [](#hints){:.section-link}Hints {#hints}
+
 * Remove "​" (ZWSP characters), "﻿" (ZWNBSP).
 * Add `<wbr>` to explicitly allow word breaks if a page does not fit a vertical mobile screen.
 
-## [](#useful-links){:.section-link}Useful links {#useful-links}
+### [](#useful-links){:.section-link}Useful links {#useful-links}
+
 * [color names](https://htmlcolorcodes.com/color-names/)
 * [Making Your Website Shareable on LinkedIn](https://www.linkedin.com/help/linkedin/answer/46687/making-your-website-shareable-on-linkedin), [LinkedIn post inspector](https://www.linkedin.com/post-inspector/)
 * comments: <https://jekyllcodex.org/without-plugin/comments/>, <https://aristath.github.io/blog/static-site-comments-using-github-issues-api>, <https://www.bitsgalore.org/2020/03/11/does-microsoft-onedrive-export-large-ZIP-files-that-are-corrupt>
 * [Validate XML against XSD online](https://www.freeformatter.com/xml-validator-xsd.html)
 * [All HTML named entities](https://dev.w3.org/html5/html-author/charref)
 
-## [](#uris-to-check){:.section-link}URIs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](https://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#uris-to-check}
+### [](#uris-to-check){:.section-link}URIs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](https://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#uris-to-check}
+
 * W3C markup validator
   * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
@@ -78,7 +81,9 @@ Text before ToC.
 #### [](#h4){:.section-link}Header `<h4>` {#h4}
 ##### [](#h5){:.section-link}Header `<h5>` {#h5}
 ###### [](#h6){:.section-link}Header `<h6>` {#h6}
+
 ## [](#basic-formatting){:.section-link}Basic formatting {#basic-formatting}
+
 Normal text.
 
 Decimal digits: 0123456789.
@@ -97,6 +102,10 @@ long text.
 *Italic text 1.* _Italic text 2._
 
 **_~~Bold italic strikethrough text.~~_**
+
+<strong>Strong text.</strong>
+
+<em>Emphasized text.</em>
 
 [**Bold** _italic_ link](https://developer.mozilla.org/en-US/).
 
@@ -133,6 +142,7 @@ long text.
 </div>
 
 ## [](#abbreviations){:.section-link}Abbreviations {#abbreviations}
+
 *[HTML]:
 {:data-title="Hypertext Markup Language"}
 *[CSS]:
@@ -155,6 +165,7 @@ that can be used to clarify any text.
 This is a link to [Java SE] that has a title, and this one does not [`java.lang.Object`].
 
 ## [](#lists){:.section-link}Lists {#lists}
+
 Normal text.
 1. Ordered list item 1.
 2. Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very
@@ -183,10 +194,12 @@ Normal text.
 * Ellipsis … <q>Andrew, can you, um … never mind.</q>
 
 ## [](#footnotes){:.section-link}Footnotes {#footnotes}
+
 <!-- see https://kramdown.gettalong.org/syntax.html#footnotes for details -->
 Text with footnotes[^footnoteA] in it[^footnoteB].
 
 ## [](#tables){:.section-link}Tables {#tables}
+
 Table:
 
 | Table column 1 header | Table column 2 header |
@@ -205,6 +218,7 @@ Table with long text:
 | cell 41 | cell 42 |
 
 ## [](#separator){:.section-link}Thematic separators {#separator}
+
 HTML thematic break (horizontal line)
 <hr>
 kramdown thematic break (horizontal line)
@@ -212,6 +226,7 @@ kramdown thematic break (horizontal line)
 ---
 
 ## [](#figures){:.section-link}Figures {#figures}
+
 Inline image ![Example image]({% link /assets/img/favicon.png %}){:style="border-radius: 20%; border: thin solid lightsteelblue; width: 3em; height: auto;"} with kramdown and inline CSS.
 
 Figure:
@@ -221,10 +236,11 @@ Figure:
 </figure>
 
 ## [](#code){:.section-link}Code {#code}
+
 Inlined code: `java.lang.Object`,
 [`java.lang.Object`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html),
 `select * from my_table where id > 10`{:.highlight .language-sql},
-<code><b>bold</b> <em>italic</em></code>,
+<code><b>bold</b> <i>italic</i></code>,
 [<code>link <b>bold</b> <em>italic</em></code>](https://github.com/stIncMale).
 
 `Very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long text.`
@@ -397,6 +413,7 @@ public final class MyClass {
 {%- endhighlight -%}
 
 ## [](#video){:.section-link}Video {#video}
+
 ### [](#video-youtube){:.section-link}YouTube {#video-youtube}
 
 {% include youtube-video.html content = "YziVpa8oZDg , hqdefault , iframe-ratio-22-15 , Darkwing Duck (intro and outro)" %}

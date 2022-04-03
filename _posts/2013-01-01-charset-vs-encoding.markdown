@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-12-19T18:28:00Z
+custom_update_date: 2022-04-03T09:42:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -144,9 +144,8 @@ UTF-8 charset = UCS CCS + UTF-8 CEF + UTF-8 CES.
 </div>
 
 [^1]: Values of the primitive type [`char`](https://doc.rust-lang.org/std/primitive.char.html) in
-    [Rust](https://www.rust-lang.org/) are Unicode scalar values,
-    and are always 32 bit in size. Unfortunately, values of its counterpart in
-    [Java](https://dev.java/) are
+    [Rust] are Unicode scalar values, and are always 32 bit in size.
+    Unfortunately, values of its counterpart in [Java] are
     [16-bit unsigned integers representing UTF-16 code units](https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2).
     This is because the Java language was unfortunate enough to appear when Unicode
     was still representing all abstract characters as 16-bit numbers, i.e., it was representing 

@@ -4,10 +4,10 @@ slug: rust-self-in-java
 title: Simulating Rust's <code>Self</code> keyword via generics in Java
 categories: [tech]
 tags: [Java, Rust]
-date: 2022-04-09T08:30:00Z
-custom_update_date: 2022-04-09T08:30:00Z
+date: 2022-04-15T10:40:00Z
+custom_update_date: 2022-04-15T10:40:00Z
 custom_keywords: [Rust, Java, Self]
-custom_description: Rust allows referring to an unknown type in some contexts, e.g., referring to the implementing type within a trait, by using the "Self" keyword. While there is no counterpart of this keyword in [Java], we can simulate it via [generic classes](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.1.2).
+custom_description: Rust allows referring to an unknown type in some contexts, e.g., referring to the implementing type within a trait, by using the "Self" keyword. While there is no counterpart of this keyword in Java, we can simulate it via generic classes.
 ---
 {% include common-links-abbreviations.markdown %}
 
@@ -43,10 +43,10 @@ they cannot be represented by a single type;
    so specifying a union of multiple known types is not possible even in principle. 
 
 The counterpart of this method in the Java SE API is
-[`java.lang.Object.clone`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()).
+[`java.lang.Object.clone`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()).[^2]
 It creates and returns a copy of the object.
 The specification proposes a convention according to which "copy" has deep copying semantics,
-but implementations are allowed to have shallow or deep semantics, or anything in between.[^2]
+but implementations are allowed to have shallow or deep semantics, or anything in between.[^3]
 `Object.clone` returns
 [`Object`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html),
 because all Java
@@ -154,9 +154,13 @@ void copy() {
 The full code and tests can be found
 [here](https://github.com/stIncMale/sandbox-java/tree/master/examples/src/main/java/stincmale/sandbox/examples/self)
 and
-[here](https://github.com/stIncMale/sandbox-java/tree/master/examples/src/test/java/stincmale/sandbox/examples/self).
-I actually used this approach for emulating `Self` in [production code](TODO),
-though in a situation different than the one we have considered above.
+[here](https://github.com/stIncMale/sandbox-java/tree/master/examples/src/test/java/stincmale/sandbox/examples/self)
+respectively.
+I am
+[planning](https://github.com/mongodb/mongo-java-driver/pull/891/files#diff-169ed033153b41d22b7c6c2741c535a7c66d27cf7930e1a4c260284598236f7e)
+to
+[use the discussed approach for emulating `Self`](https://github.com/mongodb/mongo-java-driver/blob/062994027a96660223199924ee92b526639424df/driver-core/src/main/com/mongodb/internal/client/model/AbstractConstructibleBson.java#L61-L69)
+in production code in a situation resembling the one we have considered above.
 
 ## [](#shattered-hopes){:.section-link}Shattered hopes {#shattered-hopes}
 
@@ -210,7 +214,7 @@ to fail with
 default method toString in interface Copy overrides a member of java.lang.Object
 ```
 
-That is all I wanted to say on the topic, hopefully this reading was entertaining for you.
+If the idea had worked out, it would have brought meaning to the existence of the `Object.clone` method.
 
 [^1]: The [`std::marker::Copy`](https://doc.rust-lang.org/std/marker/trait.Copy.html) trait
     defines shallow copying semantics by specifying that values are
@@ -222,7 +226,13 @@ That is all I wanted to say on the topic, hopefully this reading was entertainin
     and is the closest thing Rust has to Java's
     [inheritance of interfaces](https://docs.oracle.com/javase/specs/jls/se17/html/jls-9.html#jls-9.4.1).
 
-[^2]: The implementation of the `Object.clone` method in the `Object` class
+[^2]: I avoid implementing `Object.clone`, and prefer using
+    [copy sonstructors](https://www.baeldung.com/java-copy-constructor) instead.
+    In my opinion, `Object.clone` pollutes the API of the `Object` class for no good reason.
+    Nevertheless, I use it here because cloning is a convenient similarity between
+    the Java and Rust standard libraries.
+
+[^3]: The implementation of the `Object.clone` method in the `Object` class
     <q>["performs a "shallow copy" of this object, not a "deep copy" operation"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone())</q>.
     However, the convention proposed by the specification also states that
     <q>"the object returned by this method should be independent of

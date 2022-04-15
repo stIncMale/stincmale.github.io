@@ -23,6 +23,7 @@
 [IP]: <https://www.rfc-editor.org/info/std86>
 [LDAP]: <https://www.rfc-editor.org/rfc/rfc4510>
 [Rust]: <https://www.rust-lang.org/>
+[JSON]: <https://www.rfc-editor.org/rfc/rfc8259.html>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [authentication]: <{% post_url 2013-12-31-identification-vs-authentication-vs-authorization %}#authentication>
@@ -163,3 +164,5 @@
 {:data-title="Domain Name System"}
 *[IP]:
 {:data-title="Internet Protocol"}
+*[JSON]:
+{:data-title="JavaScript Object Notation"}

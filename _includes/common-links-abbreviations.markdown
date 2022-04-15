@@ -13,7 +13,7 @@
 [Junit 5]: <https://junit.org/junit5/>
 [PostgreSQL]: <https://www.postgresql.org/>
 [Cassandra]: <https://cassandra.apache.org/>
-[MongoDB]: <https://docs.mongodb.com/manual/>
+[MongoDB]: <https://www.mongodb.com/docs/manual/>
 [macOS]: <https://www.apple.com/macos>
 [Ubuntu]: <https://ubuntu.com>
 [Windows]: <https://www.microsoft.com/windows>

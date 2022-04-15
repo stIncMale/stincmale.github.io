@@ -5,7 +5,7 @@ title: Directory vs directory service vs naming service vs LDAP vs JNDI
 categories: [tech]
 tags: [Java, security, disambiguation]
 date: 2019-02-16T12:00:00Z
-custom_update_date: 2021-12-19T18:34:00Z
+custom_update_date: 2022-04-15T11:51:00Z
 custom_keywords: [directory, directory service, naming service, LDAP, JNDI]
 custom_description: This article briefly explains what directory and naming services are, and how they can be accessed.
 ---
@@ -76,7 +76,7 @@ where each DBMS has its own protocol and a driver library (a client) implementin
 (e.g.,
 [PostgreSQL JDBC Driver] for [PostgreSQL],
 [Datastax Java Driver](https://docs.datastax.com/en/developer/java-driver/) for [Cassandra],
-[MongoDB Java Driver](https://docs.mongodb.com/drivers/java) for [MongoDB]).
+[MongoDB Java Drivers](https://www.mongodb.com/docs/drivers/java-drivers/) for [MongoDB]).
 
 <div class="info-block" markdown="1">
 * [LDAP] is to
@@ -87,7 +87,7 @@ where each DBMS has its own protocol and a driver library (a client) implementin
   * [PostgreSQL],
 * as [Cassandra Query Language (CQL) binary protocol](https://github.com/apache/cassandra/blob/trunk/doc/native_protocol_v5.spec) is to
   * [Cassandra],
-* as [MongoDB Wire Protocol](https://docs.mongodb.com/manual/reference/mongodb-wire-protocol/) is to
+* as [MongoDB Wire Protocol](https://www.mongodb.com/docs/manual/reference/mongodb-wire-protocol/) is to
   * [MongoDB].
 </div>
 

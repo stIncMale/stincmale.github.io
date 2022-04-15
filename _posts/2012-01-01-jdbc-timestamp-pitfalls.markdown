@@ -6,9 +6,9 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2022-01-15T22:00:00Z
+custom_update_date: 2022-04-15T11:50:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
-custom_description: "Beware of using SQL timestamp [without time zone] as you may not only loose time zone information but also make your application behavior dependent on the machine time zone."
+custom_description: Beware of using SQL timestamp without time zone as you may not only loose time zone information but also make your application behavior dependent on the machine time zone.
 ---
 {% include common-links-abbreviations.markdown %}
 

@@ -96,7 +96,7 @@ Concurrency and distributed systems
 </h6>
 _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndash;current</span>
 <div class="resume-experience" markdown="1">
-* **[MongoDB Java Drivers](https://docs.mongodb.com/drivers/java-drivers/)**
+* **[MongoDB Java Drivers](https://www.mongodb.com/docs/drivers/java-drivers/)**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-java-driver);
   * implemented a large set of improvements that help
     [**avoiding connection storms**](https://jira.mongodb.org/browse/JAVA-3890);
@@ -108,7 +108,7 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
   * investigated and fixed an interesting
     [**performance** degradation](https://jira.mongodb.org/browse/JAVA-4452?focusedCommentId=4316187&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-4316187)
     caused by fair locking without blowing up high percentile latencies.
-* **[MongoDB Kafka Connector](https://docs.mongodb.com/kafka-connector/)**
+* **[MongoDB Kafka Connector](https://www.mongodb.com/docs/kafka-connector/)**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-kafka).
 </div>
 
@@ -156,7 +156,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
 
 <h6 class="resume-h">
   <a href="https://www.zeptolab.com/" title="ZeptoLab">
-    <img src="{% link /assets/img/resume/zeptolab-logo.png %}" alt="Logo" style="width: auto; height: 1.4em;">
+    <img src="{% link /assets/img/resume/zeptolab-logo.webp %}" alt="Logo" style="width: auto; height: 1.4em;">
     ZeptoLab
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>

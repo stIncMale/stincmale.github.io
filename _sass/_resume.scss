@@ -27,13 +27,8 @@ span.resume-normal-font-weight {
   font-weight: $font-weight;
 }
 
-.resume-media-print {
+.resume-invisible-media-not-print {
   @media not print {
-    display: none;
-  }
-}
-.resume-media-not-print {
-  @media print {
     display: none;
   }
 }

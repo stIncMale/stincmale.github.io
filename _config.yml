@@ -45,7 +45,10 @@ custom_plaintext_title: DEAD<code/>
 custom_simplified_title: DEADcode
 custom_author: Valentin Kovalenko
 custom_author_email: public.vkovalenko@gmail.com
-custom_feed_id_iri_inception_year: 2020
+custom_author_linkedin: https://www.linkedin.com/in/stIncMale
+custom_author_github: https://github.com/stIncMale
+custom_feed_id_year: 2020
+custom_feed_id_authority_name: kovalenko.link
 # The only way to pass variable number of parameters to includes in Jekyll is to join them
 # and pass a single parameter of type String
 # (see https://jekyllrb.com/docs/includes/#passing-parameters-to-includes

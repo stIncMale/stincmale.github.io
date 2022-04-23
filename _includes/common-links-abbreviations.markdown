@@ -7,6 +7,7 @@
 [Java Platform, Micro Edition (Java ME)]: <https://www.oracle.com/java/technologies/javameoverview.html>
 [Jakarta EE]: <https://jakarta.ee/specifications/>
 [Jakarta Enterprise Edition Platform (Jakarta EE)]: <https://jakarta.ee/specifications/>
+[JMH]: <https://github.com/openjdk/jmh>
 [OpenJDK]: <https://openjdk.java.net/>
 [OpenJDK JDK]: <https://openjdk.java.net/projects/jdk/>
 [Oracle JDK]: <https://www.oracle.com/java/technologies/downloads/>
@@ -30,6 +31,12 @@
 
 *[iff]:
 {:data-title="if and only if"}
+*[Ph.D]:
+{:data-title="Doctor of Philosophy"}
+*[M.Sc]:
+{:data-title="Master of Science"}
+*[B.Sc]:
+{:data-title="Bachelor of Science"}
 *[stdin]:
 {:data-title="standard input stream"}
 *[stdout]:

@@ -3,6 +3,11 @@ layout: base
 title: Resume
 custom_description: Server-side software engineer (Java) interested in concurrency and distributed systems.
 ---
+{% include common-links-abbreviations.markdown %}
+
+*[IRE RAS]:
+{:data-title="Kotelnikov Institute of Radioengineering and Electronics of Russian Academy of Sciences"}
+
 # Valentin Kovalenko
 {:.resume-h .resume-invisible-media-not-print}
 ## Server-side software engineer
@@ -24,7 +29,7 @@ Concurrency and distributed systems
 </div>
 ---
 <div class="resume-contact-info">
-  Location: <a href="https://www.google.com/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831">Calgary, AB, Canada</a>
+  Location: <a href="https://www.google.com/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831">Calgary, Alberta, Canada</a>
   (<a href="https://www.timeanddate.com/time/zone/canada/edmonton">America/Edmonton time zone</a>)<br>
   <div class="resume-invisible-media-not-print">
     Email: <a href="mailto:{{ site.custom_author_email }}">{{ site.custom_author_email }}</a><br>
@@ -47,9 +52,9 @@ Concurrency and distributed systems
       <td>
         <a href="https://netty.io/">Netty</a>,
         <a href="https://developers.google.com/protocol-buffers">Protocol Buffers</a>,
-        <a href="https://github.com/openjdk/jmh"><abbr data-title="Java Microbenchmark Harness">JMH</abbr></a>,
+        <span markdown="1">[JMH]</span>,
         <a href="https://spring.io/projects/spring-framework">Spring Framework</a>,
-        <a href="https://hibernate.org/orm/">Hibernate <abbr data-title="Object/Relational Mapping">ORM</abbr></a>,
+        <a href="https://hibernate.org/orm/" markdown="1">Hibernate ORM</a>,
         <a href="https://junit.org/">JUnit</a>,
         <a href="http://mockito.org/">Mockito</a>
       </td>
@@ -244,9 +249,9 @@ _Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 20
 _Implementation engineer_ / <span class="resume-insignificant">Jul 2008&ndash;Apr 2010</span>
 
 <h6 class="resume-h">
-  <a href="http://www.cplire.ru/" title="V.A. Kotelnikov Institute of Radioengineering and Electronics RAS">
+  <a href="http://www.cplire.ru/" title="IRE RAS" markdown="1">
     <img src="{% link /assets/img/resume/cplire-logo.gif %}" alt="Logo" style="width: auto; height: 0.9em;">
-    V.A. Kotelnikov Institute of Radioengineering and Electronics RAS
+    IRE RAS
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>
 </h6>

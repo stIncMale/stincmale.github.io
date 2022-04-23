@@ -3,13 +3,13 @@
   {%- assign category = page.custom_post_category_to_display | default: first_category | default: "" -%}
   <ul>
     <li>
-      <a class="button {% if category == "tech" %}selected-menu{% endif %}" href="{% link tech.markdown %}">Tech blog</a>
+      <a class="button {% if category == "tech" %}selected-menu{% endif %}" href="{% link tech.md %}">Tech blog</a>
     </li>
     <li>
-      <a class="button {% if category == "cgi-vfx" %}selected-menu{% endif %}" href="{% link cgi-vfx.markdown %}">CGI & VFX blog</a>
+      <a class="button {% if category == "cgi-vfx" %}selected-menu{% endif %}" href="{% link cgi-vfx.md %}">CGI & VFX blog</a>
     </li>
     <li>
-      <a class="button {% if category == "about" %}selected-menu{% endif %}" href="{% link index.markdown %}">About</a>
+      <a class="button {% if category == "about" %}selected-menu{% endif %}" href="{% link index.md %}">About</a>
     </li>
   </ul>
 </nav>

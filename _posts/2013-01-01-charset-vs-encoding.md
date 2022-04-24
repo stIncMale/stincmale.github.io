@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2022-04-03T09:42:00Z
+custom_update_date: 2022-04-23T09:42:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -30,6 +30,8 @@ custom_description: Charset, a.k.a. character map (CM) = coded character set (CC
 {:data-title="Big Endian"}
 *[BOM]:
 {:data-title="Byte Order Mark"}
+
+[ISO/IEC 10646]: <https://www.iso.org/standard/76835.html>
 
 I have always been discouraged by the fact that the words "charset" and "encoding" seem to be
 used interchangeably&mdash;if they are the same term, why use both words?
@@ -122,7 +124,8 @@ cares about byte order and has the little endian (LE) / big endian (BE) byte ord
 ## [](#examples){:.section-link}Examples {#examples}
 
 ### [](#ccs-example){:.section-link}Coded character set {#ccs-example}
-[ISO/IEC 10646](https://www.iso.org/standard/69119.html) defines a CCS called Universal Coded Character Set (UCS).
+[ISO/IEC 10646] defines, among other things,
+a CCS called Universal Coded Character Set (UCS).
 The Unicode standard uses this CCS.
 UCS includes many interesting characters, e.g., &#x2467; &#x1f9a0; &#x222c;, but not everything you might want, for example,
 it [does not include Apple logo](https://hea-www.harvard.edu/~fine/OSX/unicode_apple_logo.html).
@@ -134,7 +137,7 @@ where `H` is a hexadecimal digit, and range from `U+0000` (0) to `U+10FFFF` (1_1
 ### [](#cm-example){:.section-link}Character map {#cm-example}
 We often refer to something called "UTF-8" as "encoding",
 but Java SE API specification refers to it as [`Charset`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/StandardCharsets.html#UTF_8). 
-So what is it exactly? According to [ISO/IEC 10646](https://www.iso.org/standard/69119.html), or the [Unicode standard](https://unicode.org/standard/standard.html)
+So what is it exactly? According to [ISO/IEC 10646], or the [Unicode standard](https://unicode.org/standard/standard.html)
 (they are [kept synchronized](https://www.unicode.org/faq/unicode_iso.html)),
 there is UTF-8 CEF and UTF-8 CES.
 [RFC 3629](https://www.rfc-editor.org/rfc/rfc3629) defines UTF-8 charset that is registered as an [IANA character set](https://www.iana.org/assignments/character-sets/character-sets.xhtml).

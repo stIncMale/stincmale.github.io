@@ -173,3 +173,7 @@
 {:data-title="Internet Protocol"}
 *[JSON]:
 {:data-title="JavaScript Object Notation"}
+*[ISO]:
+{:data-title="International Organization for Standardization"}
+*[IEC]:
+{:data-title="International Electrotechnical Commission"}

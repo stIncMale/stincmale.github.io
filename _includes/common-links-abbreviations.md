@@ -31,11 +31,11 @@
 
 *[iff]:
 {:data-title="if and only if"}
-*[Ph.D]:
+*[PhD]:
 {:data-title="Doctor of Philosophy"}
-*[M.Sc]:
+*[MSc]:
 {:data-title="Master of Science"}
-*[B.Sc]:
+*[BSc]:
 {:data-title="Bachelor of Science"}
 *[stdin]:
 {:data-title="standard input stream"}

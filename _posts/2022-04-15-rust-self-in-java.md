@@ -5,7 +5,7 @@ title: Simulating Rust's <code>Self</code> keyword via generics in Java
 categories: [tech]
 tags: [Java, Rust]
 date: 2022-04-15T10:40:00Z
-custom_update_date: 2022-04-15T11:52:00Z
+custom_update_date: 2022-04-29T03:25:00Z
 custom_keywords: [Rust, Java, Self]
 custom_description: Rust allows referring to an unknown type in some contexts, e.g., referring to the implementing type within a trait, by using the &quot;Self&quot; keyword. While there is no counterpart of this keyword in Java, we can simulate it via generic classes, and achieve interesting results like being able to use &quot;Object.clone&quot; on a type that does not override it without resorting to cast expressions.
 ---
@@ -125,7 +125,7 @@ abstract class Copy<Self extends Copy<Self>> implements Cloneable {
 }
 ```
 
-Extending this class has an effect similar to that of Rust's
+Extending this class has the effect similar to that of Rust's
 [`#[derive(Copy, Clone)]`](https://doc.rust-lang.org/std/marker/trait.Copy.html#how-can-i-implement-copy)[^1]
 attribute which allows [generating](https://doc.rust-lang.org/reference/attributes/derive.html)
 code that copies values:

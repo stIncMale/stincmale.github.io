@@ -268,5 +268,5 @@ _Student_ / <span class="resume-insignificant">Sep 2006&ndash;Jun 2009</span>
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Dolgoprudny, Moscow Region, Russia</span>
 </h6>
-_M.Sc in applied mathematics and physics_ / <span class="resume-insignificant">Sep 2007&ndash;Jun 2009</span>\\
-_B.Sc in applied mathematics and physics_ / <span class="resume-insignificant">Sep 2003&ndash;Jun 2007</span>
+_MSc in applied mathematics and physics_ / <span class="resume-insignificant">Sep 2007&ndash;Jun 2009</span>\\
+_BSc in applied mathematics and physics_ / <span class="resume-insignificant">Sep 2003&ndash;Jun 2007</span>

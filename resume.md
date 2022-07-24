@@ -103,8 +103,12 @@ Concurrency and distributed systems
 </h6>
 _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndash;current</span>
 <div class="resume-experience" markdown="1">
-* **[MongoDB Java Drivers](https://www.mongodb.com/docs/drivers/java-drivers/)**
+* **[MongoDB Java Drivers]**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-java-driver);
+  * designed and
+    [implemented](https://github.com/mongodb/mongo-java-driver/commit/1812865f234b2d9c9ab27ea760959ded152d51ac)
+    a **[query building API](https://mongodb.github.io/mongo-java-driver/4.7/apidocs/mongodb-driver-core/com/mongodb/client/model/search/package-summary.html)**
+    for [MongoDB Atlas Search](https://www.mongodb.com/docs/atlas/atlas-search/searching/);
   * implemented a large set of improvements that help
     [**avoiding connection storms**](https://jira.mongodb.org/browse/JAVA-3890);
     the most interesting parts are

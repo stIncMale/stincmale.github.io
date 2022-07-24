@@ -5,7 +5,7 @@ title: Simulating Rust's <code>Self</code> keyword via generics in Java
 categories: [tech]
 tags: [Java, Rust]
 date: 2022-04-15T10:40:00Z
-custom_update_date: 2022-04-29T03:25:00Z
+custom_update_date: 2022-07-24T03:02:00Z
 custom_keywords: [Rust, Java, Self]
 custom_description: Rust allows referring to an unknown type in some contexts, e.g., referring to the implementing type within a trait, by using the &quot;Self&quot; keyword. While there is no counterpart of this keyword in Java, we can simulate it via generic classes, and achieve interesting results like being able to use &quot;Object.clone&quot; on a type that does not override it without resorting to cast expressions.
 ---
@@ -156,11 +156,10 @@ The full code and tests can be found
 and
 [here](https://github.com/stIncMale/sandbox-java/tree/master/examples/src/test/java/stincmale/sandbox/examples/self)
 respectively.
-I am
-[planning](https://github.com/mongodb/mongo-java-driver/pull/891/files#diff-169ed033153b41d22b7c6c2741c535a7c66d27cf7930e1a4c260284598236f7e)
-to
-[use the discussed approach for emulating `Self`](https://github.com/mongodb/mongo-java-driver/blob/062994027a96660223199924ee92b526639424df/driver-core/src/main/com/mongodb/internal/client/model/AbstractConstructibleBson.java#L61-L69)
-in production code in a situation resembling the one we have considered above.
+I
+[used](https://github.com/mongodb/mongo-java-driver/blob/6355a4df6130e7bedf13cedf6c71ca111d99dc2a/driver-core/src/main/com/mongodb/internal/client/model/AbstractConstructibleBson.java)
+the discussed approach for emulating `Self` in [MongoDB Java Drivers]
+in a situation resembling the one we have considered above.
 
 ## [](#shattered-hopes){:.section-link}Shattered hopes {#shattered-hopes}
 

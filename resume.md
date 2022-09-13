@@ -60,7 +60,7 @@ Concurrency and distributed systems
       </td>
     </tr>
     <tr class="resume-table-no-background">
-      <td><code>DBMSs</code></td>
+      <td><abbr data-title="Database Management System"><code>DBMSs</code></abbr></td>
       <td>
         <a href="https://www.postgresql.org/">PostgreSQL</a>,
         <a href="https://redis.io/">Redis</a> + <a href="https://redis.io/topics/sentinel">Sentinel</a>,

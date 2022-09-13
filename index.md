@@ -46,6 +46,7 @@ This tag is now quite useless because I suppose I am the only one who still uses
 I also was taking part for 3 years in developing (unfortunately mobile) games at [ZeptoLab](https://youtu.be/mAXjQvJ2Umo).
 
 Following are examples of YouTube channels I am subscribed to and watching regularly, which may tell you something about my interests beyond professional ones:
+
 * [3Blue1Brown](https://www.youtube.com/3blue1brown)<span class="insignificant">&nbsp;by [Grant Sanderson](https://www.3blue1brown.com/about#about-the-author)</span>\\
   <span class="insignificant">A combination of math and entertainment, depending on your disposition.</span>
 * [Robert Miles](https://www.youtube.com/RobertMilesAI)\\
@@ -64,6 +65,10 @@ Following are examples of YouTube channels I am subscribed to and watching regul
   <span class="insignificant">Videos on basic particle physics and cosmology.</span>
 * [World Science Festival](https://www.youtube.com/WorldScienceFestival)<span class="insignificant">&nbsp;by [World Science Foundation](https://www.worldsciencefestival.com/about/meet-our-team/), hosted by [Brian Greene](https://www.briangreene.org/)</span>\\
   <span class="insignificant">Long and short-form videos on nearly every science-related topic including physics, biology, the brain, robotics, medicine, space, engineering, and the Earth.</span>
+* [Jordan B Peterson](https://www.youtube.com/JordanPetersonVideos)\\
+  <span class="insignificant">Jordan B. Peterson is a Canadian professor of psychology,
+  clinical psychologist, YouTube personality. This channel features videos from his classes,
+  his podcasts, interviews, book tours and lectures.</span>
 
 [^1]: Albert Einstein went even further than Lewis Carroll in his general theory of relativity, which tells us that in curved spacetime a body must
     have non-zero proper acceleration (it may be measured by an accelerometer) to stay in the same place.

@@ -8,8 +8,8 @@ custom_description: My personal website. Software engineering articles/notes/tho
 
 <figure style="display: block">
   {%- comment -%}<!-- -webkit-clip-path is for iOS Safari -->{%- endcomment -%}
-  <img src="{% link /assets/img/face.png %}" alt="Me" style="clip-path: circle(49% at 50% 50%); -webkit-clip-path: circle(49% at 50% 50%); width: 12em; height: auto; display: block; margin-left: auto; margin-right: auto;">
-  <figcaption>2016, July</figcaption>
+  <img src="{% link /assets/img/face.webp %}" alt="Me" style="clip-path: circle(50% at 50% 50%); -webkit-clip-path: circle(50% at 50% 50%); width: 12em; height: auto; display: block; margin-left: auto; margin-right: auto;">
+  <figcaption>2022, August</figcaption>
 </figure>
 
 `Profession` | **Server-side software engineer (Java)** interested in concurrency and distributed systems.

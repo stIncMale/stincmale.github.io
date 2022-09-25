@@ -5,7 +5,7 @@ title: Useful resources on memory models
 categories: [tech]
 tags: [concurrency, memory model, C, C++, Rust, Java]
 date: 2022-09-25T12:00:00Z
-custom_update_date: 2022-09-25T12:00:00Z
+custom_update_date: 2022-09-26T04:10:00Z
 custom_keywords: [C memory model, C++ memory model, Rust memory model, Java memory model, JMM]
 custom_description: A list of resources on memory models and accompanying topics.
 ---
@@ -35,8 +35,8 @@ Specification-like resources:
    * [`memory_order`](https://en.cppreference.com/w/c/atomic/memory_order)
    * [`atomic_thread_fence`](https://en.cppreference.com/w/c/atomic/atomic_thread_fence),
      [`atomic_signal_fence`](https://en.cppreference.com/w/c/atomic/atomic_signal_fence)
-* [Atomic operations](https://en.cppreference.com/w/c/atomic)
-   * [`_Atomic`](https://en.cppreference.com/w/c/language/atomic)
+   * [Atomic operations](https://en.cppreference.com/w/c/atomic)
+      * [`_Atomic`](https://en.cppreference.com/w/c/language/atomic)
 
 Free-form resources:
 
@@ -85,7 +85,11 @@ Specification-like resources:
 
 * [Memory model (JMM)](https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls-17.4)
   * [`java.lang.invoke.VarHandle.AccessMode`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html)[^4]
-  * [`java.lang.invoke.VarHandle.releaseFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#releaseFence())/<wbr>[`acquireFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#acquireFence())/<wbr>[`fullFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#fullFence())/<wbr>[`loadLoadFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#loadLoadFence())/<wbr>[`storeStoreFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#storeStoreFence())[^5]
+  * [`java.lang.invoke.VarHandle.releaseFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#releaseFence())/<wbr>
+    [`acquireFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#acquireFence())/<wbr>
+    [`fullFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#fullFence())/<wbr>
+    [`loadLoadFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#loadLoadFence())/<wbr>
+    [`storeStoreFence`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.html#storeStoreFence())[^5]
   * ["Using JDK 9 Memory Order Modes"](http://gee.cs.oswego.edu/dl/html/j9mm.html)<span class="insignificant">&nbsp;by [Doug Lea](http://gee.cs.oswego.edu/)</span>[^6]
   * [`java.util.concurrent.atomic`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)
 
@@ -94,7 +98,7 @@ Free-form resources:
 * ["Close Encounters of The Java Memory Model Kind"](https://shipilev.net/blog/2016/close-encounters-of-jmm-kind/)<span class="insignificant">&nbsp;by [Aleksey Shipilëv](https://shipilev.net/)</span>
 * ["Java 9 VarHandles Best practices, and why?"](https://youtu.be/w2zaqhFczjY)<span class="insignificant">&nbsp;by [Tobi Ajila](https://github.com/tajila)</span>
 * ["The JSR-133 Cookbook for Compiler Writers"](http://gee.cs.oswego.edu/dl/jmm/cookbook.html)<span class="insignificant">&nbsp;by [Doug Lea](http://gee.cs.oswego.edu/)</span>
-* ["What do `Atomic*::lazySet`/`Atomic*FieldUpdater::lazySet`/`Unsafe::putOrdered*` actually mean?"](https://psy-lob-saw.blogspot.com/2016/12/what-is-lazyset-putordered.html)<span class="insignificant">&nbsp;by [Nitsan Wakart](https://github.com/nitsanw)</span>
+* ["What do `Atomic*::lazySet`/<wbr>`Atomic*FieldUpdater::lazySet`/<wbr>`Unsafe::putOrdered*` actually mean?"](https://psy-lob-saw.blogspot.com/2016/12/what-is-lazyset-putordered.html)<span class="insignificant">&nbsp;by [Nitsan Wakart](https://github.com/nitsanw)</span>
 * ["Java `final` field semantics"]({% post_url 2014-01-01-java-final-field-semantics %})
 * ["A Formalization of Java's Concurrent Access Modes"](http://compiler.cs.ucla.edu/papers/jam/)<span class="insignificant">&nbsp;by [John Bender](https://johnbender.us/), [Jens Palsberg](https://web.cs.ucla.edu/~palsberg/)</span>
 

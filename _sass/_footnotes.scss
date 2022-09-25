@@ -18,30 +18,64 @@ a.footnote {
   }
 }
 
-@keyframes bounce {
+@keyframes blink {
   from {
-    padding-left: 0em; 
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
   }
 
-  25% {
-    padding-left: 1em;
+  9% {
+    text-decoration: none;
   }
 
-  50% {
-    padding-left: 0em;
+  18% {
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
   }
 
-  75% {
-    padding-left: 0.5em;
+  27% {
+    text-decoration: none;
+  }
+
+  36% {
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
+  }
+
+  45% {
+    text-decoration: none;
+  }
+
+  54% {
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
+  }
+
+  63% {
+    text-decoration: none;
+  }
+
+  72% {
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
+  }
+
+  81% {
+    text-decoration: none;
+  }
+
+  90% {
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
   }
 
   to {
-    padding-left: 0em;
+    text-decoration: none;
   }
 }
 sup:target {
-  animation-name: bounce;
-  animation-duration: 0.5s;
+  animation-name: blink;
+  animation-duration: 1.3s;
 }
 
 a.reversefootnote::after {

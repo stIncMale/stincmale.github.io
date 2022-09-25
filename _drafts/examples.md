@@ -25,19 +25,19 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2022-07-24T03:34:00Z
+custom_update_date: 2022-09-25T12:03:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.
 ---
-{% comment %}<!--
-  Use -draft (actually it is double hyphen, but those are not allowed inside comments) e.g.
-    bundle exec jekyll serve -draft
+{% comment %}
+  Use --draft, e.g.
+    bundle exec jekyll serve --draft
   to start Jekyll server that serves draft posts;
   alternatively specify
     show_drafts: true
   in _config.yml.
--->{% endcomment %}
+{% endcomment %}
 
 {% include common-links-abbreviations.md %}
 
@@ -61,19 +61,19 @@ Text before ToC.
 ### [](#uris-to-check){:.section-link}URIs to check with [W3C markup validator](https://validator.w3.org/), [W3C CSS validator](https://jigsaw.w3.org/css-validator/), [W3C feed validator](https://validator.w3.org/feed/) {#uris-to-check}
 
 * W3C markup validator
-  * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
-  * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
-  * [https://www.kovalenko.link/lyrics](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Flyrics)
-  * [https://www.kovalenko.link/resume](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fresume)
-  * [https://www.kovalenko.link/blog/tags/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags%2F)
-  * [https://www.kovalenko.link/blog/cgi-vfx/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2F)
-  * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
-  * [https://www.kovalenko.link/blog/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fnetcracker-sportfest)
-  * [https://www.kovalenko.link/blog/rust-self-in-java](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Frust-self-in-java)
+   * [view-source:http://127.0.0.1:4000/blog/examples](view-source:http://127.0.0.1:4000/blog/examples)
+   * [https://www.kovalenko.link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2F)
+   * [https://www.kovalenko.link/lyrics](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Flyrics)
+   * [https://www.kovalenko.link/resume](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fresume)
+   * [https://www.kovalenko.link/blog/tags/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftags%2F)
+   * [https://www.kovalenko.link/blog/cgi-vfx/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fcgi-vfx%2F)
+   * [https://www.kovalenko.link/blog/tech/](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Ftech%2F)
+   * [https://www.kovalenko.link/blog/netcracker-sportfest](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fnetcracker-sportfest)
+   * [https://www.kovalenko.link/blog/memory-model-resources](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.kovalenko.link%2Fblog%2Fmemory-model-resources)
 * W3C feed validator
-  * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
+   * [https://www.kovalenko.link/feed.xml](https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fwww.kovalenko.link%2Ffeed.xml)
 * W3C CSS validator
-  * [https://www.kovalenko.link/assets/css/style.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.kovalenko.link%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   * [https://www.kovalenko.link/assets/css/style.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.kovalenko.link%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 <!-- see https://kramdown.gettalong.org/syntax.html#specifying-a-header-id for details -->
 ## [](#h2){:.section-link}Header `<h2>` {#h2}
@@ -181,17 +181,22 @@ long text.
 
       Another paragraph.
    3. Ordered list item 4c.
+      * Unordered list item.
+         1. Ordered list item.
+
+            With a second paragraph.
+      * Another unordered list item.
    4. Ordered list item 4d.
 5. Ordered list item 5.
 6. Ordered list item 6.
 
 Normal text.
 * Hyphens and dashes (see <https://www.grammarly.com/blog/hyphens-and-dashes/>)
-  * Hyphen (actually, hyphen-minus because keyboards do not have actual hyphens) - <q>This 
-    rock-hard cake is absolutely impossible to eat.</q>
-  * En dash &ndash; <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
-  * Em dash &mdash; <q>He is afraid of two things&mdash;spiders and senior prom.</q>
-* Ellipsis … <q>Andrew, can you, um … never mind.</q>
+   * Hyphen (actually, hyphen-minus because keyboards do not have actual hyphens) `-` <q>This 
+     rock-hard cake is absolutely impossible to eat.</q>
+   * En dash `–` <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
+   * Em dash `—` <q>He is afraid of two things&mdash;spiders and senior prom.</q>
+* Ellipsis `…` <q>Andrew, can you, um … never mind.</q>
 
 ## [](#footnotes){:.section-link}Footnotes {#footnotes}
 

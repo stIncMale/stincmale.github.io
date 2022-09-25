@@ -8,6 +8,7 @@
 [Jakarta EE]: <https://jakarta.ee/specifications/>
 [Jakarta Enterprise Edition Platform (Jakarta EE)]: <https://jakarta.ee/specifications/>
 [JMH]: <https://github.com/openjdk/jmh>
+[jcstress]: <https://github.com/openjdk/jcstress>
 [OpenJDK]: <https://openjdk.java.net/>
 [OpenJDK JDK]: <https://openjdk.java.net/projects/jdk/>
 [Oracle JDK]: <https://www.oracle.com/java/technologies/downloads/>
@@ -25,6 +26,9 @@
 [LDAP]: <https://www.rfc-editor.org/rfc/rfc4510>
 [Rust]: <https://www.rust-lang.org/>
 [JSON]: <https://www.rfc-editor.org/rfc/rfc8259.html>
+[CAP]: <https://www.researchgate.net/publication/2540896_Brewer's_Conjecture_and_the_Feasibility_of_Consistent_Available_Partition-Tolerant_Web_Services>
+[CAP theorem]: <https://www.researchgate.net/publication/2540896_Brewer's_Conjecture_and_the_Feasibility_of_Consistent_Available_Partition-Tolerant_Web_Services>
+[PACELC]: <https://www.researchgate.net/publication/220476540_Consistency_Tradeoffs_in_Modern_Distributed_Database_System_Design_CAP_is_Only_Part_of_the_Story>
 [concurrent]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [authentication]: <{% post_url 2013-12-31-identification-vs-authentication-vs-authorization %}#authentication>
@@ -62,6 +66,10 @@
 {:data-title="High Dynamic Range"}
 *[ACID]:
 {:data-title="Atomicity, Consistency, Isolation, Durability"}
+*[CAP]:
+{:data-title="if partitions are possible, then Consistency, Availability, Partition-tolerance cannot all be always provided"}
+*[PACELC]:
+{:data-title="if there is a Partition, then Availability vs Consistency; Else, Latency vs Consistency"}
 *[SSI]:
 {:data-title="Serializable Snapshot Isolation"}
 *[DBMS]:
@@ -106,6 +114,8 @@
 {:data-title=" Java Native Interface"}
 *[JMH]:
 {:data-title="Java Microbenchmark Harness"}
+*[jcstress]:
+{:data-title="Java Concurrency Stress"}
 *[SLF4J]:
 {:data-title="Simple Logging Facade for Java"}
 *[JPA]:

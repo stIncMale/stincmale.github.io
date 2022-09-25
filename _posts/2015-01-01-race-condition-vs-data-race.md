@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2022-04-03T09:43:00Z
+custom_update_date: 2022-09-25T12:02:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -135,7 +135,7 @@ We can get rid of the race condition in our program by waiting until `flag` beco
 (the approach is only used for demonstration purposes, so please do not copy it blindly to a real code because there are more sane ways
 of accomplishing the same goal):
 
-{% comment %}<!-- The character '∈' used here is ELEMENT OF -->{% endcomment %}
+{% comment %}The character '∈' used here is ELEMENT OF{% endcomment %}
 ```java
 class FixedRaceConditionExample {
     static volatile boolean flag = false; // w0
@@ -251,7 +251,7 @@ and a [concurrency-interest discussion](http://cs.oswego.edu/pipermail/concurren
 
 [^4]: More links to resources about the JMM and its new developments like
     [access modes](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/invoke/VarHandle.AccessMode.html)
-    may be found [here]({% post_url 2014-01-01-java-final-field-semantics %}#links).
+    may be found [here]({% post_url 2022-09-25-memory-model-resources %}).
 
 [^5]: Here we are ignoring any shared variables used inside <code>ForkJoinPool.commonPool()<wbr>.execute(<wbr>DataRaceExample::raiseFlag)</code> without loss of generality.
 

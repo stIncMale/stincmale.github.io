@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2021-12-19T18:36:00Z
+custom_update_date: 2022-09-25T03:57:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism&mdash;a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -60,7 +60,7 @@ While it is true that physical and logical time are concepts similar in that the
 it is easy to forget that the order of actions in a specific system or a computing model is not necessarily correlated with the physical time[^3],
 let alone that it is often incorrect to assume that there is an absolute physical time in a distributed system.
 Just like using the word "time" may be misleading, using the words "now", "immediate"
-may also be misleading, see [Disambiguating "now" and "immediate"]({% post_url 2013-08-01-now-immediate %}) for more details.
+may also be misleading, see ["Disambiguating "now" and "immediate"]({% post_url 2013-08-01-now-immediate %}) for more details.
 
 ## [](#source-of-confusion){:.section-link}A possible source of confusion {#source-of-confusion}
 The concepts of parallelism and concurrency are likely often confused because the corresponding techniques affect each other:

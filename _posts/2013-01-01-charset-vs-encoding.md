@@ -6,7 +6,7 @@ categories: [tech]
 tags: [disambiguation]
 date: 2013-01-01T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2022-04-23T09:42:00Z
+custom_update_date: 2022-09-25T03:55:00Z
 custom_keywords: [charset, encoding, character map, CM, coded character set, CCS, character encoding form, CEF, character encoding scheme, CES, Universal Coded Character Set, UCS, UCS Transformation Format, UTF, Unicode]
 custom_description: Charset, a.k.a. character map (CM) = coded character set (CCS) + character encoding form (CEF) + character encoding scheme (CES).
 ---
@@ -36,7 +36,7 @@ custom_description: Charset, a.k.a. character map (CM) = coded character set (CC
 I have always been discouraged by the fact that the words "charset" and "encoding" seem to be
 used interchangeably&mdash;if they are the same term, why use both words?
 * The [HTML specification](https://html.spec.whatwg.org/multipage/) uses both words interchangeably:
-<q>"The <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset">`charset`</a> attribute specifies the character <a href="https://encoding.spec.whatwg.org/#encoding">encoding</a> used by the document."</q>
+<q>"The [`charset`](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset) attribute specifies the character [encoding](https://encoding.spec.whatwg.org/#encoding) used by the document."</q>
 * The [XML specification](https://www.w3.org/TR/xml/) seems to do a similar thing, only it specifies a declaration named `encoding` instead of `charset`,
 but [recommends](https://www.w3.org/TR/xml/#charencoding) the names of [IANA charsets](https://www.iana.org/assignments/character-sets/character-sets.xhtml) to be specified as values:
 <q>"It is recommended that character encodings registered (as charsets) with the Internet Assigned Numbers Authority, other than those just listed,
@@ -152,7 +152,7 @@ UTF-8 charset = UCS CCS + UTF-8 CEF + UTF-8 CES.
     [16-bit unsigned integers representing UTF-16 code units](https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2).
     This is because the Java language was unfortunate enough to appear when Unicode
     was still representing all abstract characters as 16-bit numbers, i.e., it was representing 
-    less characters than it currently does. Since then, the Java SE
+    less characters than it does currently. Since then, the Java SE
     [`String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html) class
     gained methods that can work with Unicode code points, but the
     [`char`](https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2) stayed unchanged

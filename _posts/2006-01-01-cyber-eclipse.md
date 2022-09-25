@@ -6,13 +6,13 @@ categories: [cgi-vfx]
 tags: [game highlights, Unreal Tournament]
 date: 2006-01-01T12:00:00Z
 custom_post_date: 2006
-custom_update_date: 2020-07-11T18:03:00Z
+custom_update_date: 2022-09-25T03:50:00Z
 custom_keywords: [game highlights, frag highlights, Unreal Tournament 2004, UT2004, Unreal Tournament, UT]
 custom_description: A game highlights Unreal Tournament 2004 video.
 ---
 {% include common-links-abbreviations.md %}
 
-After a "pilot" video [Male vs Godlike]({% post_url 2005-01-01-male-vs-godlike %}) I decided to make a really good and "serious" game highlights video,
+After a "pilot" video ["Male vs Godlike"]({% post_url 2005-01-01-male-vs-godlike %}) I decided to make a really good and "serious" game highlights video,
 and this is the result.
 
 <div class="info-block" markdown="1">

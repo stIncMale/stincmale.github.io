@@ -5,13 +5,13 @@ title: Smoke to text in Adobe After Effects CS3
 categories: [cgi-vfx]
 tags: [archived, tutorial]
 date: 2011-01-05T12:00:00Z
-custom_update_date: 2020-12-03T03:22:00Z
+custom_update_date: 2022-09-25T03:53:00Z
 custom_description: This tutorial presents a way to make a smoke to text (or vice versa) effect in Adobe After Effects using only out of the box functionality.
 ---
 {% include common-links-abbreviations.md %}
 
 This tutorial presents a way[^1] to make a smoke to text (or vice versa) effect in Adobe After Effects using only out of the box functionality.
-I used this technique in the game highlights video [No sense]({% post_url 2011-08-13-no-sense %}).
+I used this technique in the game highlights video ["No sense"]({% post_url 2011-08-13-no-sense %}).
 
 {% include youtube-video.html content = "ULnth5oqNEw , maxresdefault , iframe-ratio-16-9 , Smoke to Text in Adobe After Effects CS3" %}
 

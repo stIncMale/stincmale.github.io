@@ -5,17 +5,19 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2022-02-26T03:21:00Z
+custom_update_date: 2022-09-25T03:56:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
-custom_description: When using the word &quot;now&quot; with regard to a logical system, consider if it is actually applicable to the system, and even if it is applicable, do you actually need it? Use the word &quot;immediately&quot; only to express ordering relations because its temporal meaning is vague.
+custom_description: An attempt to consider with some rigor what &quot;now&quot; means when used with respect to something physical, that is, the universe or its part, or something logical, e.g., a data object.
 ---
 {% include common-links-abbreviations.md %}
 
 {% include toc.md %}
 
 ## [](#now){:.section-link}Now {#now}
-The notion of "now" seems to be a good enough illusion for everyday perception of time[^1]. Let us consider with some rigor what "now" means
-when used with respect to something physical, that is, the universe or its part, or something logical, e.g., a data object.
+The notion of "now" seems to be a good enough illusion for everyday perception of time[^1].
+This writeup is my attempt to consider with some rigor what "now" means
+when used with respect to something physical, that is, the universe or its part,
+or something logical, e.g., a data object.
 Having the current state of a system `X` assumes
 * existence of absolute time, a.k.a. global time, which allows us to talk about snapshots of `X`;
 * the ability to stop time and explore a snapshot of `X` while `X` is not changing, as otherwise, the snapshot would not be the current one.
@@ -154,7 +156,7 @@ See also ["There is No Now: Problems with simultaneity in distributed systems"](
     * ["The Richness of Time"](https://youtu.be/1FJWvEbeBps)\\
       <span class="insignificant">Participants: [Lera Boroditsky](http://lera.ucsd.edu/), [Dean Buonomano](https://en.wikipedia.org/wiki/Dean_Buonomano); moderator: [Brian Greene](https://www.briangreene.org/)</span> 
 
-[^2]: By the way, despite the paper does not mention the term "consistent cut",
+[^2]: By the way, despite the paper not mentioning the term "consistent cut",
     it is widely used by the community when talking about the snapshot algorithm described in the paper.
 
 [^3]: The word "atomic" is overloaded: it is used both as a synonym of being linearizable (by the way, a `volatile` field in Java is a linearizable register)

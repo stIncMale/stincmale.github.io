@@ -6,7 +6,7 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2022-04-15T11:50:00Z
+custom_update_date: 2022-09-25T03:54:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: Beware of using SQL timestamp without time zone as you may not only loose time zone information but also make your application behavior dependent on the machine time zone.
 ---
@@ -96,6 +96,6 @@ the time zone information is not lost, and the behavior does not depend on the [
 [Junit 5] tests illustrating the problem and the solutions: [`JdbcTimestampIntegrationTest.java`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampIntegrationTest.java).
 
 [^1]: Java Time-Scale is similar to Epoch Time, a.k.a. POSIX time,
-    see [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/)
-    [4.16 Seconds Since the Epoch](https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/basedefs/V1_chap04.html#tag_04_16)
+    see [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799)
+    [4.16 Seconds Since the Epoch](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html#tag_04_16)
     and [A.4.16 Seconds Since the Epoch](https://pubs.opengroup.org/onlinepubs/9699919799/xrat/V4_xbd_chap04.html#tag_21_04_16).

@@ -5,7 +5,7 @@ title: Useful resources on memory models
 categories: [tech]
 tags: [concurrency, memory model, C, C++, Rust, Java]
 date: 2022-09-25T12:00:00Z
-custom_update_date: 2022-09-26T04:10:00Z
+custom_update_date: 2022-09-27T06:00:00Z
 custom_keywords: [C memory model, C++ memory model, Rust memory model, Java memory model, JMM]
 custom_description: A list of resources on memory models and accompanying topics.
 ---
@@ -43,7 +43,7 @@ Free-form resources:
 * ["Modern C"](https://gustedt.gitlabpages.inria.fr/modern-c/)<span class="insignificant">&nbsp;by [Jens Gustedt](https://icps.icube.unistra.fr/index.php/Jens_Gustedt)</span>,
   chapters:
    * ["17. Variations in control flow"](https://livebook.manning.com/book/modern-c/chapter-17)
-   * ["18. Threads"](https://livebook.manning.com/book/modern-c/chapter-17)
+   * ["18. Threads"](https://livebook.manning.com/book/modern-c/chapter-18)
    * ["19. Atomic access and memory consistency"](https://livebook.manning.com/book/modern-c/chapter-19)
 
 {% comment %} I found no way to use '+' as the `id` attribute in a header.

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [JDBC, Java]
 date: 2012-01-01T12:00:00Z
 custom_post_date: 2012
-custom_update_date: 2022-09-25T03:54:00Z
+custom_update_date: 2022-11-08T06:20:00Z
 custom_keywords: [PreparedStatement.setTimestamp, setTimestamp, ResultSet.getTimestamp, getTimestamp, timestamp, time zone, timezone, timestamp without time zone, timestamp with time zone, OffsetDateTime, LocalDateTime, PreparedStatement.setObject, setObject, ResultSet.getObject, getObject]
 custom_description: Beware of using SQL timestamp without time zone as you may not only loose time zone information but also make your application behavior dependent on the machine time zone.
 ---
@@ -28,7 +28,7 @@ custom_description: Beware of using SQL timestamp without time zone as you may n
 ## [](#situation){:.section-link}Situation {#situation}
 
 Imagine the following Java application:
-* it stores timestamp data in a DB via JDBC and reads them back;
+* it stores timestamp data in a DB via JDBC and reads it back;
 * in the DB timestamps are represented as [`timestamp [without time zone]`](https://www.postgresql.org/docs/current/datatype-datetime.html) SQL data type
 (the Java SE API counterpart is [`JDBCType.TIMESTAMP`]);
 * in the application timestamps are represented as [`Timestamp`].
@@ -93,7 +93,7 @@ This is the best solution we may have because it uses immutable [`OffsetDateTime
 the time zone information is not lost, and the behavior does not depend on the [default time zone].
 
 ## [](#examples){:.section-link}Examples {#examples}
-[Junit 5] tests illustrating the problem and the solutions: [`JdbcTimestampIntegrationTest.java`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampIntegrationTest.java).
+[Junit 5] tests illustrating the problem and the solutions: [`JdbcTimestampItTest.java`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/test/java/stincmale/sandbox/examples/brokentimestamps/JdbcTimestampItTest.java).
 
 [^1]: Java Time-Scale is similar to Epoch Time, a.k.a. POSIX time,
     see [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799)

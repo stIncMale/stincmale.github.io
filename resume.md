@@ -118,7 +118,7 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
     * [refactored read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782);
   * investigated and fixed an interesting
     [**performance** degradation](https://jira.mongodb.org/browse/JAVA-4452?focusedCommentId=4316187&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-4316187)
-    caused by fair locking without blowing up high percentile latencies.
+    caused by fair locking, without blowing up the tail latency.
 * **[MongoDB Kafka Connector](https://www.mongodb.com/docs/kafka-connector/)**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-kafka).
 </div>

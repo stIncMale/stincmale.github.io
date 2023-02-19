@@ -109,16 +109,20 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
     [implemented](https://github.com/mongodb/mongo-java-driver/commit/1812865f234b2d9c9ab27ea760959ded152d51ac)
     a **[query building API](https://mongodb.github.io/mongo-java-driver/4.7/apidocs/mongodb-driver-core/com/mongodb/client/model/search/package-summary.html)**
     for [MongoDB Atlas Search](https://www.mongodb.com/docs/atlas/atlas-search/searching/);
+  * investigated and fixed an interesting
+    [**performance** degradation](https://jira.mongodb.org/browse/JAVA-4452?focusedCommentId=4316187&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-4316187)
+    caused by fair locking, without blowing up the tail latency;
+    {% comment %}
+      If the ticket becomes unavailable, the PDF version is in
+      `My Drive/programming/from previous jobs/MongoDB`.
+    {% endcomment %}
   * implemented a large set of improvements that help
     [**avoiding connection storms**](https://jira.mongodb.org/browse/JAVA-3890);
     the most interesting parts are
     * implemented a
       [mechanism of limiting the number of connections that can be established concurrently](https://github.com/mongodb/mongo-java-driver/blob/8c68972b6b5278bc42b702b6837236b2c6fedbc2/driver-core/src/main/com/mongodb/internal/connection/DefaultConnectionPool.java#L830-L1118),
       featuring the connection hand-over mechanism to support fairness;
-    * [refactored read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782);
-  * investigated and fixed an interesting
-    [**performance** degradation](https://jira.mongodb.org/browse/JAVA-4452?focusedCommentId=4316187&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-4316187)
-    caused by fair locking, without blowing up the tail latency.
+    * [refactored read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782).
 * **[MongoDB Kafka Connector](https://www.mongodb.com/docs/kafka-connector/)**
   * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-kafka).
 </div>
@@ -135,18 +139,18 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
 * **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
   (Tomcat, PostgreSQL, Hibernate ORM)&mdash;stores and manages issues detected by code analysis tools
   * designed and developed **export/import** functionality (the technical side is more complex than it sounds) in pair with a colleague,
-  designed and implemented support of this functionality in a **cluster environment** on my own;
-  {% comment %}
-    See https://drive.google.com/file/d/1DPblQZxZavvnR5Kh1wk9e9MVFyjEf-gs/view?usp=sharing,
-    https://gist.github.com/stIncMale/1db6608396edb35a1cc19894f430b5a2.
-    Also used listen/notify and advisory locks https://gist.github.com/stIncMale/c39903afe4cfde8cea1b1998494ee5e1.
-    Listen/notify was used to improve reaction of one process waiting for new rows inserted by another process;
-    this was used to delete exported streams.
-  {% endcomment %}   
+    designed and implemented support of this functionality in a **cluster environment** on my own;
+    {% comment %}
+      See `My Drive/programming/from previous jobs/Synopsys`,
+      https://gist.github.com/stIncMale/1db6608396edb35a1cc19894f430b5a2.
+      Also used listen/notify and advisory locks https://gist.github.com/stIncMale/bd673f5680e390f6f23ee308bd489f0d.
+      Listen/notify was used to improve reaction of one process waiting for new rows inserted by another process;
+      this was used to delete exported streams.
+    {% endcomment %}
   * **migrated from JDK 8 to JDK 11**, took me about 1.5 months in case you are curious;
   * **cluster**&mdash;identified and fixed/mitigated multiple bugs, including replication failures caused by
     * incorrect inference of the order of replicated changes,
-    here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
+      here is my [related blog post]({% post_url 2018-07-30-data-replication-pitfall %});
     * broken transaction isolation due to incorrect cache strategy;
     {% comment %}
       Cluster: a coordinator and subscribers with read-only config. Coordinator replicates config (users, roles, groups, triage stores, etc. to subscribers).
@@ -162,7 +166,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
       An actual fix was not feasible due to complexity and resource intensity.
     {% endcomment %}
   * incremental updates functionality&mdash;allows automatically updating client applications;
-  fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
+    fixed a number of bugs, optimized the process of downloading updates so that updates that are not needed or have been cached would not be downloaded.
 </div>
 
 <h6 class="resume-h">
@@ -236,8 +240,8 @@ _Software programmer_ / <span class="resume-insignificant">Apr 2010&ndash;Aug 20
 * [**TELUS Self Service Portal**](https://www.telus.com) (JMS, WebLogic Server, Oracle Database)
   * integrated with **Oracle OpenSSO**;
   * **availability**&mdash;developed functionality allowing front-end servers to persist
-  and later initiate asynchronous execution of tasks on back-ends.
-  This allowed users to use some features of the portal even when back-end servers are temporarily unavailable.
+    and later initiate asynchronous execution of tasks on back-ends.
+    This allowed users to use some features of the portal even when back-end servers are temporarily unavailable.
 * **Data objects**, a homegrown persistence library&mdash;developed various **concurrent caches**.
 * Implemented **OpenID authentication**.
 * **Data migration** (Oracle Database, Oracle PL/SQL).

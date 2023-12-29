@@ -6,7 +6,7 @@
     white-space: nowrap;
 
     li {
-      margin-bottom: calc($spacing-unit-em / 0.75);
+      margin-bottom: $spacing-unit-em / 0.75;
 
       a {
         color: $site-navigation-menu-font-color;

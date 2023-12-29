@@ -59,14 +59,14 @@ div.info-block {
 }
 li > ol,
 li > ul {
-  margin-top: calc($spacing-unit-em / 2);
+  margin-top: $spacing-unit-em / 2;
   margin-bottom: 0em;
 }
 li p {
-    margin-bottom: calc($spacing-unit-em / 3);
+    margin-bottom: $spacing-unit-em / 3;
 }
 li {
-  margin-bottom: calc($spacing-unit-em / 2);
+  margin-bottom: $spacing-unit-em / 2;
 }
 
 /**
@@ -186,7 +186,7 @@ abbr {
       content: attr(data-title);
       border-radius: $border-radius;
       color: $info-font-color;
-      background: lighten($info-background-color, calc($border-color-darken-percentage / 4));
+      background: lighten($info-background-color, $border-color-darken-percentage / 4);
       border: $border-widthstyle darken($info-background-color, $border-color-darken-percentage);
     }
   }

@@ -48,7 +48,7 @@ a.button {//the image inside should define the size of the button, not the <a> e
   #site-logo {
     height: 1.85em;
     overflow: hidden;
-    margin-bottom: calc($spacing-unit-em / 0.75);
+    margin-bottom: $spacing-unit-em / 0.75;
   
     img {
       position: relative;

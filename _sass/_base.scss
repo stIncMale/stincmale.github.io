@@ -359,6 +359,7 @@ samp, kbd, var,
 code,
 .monospace {
   font-family: $monospace-font-family;
+  font-variant-ligatures: none;
   font-size: $inline-monospace-font-size;
 }
 // inline code

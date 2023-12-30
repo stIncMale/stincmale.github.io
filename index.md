@@ -8,7 +8,7 @@ custom_description: My personal website. Software engineering articles/notes/tho
 
 <figure style="display: block">
   {%- comment -%}<!-- -webkit-clip-path is for iOS Safari -->{%- endcomment -%}
-  <img src="{% link /assets/img/face.webp %}" alt="Me" style="clip-path: circle(50% at 50% 50%); -webkit-clip-path: circle(50% at 50% 50%); width: 12em; height: auto; display: block; margin-left: auto; margin-right: auto;">
+  <img src="{% link /assets/img/face.jpg %}" alt="Me" style="clip-path: circle(50% at 50% 50%); -webkit-clip-path: circle(50% at 50% 50%); width: 12em; height: auto; display: block; margin-left: auto; margin-right: auto;">
   <figcaption>2022, August</figcaption>
 </figure>
 

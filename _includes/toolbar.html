@@ -4,8 +4,8 @@
   </div>
   <div id="site-search-form-container">
     <form id="site-search-form" method="get" action="https://www.google.com/search" target="_self" autocomplete="off">
-      <input type="hidden" name="sitesearch" value="{{ site.url | remove_first: "http://" | remove_first: "https://" }}"/>
-      <input type="search" name="q" placeholder="" title="Search" required/>
+      <input type="hidden" name="sitesearch" value="{{ site.url | remove_first: "http://" | remove_first: "https://" }}">
+      <input type="search" name="q" placeholder="" title="Search" required>
     </form>
   </div>
   {%- include site-navigation-menu.html content = "site-navigation-portrait-menu" -%}

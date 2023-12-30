@@ -171,7 +171,7 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
 
 <h6 class="resume-h">
   <a href="https://www.zeptolab.com/" title="ZeptoLab">
-    <img src="{% link /assets/img/resume/zeptolab-logo.webp %}" alt="Logo" style="width: auto; height: 1.4em;">
+    <img src="{% link /assets/img/resume/zeptolab-logo.png %}" alt="Logo" style="width: auto; height: 1.4em;">
     ZeptoLab
   </a>
   / <span class="resume-insignificant resume-normal-font-weight">Moscow, Russia</span>

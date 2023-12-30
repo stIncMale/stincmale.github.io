@@ -18,9 +18,9 @@
     <meta name="robots" content="noindex">
   {%- endif -%}
   <meta name="author" content="{{ site.custom_author }}">
-  <meta property="og:title" content="{{ og_title }}"/>
-  <meta property="og:image" content="{% link assets/img/site-logo.png %}"/>{%- comment -%}<!-- The aspect ratio of this image is for LinkedIn, but also works with Telegram -->{%- endcomment -%}
-  <meta property="og:image" content="{% link assets/img/favicon.png %}"/>{%- comment -%}<!-- WatsApp takes the last og:image -->{%- endcomment -%}
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:image" content="{% link assets/img/site-logo.png %}">{%- comment -%}<!-- The aspect ratio of this image is for LinkedIn, but also works with Telegram -->{%- endcomment -%}
+  <meta property="og:image" content="{% link assets/img/favicon.png %}">{%- comment -%}<!-- WatsApp takes the last og:image -->{%- endcomment -%}
   <link rel="icon" type="image/png" href="{% link assets/img/favicon.png %}">
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <link rel="alternate" href="{% link feed.xml %}" type="application/atom+xml">

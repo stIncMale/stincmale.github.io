@@ -5,7 +5,7 @@ title: 'Disambiguating "now" and "immediate"'
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2013-08-21T12:00:00Z
-custom_update_date: 2022-09-25T03:56:00Z
+custom_update_date: 2023-12-31T00:41:00Z
 custom_keywords: [now, currently, current, snapshot, immediately, immediate, instantaneously, instantaneous, instant, concurrency, distributed system, distributed computing]
 custom_description: An attempt to consider with some rigor what &quot;now&quot; means when used with respect to something physical, that is, the universe or its part, or something logical, e.g., a data object.
 ---
@@ -62,10 +62,10 @@ What if we are talking about a logical system, may it have absolute time?&mdash;
   describes the synchronization of logical clocks, allowing to totally order all events in a distributed system.
 
 Do not get too excited, though&mdash;there are many logical [concurrent] systems, especially distributed ones, such that different parts of a system
-exist in different timelines, i.e., the events are ordered not totally, but partially. [`LongAdder`](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
-from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html)
+exist in different timelines, i.e., the events are ordered not totally, but partially. [`LongAdder`](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html)
+from [Java Platform, Standard Edition (Java SE) API](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html)
 is an example of a simple concurrent object with no absolute timeline and no snapshots,
-and the [specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html#sum()) is explicit about this:
+and the [specification](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/api/java.base/java/util/concurrent/atomic/LongAdder.html#sum()) is explicit about this:
 <q>"The returned value is NOT an atomic snapshot; invocation in the absence of concurrent updates returns an accurate result,
 but concurrent updates that occur while the `sum` is being calculated might not be incorporated."</q>
 

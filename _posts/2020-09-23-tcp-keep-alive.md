@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2022-04-03T09:45:00Z
+custom_update_date: 2023-12-31T00:46:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -342,7 +342,7 @@ Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to pr
 
 [^3]: The link is to [Oracle JDK] documentation
     because there is no other documentation published for the option,
-    but the option was [implemented](https://bugs.openjdk.java.net/browse/JDK-8194298) in [OpenJDK JDK].
+    but the option was [implemented](https://bugs.openjdk.org/browse/JDK-8194298) in [OpenJDK JDK].
 
 [^4]: For software or hardware that operates on levels below TCP,
     e.g., [NAT](https://www.rfc-editor.org/rfc/rfc2663) implementations and firewalls operating on the IP level, the situation is different

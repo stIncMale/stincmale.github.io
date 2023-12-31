@@ -5,7 +5,7 @@ title: Simulating Rust's <code>Self</code> keyword via generics in Java
 categories: [tech]
 tags: [Java, Rust]
 date: 2022-04-15T10:40:00Z
-custom_update_date: 2022-07-24T03:02:00Z
+custom_update_date: 2023-12-31T00:47:00Z
 custom_keywords: [Rust, Java, Self]
 custom_description: Rust allows referring to an unknown type in some contexts, e.g., referring to the implementing type within a trait, by using the &quot;Self&quot; keyword. While there is no counterpart of this keyword in Java, we can simulate it via generic classes, and achieve interesting results like being able to use &quot;Object.clone&quot; on a type that does not override it without resorting to cast expressions.
 ---
@@ -195,7 +195,7 @@ That is because `java.lang.Object.clone` is declared as
 and `Copy` is neither a subclass of `Object`, nor is contained in the `java.lang` package.
 However, even if `Object.clone` were declared `public`,
 the `Copy` interface would not be allowed to override this method because
-[default methods are not allowed to override `Object`'s methods](https://mail.openjdk.java.net/pipermail/lambda-dev/2013-March/008435.html).
+[default methods are not allowed to override `Object`'s methods](https://mail.openjdk.org/pipermail/lambda-dev/2013-March/008435.html).
 This limitation causes compilation of the following code
 
 ```java

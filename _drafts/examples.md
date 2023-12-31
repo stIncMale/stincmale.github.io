@@ -25,7 +25,7 @@ hidden: false
 date: 2020-04-11T12:00:00Z
 # A date without a day or a month may be specified here.
 custom_post_date: 2020
-custom_update_date: 2022-09-25T12:03:00Z
+custom_update_date: 2023-12-31T00:40:00Z
 custom_keywords: [keyword1, keyword2]
 # Note that at least Google Search terminates the description text when '"' is encountered. Use &quot; instead.
 custom_description: Markup and style examples.

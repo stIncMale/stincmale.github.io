@@ -9,8 +9,8 @@
 [Jakarta Enterprise Edition Platform (Jakarta EE)]: <https://jakarta.ee/specifications/>
 [JMH]: <https://github.com/openjdk/jmh>
 [jcstress]: <https://github.com/openjdk/jcstress>
-[OpenJDK]: <https://openjdk.java.net/>
-[OpenJDK JDK]: <https://openjdk.java.net/projects/jdk/>
+[OpenJDK]: <https://openjdk.org/>
+[OpenJDK JDK]: <https://openjdk.org/projects/jdk/>
 [Oracle JDK]: <https://www.oracle.com/java/technologies/downloads/>
 [Junit 5]: <https://junit.org/junit5/>
 [PostgreSQL]: <https://www.postgresql.org/>

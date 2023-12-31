@@ -5,7 +5,7 @@ title: Actual rows reported by PostgreSQL's <code>explain analyze</code> is not 
 categories: [tech]
 tags: [PostgreSQL, SQL]
 date: 2020-09-20T12:00:00Z
-custom_update_date: 2022-04-03T09:44:00Z
+custom_update_date: 2023-12-31T00:45:00Z
 custom_keywords: [explain analyze, explain plan, explain, execution plan, plan, actual rows, rows]
 custom_description: This article explains a corner case that helps to develop a better understanding of the output of the EXPLAIN ANALYZE PostgreSQL command.
 ---

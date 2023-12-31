@@ -5,7 +5,7 @@ title: Directory vs directory service vs naming service vs LDAP vs JNDI
 categories: [tech]
 tags: [Java, security, disambiguation]
 date: 2019-02-16T12:00:00Z
-custom_update_date: 2022-04-15T11:51:00Z
+custom_update_date: 2023-12-31T00:43:00Z
 custom_keywords: [directory, directory service, naming service, LDAP, JNDI]
 custom_description: This article briefly explains what directory and naming services are, and how they can be accessed.
 ---
@@ -112,7 +112,7 @@ and the latter one is called
 Usually, authentication is not the only thing that an application wants, and other interactions with a [directory service] may be required.
 <div class="info-block" markdown="1">
 **Java Naming and Directory Interface** ([JNDI])&mdash;a part of the
-[Java SE API Specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html)
+[Java SE API Specification](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html)
 that provides API for working with [naming] and [directory services] and SPI for plugging in implementations of this API for different services
 (see also [JNDI docs published by Oracle](https://docs.oracle.com/javase/8/docs/technotes/guides/jndi/index.html)).
 </div>

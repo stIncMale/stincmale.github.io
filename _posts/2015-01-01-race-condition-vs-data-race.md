@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2022-09-25T12:02:00Z
+custom_update_date: 2023-12-31T00:42:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -61,7 +61,7 @@ that are not properly coordinated, a.k.a synchronized, but I am going to talk ab
 Unfortunately, the above definition has a significant flaw in it, which was pointed out many times by different people,
 though the problem has not been fixed as of
 the [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se17/html/index.html)
-for the [Java Platform, Standard Edition (Java SE) 17](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/):
+for the [Java Platform, Standard Edition (Java SE) 17](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/):
 
 * <q>"JLS3 seems to contain a glitch that prevents me from proving that my program is free of data races"</q>\\
 <span class="insignificant">[Java Memory Model discussions list](https://www.cs.umd.edu/~pugh/java/memoryModel/archive/2477.html),
@@ -194,7 +194,7 @@ but rather by data races in the executions of the program.
 
 For the sake of completeness, I need to say that a data race does not always lead to unexpected outcomes, while a race condition by definition does.
 Sometimes data races are used to allow the program to perform faster; these are so-called benign data races.
-Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.java.net/projects/jdk/)[^6]:
+Examples of such benign cases can be found in the source code of the [OpenJDK]<!-- --> [Java Development Kit (JDK)](https://openjdk.org/projects/jdk/)[^6]:
 
 ```java
 // java.lang.String from OpenJDK JDK 17

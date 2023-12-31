@@ -5,7 +5,7 @@ title: Making Java app behavior consistent in different environments
 categories: [tech]
 tags: [Java]
 date: 2019-05-06T12:00:00Z
-custom_update_date: 2022-03-11T06:39:00Z
+custom_update_date: 2023-12-31T00:44:00Z
 custom_keywords: [environment, charset, locale, time zone, line separator]
 custom_description: The behavior of a process is usually partly dependent on the environment where the process is being executed. This article points out what to pay attention to when writing an application that behaves the same way in different environments.
 ---
@@ -134,7 +134,7 @@ Locale.setDefault(Locale.ENGLISH);
 The default [`java.nio.charset.Charset`] can be obtained via the method
 [`Charset.defaultCharset()`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html#defaultCharset()),
 but the Java SE does not provide any way of setting the default charset. As of
-[JEP 400: UTF-8 by Default](https://openjdk.java.net/jeps/400), the Java SE API uses
+[JEP 400: UTF-8 by Default](https://openjdk.org/jeps/400), the Java SE API uses
 UTF-8 as the
 [default charset](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/charset/Charset.html#defaultCharset()),
 except for the
@@ -169,7 +169,7 @@ It does, but this exception is allowed by the [JLS 17.5.4. Write-Protected Field
 ## [](#example){:.section-link}Example {#example}
 [`ConsistentAppExample.java`] is a tiny Java application that demonstrates the aforementioned techniques.
 We can start it in [Bash] running in [macOS] or [Ubuntu]
-using the [source-file mode] (see also [JEP 330: Launch Single-File Source-Code Programs](https://openjdk.java.net/jeps/330)):
+using the [source-file mode] (see also [JEP 330: Launch Single-File Source-Code Programs](https://openjdk.org/jeps/330)):
 
 ```shell
 $ java -Dline.separator=$'\n' -Dfile.encoding=UTF-8 ConsistentAppExample.java
@@ -187,7 +187,7 @@ Charset smoke test: latin:english___cyrillic:русский___hangul:한국어__
 
 Be aware that starting a Java application using the source-file mode
 introduces an additional activity where the default platform charset plays a role&mdash;the source file
-<q>["bytes are read with the default platform character encoding that is in effect."](https://openjdk.java.net/jeps/330)</q>[^3]
+<q>["bytes are read with the default platform character encoding that is in effect."](https://openjdk.org/jeps/330)</q>[^3]
 This can be avoided if we compile the source files at first with explicitly specifying the source file charset via the documented
 [`javac` `-encoding`](https://docs.oracle.com/en/java/javase/17/docs/specs/man/javac.html#option-encoding) option,
 and then start the application from the resulting [`class` file](https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html),
@@ -196,7 +196,7 @@ which has <q>["hardware- and operating system-independent binary format"](https:
 ## [](#cli-charset-conversion){:.section-link}Using [`iconv`] to convert between charsets {#cli-charset-conversion}
 As a bonus topic, which is to some extent related to the main topic of the article, I would like to mention the
 [`iconv`](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/iconv.html) POSIX CLI utility for converting between charsets.
-We have two CLI Java programs represented as ["shebang" files](https://openjdk.java.net/jeps/330#Shebang_files):
+We have two CLI Java programs represented as ["shebang" files](https://openjdk.org/jeps/330#Shebang_files):
 * [`inShellOutUtf16`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/inShellOutUtf16)
 that reads character data from the stdin using the charset specified by the shell and writes the data to the stdout using UTF-16 charset;
 * [`inUtf8OutShell`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/makeappbehaviorconsistent/inUtf8OutShell)
@@ -229,16 +229,16 @@ from the stdin to the stdout instead of transferring character data, which would
 [^1]: {%- comment -%}<!-- This footnote is linked from 2015-01-01-race-condition-vs-data-race.md, 2019-02-16-directory.md -->{%- endcomment -%}
     <h5>Java Platform</h5>
     A Java Development Kit (JDK) is the common name for an implementation of the Java Platform, Standard Edition (Java SE) Specification.
-    For example, here is a link to the [Java SE 17 Specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/),
+    For example, here is a link to the [Java SE 17 Specification](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/),
     which formal name is the [Java Specification Request (JSR)](https://jcp.org/en/jsr/overview) [392](https://jcp.org/en/jsr/detail?id=392).
     Its key parts are
     * [Java Language Specification (JLS)](https://docs.oracle.com/javase/specs/jls/se17/html/index.html),
     * [Java Virtual Machine Specification (JVMS)](https://docs.oracle.com/javase/specs/jvms/se17/html/index.html),
-    * [Java SE API Specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html);
+    * [Java SE API Specification](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/api/index.html);
     
     there are other parts, e.g.,
-    * [Java Object Serialization Specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/specs/serialization/index.html),
-    * [Java Native Interface (JNI) Specification](https://cr.openjdk.java.net/~iris/se/17/spec/fr/java-se-17-fr-spec/specs/jni/index.html).
+    * [Java Object Serialization Specification](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/specs/serialization/index.html),
+    * [Java Native Interface (JNI) Specification](https://cr.openjdk.org/~iris/se/17/spec/fr/java-se-17-fr-spec/specs/jni/index.html).
     
     Unfortunately, OpenJDK publishes mostly changed specifications with each Java SE release instead of publishing all of them.
     See the [specifications published by Oracle](https://docs.oracle.com/en/java/javase/17/docs/specs/index.html) for a full list of Java SE parts.
@@ -260,20 +260,20 @@ from the stdin to the stdout instead of transferring character data, which would
     is to a machine controlled by the Linux/Windows operating system respectively.
 
     <h5>OpenJDK</h5>
-    [OpenJDK] is a [community](https://openjdk.java.net/groups/) whose main goal is developing an
+    [OpenJDK] is a [community](https://openjdk.org/groups/) whose main goal is developing an
     [open-source](https://opensource.org/osd) implementation of the Java SE Specification.
     [OpenJDK JDK] is a proper name of the JDK developed by the OpenJDK community
-    ("OpenJDK" is an adjective here according to [JDK-8205956 Fix usage of “OpenJDK” in build and test instructions](https://bugs.openjdk.java.net/browse/JDK-8205956)),
+    ("OpenJDK" is an adjective here according to [JDK-8205956 Fix usage of “OpenJDK” in build and test instructions](https://bugs.openjdk.org/browse/JDK-8205956)),
     but it is ridiculous and is usually shortened to just OpenJDK where it does not cause ambiguity.
-    We may see the usage of the full name, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):
+    We may see the usage of the full name, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.org/install/index.html):
     <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)&hellip;"</q>
     I find this naming confusing.
 
     So, the OpenJDK JDK is an implementation of the Java SE Specification. As a result of it being open-source, there are many other implementations
     that are based on it. Each implementation may have its own additional features not specified by the Java SE Specification.
     Both standard and nonstandard features included in each new release of the OpenJDK JDK are listed in the corresponding release page.
-    They are called [JDK Enhancement Proposals (JEPs)](https://openjdk.java.net/jeps/0),
-    here is a link to the [OpenJDK JDK 17 release page](https://openjdk.java.net/projects/jdk/17/)
+    They are called [JDK Enhancement Proposals (JEPs)](https://openjdk.org/jeps/0),
+    here is a link to the [OpenJDK JDK 17 release page](https://openjdk.org/projects/jdk/17/)
     specifying all the JEPs included in this release.
 
     One of the commercial JDKs based on [OpenJDK JDK] is [Oracle JDK].

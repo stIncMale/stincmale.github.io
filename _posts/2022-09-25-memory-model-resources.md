@@ -5,7 +5,7 @@ title: Useful resources on memory models
 categories: [tech]
 tags: [concurrency, memory model, C, C++, Rust, Java]
 date: 2022-09-25T12:00:00Z
-custom_update_date: 2022-09-27T06:00:00Z
+custom_update_date: 2023-12-31T00:48:00Z
 custom_keywords: [C memory model, C++ memory model, Rust memory model, Java memory model, JMM]
 custom_description: A list of resources on memory models and accompanying topics.
 ---

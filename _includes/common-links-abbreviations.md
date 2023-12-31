@@ -9,6 +9,7 @@
 [Jakarta Enterprise Edition Platform (Jakarta EE)]: <https://jakarta.ee/specifications/>
 [JMH]: <https://github.com/openjdk/jmh>
 [jcstress]: <https://github.com/openjdk/jcstress>
+[JPF]: <https://github.com/javapathfinder/jpf-core/wiki>
 [OpenJDK]: <https://openjdk.org/>
 [OpenJDK JDK]: <https://openjdk.org/projects/jdk/>
 [Oracle JDK]: <https://www.oracle.com/java/technologies/downloads/>
@@ -116,6 +117,8 @@
 {:data-title="Java Microbenchmark Harness"}
 *[jcstress]:
 {:data-title="Java Concurrency Stress"}
+*[JPF]:
+{:data-title="Java Pathfinder"}
 *[SLF4J]:
 {:data-title="Simple Logging Facade for Java"}
 *[JPA]:

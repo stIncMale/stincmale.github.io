@@ -5,13 +5,13 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2023-12-31T00:46:00Z
+custom_update_date: 2023-12-31T09:15:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
 {% include common-links-abbreviations.md %}
 
-[`TIME-WAIT`]: <https://www.rfc-editor.org/rfc/rfc793#section-3.2>
+[`TIME-WAIT`]: <https://www.rfc-editor.org/rfc/rfc9293#section-3.3.2-2.20>
 
 *[NAT]:
 {:data-title="Network Address Translator"}
@@ -261,7 +261,7 @@ The client connected at 02:37:44 and received the last byte at 02:38:08,
 which means that the dialogue lasted for more than 15 s without being terminated by the proxy.
 This is as expected because the client was regularly sending data to the server, and the server was regularly sending data back.
 
-Note that the both the server and the client read timeout, which is 25 s,
+Note that both the server and the client read timeout, which is 25 s,
 are greater than the proxy `timeout server`, which is 15 s. Therefore, they cannot affect the next 
 experiment, where we will not be sending data between the client and the server.
 Note also that the server sends TCP keep-alive probes every 5 s after 5 s of idling.
@@ -320,7 +320,7 @@ Here is what the `tcpdump` tool captured:
 ```
 
 * Segments 1-3 with flags `S` (`SYN`), `S.` (`SYN-ACK`), `.` (`ACK`) respectively
-represent [three-way TCP handshake](https://www.rfc-editor.org/rfc/rfc793#section-3.4) between the proxy and the server.
+represent [three-way TCP handshake](https://www.rfc-editor.org/rfc/rfc9293#section-3.5) between the proxy and the server.
 The proxy initiated the handshake because the client connected to it;
 the respective segments are not in the log because they involved the proxy frontend port 30000,
 not the proxy backend port 30001, for which we were capturing segments.
@@ -332,9 +332,9 @@ about 5 s of idling, the next probe was sent in another 5 s.
 Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to prevent it from terminating connections.
 
 [^1]: The "connection" referred to here is not a single
-    [TCP connection](https://www.rfc-editor.org/rfc/rfc793#section-1.5),
+    [TCP connection](https://www.rfc-editor.org/rfc/rfc9293#section-4-1.3),
     but an abstraction over two linked TCP connections&mdash;client-proxy & proxy-server, 
-    that together allows client-server communication.
+    that together allow client-server communication.
 
 [^2]: I may also recommend reading
     ["When TCP sockets refuse to die"](https://idea.popcount.org/2019-09-20-when-tcp-sockets-refuse-to-die/)

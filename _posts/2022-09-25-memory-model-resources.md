@@ -5,7 +5,7 @@ title: Useful resources on memory models
 categories: [tech]
 tags: [concurrency, memory model, C, C++, Rust, Java]
 date: 2022-09-25T12:00:00Z
-custom_update_date: 2023-12-31T00:48:00Z
+custom_update_date: 2023-12-31T09:15:00Z
 custom_keywords: [C memory model, C++ memory model, Rust memory model, Java memory model, JMM]
 custom_description: A list of resources on memory models and accompanying topics.
 ---
@@ -21,8 +21,8 @@ Non-language-specific resources:
 
 * ["Hardware Memory Models"](https://research.swtch.com/hwmm),
   ["Programming Language Memory Models"](https://research.swtch.com/plmm)<span class="insignificant">&nbsp;by [Russ Cox](https://swtch.com/~rsc/)</span>
-* ["Теоретический минимум для понимания Java Memory Model"](https://jug.ru/2014/04/%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%B5%D0%BB%D0%B8%D0%B7%D0%B0%D1%80%D0%BE%D0%B2-%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC/)<span class="insignificant">&nbsp;by [Roman Elizarov](https://github.com/elizarov)</span>
-  (the video is in Russian and is currently hidden for some reason, the slides are
+* ["Многопоточное программирование&mdash;теория и практика"](https://youtu.be/mf4lC6TpclM)<span class="insignificant">&nbsp;by [Roman Elizarov](https://github.com/elizarov)</span>
+  (the talk is in Russian, the slides are
   [here](https://www.slideshare.net/elizarov/j-point-2014-java-memory-model))
 * ["Strong consistency models"](https://aphyr.com/posts/313-strong-consistency-models),
   ["Consistency models"](https://jepsen.io/consistency)[^1]<span class="insignificant">&nbsp;by [Kyle Kingsbury](https://aphyr.com/about)</span>
@@ -31,12 +31,14 @@ Non-language-specific resources:
 
 Specification-like resources:
 
+* [Order of evaluation](https://en.cppreference.com/w/c/language/eval_order)
 * [Memory model](https://en.cppreference.com/w/c/language/memory_model)[^2]
    * [`memory_order`](https://en.cppreference.com/w/c/atomic/memory_order)
    * [`atomic_thread_fence`](https://en.cppreference.com/w/c/atomic/atomic_thread_fence),
      [`atomic_signal_fence`](https://en.cppreference.com/w/c/atomic/atomic_signal_fence)
    * [Atomic operations](https://en.cppreference.com/w/c/atomic)
       * [`_Atomic`](https://en.cppreference.com/w/c/language/atomic)
+* [`volatile`](https://en.cppreference.com/w/c/language/volatile)
 
 Free-form resources:
 
@@ -52,6 +54,7 @@ This looks like a krandown bug to me.{% endcomment %}
 
 Specification-like resources:
 
+* [Order of evaluation](https://en.cppreference.com/w/cpp/language/eval_order)
 * [Memory model](https://en.cppreference.com/w/cpp/language/memory_model)
   * [`std::memory_order`](https://en.cppreference.com/w/cpp/atomic/memory_order)
   * [`std::atomic_thread_fence`](https://en.cppreference.com/w/cpp/atomic/atomic_thread_fence),
@@ -59,6 +62,7 @@ Specification-like resources:
   * [Atomic operations](https://en.cppreference.com/w/cpp/atomic)
     * [`std::atomic`](https://en.cppreference.com/w/cpp/atomic/atomic),
       [`std::atomic_ref`](https://en.cppreference.com/w/cpp/atomic/atomic_ref)
+* [`volatile`](https://en.cppreference.com/w/cpp/language/cv)
 
 ## [](#rs){:.section-link}Rust {#rs}
 
@@ -70,14 +74,20 @@ Specification-like resources:
     [`core::sync::atomic::compiler_fence`](https://doc.rust-lang.org/core/sync/atomic/fn.compiler_fence.html)
   * [Atomic operations](https://doc.rust-lang.org/nomicon/atomics.html)
     * [`core::sync::atomic`](https://doc.rust-lang.org/core/sync/atomic/index.html)
+* [`core::ptr::read_volatile`](https://doc.rust-lang.org/core/ptr/fn.read_volatile.html),
+  [`core::ptr::write_volatile`](https://doc.rust-lang.org/core/ptr/fn.write_volatile.html)
 
 Free-form resources:
 
+* ["Rust Atomics and Locks"](https://marabos.nl/atomics/)<span class="insignificant">&nbsp;by [Mara Bos](https://marabos.nl/)</span>,
+  ["Chapter 3. Memory Ordering"](https://marabos.nl/atomics/memory-ordering.html)
 * ["Crust of Rust: Atomics and Memory Ordering"](https://youtu.be/rMGWeSjctlY)<span class="insignificant">&nbsp;by [Jon Gjengset](https://thesquareplanet.com/)</span>
 
 Tools:
 
 * [Loom](https://crates.io/crates/loom)&mdash;a testing tool for concurrent Rust code.
+* [ThreadSanitizer](https://doc.rust-lang.org/nightly/unstable-book/compiler-flags/sanitizer.html#threadsanitizer)&mdash;a
+  data race detection tool.
 
 ## [](#java){:.section-link}Java {#java}
 
@@ -108,6 +118,7 @@ Tools:
   concurrent data structures for correctness.
 * [jcstress]&mdash;an experimental harness and a suite of tests to aid the research
   in the correctness of concurrency support in the JVM, class libraries, and hardware.
+* [JPF]&mdash;an extensible software model-checking framework.
 
 [^1]: These resources are about consistency models of distributed systems
     and not about hardware / programming language memory models

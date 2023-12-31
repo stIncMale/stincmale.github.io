@@ -45,7 +45,7 @@ Below are some notable points from the specification.
    
    In other words, the **keep-alive mechanism is meant to detect whether a connection is worth closing** and releasing the occupied resources,
    as it is unlikely that the peer is still out there intending to communicate.
-2. > "Implementors **MAY include** "keep-alives" in their TCP implementations …"
+2. > "Implementors **MAY include** "keep-alives" in their TCP implementations&hellip;"
    
    This means that the mechanism **may not even be implemented**.
 3. > "Keep-alive packets MUST only be sent when no data or acknowledgement packets have been received for the connection within an interval.

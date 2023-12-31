@@ -97,7 +97,7 @@ Note that the method [`System.getProperties()`](https://docs.oracle.com/en/java/
 states
 > "**Changing a standard system property may have unpredictable results unless otherwise specified.**
 > Property values may be cached during initialization or on first use.
-> Setting a standard property after initialization … may not have the desired effect."
+> Setting a standard property after initialization &hellip; may not have the desired effect."
 
 So the only reliable way of setting the default line separator is by specifying the value of the `line.separator` Java system property when starting a JVM process.
 Once this is done, methods like [`java.io.PrintStream.println()`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/PrintStream.html#println())
@@ -266,7 +266,7 @@ from the stdin to the stdout instead of transferring character data, which would
     ("OpenJDK" is an adjective here according to [JDK-8205956 Fix usage of “OpenJDK” in build and test instructions](https://bugs.openjdk.java.net/browse/JDK-8205956)),
     but it is ridiculous and is usually shortened to just OpenJDK where it does not cause ambiguity.
     We may see the usage of the full name, for example, on the page [How to download and install prebuilt OpenJDK packages](https://openjdk.java.net/install/index.html):
-    <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)…"</q>
+    <q markdown="1">"Oracle's OpenJDK JDK binaries for Windows, macOS, and Linux are available on release-specific pages of [jdk.java.net](https://jdk.java.net/)&hellip;"</q>
     I find this naming confusing.
 
     So, the OpenJDK JDK is an implementation of the Java SE Specification. As a result of it being open-source, there are many other implementations

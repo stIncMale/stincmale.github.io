@@ -120,7 +120,7 @@ When using the word "now" with regard to a logical system, consider if it is act
 and even if it is applicable, do you actually need it?
 Use the word "immediately" only to express ordering relations because its temporal meaning is vague.
 The idea to write this post came to me as a result of seeing [the question](http://cs.oswego.edu/pipermail/concurrency-interest/2013-August/011733.html)
-<q>"Can you confirm if this is correct&mdash;a volatile write or atomic dec/inc becomes visible immediately to other threads …?"</q>,
+<q>"Can you confirm if this is correct&mdash;a volatile write or atomic dec/inc becomes visible immediately to other threads&hellip;?"</q>,
 which was about the semantics of [`volatile` fields](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1.4) in Java,
 and apparently implied the temporal meaning of the word "immediately". I like the two following answers to this question:
 
@@ -149,7 +149,7 @@ See also ["There is No Now: Problems with simultaneity in distributed systems"](
       <span class="insignificant">[PBS Space Time](https://www.youtube.com/c/pbsspacetime), host: [Gabe Perez-Giz](https://twitter.com/fizziksgabe)</span>
     * ["The Distinction of Past and Future"](https://youtu.be/VU0mpPm9U-4)\\
       <span class="insignificant">[Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman)</span>
-    * ["Time Is of the Essence… or Is It?"](https://youtu.be/N-NTXoYTvao)\\
+    * ["Time Is of the Essence&hellip; or Is It?"](https://youtu.be/N-NTXoYTvao)\\
       <span class="insignificant">Participants: [David Z. Albert](https://en.wikipedia.org/wiki/David_Albert), [Vijay Balasubramanian](https://www.sas.upenn.edu/~vbalasub/Home.html), [Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/), [Lee Smolin](https://leesmolin.com); moderator: [Jim Holt](https://en.wikipedia.org/wiki/Jim_Holt_(philosopher))</span>
     * ["The Physics and Philosophy of Time"](https://youtu.be/-6rWqJhDv7M)\\
       <span class="insignificant">[Carlo Rovelli](http://www.cpt.univ-mrs.fr/~rovelli/)</span>

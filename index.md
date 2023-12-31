@@ -18,7 +18,7 @@ custom_description: My personal website. Software engineering articles/notes/tho
 
 ## [](#dead-code){:.section-link}{{ site.custom_title }} {#dead-code}
 A place where I share things (mostly those related to my profession) with humanity.
-Humanity … do I like it? Let's say, I have mixed feelings.
+Humanity &hellip; do I like it? Let's say, I have mixed feelings.
 I love [the song](https://youtu.be/0755SXCTCN0) though!
 
 The story behind the name {{ site.custom_title }} is straightforward:
@@ -27,7 +27,7 @@ the majority of code that software engineers write in their spare time ends up b
 ## [](#personality){:.section-link}Personality {#personality}
 This particular page is about sharing something with regard to my personality rather than technical things.
 Here are a few examples of [lyrics]({% link lyrics.md %}) and quotes/sayings I like:
-* <q>"… it takes all the running you can do to keep in the same place.[^1] If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
+* <q>"it takes all the running you can do to keep in the same place.[^1] If you want to get somewhere else, you must run at least twice as fast as that!"</q>\\
   <span class="insignificant">Lewis Carroll, ["Through the looking-glass, and what Alice found there"](https://www.loc.gov/item/00000848/), 1871</span>
 * <q>"Those who would give up essential Liberty, to purchase a little temporary Safety, deserve neither Liberty nor Safety."</q>\\
   <span class="insignificant">Benjamin Franklin, [Pennsylvania Assembly: Reply to the Governor](https://franklinpapers.org/framedVolumes.jsp?vol=6&page=238a), November 11, 1755</span>
@@ -53,7 +53,7 @@ Following are examples of YouTube channels I am subscribed to and watching regul
   <span class="insignificant">Videos about Artificial Intelligence Safety Research, for everyone.</span>
 * [Healthcare Triage](https://www.youtube.com/healthcaretriage)<span class="insignificant">&nbsp;by [Aaron Carroll](https://medicine.iu.edu/faculty/3005/carroll-aaron)</span>\\
   <span class="insignificant">Videos that explain healthcare policy, medical research, and answer a lot of other questions you may have about medicine, health, and healthcare.</span>
-* [Kurzgesagt – In a Nutshell](https://www.youtube.com/inanutshell)<span class="insignificant">&nbsp;by [kurzgesagt.org](https://kurzgesagt.org/about/)</span>\\
+* [Kurzgesagt&mdash;In a Nutshell](https://www.youtube.com/inanutshell)<span class="insignificant">&nbsp;by [kurzgesagt.org](https://kurzgesagt.org/about/)</span>\\
   <span class="insignificant">Videos explaining things with optimistic nihilism.</span>
 * [Real Engineering](https://www.youtube.com/RealEngineering)<span class="insignificant">&nbsp;by [Brian McManus](https://twitter.com/TheBrianMcManus)</span>\\
   <span class="insignificant">Interesting answers to simple questions.</span>

@@ -140,4 +140,4 @@ Tools:
     a.k.a. [hardware and software interrupts](https://en.wikipedia.org/wiki/Interrupt).
 
 [^6]: Instead of individual Java SE contributors publishing memos like that,
-    the Java memory model needs to be updated. Any decade now…
+    the Java memory model needs to be updated. Any decade now&hellip;

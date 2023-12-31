@@ -235,5 +235,5 @@ If the idea had worked out, it would have brought meaning to the existence of th
     <q>["performs a "shallow copy" of this object, not a "deep copy" operation"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone())</q>.
     However, the convention proposed by the specification also states that
     <q>"the object returned by this method should be independent of
-    this object (which is being cloned) … Typically, this means copying
+    this object (which is being cloned)&hellip; Typically, this means copying
     any mutable objects that comprise the internal "deep structure" of the object being cloned"</q>.

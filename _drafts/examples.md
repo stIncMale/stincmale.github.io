@@ -192,11 +192,11 @@ long text.
 
 Normal text.
 * Hyphens and dashes (see <https://www.grammarly.com/blog/hyphens-and-dashes/>)
-   * Hyphen (actually, hyphen-minus because keyboards do not have actual hyphens) `-` <q>This 
+   * Hyphen (actually, hyphen-minus because keyboards do not have actual hyphens) - `-` <q>This 
      rock-hard cake is absolutely impossible to eat.</q>
-   * En dash `–` <q>14:00&ndash;15:00, 2015&ndash;2020 years, the Nobel prize&ndash;winning author.</q>
-   * Em dash `—` <q>He is afraid of two things&mdash;spiders and senior prom.</q>
-* Ellipsis `…` <q>Andrew, can you, um … never mind.</q>
+   * En dash --, &ndash;, `–`: <q>14:00--15:00, 2015--2020 years, the Nobel prize--winning author.</q>
+   * Em dash ---, &mdash;, `—`: <q>He is afraid of two things---spiders and senior prom.</q>
+* Ellipsis ..., &hellip;, `…`: <q>Andrew, can you, um ... never mind.</q>
 
 ## [](#footnotes){:.section-link}Footnotes {#footnotes}
 

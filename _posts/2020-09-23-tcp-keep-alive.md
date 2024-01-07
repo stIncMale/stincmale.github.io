@@ -5,7 +5,7 @@ title: TCP keep-alive mechanism is not meant to keep TCP connections alive
 categories: [tech]
 tags: [TCP, networking]
 date: 2020-09-25T12:00:00Z
-custom_update_date: 2023-12-31T09:15:00Z
+custom_update_date: 2024-01-07T08:55:00Z
 custom_keywords: [TCP, keep-alive, SO_KEEPALIVE, TCP_KEEPIDLE, KeepAliveTime, proxy]
 custom_description: The name &quot;keep-alive&quot; is misleading and leads some engineers into thinking that it is a good idea to use the mechanism for preventing a TCP proxy from considering a connection idle and terminating it. This article explains why even if possible, this cannot be done reliably. It also shows an example of using HAProxy where the approach fails.
 ---
@@ -16,9 +16,11 @@ custom_description: The name &quot;keep-alive&quot; is misleading and leads some
 *[NAT]:
 {:data-title="Network Address Translator"}
 
-The name "keep-alive" is misleading and leads some engineers into thinking that it is a good idea to use the mechanism
+The name "keep-alive" is misleading and leads some engineers into thinking
+that it is a good idea to use this mechanism
 for preventing a TCP proxy from considering a connection[^1] idle and terminating it.
-This article explains why even if possible (and that is a big "if"), this cannot be done reliably.
+This article explains why despite being possible[^2],
+the approach may not necessarily be used reliably across different TCP implementations and proxies.
 It also shows an example of using HAProxy where the approach fails.
 
 {% include toc.md %}
@@ -34,7 +36,7 @@ The information specified in this article was verified in the following environm
 | [HAProxy](https://www.haproxy.org) | 2.0.13 |
 
 ## [](#theory){:.section-link}Theory {#theory}
-The TCP keep-alive mechanism is specified in [RFC 1122. 4.2.3.6 TCP Keep-Alives](https://www.rfc-editor.org/rfc/rfc1122#page-101)[^2].
+The TCP keep-alive mechanism is specified in [RFC 1122. 4.2.3.6 TCP Keep-Alives](https://www.rfc-editor.org/rfc/rfc1122#page-101)[^3].
 Below are some notable points from the specification.
 
 1. The intent behind the keep-alive mechanism is to <q>"**confirm that an idle connection is still active**"</q>,
@@ -54,7 +56,7 @@ Below are some notable points from the specification.
    The interval mentioned here is called
    [`TCP_KEEPIDLE` in Linux](https://man7.org/linux/man-pages/man7/tcp.7.html),
    [`TCP_KEEPIDLE` in Windows](https://docs.microsoft.com/en-us/windows/win32/winsock/ipproto-tcp-socket-options),
-   [`TCP_KEEPIDLE` in OpenJDK JDK / Oracle JDK, etc.](https://docs.oracle.com/en/java/javase/17/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE)[^3],
+   [`TCP_KEEPIDLE` in OpenJDK JDK / Oracle JDK, etc.](https://docs.oracle.com/en/java/javase/17/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE)[^4],
    and we most likely would want to adjust the default value. Unfortunately,
    [OpenJDK JDK] does not support the [`TCP_KEEPIDLE`](https://docs.oracle.com/en/java/javase/17/docs/api/jdk.net/jdk/net/ExtendedSocketOptions.html#TCP_KEEPIDLE) option on Windows
    (at least at the time of writing this article).
@@ -73,22 +75,25 @@ Below are some notable points from the specification.
    registry entries).
    Adjusting this registry entry requires restarting the operating system.
 
-Taking all the aforementioned into account, it is safe to say that using the TCP keep-alive mechanism with an intent to keep connections active
-is an abuse of an optional mechanism, which may not be always easily configurable.
-TCP proxies do not have to behave in a way we may expect when trying to prevent connections from idling via the keep-alive mechanism.[^4]
+Taking all the aforementioned into account,
+it is safe to say that using the TCP keep-alive mechanism with the intent to keep connections active
+is an abuse of this optional mechanism, which may not be always easily configurable.
+TCP proxies are not required to behave in the way we may want concerning using the keep-alive
+mechanism for preventing connections from idling.[^5]
 
 ### [](#right-way){:.section-link}How to actually keep connection alive {#right-way}
-Sure, one may imagine a TCP proxy interpreting keep-alive probes as activity in a connection, but the important thing here is that
-this would have been just an implementation quirk of the proxy. On the other hand, if two peers implement ping/pong messages
-on top of TCP[^5], then a TCP proxy has to treat such messages like any other TCP traffic,
-thus considering a connection active regardless of the proxy implementation.
+There are TCP proxies interpreting keep-alive probes as activity in a connection[^2],
+but the important thing here is that this is just a quirk of those specific proxies.
+On the other hand, if two peers implement ping/pong messages on top of TCP[^6],
+then any TCP proxy naturally treats such messages like any other TCP traffic,
+thus considering a connection active.
 
 ## [](#practice){:.section-link}Practice {#practice}
 Let us try and see how a [production-grade](https://www.haproxy.org/they-use-it.html) HAProxy reacts to TCP keepalive probes
 when operating as a TCP reverse proxy. I am going to use a self-written TCP
 [client](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Client.java)
 and [server](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java)
-that communicate via a protocol mostly compliant with the [echo protocol](https://www.rfc-editor.org/rfc/rfc862)[^6].
+that communicate via a protocol mostly compliant with the [echo protocol](https://www.rfc-editor.org/rfc/rfc862)[^7].
 
 ### [](#preparation){:.section-link}Preparation {#preparation}
 I am going to run the proxy, the client and the server on Ubuntu.
@@ -329,29 +334,43 @@ The same is true for segments 6 and 7 respectively. Note that the first probe wa
 about 5 s of idling, the next probe was sent in another 5 s.
 * Segments 8 and 9 with flags `F.` (`FYN-ACK`), `R.` (`RST-ACK`) respectively is how the proxy terminated its connection with the server.
 
-Hereby we showed that TCP keep-alive mechanism cannot be used with HAProxy to prevent it from terminating connections.
+We hereby showed that the TCP keep-alive mechanism fails to prevent
+HAProxy from terminating idle connections.
 
 [^1]: The "connection" referred to here is not a single
     [TCP connection](https://www.rfc-editor.org/rfc/rfc9293#section-4-1.3),
     but an abstraction over two linked TCP connections&mdash;client-proxy & proxy-server, 
     that together allow client-server communication.
 
-[^2]: I may also recommend reading
+[^2]: The following TCP proxies all reset the idling timer due to TCP keep-alive segments: 
+    * [AWS Network Load Balancer](https://aws.amazon.com/elasticloadbalancing/network-load-balancer/)
+    <q>["functions at the fourth layer of the Open Systems Interconnection (OSI) model"](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview)</q>,
+    <q>["clients or targets can use TCP keepalive packets to reset the idle timeout"](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#connection-idle-timeout)</q>.
+    * [Azure Load Balancer](https://learn.microsoft.com/en-us/azure/load-balancer/)
+    <q>["operates at layer 4 of the Open Systems Interconnection (OSI) model"](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview)</q>,
+    <q>["keep-alive packets ensure the idle timeout value isn't reached and the connection is maintained for a long period"](https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-tcp-reset#configurable-tcp-idle-timeout)</q>.
+    * Google Cloud Proxy Network Load Balancer is a
+    <q>["layer 4 reverse proxy load balancer"](https://cloud.google.com/load-balancing/docs/proxy-network-load-balancer)</q>,
+    which suggests users to
+    <q>["ensure applications that open TCP connections do so with the `SO_KEEPALIVE` option enabled"](https://cloud.google.com/compute/docs/troubleshooting/general-tips#idle-connections)</q>,
+    to prevent idle connections.
+
+[^3]: I may also recommend reading
     ["When TCP sockets refuse to die"](https://idea.popcount.org/2019-09-20-when-tcp-sockets-refuse-to-die/)
     <span class="insignificant">by [Marek Majkowski](https://idea.popcount.org)</span>
 
-[^3]: The link is to [Oracle JDK] documentation
+[^4]: The link is to [Oracle JDK] documentation
     because there is no other documentation published for the option,
     but the option was [implemented](https://bugs.openjdk.org/browse/JDK-8194298) in [OpenJDK JDK].
 
-[^4]: For software or hardware that operates on levels below TCP,
+[^5]: For software or hardware that operates on levels below TCP,
     e.g., [NAT](https://www.rfc-editor.org/rfc/rfc2663) implementations and firewalls operating on the IP level, the situation is different
     because TCP keep-alive probes are traffic for them just like any other traffic.
 
-[^5]: For example, the [WebSocket](https://www.rfc-editor.org/rfc/rfc6455) protocol has
+[^6]: For example, the [WebSocket](https://www.rfc-editor.org/rfc/rfc6455) protocol has
     [ping/pong frames](https://www.rfc-editor.org/rfc/rfc6455#section-5.5.2).
 
-[^6]: The protocol is documented in
+[^7]: The protocol is documented in
     [`Server.java`](https://github.com/stIncMale/sandbox-java/blob/master/examples/src/main/java/stincmale/sandbox/examples/tcpkeepalive/Server.java),
     and besides treating bytes
     `0x68` (`LATIN SMALL LETTER H` in [UTF-8](https://www.rfc-editor.org/rfc/rfc3629))

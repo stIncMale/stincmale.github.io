@@ -191,3 +191,7 @@
 {:data-title="International Organization for Standardization"}
 *[IEC]:
 {:data-title="International Electrotechnical Commission"}
+*[AWS]:
+{:data-title="Amazon Web Services"}
+*[OSI]:
+{:data-title="Open Systems Interconnection"}

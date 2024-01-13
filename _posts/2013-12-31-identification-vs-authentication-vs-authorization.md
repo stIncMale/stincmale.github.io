@@ -6,7 +6,7 @@ categories: [tech]
 tags: [security, disambiguation]
 date: 2013-12-30T12:00:00Z
 custom_post_date: 2013
-custom_update_date: 2021-12-19T18:30:00Z
+custom_update_date: 2024-01-13T16:30:00Z
 custom_keywords: [identification, authentication, external authentication, perimeter authentication, authorization, subject, security domain, security realm, identity, credential, credentials, ]
 custom_description: Identification, authentication, and authorization are crucial parts of implementing access control in a system and they do not mean the same thing.
 ---
@@ -36,10 +36,10 @@ custom_description: Identification, authentication, and authorization are crucia
 [authorization]: <#authorization>
 
 I sometimes notice the words "authentication" and "authorization" being used interchangeably. They sound similar to each other,
-they are both related to security, the HTTP specification names a [header field](https://www.rfc-editor.org/rfc/rfc7230#section-3.2) that
+they are both related to security, the HTTP specification names a [header field](https://www.rfc-editor.org/rfc/rfc9110#section-6.3) that
 <q>"allows a user agent to authenticate itself with an origin server"</q> and has a value that
 <q>"consists of credentials containing the authentication information of the user agent for the realm of the resource being requested"</q>
-[`Authorization`](https://www.rfc-editor.org/rfc/rfc7235#section-4.2)[^1] instead of calling it `Credentials` or `Authentication` at worst.
+[`Authorization`](https://www.rfc-editor.org/rfc/rfc9110#section-11.6.2)[^1] instead of calling it `Credentials` or `Authentication` at worst.
 So there is no wonder these words are confused sometimes.
 
 Lately, I have been doing security-related work, and documenting was a part of the task. I had to define some commonly used security-related terms
@@ -87,7 +87,7 @@ See also [JAAS principal](https://docs.oracle.com/en/java/javase/17/security/jav
 
 A [subject] may have multiple [credentials], which may be either public or private, i.e., requiring special protection.
 For example, a password is a private [credential], while a login name is a public [credential].
-Note that a login name is also an [identity] and it is not unusual for an [identity] to be used as a *public* [credential].
+Note that a login name is also an [identity], and it is common for an [identity] to be used as a *public* [credential].
 
 ## [](#identification){:.section-link}Identification {#identification}
 <div class="info-block" markdown="1">
@@ -132,7 +132,7 @@ A token may contain information that is used by the system to verify its authent
 Single sign-on (SSO) is implemented by utilizing the external [authentication] approach,
 but this approach may often be used just to move the [authentication] burden to a different system.
 [Kerberos](https://www.rfc-editor.org/rfc/rfc4120), [LDAP authentication](https://www.rfc-editor.org/rfc/rfc4513),
-[RADIUS](https://www.rfc-editor.org/rfc/rfc2865), [OpenID](https://openid.net/what-is-openid/) are all examples of external [authentication].
+[RADIUS](https://www.rfc-editor.org/rfc/rfc2865), [OpenID Connect](https://openid.net/developers/how-connect-works/) are all examples of external [authentication].
 
 See also [WebLogic perimeter authentication](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/scovr/glossary.html#GUID-0E1E0338-573D-4DD9-AD9A-E4C1B488DF0D).
 
@@ -143,19 +143,13 @@ See also [WebLogic perimeter authentication](https://docs.oracle.com/en/middlewa
 
 [Identification], [authentication], and [authorization] are crucial parts of implementing access control in a system.
 
-[^1]: The [HTTP/1.1 Authorization](https://www.rfc-editor.org/rfc/rfc7235#section-4.2) header field
-    was a [part of HTTP/1.0](https://www.rfc-editor.org/rfc/rfc1945#section-10.2)
-    and is also a part of [HTTP/2 specification](https://www.rfc-editor.org/rfc/rfc7540) according to the section
-    [8. HTTP Message Exchanges](https://www.rfc-editor.org/rfc/rfc7540#section-8):
-    > "the specification and requirements of HTTP/1.1 Semantics and Content [[RFC7231]](https://www.rfc-editor.org/rfc/rfc7231),
-    > Conditional Requests [[RFC7232]](https://www.rfc-editor.org/rfc/rfc7232),
-    > Range Requests [[RFC7233]](https://www.rfc-editor.org/rfc/rfc7233),
-    > Caching [[RFC7234]](https://www.rfc-editor.org/rfc/rfc7234),
-    > and Authentication [[RFC7235]](https://www.rfc-editor.org/rfc/rfc7235) are applicable to HTTP/2.
-    > Selected portions of HTTP/1.1 Message Syntax and Routing [[RFC7230]](https://www.rfc-editor.org/rfc/rfc7230),
-    > such as the HTTP and HTTPS URI schemes, are also applicable in HTTP/2"
+[^1]: The `Authorization` header field
+    was originally introduced as a [part of HTTP/1.0](https://www.rfc-editor.org/rfc/rfc1945#section-10.2),
+    and is now [part of HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html#section-11.6.2),
+    which makes it part of [HTTP/2](https://www.rfc-editor.org/rfc/rfc9113.html)
+    and [HTTP/3](https://www.rfc-editor.org/rfc/rfc9114.html).
 
-[^2]: How fucking brain-damaged should meat bags, a.k.a. humans, be to use in 2020 an [identity] which at the same time acts as a *private* [credential],
+[^2]: How fucking brain-dead should meat bags, a.k.a. humans, be to use in 2020 an [identity] which at the same time acts as a *private* [credential],
     which its owner must both [protect](https://www.canada.ca/en/employment-social-development/programs/sin/protect.html)
     and [share with many unrelated parties](https://www.canada.ca/en/employment-social-development/programs/sin/protect.html#a2)?
     Though, taking into account how humans [perverted the concept of money](https://youtu.be/mzoX7zEZ6h4),

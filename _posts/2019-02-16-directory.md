@@ -5,7 +5,7 @@ title: Directory vs directory service vs naming service vs LDAP vs JNDI
 categories: [tech]
 tags: [Java, security, disambiguation]
 date: 2019-02-16T12:00:00Z
-custom_update_date: 2023-12-31T00:43:00Z
+custom_update_date: 2024-01-13T08:30:00Z
 custom_keywords: [directory, directory service, naming service, LDAP, JNDI]
 custom_description: This article briefly explains what directory and naming services are, and how they can be accessed.
 ---
@@ -87,7 +87,7 @@ where each DBMS has its own protocol and a driver library (a client) implementin
   * [PostgreSQL],
 * as [Cassandra Query Language (CQL) binary protocol](https://github.com/apache/cassandra/blob/trunk/doc/native_protocol_v5.spec) is to
   * [Cassandra],
-* as [MongoDB Wire Protocol](https://www.mongodb.com/docs/manual/reference/mongodb-wire-protocol/) is to
+* as [MongoDB Wire Protocol] is to
   * [MongoDB].
 </div>
 

@@ -45,7 +45,11 @@ Concurrency and distributed systems
   <tbody>
     <tr class="resume-table-no-background">
       <td><code>Main&nbsp;language</code></td>
-      <td><a href="https://dev.java/">Java</a></td>
+      <td><span markdown="1">[Java]</span></td>
+    </tr>
+    <tr class="resume-table-no-background">
+      <td><code>Second&nbsp;language</code></td>
+      <td><span markdown="1">[Rust]</span></td>
     </tr>
     <tr class="resume-table-no-background">
       <td><code>Frameworks/libraries</code></td>
@@ -104,7 +108,28 @@ Concurrency and distributed systems
 _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndash;current</span>
 <div class="resume-experience" markdown="1">
 * **[MongoDB Java Drivers]**
-  * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-java-driver);
+  * [my pull requests](https://github.com/mongodb/mongo-java-driver/pulls?page=1&q=is%3Apr+author%3AstIncMale);
+  * [implemented](https://github.com/mongodb/mongo-java-driver/pull/1154)
+    a PoC for using [gRPC] as a "transport" protocol for [MongoDB Wire Protocol] messages,
+    the most interesting part is
+    [`GrpcStream.java`](https://github.com/mongodb/mongo-java-driver/blob/d8a29e56b7fdff06a2d4222cc8e74903da8cf365/driver-core/src/main/com/mongodb/internal/connection/grpc/GrpcStream.java);
+    {% comment %}
+      We wanted to have multiplexing of requests, and HTTP/2, HTTP/3, QUIC all have it.
+      With multiplexing,
+      - it is easier to size connection pools, as only a few connections are needed,
+        and there will hardly be unused pooled connections;
+      - fewer connections means fewer TLS and MongoDB handshakes, i.e., faster startup time.
+
+      We also wanted integrability with the HTTP infrastructure,
+      as HTTP access is important for FaaS use-cases.
+
+      gRPC had implementation over HTTP/2, and may have one over HTTP/3 in the future.
+      It seems better to use gRPC rather than HTTP directly:
+      - we may decide to use gRPC features that we do not currently use;
+      - despite HTTP/3 not being awailable, once it is supported, we'll trivially switch to it,
+        and have the head-of-line blocking problem solved completely,
+        while using only a single connection.
+    {% endcomment %}
   * designed and
     [implemented](https://github.com/mongodb/mongo-java-driver/commit/1812865f234b2d9c9ab27ea760959ded152d51ac)
     a **[query building API](https://mongodb.github.io/mongo-java-driver/4.7/apidocs/mongodb-driver-core/com/mongodb/client/model/search/package-summary.html)**
@@ -123,8 +148,10 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
       [mechanism of limiting the number of connections that can be established concurrently](https://github.com/mongodb/mongo-java-driver/blob/8c68972b6b5278bc42b702b6837236b2c6fedbc2/driver-core/src/main/com/mongodb/internal/connection/DefaultConnectionPool.java#L830-L1118),
       featuring the connection hand-over mechanism to support fairness;
     * [refactored read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782).
-* **[MongoDB Kafka Connector](https://www.mongodb.com/docs/kafka-connector/)**
-  * [my pull requests](https://github.com/pulls?q=is%3Apr+author%3AstIncMale+repo%3Amongodb%2Fmongo-kafka).
+* **[MongoDB Kafka Connector]**
+  * [my pull requests](https://github.com/mongodb/mongo-kafka/pulls?page=1&q=is%3Apr+author%3AstIncMale).
+* **[MongoDB Rust Driver]**
+  * [my pull requests](https://github.com/mongodb/mongo-rust-driver/pulls?page=1&q=is%3Apr+author%3AstIncMale). 
 </div>
 
 <h6 class="resume-h">

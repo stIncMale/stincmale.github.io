@@ -14,6 +14,7 @@
 [OpenJDK JDK]: <https://openjdk.org/projects/jdk/>
 [Oracle JDK]: <https://www.oracle.com/java/technologies/downloads/>
 [Junit 5]: <https://junit.org/junit5/>
+[Rust]: <https://www.rust-lang.org/>
 [PostgreSQL]: <https://www.postgresql.org/>
 [Cassandra]: <https://cassandra.apache.org/>
 [MongoDB]: <https://www.mongodb.com/docs/manual/>
@@ -34,6 +35,10 @@
 [concurrently]: <{% post_url 2020-05-17-parallelism-vs-concurrency %}#concurrency>
 [authentication]: <{% post_url 2013-12-31-identification-vs-authentication-vs-authorization %}#authentication>
 [MongoDB Java Drivers]: <https://www.mongodb.com/docs/drivers/java-drivers/>
+[MongoDB Kafka Connector]: <https://www.mongodb.com/docs/kafka-connector/current/>
+[MongoDB Rust Driver]: <https://www.mongodb.com/docs/drivers/rust/current/>
+[MongoDB Wire Protocol]: <https://www.mongodb.com/docs/manual/reference/mongodb-wire-protocol/>
+[gRPC]: <https://grpc.io/>
 
 *[iff]:
 {:data-title="if and only if"}
@@ -195,3 +200,7 @@
 {:data-title="Amazon Web Services"}
 *[OSI]:
 {:data-title="Open Systems Interconnection"}
+*[gRPC]:
+{:data-title="gRPC Remote Procedure Calls"}
+*[PoC]:
+{:data-title="Proof of Concept"}

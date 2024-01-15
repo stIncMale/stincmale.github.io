@@ -6,7 +6,7 @@ categories: [tech]
 tags: [concurrency, Java, disambiguation]
 date: 2015-01-01T12:00:00Z
 custom_post_date: 2015
-custom_update_date: 2023-12-31T00:42:00Z
+custom_update_date: 2024-01-15T09:20:00Z
 custom_keywords: [race condition, data race, race, racy]
 custom_description: Not all race conditions are data races, and not all data races are race conditions, but they both can cause concurrent programs to fail in unpredictable ways.
 ---
@@ -128,7 +128,8 @@ But both orders
 * `so2`: `w1`, `r`
 
 are allowed[^3] and lead to different program outputs&mdash;"false" and "true" respectively.
-Moreover, this program may exit without ever executing the method `raiseFlag`, i.e. without printing anything.
+Moreover, not all the allowed executions even have the `w1` action, as the `raiseFlag` method
+is not guaranteed to be called.
 So the program clearly has a race condition despite having no data race.
 
 We can get rid of the race condition in our program by waiting until `flag` becomes true
@@ -145,14 +146,14 @@ class FixedRaceConditionExample {
     }
 
     public static void main(String... args) {
-        ForkJoinPool.commonPool().execute(RaceConditionExample::raiseFlag);
+        ForkJoinPool.commonPool().execute(FixedRaceConditionExample::raiseFlag);
         while (!flag); // r_i, where i ∈ [1, k], k is finite
         System.out.print(flag); // r
     }
 }
 ```
 
-For this modified program the JMM allows executions with *only* the following `so`:
+For this modified program the JMM allows executions with *only* the following sets of `so`:
 
 * `so1`: `w0`, `w1`, `r_1`, `r`
 

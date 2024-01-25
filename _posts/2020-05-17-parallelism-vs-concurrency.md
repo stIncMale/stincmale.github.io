@@ -5,7 +5,7 @@ title: Parallelism vs. concurrency
 categories: [tech]
 tags: [concurrency, disambiguation]
 date: 2020-05-17T12:00:00Z
-custom_update_date: 2022-09-25T03:57:00Z
+custom_update_date: 2024-01-24T06:30:00Z
 custom_keywords: [concurrency, parallelism, multitasking, multithreading]
 custom_description: Parallelism&mdash;a term referring to techniques used to speedup execution by doing independent actions on multiple independently working processing units at the same physical time. Concurrency &mdash; a term referring to situations when there are unordered conflicting actions and techniques used to deal with them.
 ---
@@ -51,7 +51,7 @@ situations when there are *unordered* *conflicting* actions and techniques used 
 Unordered actions are referred to as being concurrent.
 </div>
 
-So concurrency is a concept we may want to use when talking about the *design* if a system.
+So concurrency is a concept we may want to use when talking about the *design* of a system.
 For example, when deciding how to deal with incoming requests and the corresponding transactions which are not ordered, a.k.a. concurrent, and often may affect each other.
 
 It is worth mentioning that some sources use the word "time" instead of the word "order",

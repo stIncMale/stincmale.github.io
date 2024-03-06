@@ -16,17 +16,6 @@ window.matchMedia("(orientation: portrait)").addListener(()=> {
   updateWindowAccordingToOrientation(false);
 });
 
-// this call scrolls the window when a user enters a page with a hash-URI
-if (window.location.hash !== "") {
-  scrollWindowToAnchor(100);
-}
-// this event listener scrolls the window when a user clicks a hash-link
-window.addEventListener("click", event => {
-  if (event.target.tagName == "A" && event.target.hash !== "") {
-    scrollWindowToAnchor(0);
-  }
-});
-
 function toggleNavigationMenu() {
   updateWindowAccordingToOrientation(true);
   const siteNavigationMenuToggle = window.document.getElementById("site-navigation-menu-toggle");
@@ -98,25 +87,4 @@ function displayOrNoneIfMediaPrint(display) {
   } else {
     return display;
   }
-}
-
-/**
- * The toolbar hovers over the right-page-area and covers a part of it. This is fine until a user
- * navigates to an element via hash-link, and the browser scrolls the window to the minimum possible
- * position to make that element wholly visible within the viewport. So if an element if covered by
- * the toolbar but is within the viewport, the browser decides that this is fine.
- *
- * This function scrolls the window so that the element a user jumped to appears right under
- * the toolbar. Some solutions to the problem: https://css-tricks.com/hash-tag-links-padding/.
- * I used this one https://stackoverflow.com/a/17535094/1285873.
- *
- * Note that for some reason window.scrollTo has to be called with a timeout
- * (even if the timeout is 0). I do not know whether this is a robust
- * solution or, more likely, a kludge that appear to do the trick at least in my experiments.
- */
-function scrollWindowToAnchor(delayMillis) {
-  window.setTimeout(() => {
-    window.scrollTo(window.scrollX,
-        window.scrollY - window.document.getElementById("toolbar").offsetHeight);
-  }, delayMillis);
 }

@@ -17,6 +17,10 @@ figure, hr {
   padding: 0em;
 }
 
+html {
+  scroll-padding-top: 2em;
+}
+
 body {
   font-size: $font-size;
   line-height: $line-height;

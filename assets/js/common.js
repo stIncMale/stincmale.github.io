@@ -21,15 +21,3 @@ function toBool(value, defaultValue) {
   }
   return value;
 }
-
-/**
- * undefined, null -> false
- * anything else -> true
- */
-function notNullOrUndefined(value) {
-  if (value === undefined || value === null) {
-    return false;
-  } else {
-    return true;
-  }
-}

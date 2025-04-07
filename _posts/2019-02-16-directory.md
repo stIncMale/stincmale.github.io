@@ -76,7 +76,7 @@ where each DBMS has its own protocol and a driver library (a client) implementin
 (e.g.,
 [PostgreSQL JDBC Driver] for [PostgreSQL],
 [Datastax Java Driver](https://docs.datastax.com/en/developer/java-driver/) for [Cassandra],
-[MongoDB Java Drivers](https://www.mongodb.com/docs/drivers/java-drivers/) for [MongoDB]).
+[MongoDB Java Drivers] for [MongoDB]).
 
 <div class="info-block" markdown="1">
 * [LDAP] is to

@@ -38,6 +38,7 @@
 [MongoDB Kafka Connector]: <https://www.mongodb.com/docs/kafka-connector/current/>
 [MongoDB Rust Driver]: <https://www.mongodb.com/docs/drivers/rust/current/>
 [MongoDB Wire Protocol]: <https://www.mongodb.com/docs/manual/reference/mongodb-wire-protocol/>
+[MongoDB Extension of Hibernate ORM]: <https://github.com/mongodb/mongo-hibernate/>
 [gRPC]: <https://grpc.io/>
 
 *[iff]:

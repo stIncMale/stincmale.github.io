@@ -107,10 +107,18 @@ Concurrency and distributed systems
 </h6>
 _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndash;current</span>
 <div class="resume-experience" markdown="1">
+* **[MongoDB Extension of Hibernate ORM]**
+  * [my pull requests](https://github.com/mongodb/mongo-hibernate/pulls?page=1&q=is%3Apr+author%3AstIncMale);
+  * I participated in development from the inception,
+    but the man behind the key architecture ideas is [Nathan Xu](https://github.com/NathanQingyangXu);
 * **[MongoDB Java Drivers]**
   * [my pull requests](https://github.com/mongodb/mongo-java-driver/pulls?page=1&q=is%3Apr+author%3AstIncMale);
+  * [implemented](https://github.com/mongodb/mongo-java-driver/pull/1509) a
+    [**client-level API**](https://mongodb.github.io/mongo-java-driver/5.3/apidocs/mongodb-driver-core/com/mongodb/client/model/bulk/package-summary.html)
+    [**`MongoCluster.bulkWrite`**](https://mongodb.github.io/mongo-java-driver/5.3/apidocs/mongodb-driver-sync/com/mongodb/client/MongoCluster.html#bulkWrite(com.mongodb.client.ClientSession,java.util.List,com.mongodb.client.model.bulk.ClientBulkWriteOptions))
+    for the [`bulkWrite`](https://www.mongodb.com/docs/manual/reference/command/bulkWrite/) command;
   * [implemented](https://github.com/mongodb/mongo-java-driver/pull/1154)
-    a PoC for using [gRPC] as a "transport" protocol for [MongoDB Wire Protocol] messages,
+    a PoC for using **[gRPC] as a "transport" protocol** for [MongoDB Wire Protocol] messages,
     the most interesting part is
     [`GrpcStream.java`](https://github.com/mongodb/mongo-java-driver/blob/d8a29e56b7fdff06a2d4222cc8e74903da8cf365/driver-core/src/main/com/mongodb/internal/connection/grpc/GrpcStream.java);
     {% comment %}
@@ -148,10 +156,10 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
       [mechanism of limiting the number of connections that can be established concurrently](https://github.com/mongodb/mongo-java-driver/blob/8c68972b6b5278bc42b702b6837236b2c6fedbc2/driver-core/src/main/com/mongodb/internal/connection/DefaultConnectionPool.java#L830-L1118),
       featuring the connection hand-over mechanism to support fairness;
     * [refactored read/write retries](https://github.com/mongodb/mongo-java-driver/pull/782).
+* **[MongoDB Rust Driver]**
+  * [my pull requests](https://github.com/mongodb/mongo-rust-driver/pulls?page=1&q=is%3Apr+author%3AstIncMale).
 * **[MongoDB Kafka Connector]**
   * [my pull requests](https://github.com/mongodb/mongo-kafka/pulls?page=1&q=is%3Apr+author%3AstIncMale).
-* **[MongoDB Rust Driver]**
-  * [my pull requests](https://github.com/mongodb/mongo-rust-driver/pulls?page=1&q=is%3Apr+author%3AstIncMale). 
 </div>
 
 <h6 class="resume-h">

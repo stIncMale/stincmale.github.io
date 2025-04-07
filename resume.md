@@ -110,7 +110,7 @@ _Senior Java driver engineer_ / <span class="resume-insignificant">Jan 2021&ndas
 * **[MongoDB Extension of Hibernate ORM]**
   * [my pull requests](https://github.com/mongodb/mongo-hibernate/pulls?page=1&q=is%3Apr+author%3AstIncMale);
   * I participated in development from the inception,
-    but the man behind the key architecture ideas is [Nathan Xu](https://github.com/NathanQingyangXu);
+    but the man behind the key architecture ideas is [Nathan Xu](https://github.com/NathanQingyangXu).
 * **[MongoDB Java Drivers]**
   * [my pull requests](https://github.com/mongodb/mongo-java-driver/pulls?page=1&q=is%3Apr+author%3AstIncMale);
   * [implemented](https://github.com/mongodb/mongo-java-driver/pull/1509) a

@@ -173,7 +173,8 @@ _Senior software engineer_ / <span class="resume-insignificant">Apr 2018&ndash;N
 <div class="resume-experience" markdown="1">
 * **[Coverity Connect](https://www.synopsys.com/software-integrity/security-testing/static-analysis-sast.html) server**
   (Tomcat, PostgreSQL, Hibernate ORM)&mdash;stores and manages issues detected by code analysis tools
-  * designed and developed **export/import** functionality (the technical side is more complex than it sounds) in pair with a colleague,
+  * designed and developed **export/import** functionality (the technical side is more complex than it sounds)
+    in pair with [Maxim Katcharov](https://www.linkedin.com/in/katcharov/),
     designed and implemented support of this functionality in a **cluster environment** on my own;
     {% comment %}
       See `My Drive/programming/from previous jobs/Synopsys`,
